@@ -6,7 +6,8 @@ namespace Elektrogrrosshandel
     {
         static void Main(string[] args)
         {
-
+            GUI_MainMenu.PrintMainMenu();
+            GUI_MainMenu.GetMenuChoice();
         }
     }
 }
