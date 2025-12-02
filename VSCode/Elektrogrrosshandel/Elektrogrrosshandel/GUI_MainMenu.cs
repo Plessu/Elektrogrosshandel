@@ -39,14 +39,13 @@ namespace Elektrogrrosshandel
                     new Layout("MainMenuBodyDisplay")));
 
             //Change size of structure
-            mainMenu["MainMenu"].Size(60);
             mainMenu["MainMenuHeader"].Size(3);
-            mainMenu["MainMenuBody"].Size(24);
+            mainMenu["MainMenuBody"].Size(20);
 
             //Fill structure
             Panel panelMenu = new Panel(
                 Align.Left(new Rows(menuItems), VerticalAlignment.Top));
-            panelMenu.Header("[bold blue]Main Menu[/]"); // <-- geschlossenes Tag
+            panelMenu.Header("[bold #00ffff]Main Menu[/]" + Emoji.Known.DownArrow); // <-- geschlossenes Tag
             panelMenu.HeaderAlignment(Justify.Left);
             
 
@@ -67,7 +66,7 @@ namespace Elektrogrrosshandel
             int choice;
             while (true)
             {
-                AnsiConsole.Markup("\n[bold yellow]Please enter your choice (1-7): [/]");
+                AnsiConsole.Markup("[bold yellow]Please enter your choice (1-7): [/]");
                 string input = Console.ReadLine();
                 if (int.TryParse(input, out choice) && choice >= 1 && choice <= 7)
                 {
