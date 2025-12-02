@@ -8,12 +8,8 @@ namespace Elektrogrrosshandel
     //Main Menu dispalyed via Spectre.Console NuGet Plugin
     internal class GUI_MainMenu
     {
-        //Layout
-        private static Layout MainMenu()
-        {
-            //Variables
-            //Menu Items
-            List<Markup> menuItems = new List<Markup>
+        //Menu Items
+        private static List<Markup> menuItems = new List<Markup>
             {
                 new Markup("[yellow] 1. News[/]"),
                 new Markup("[yellow] 2. View Product Catalog[/]"),
@@ -24,62 +20,31 @@ namespace Elektrogrrosshandel
                 new Markup("[yellow] 7. Cabinet Builder[/]"),
                 new Markup("[yellow] 8. Account[/]"),
                 new Markup("[yellow] 9. Customer Support[/]"),
-                new Markup("[yellow]10. Massages[/]"),
+                new Markup("[yellow]10. Messages[/]"),
                 new Markup("[yellow]11. Impressum[/]"),
                 new Markup("[yellow]12. Exit[/]")
             };
 
-            int choice;
 
-            //Create Layout and structure
-            Layout mainMenu = new Layout("MainMenu")
-                .SplitRows(
-                new Layout("MainMenuHeader"),
-                new Layout("MainMenuBody")
-                    .SplitColumns(
-                    new Layout("MainMenuBodyMenu"),
-                    new Layout("MainMenuBodyDisplay")));
-
-            //Change size of structure
-            mainMenu["MainMenuHeader"].Size(3);
-            mainMenu["MainMenuBody"].Size(20);
-
-            //Create Panel for menu items
+        //Layout
+        internal static Panel MainMenu()
+        {
             Panel panelMenu = new Panel(
                 Align.Left(new Rows(menuItems), VerticalAlignment.Top));
-            panelMenu.Header(" [bold #00ffff]Main Menu[/] :abacus: "); // <-- geschlossenes Tag
+            panelMenu.Header("[bold #00afff]Main Menu[/] :downwards_button:");
             panelMenu.HeaderAlignment(Justify.Left);
-            
-            mainMenu["MainMenuBodyMenu"].Update(
-                new Panel(panelMenu).Expand());
 
-            return mainMenu;
+            return panelMenu;
         }
-
-        //Methode to get user input for menu choice with validation
-        static internal int GetMenuChoice()
+        internal static Panel MainDisplay()
         {
-            int choice;
-            while (true)
-            {
-                AnsiConsole.Markup("[bold yellow]Please enter your choice (1-7): [/]");
-                string input = Console.ReadLine();
-                if (int.TryParse(input, out choice) && choice >= 1 && choice <= 7)
-                {
-                    break; // Valid input, exit the loop
-                }
-                else
-                {
-                    AnsiConsole.MarkupLine("[bold red]Invalid input. Please enter a number between 1 and 7.[/]");
-                }
-            }
-            return choice;
-        }
+            //Create Panel for Display area
+            Panel panelDisplay = new Panel(
+                new Markup("[italic #00afff]Please select an option from the menu.[/]"));
 
-        //Methode to access and print Layout MainMenu
-        static internal void PrintMainMenu()
-        {
-            AnsiConsole.Write(MainMenu());
+            panelDisplay.Header("[bold #00afff]Display Area[/] :computer:");
+            panelDisplay.HeaderAlignment(Justify.Left);
+            return panelDisplay;
         }
     }
 }
