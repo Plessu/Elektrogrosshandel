@@ -39,7 +39,8 @@ namespace Elektrogrrosshandel
             mainWindow["Header"].Size = 4;
             mainWindow["Footer"].Size = 3;
             mainWindow["Body"].Size = 20;
-            mainWindow["HeaderTitle"].Size = 20;
+            mainWindow["HeaderTitle"].Size = 35;
+            mainWindow["BodyMenu"].Size = 35;
 
             Panel bodyMenuPanel = new Panel(BodyMenu);
             Panel bodyDisplay = new Panel(BodyDisplay);

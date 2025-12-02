@@ -26,6 +26,7 @@ namespace Elektrogrrosshandel
             };
 
 
+
         //Layout
         internal static Panel MainMenu()
         {
@@ -33,6 +34,7 @@ namespace Elektrogrrosshandel
                 Align.Left(new Rows(menuItems), VerticalAlignment.Top));
             panelMenu.Header("[bold #00afff]Main Menu[/] :downwards_button:");
             panelMenu.HeaderAlignment(Justify.Left);
+            
 
             return panelMenu;
         }
@@ -42,9 +44,13 @@ namespace Elektrogrrosshandel
             Panel panelDisplay = new Panel(
                 new Markup("[italic #00afff]Please select an option from the menu.[/]"));
 
-            panelDisplay.Header("[bold #00afff]Display Area[/] :computer:");
+            panelDisplay.Header("[bold #00afff]Wellcome Area[/] :handshake:");
             panelDisplay.HeaderAlignment(Justify.Left);
             return panelDisplay;
+        }
+        public static int MaxMenuItems()
+        {
+            return menuItems.Count;
         }
     }
 }
