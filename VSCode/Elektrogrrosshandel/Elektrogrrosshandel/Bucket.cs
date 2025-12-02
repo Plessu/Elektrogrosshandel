@@ -13,15 +13,12 @@ namespace Elektrogrrosshandel
         private List<int> ItemQuantity { get; set; }
 
         private decimal TotalPrice { get; set; }
+
         private static List<Bucket> buckets = new List<Bucket>();
 
-        private static Dictionary<int, int> BucketIDs = new Dictionary<int, int>();
-
-        private Bucket(int BucketID, int UserID, string BucketName)
+        private Bucket(int BucketID, string BucketName)
         {
-            string bucketID = UserID.ToString() + BucketID.ToString();
-            this.BucketID = Int32.Parse(bucketID);
-            this.UserID = UserID;
+            this.BucketID = BucketID;
             this.BucketName = BucketName;
             this.ArticlesInBucket = new List<ArticleItem>();
             this.TotalPrice = 0;
@@ -30,30 +27,28 @@ namespace Elektrogrrosshandel
         {
             buckets.Add(bucket);
         }
-        public static void CreateBucket(int UserID, string BucketName)
+        public static void CreateBucket(int BucketID, string BucketName)
         {
-            int BucketSubID;
-            if (BucketIDs.ContainsKey(UserID))
-            {
-                BucketSubID = BucketIDs[UserID] + 1;
-                BucketIDs[UserID] = BucketSubID;
-            }
-            else
-            {
-                BucketSubID = 1;
-                BucketIDs.Add(UserID, BucketSubID);
-            }
-            Bucket newBucket = new Bucket(BucketSubID, UserID, BucketName);
+            Bucket newBucket = new Bucket(BucketID, BucketName);
             AddBucket(newBucket);
         }
-        public static void AddArticleToBucket(int BucketID, ArticleItem Item)
+        public static void AddArticleToBucket(int BucketID, ArticleItem Item, int Quantity)
         {
             foreach (Bucket bucket in buckets)
             {
                 if (bucket.BucketID == BucketID)
                 {
-                    bucket.ArticlesInBucket.Add(Item);
-                    bucket.TotalPrice += ArticleItem.GetArticlePriceByItem(Item);
+                    if (bucket.ArticlesInBucket.Contains(Item))
+                    {
+                        int index = bucket.ArticlesInBucket.IndexOf(Item);
+                        bucket.ItemQuantity[index] += Quantity;
+                    }
+                    else
+                    {
+                           bucket.ArticlesInBucket.Add(Item);
+                           bucket.ItemQuantity.Add(Quantity);
+                    }
+                    bucket.TotalPrice += ArticleItem.GetArticlePriceByItem(Item) * Quantity;
                     break;
                 }
             }
