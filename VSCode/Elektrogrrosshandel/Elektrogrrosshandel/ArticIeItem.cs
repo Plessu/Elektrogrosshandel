@@ -90,6 +90,21 @@ namespace Elektrogrrosshandel
             AddArticleItem(newItem);
         }
 
+        public static ArticleItem GetArticleItemByID(int ArticleID)
+        {
+            foreach (ArticleItem item in articleItems)
+            {
+                if (item.ArticleID == ArticleID)
+                {
+                    return item;
+                }
+            }
+            return null;
+        }
+        public static decimal GetArticlePriceByItem(ArticleItem Item)
+        {
+            return Item.Price;
+        }
         public static List<ArticleItem> GetArticleItems()
         {
             return articleItems;
