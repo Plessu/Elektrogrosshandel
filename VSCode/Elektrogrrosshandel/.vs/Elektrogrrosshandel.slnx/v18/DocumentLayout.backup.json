@@ -3,24 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\giaco\\OneDrive - LG-Academy\\Giacomo\\\u00DCbungen\\Pr\u00E4senzkurse\\Anwendungsgrundlagen\\Abschlussprojekt\\Elektrogrosshandel\\VSCode\\Elektrogrrosshandel\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3A1A6625-A825-F042-7472-6B35EF087C25}|Elektrogrrosshandel\\Elektrogrrosshandel.csproj|c:\\users\\giaco\\onedrive - lg-academy\\giacomo\\\u00FCbungen\\pr\u00E4senzkurse\\anwendungsgrundlagen\\abschlussprojekt\\elektrogrosshandel\\vscode\\elektrogrrosshandel\\elektrogrrosshandel\\articlegroup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3A1A6625-A825-F042-7472-6B35EF087C25}|Elektrogrrosshandel\\Elektrogrrosshandel.csproj|solutionrelative:elektrogrrosshandel\\articlegroup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{3A1A6625-A825-F042-7472-6B35EF087C25}|Elektrogrrosshandel\\Elektrogrrosshandel.csproj|c:\\users\\giaco\\onedrive - lg-academy\\giacomo\\\u00FCbungen\\pr\u00E4senzkurse\\anwendungsgrundlagen\\abschlussprojekt\\elektrogrosshandel\\vscode\\elektrogrrosshandel\\elektrogrrosshandel\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3A1A6625-A825-F042-7472-6B35EF087C25}|Elektrogrrosshandel\\Elektrogrrosshandel.csproj|solutionrelative:elektrogrrosshandel\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3A1A6625-A825-F042-7472-6B35EF087C25}|Elektrogrrosshandel\\Elektrogrrosshandel.csproj|c:\\users\\giaco\\onedrive - lg-academy\\giacomo\\\u00FCbungen\\pr\u00E4senzkurse\\anwendungsgrundlagen\\abschlussprojekt\\elektrogrosshandel\\vscode\\elektrogrrosshandel\\elektrogrrosshandel\\getuserinput.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3A1A6625-A825-F042-7472-6B35EF087C25}|Elektrogrrosshandel\\Elektrogrrosshandel.csproj|solutionrelative:elektrogrrosshandel\\getuserinput.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3A1A6625-A825-F042-7472-6B35EF087C25}|Elektrogrrosshandel\\Elektrogrrosshandel.csproj|c:\\users\\giaco\\onedrive - lg-academy\\giacomo\\\u00FCbungen\\pr\u00E4senzkurse\\anwendungsgrundlagen\\abschlussprojekt\\elektrogrosshandel\\vscode\\elektrogrrosshandel\\elektrogrrosshandel\\gui_display.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3A1A6625-A825-F042-7472-6B35EF087C25}|Elektrogrrosshandel\\Elektrogrrosshandel.csproj|solutionrelative:elektrogrrosshandel\\gui_display.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{3A1A6625-A825-F042-7472-6B35EF087C25}|Elektrogrrosshandel\\Elektrogrrosshandel.csproj|c:\\users\\giaco\\onedrive - lg-academy\\giacomo\\\u00FCbungen\\pr\u00E4senzkurse\\anwendungsgrundlagen\\abschlussprojekt\\elektrogrosshandel\\vscode\\elektrogrrosshandel\\elektrogrrosshandel\\articlegroup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3A1A6625-A825-F042-7472-6B35EF087C25}|Elektrogrrosshandel\\Elektrogrrosshandel.csproj|solutionrelative:elektrogrrosshandel\\articlegroup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3A1A6625-A825-F042-7472-6B35EF087C25}|Elektrogrrosshandel\\Elektrogrrosshandel.csproj|c:\\users\\giaco\\onedrive - lg-academy\\giacomo\\\u00FCbungen\\pr\u00E4senzkurse\\anwendungsgrundlagen\\abschlussprojekt\\elektrogrosshandel\\vscode\\elektrogrrosshandel\\elektrogrrosshandel\\getuserinput.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3A1A6625-A825-F042-7472-6B35EF087C25}|Elektrogrrosshandel\\Elektrogrrosshandel.csproj|solutionrelative:elektrogrrosshandel\\getuserinput.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{3A1A6625-A825-F042-7472-6B35EF087C25}|Elektrogrrosshandel\\Elektrogrrosshandel.csproj|c:\\users\\giaco\\onedrive - lg-academy\\giacomo\\\u00FCbungen\\pr\u00E4senzkurse\\anwendungsgrundlagen\\abschlussprojekt\\elektrogrosshandel\\vscode\\elektrogrrosshandel\\elektrogrrosshandel\\gui_mainmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3A1A6625-A825-F042-7472-6B35EF087C25}|Elektrogrrosshandel\\Elektrogrrosshandel.csproj|solutionrelative:elektrogrrosshandel\\gui_mainmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3A1A6625-A825-F042-7472-6B35EF087C25}|Elektrogrrosshandel\\Elektrogrrosshandel.csproj|c:\\users\\giaco\\onedrive - lg-academy\\giacomo\\\u00FCbungen\\pr\u00E4senzkurse\\anwendungsgrundlagen\\abschlussprojekt\\elektrogrosshandel\\vscode\\elektrogrrosshandel\\elektrogrrosshandel\\articieitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3A1A6625-A825-F042-7472-6B35EF087C25}|Elektrogrrosshandel\\Elektrogrrosshandel.csproj|solutionrelative:elektrogrrosshandel\\articieitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,7 +34,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Bookmark",
@@ -46,7 +50,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 5,
+              "Title": "ArticIeItem.cs",
+              "DocumentMoniker": "C:\\Users\\giaco\\OneDrive - LG-Academy\\Giacomo\\\u00DCbungen\\Pr\u00E4senzkurse\\Anwendungsgrundlagen\\Abschlussprojekt\\Elektrogrosshandel\\VSCode\\Elektrogrrosshandel\\Elektrogrrosshandel\\ArticIeItem.cs",
+              "RelativeDocumentMoniker": "Elektrogrrosshandel\\ArticIeItem.cs",
+              "ToolTip": "C:\\Users\\giaco\\OneDrive - LG-Academy\\Giacomo\\\u00DCbungen\\Pr\u00E4senzkurse\\Anwendungsgrundlagen\\Abschlussprojekt\\Elektrogrosshandel\\VSCode\\Elektrogrrosshandel\\Elektrogrrosshandel\\ArticIeItem.cs",
+              "RelativeToolTip": "Elektrogrrosshandel\\ArticIeItem.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-02T17:14:27.669Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "ArticleGroup.cs",
               "DocumentMoniker": "C:\\Users\\giaco\\OneDrive - LG-Academy\\Giacomo\\\u00DCbungen\\Pr\u00E4senzkurse\\Anwendungsgrundlagen\\Abschlussprojekt\\Elektrogrosshandel\\VSCode\\Elektrogrrosshandel\\Elektrogrrosshandel\\ArticleGroup.cs",
               "RelativeDocumentMoniker": "Elektrogrrosshandel\\ArticleGroup.cs",
@@ -59,7 +76,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "GetUserInput.cs",
               "DocumentMoniker": "C:\\Users\\giaco\\OneDrive - LG-Academy\\Giacomo\\\u00DCbungen\\Pr\u00E4senzkurse\\Anwendungsgrundlagen\\Abschlussprojekt\\Elektrogrosshandel\\VSCode\\Elektrogrrosshandel\\Elektrogrrosshandel\\GetUserInput.cs",
               "RelativeDocumentMoniker": "Elektrogrrosshandel\\GetUserInput.cs",
@@ -67,19 +84,21 @@
               "RelativeToolTip": "Elektrogrrosshandel\\GetUserInput.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAABhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-02T12:10:57.795Z"
+              "WhenOpened": "2025-12-02T12:10:57.795Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "GUI_Display.cs",
               "DocumentMoniker": "C:\\Users\\giaco\\OneDrive - LG-Academy\\Giacomo\\\u00DCbungen\\Pr\u00E4senzkurse\\Anwendungsgrundlagen\\Abschlussprojekt\\Elektrogrosshandel\\VSCode\\Elektrogrrosshandel\\Elektrogrrosshandel\\GUI_Display.cs",
               "RelativeDocumentMoniker": "Elektrogrrosshandel\\GUI_Display.cs",
               "ToolTip": "C:\\Users\\giaco\\OneDrive - LG-Academy\\Giacomo\\\u00DCbungen\\Pr\u00E4senzkurse\\Anwendungsgrundlagen\\Abschlussprojekt\\Elektrogrosshandel\\VSCode\\Elektrogrrosshandel\\Elektrogrrosshandel\\GUI_Display.cs",
               "RelativeToolTip": "Elektrogrrosshandel\\GUI_Display.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAACUAAAAuAAAAAAAAAA==",
+              "ViewState": "AgIAABEAAAAAAAAAAAAAwCgAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-02T08:40:46.382Z"
+              "WhenOpened": "2025-12-02T08:40:46.382Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -87,21 +106,22 @@
               "Title": "GUI_MainMenu.cs",
               "DocumentMoniker": "C:\\Users\\giaco\\OneDrive - LG-Academy\\Giacomo\\\u00DCbungen\\Pr\u00E4senzkurse\\Anwendungsgrundlagen\\Abschlussprojekt\\Elektrogrosshandel\\VSCode\\Elektrogrrosshandel\\Elektrogrrosshandel\\GUI_MainMenu.cs",
               "RelativeDocumentMoniker": "Elektrogrrosshandel\\GUI_MainMenu.cs",
-              "ToolTip": "C:\\Users\\giaco\\OneDrive - LG-Academy\\Giacomo\\\u00DCbungen\\Pr\u00E4senzkurse\\Anwendungsgrundlagen\\Abschlussprojekt\\Elektrogrosshandel\\VSCode\\Elektrogrrosshandel\\Elektrogrrosshandel\\GUI_MainMenu.cs",
-              "RelativeToolTip": "Elektrogrrosshandel\\GUI_MainMenu.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC0AAAA3AAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\giaco\\OneDrive - LG-Academy\\Giacomo\\\u00DCbungen\\Pr\u00E4senzkurse\\Anwendungsgrundlagen\\Abschlussprojekt\\Elektrogrosshandel\\VSCode\\Elektrogrrosshandel\\Elektrogrrosshandel\\GUI_MainMenu.cs*",
+              "RelativeToolTip": "Elektrogrrosshandel\\GUI_MainMenu.cs*",
+              "ViewState": "AgIAACEAAAAAAAAAAAAQwDUAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-01T12:18:09.409Z"
+              "WhenOpened": "2025-12-01T12:18:09.409Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\giaco\\OneDrive - LG-Academy\\Giacomo\\\u00DCbungen\\Pr\u00E4senzkurse\\Anwendungsgrundlagen\\Abschlussprojekt\\Elektrogrosshandel\\VSCode\\Elektrogrrosshandel\\Elektrogrrosshandel\\Program.cs",
               "RelativeDocumentMoniker": "Elektrogrrosshandel\\Program.cs",
               "ToolTip": "C:\\Users\\giaco\\OneDrive - LG-Academy\\Giacomo\\\u00DCbungen\\Pr\u00E4senzkurse\\Anwendungsgrundlagen\\Abschlussprojekt\\Elektrogrosshandel\\VSCode\\Elektrogrrosshandel\\Elektrogrrosshandel\\Program.cs",
               "RelativeToolTip": "Elektrogrrosshandel\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAABMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-01T12:00:45.886Z",
               "EditorCaption": ""
