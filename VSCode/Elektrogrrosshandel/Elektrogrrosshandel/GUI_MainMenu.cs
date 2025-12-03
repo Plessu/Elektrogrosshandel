@@ -18,15 +18,15 @@ namespace Elektrogrrosshandel
         };
         private static List<Markup> menuItemsAccount = new List<Markup>
         {
+                new Markup("[#c0c0c0]  8. User[/]"),
                 new Markup("[#c0c0c0]  5. Shoping Cart[/]"),
                 new Markup("[#c0c0c0]  6. Orders[/]"),
                 new Markup("[#c0c0c0]  7. Messages[/]"),
-                new Markup("[#c0c0c0]  8. User[/]")
         };
         private static List<Markup> menuItemsPublic = new List<Markup>
         {
-                new Markup("[#c0c0c0] 10. News[/]"),
-                new Markup("[#c0c0c0]  9. Customer Support[/]"),
+                new Markup("[#c0c0c0]  9. News[/]"),
+                new Markup("[#c0c0c0] 10. Customer Support[/]"),
                 new Markup("[#c0c0c0] 11. Impressum[/]")
         };
         private static Layout MainMenu()
