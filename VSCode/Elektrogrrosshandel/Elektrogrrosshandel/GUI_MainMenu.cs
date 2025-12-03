@@ -11,18 +11,24 @@ namespace Elektrogrrosshandel
         //Menu Items
         private static List<Markup> menuItems = new List<Markup>
             {
-                new Markup("[yellow] 1. News[/]"),
-                new Markup("[yellow] 2. View Product Catalog[/]"),
-                new Markup("[yellow] 3. Discount Promotion[/]"),
-                new Markup("[yellow] 4. Shoping Cart[/]"),
-                new Markup("[yellow] 5. PC Builder[/]"),
-                new Markup("[yellow] 6. Rack Builder[/]"),
-                new Markup("[yellow] 7. Cabinet Builder[/]"),
-                new Markup("[yellow] 8. Account[/]"),
-                new Markup("[yellow] 9. Customer Support[/]"),
-                new Markup("[yellow]10. Messages[/]"),
-                new Markup("[yellow]11. Impressum[/]"),
-                new Markup("[yellow]12. Exit[/]")
+                new Markup("[bold #af8700 on black]Shop[/]"),
+                new Markup("[bold #af8700 on black]---------------------------[/]"),
+                new Markup("[#c0c0c0]  1. Product Catalog[/]"),
+                new Markup("[#c0c0c0]  2. Discount Promotion[/]"),
+                new Markup("[#c0c0c0]  3. PC Builder[/]"),
+                new Markup("[#c0c0c0]  4. Rack Builder[/]"),
+                new Markup("[#c0c0c0]  5. Cabinet Builder[/]"),
+                new Markup("[bold #af8700 on black]Account[/]"),
+                new Markup("[bold #af8700 on black]---------------------------[/]"),
+                new Markup("[#c0c0c0]  6. Shoping Cart[/]"),
+                new Markup("[#c0c0c0]  7. Orders[/]"),
+                new Markup("[#c0c0c0]  8. Messages[/]"),
+                new Markup("[#c0c0c0]  9. User[/]"),
+                new Markup("[bold #af8700 on black]Public Area[/]"),
+                new Markup("[bold #af8700 on black]---------------------------[/]"),
+                new Markup("[#c0c0c0] 10. Customer Support[/]"),
+                new Markup("[#c0c0c0] 11. News[/]"),
+                new Markup("[#c0c0c0] 12. Impressum[/]")
             };
 
 
@@ -32,7 +38,6 @@ namespace Elektrogrrosshandel
         {
             Panel panelMenu = new Panel(
                 Align.Left(new Rows(menuItems), VerticalAlignment.Top));
-            panelMenu.Header("[bold #00afff]Main Menu[/] :downwards_button:");
             panelMenu.HeaderAlignment(Justify.Left);
             
 
@@ -43,14 +48,12 @@ namespace Elektrogrrosshandel
             //Create Panel for Display area
             Panel panelDisplay = new Panel(
                 new Markup("[italic #00afff]Please select an option from the menu.[/]"));
-
-            panelDisplay.Header("[bold #00afff]Wellcome Area[/] :handshake:");
             panelDisplay.HeaderAlignment(Justify.Left);
             return panelDisplay;
         }
         public static int MaxMenuItems()
         {
-            return menuItems.Count;
+            return 12;
         }
     }
 }

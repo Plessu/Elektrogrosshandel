@@ -8,8 +8,7 @@ namespace Elektrogrrosshandel
     internal class GetUserInput
     {
         static internal int Choice(int MaxChoice)
-        {
-            AnsiConsole.MarkupLine("");
+        { 
             int confirmation = AnsiConsole.Prompt(
             new TextPrompt<int>("[bold #00afff]---[/] [bold blue]Your Choice[/] [bold #00afff]---[/]")
             .AddChoice(1)

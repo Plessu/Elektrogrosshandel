@@ -8,14 +8,14 @@ namespace Elektrogrrosshandel
     internal class GUI_Display
     {
         private static Markup headertitle = 
-            new Markup("[bold red]Graef[/] \n[bold white]Elektrogrosshandel[/]");
+            new Markup("[bold #af8700 on black]Graef \n[/][bold #c0c0c0]Elektro[/][white]grosshandel[/]");
 
         private static Layout HeaderTitel = 
                            new Layout("HeaderTitle").Update(new Panel(
                                headertitle.Justify(Justify.Left)).Expand());
 
         private static Markup headersubtitle = 
-            new Markup("[white]Ihr[/] [bold red]Partner[/] [white]fuer Elektrozubehoer[/]");
+            new Markup("[#c0c0c0]Ihr[/] [bold #af8700 on black]Partner[/] [#c0c0c0]fuer Elektrozubehoer[/]");
 
         private static Layout HeaderSubtitle = 
                            new Layout("HeaderSubtitle").Update(new Panel(
@@ -38,7 +38,7 @@ namespace Elektrogrrosshandel
             mainWindow["MainWindow"].Size = 30;
             mainWindow["Header"].Size = 4;
             mainWindow["Footer"].Size = 3;
-            mainWindow["Body"].Size = 20;
+            mainWindow["Body"].Size = 22;
             mainWindow["HeaderTitle"].Size = 35;
             mainWindow["BodyMenu"].Size = 35;
 
