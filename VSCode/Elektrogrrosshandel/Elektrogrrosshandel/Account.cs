@@ -69,7 +69,7 @@ namespace Elektrogrrosshandel
         public Account(string AccountName, string FirmName, string Password, string Email, int SerialCode)
         {
             string role = VerifyAccount(SerialCode);
-            CreateAccount(AccountName, FirmName, Password, Email, role, SerialCode);
+            //CreateAccount(AccountName, FirmName, Password, Email, role, SerialCode);
         }
         public void DisplayAccountInfo()
         {

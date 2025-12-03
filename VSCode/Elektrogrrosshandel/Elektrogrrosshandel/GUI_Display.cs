@@ -8,20 +8,20 @@ namespace Elektrogrrosshandel
     internal class GUI_Display
     {
         private static Markup headertitle = 
-            new Markup("[bold red]Graef[/] \n[bold white]Elektrogrosshandel[/]");
+            new Markup("[bold #af8700 on black]Graef [/][bold #c0c0c0]Elektro[/][white]grosshandel[/]");
 
         private static Layout HeaderTitel = 
                            new Layout("HeaderTitle").Update(new Panel(
                                headertitle.Justify(Justify.Left)).Expand());
 
         private static Markup headersubtitle = 
-            new Markup("[white]Ihr[/] [bold red]Partner[/] [white]fuer Elektrozubehoer[/]");
+            new Markup("[#c0c0c0]Ihr[/] [bold #af8700 on black]Partner[/] [#c0c0c0]fuer Elektrozubehoer[/]");
 
         private static Layout HeaderSubtitle = 
                            new Layout("HeaderSubtitle").Update(new Panel(
                                headersubtitle.Justify(Justify.Center)).Expand());
 
-        public static void MainWindow(Panel BodyMenu, Panel BodyDisplay)
+        public static void MainWindow(Layout Body)
         {
             //Create Layout and structure
             Layout mainWindow = new Layout("MainWindow")
@@ -30,25 +30,22 @@ namespace Elektrogrrosshandel
                 .SplitColumns(
                 new Layout("HeaderTitle"),
                 new Layout("HeaderSubtitle")),
-                new Layout("Body").SplitColumns(
-                    new Layout("BodyMenu"),
-                    new Layout("BodyDisplay")),
+                new Layout("Body"),
                 new Layout("Footer"));
             
-            mainWindow["MainWindow"].Size = 30;
-            mainWindow["Header"].Size = 4;
+            mainWindow["MainWindow"].Size = 26;
+            mainWindow["Header"].Size = 3;
             mainWindow["Footer"].Size = 3;
-            mainWindow["Body"].Size = 20;
             mainWindow["HeaderTitle"].Size = 35;
-            mainWindow["BodyMenu"].Size = 35;
 
-            Panel bodyMenuPanel = new Panel(BodyMenu);
-            Panel bodyDisplay = new Panel(BodyDisplay);
+            Layout body = 
+                new Layout("BodyMenu").Update(
+                    new Layout(Body));
 
+            mainWindow["Body"].Update(new Layout(body));
             mainWindow["HeaderTitle"].Update(HeaderTitel);
             mainWindow["HeaderSubtitle"].Update(HeaderSubtitle);
-            mainWindow["BodyMenu"].Update(bodyMenuPanel.Expand());
-            mainWindow["BodyDisplay"].Update(bodyDisplay.Expand());
+
 
 
 

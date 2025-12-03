@@ -9,48 +9,112 @@ namespace Elektrogrrosshandel
     internal class GUI_MainMenu
     {
         //Menu Items
-        private static List<Markup> menuItems = new List<Markup>
+        private static List<Markup> menuItemsShop = new List<Markup>
             {
-                new Markup("[yellow] 1. News[/]"),
-                new Markup("[yellow] 2. View Product Catalog[/]"),
-                new Markup("[yellow] 3. Discount Promotion[/]"),
-                new Markup("[yellow] 4. Shoping Cart[/]"),
-                new Markup("[yellow] 5. PC Builder[/]"),
-                new Markup("[yellow] 6. Rack Builder[/]"),
-                new Markup("[yellow] 7. Cabinet Builder[/]"),
-                new Markup("[yellow] 8. Account[/]"),
-                new Markup("[yellow] 9. Customer Support[/]"),
-                new Markup("[yellow]10. Messages[/]"),
-                new Markup("[yellow]11. Impressum[/]"),
-                new Markup("[yellow]12. Exit[/]")
-            };
+                new Markup("[#c0c0c0]  1. Product Catalog[/]"),
+                new Markup("[#c0c0c0]  2. Discount Promotion[/]"),
+                new Markup("[#c0c0c0]  3. PC Builder[/]"),
+                new Markup("[#c0c0c0]  4. Rack Builder[/]")
+        };
+        private static List<Markup> menuItemsAccount = new List<Markup>
+        {
+                new Markup("[#c0c0c0]  8. User[/]"),
+                new Markup("[#c0c0c0]  5. Shoping Cart[/]"),
+                new Markup("[#c0c0c0]  6. Orders[/]"),
+                new Markup("[#c0c0c0]  7. Messages[/]"),
+        };
+        private static List<Markup> menuItemsPublic = new List<Markup>
+        {
+                new Markup("[#c0c0c0]  9. News[/]"),
+                new Markup("[#c0c0c0] 10. Customer Support[/]"),
+                new Markup("[#c0c0c0] 11. Impressum[/]")
+        };
+        private static Layout MainMenu()
+        {
+            Layout mainMenu = new Layout("Main Menu")
+                .SplitColumns(
+                    new Layout("Left").Size(35)
+                        .SplitRows(
+                            new Layout("Shop").Size(8),
+                            new Layout("Account").Size(8),
+                            new Layout("Public Area").Size(7)),
+                    new Layout("Right"));
 
+            mainMenu["Left"]["Shop"].Update(new Panel(PanelMenuShop().Expand()));
+            mainMenu["Left"]["Account"].Update(new Panel(PanelMenuAccount().Expand()));
+            mainMenu["Left"]["Public Area"].Update(new Panel(PanelMenuPublic().Expand()));
+            mainMenu["Right"].Update(new Panel(PanelDisplay().Expand()));
 
+            return mainMenu;
+        }
+            
 
+         
+        
         //Layout
-        internal static Panel MainMenu()
+        private static Panel PanelMenuShop()
         {
             Panel panelMenu = new Panel(
-                Align.Left(new Rows(menuItems), VerticalAlignment.Top));
-            panelMenu.Header("[bold #00afff]Main Menu[/] :downwards_button:");
+                Align.Left(new Rows(menuItemsShop), VerticalAlignment.Top));
+            panelMenu.Height = 6;
+            panelMenu.Width = 35;
+            panelMenu.Border(BoxBorder.Rounded);
+            panelMenu.BorderColor(Color.DarkGoldenrod);
+            panelMenu.Header("[bold #af8700 on black]Shop[/]");
             panelMenu.HeaderAlignment(Justify.Left);
             
+            return panelMenu;
+        }
+
+        private static Panel PanelMenuAccount()
+        {
+            Panel panelMenu = new Panel(
+                Align.Left(new Rows(menuItemsAccount), VerticalAlignment.Top));
+            panelMenu.Height = 6;
+            panelMenu.Width = 35;
+            panelMenu.Border(BoxBorder.Rounded);
+            panelMenu.BorderColor(Color.DarkGoldenrod);
+            panelMenu.Header("[bold #af8700 on black]Account[/]");
+            panelMenu.HeaderAlignment(Justify.Left);
 
             return panelMenu;
         }
-        internal static Panel MainDisplay()
+
+        private static Panel PanelMenuPublic()
+        {
+            Panel panelMenu = new Panel(
+                Align.Left(new Rows(menuItemsPublic), VerticalAlignment.Top));
+            panelMenu.Height = 5;
+            panelMenu.Width = 35;
+            panelMenu.Border(BoxBorder.Rounded);
+            panelMenu.BorderColor(Color.DarkGoldenrod);
+            panelMenu.Header("[bold #af8700 on black]Public Area[/]");
+            panelMenu.HeaderAlignment(Justify.Left);
+
+            return panelMenu;
+        }
+
+        private static Panel PanelDisplay()
         {
             //Create Panel for Display area
             Panel panelDisplay = new Panel(
                 new Markup("[italic #00afff]Please select an option from the menu.[/]"));
-
-            panelDisplay.Header("[bold #00afff]Wellcome Area[/] :handshake:");
+            panelDisplay.Height = 21;
+            panelDisplay.Width = 81;
+            panelDisplay.Border(BoxBorder.Rounded);
+            panelDisplay.Header("[bold #af8700 on black]Display Area[/]");
             panelDisplay.HeaderAlignment(Justify.Left);
             return panelDisplay;
         }
+        public static Layout ShowMainMenu()
+        {
+            Layout mainMenuLayout = MainMenu();
+            return mainMenuLayout;
+        }
         public static int MaxMenuItems()
         {
-            return menuItems.Count;
+            int maxMenuItems = menuItemsShop.Count() + menuItemsAccount.Count() + menuItemsPublic.Count();
+            return maxMenuItems;
         }
     }
 }
