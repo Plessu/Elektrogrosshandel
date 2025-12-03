@@ -27,10 +27,11 @@ namespace Elektrogrrosshandel
         {
             buckets.Add(bucket);
         }
-        public static void CreateBucket(int BucketID, string BucketName)
+        public static Bucket CreateBucket(int BucketID, string BucketName)
         {
             Bucket newBucket = new Bucket(BucketID, BucketName);
             AddBucket(newBucket);
+            return newBucket;
         }
         public static void AddArticleToBucket(int BucketID, ArticleItem Item, int Quantity)
         {

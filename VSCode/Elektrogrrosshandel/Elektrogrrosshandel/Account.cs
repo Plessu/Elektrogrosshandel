@@ -8,7 +8,10 @@ namespace Elektrogrrosshandel
 
     internal class Account
     {
-        private string AccountName { get; set; }
+        private int AccountID { get; set; }
+        private string UserName { get; set; }
+        private string FirstName { get; set; }
+        private string LastName { get; set; }
         private string FirmName { get; set; }
         private int PasswordHash { get; set; }
         private string Email { get; set; }
@@ -16,35 +19,35 @@ namespace Elektrogrrosshandel
         private DateTime CreatedAt { get; set; }
         private string AcountRole { get; set; }
         private int SerialCode { get; set; }
-        private List<User> UsersRealated { get; set; }
-        bool WantUSTax { get; set; }
+        private bool IsFirmAccount { get; set; }
+        private bool WantUSTax { get; set; }
+        private Bucket ActiveBucket { get; set; }
+        private List<Bucket> SafedBuckets {get; set; }
 
         private static List<Account> Accounts = new List<Account>();
+        private static List<int> UsedAccountIDs = new List<int>();
 
-        private void CreateAccount(string Accountname, string FirmName, string Password, string Email, string PhoneNumber, string AcountRole, int SerialCode)
+        private void CreateAccount(int accountID, string username, string firstName, string lastName, string firmName,
+                 string password, string email, string phoneNumber, string acountRole, int serialCode, bool isFirmAccount)
         {
-            this.AccountName = Accountname;
-            this.FirmName = FirmName;
-            this.PasswordHash = HashCode.Combine(Password);
-            this.Email = Email;
-            this.PhoneNumber = PhoneNumber;
+            this.AccountID = accountID;
+            this.UserName = username;
+            this.FirstName = firstName;
+            this.LastName = lastName;
+            this.FirmName = firmName;
+            this.PasswordHash = HashCode.Combine(password);
+            this.Email = email;
+            this.PhoneNumber = phoneNumber;
             this.CreatedAt = DateTime.Now;
-            this.AcountRole = AcountRole;
-            this.SerialCode = SerialCode;
+            this.AcountRole = acountRole;
+            this.SerialCode = serialCode;
+            this.CreatedAt = DateTime.Now;
+            this.IsFirmAccount = isFirmAccount;
+            this.ActiveBucket = Bucket.CreateBucket(accountID, "Active Bucket");
+            this.SafedBuckets = new List<Bucket>(10);
+
             AddAccountToList();
 
-            if (AcountRole == "PrivateUser")
-            {
-                UsersRealated = new List<Users>(1);
-            }
-            else if (AcountRole == "BuisnessUser")
-            {
-                UsersRealated = new List<Users>(10);
-            }
-            else if (AcountRole == "Admin")
-            {
-                UsersRealated= new List<Users>(1);
-            }
         }
         private void AddAccountToList()
         {
@@ -70,7 +73,7 @@ namespace Elektrogrrosshandel
         }
         public void DisplayAccountInfo()
         {
-            Console.WriteLine($"Username: {AccountName}");
+            Console.WriteLine($"Username: {UserName}");
             Console.WriteLine($"Email: {Email}");
             Console.WriteLine($"Account Role: {AcountRole}");
             Console.WriteLine($"Created At: {CreatedAt}");

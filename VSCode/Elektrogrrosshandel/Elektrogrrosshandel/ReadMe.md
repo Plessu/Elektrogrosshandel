@@ -19,7 +19,8 @@ Folgende Klassen und Interfaces sind aktuell im Projekt vorhanden (kurze Beschre
 - `Account` — Repräsentation von Benutzerkonten / Account-Logik (Datei: `Account.cs`).
 - `IUser` — Interface für Benutzerkonto-Funktionalität (Datei: `IUser.cs`).
 
-Hinweis: Dateinamen im Projekt enthalten u. a. `ArticIeItem.cs` (enthält Klasse `ArticleItem`), `ArticleGroup.cs`, `Bucket.cs`, `GUI_Display.cs`, `GUI_MainMenu.cs`, `GetUserInput.cs`, `Program.cs`, `Account.cs`, `IUser.cs`.
+Hinweis: Dateinamen im Projekt enthalten u. a. `ArticIeItem.cs` (enthält Klasse `ArticleItem`), `ArticleGroup.cs`, `Bucket.cs`,
+`GUI_Display.cs`, `GUI_MainMenu.cs`, `GetUserInput.cs`, `Program.cs`, `Account.cs`, `IUser.cs`.
 
 ## Versionsverlauf
 
