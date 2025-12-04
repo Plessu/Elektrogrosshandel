@@ -1,12 +1,8 @@
 /.vs
 /Projektmanagment/Dokumente/Dateien
 *.cache
-*.cs
 *.vsidx
-/VSCode/Elektrogrrosshandel/.vs
 /VSCode/Elektrogrrosshandel/Elektrogrrosshandel/obj
 *.cache
 *.json
-/VSCode/Elektrogrrosshandel/.vs
-/VSCode/Elektrogrrosshandel/.vs/Elektrogrrosshandel.slnx/v18
-/VSCode/Elektrogrrosshandel/.vs/Elektrogrrosshandel.slnx
+
