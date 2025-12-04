@@ -41,15 +41,21 @@ namespace Elektrogrrosshandel.GUI
                     new Layout("Right"));
 
 <<<<<<< Updated upstream:VSCode/Elektrogrrosshandel/Elektrogrrosshandel/GUI/GUI_MainMenu.cs
+<<<<<<< Updated upstream:VSCode/Elektrogrrosshandel/Elektrogrrosshandel/GUI/GUI_MainMenu.cs
             mainMenu["Left"]["Shop"].Update(new Panel(PanelMenuShop().Expand()));
             mainMenu["Left"]["Account"].Update(PanelMenuAccount().Expand());
             mainMenu["Left"]["Public Area"].Update(new Panel(PanelMenuPublic().Expand()));
             mainMenu["Right"].Update(new Panel(PanelDisplay().Expand()));
 =======
+=======
+>>>>>>> Stashed changes:VSCode/Elektrogrrosshandel/Elektrogrrosshandel/GUI_MainMenu.cs
             mainMenu["Left"]["Shop"].Update(PanelMenuShop().Expand());
             mainMenu["Left"]["Account"].Update(PanelMenuAccount().Expand());
             mainMenu["Left"]["Public Area"].Update(PanelMenuPublic().Expand());
             mainMenu["Right"].Update(PanelDisplay().Expand());
+<<<<<<< Updated upstream:VSCode/Elektrogrrosshandel/Elektrogrrosshandel/GUI/GUI_MainMenu.cs
+>>>>>>> Stashed changes:VSCode/Elektrogrrosshandel/Elektrogrrosshandel/GUI_MainMenu.cs
+=======
 >>>>>>> Stashed changes:VSCode/Elektrogrrosshandel/Elektrogrrosshandel/GUI_MainMenu.cs
 
             return mainMenu;
