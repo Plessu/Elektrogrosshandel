@@ -7,13 +7,12 @@ namespace Elektrogrrosshandel.GUI
 {
     internal class GUI_Display
     {
-
         private static Markup headertitle = 
             new Markup("[bold #af8700 on black]Graef [/][bold #c0c0c0]Elektro[/][white]grosshandel[/]");
 
         private static Layout HeaderTitel = 
-                           new Layout("HeaderTitle").Update(new Panel (
-                               headertitle.Justify(Justify.Left)));
+                           new Layout("HeaderTitle").Update(new Panel(
+                               headertitle.Justify(Justify.Left)).Expand());
 
         private static Markup headersubtitle = 
             new Markup("[#c0c0c0]Ihr[/] [bold #af8700 on black]Partner[/] [#c0c0c0]fuer Elektrozubehoer[/]");
@@ -24,10 +23,6 @@ namespace Elektrogrrosshandel.GUI
 
         public static void MainWindow(Layout Body)
         {
-            Console.BufferHeight = 3000;
-            Console.BufferWidth = 250;
-            Console.WindowHeight = 23;
-            Console.WindowWidth = 120;
             //Create Layout and structure
             Layout mainWindow = new Layout("MainWindow")
                 .SplitRows(
@@ -47,7 +42,7 @@ namespace Elektrogrrosshandel.GUI
                 new Layout("BodyMenu").Update(
                     new Layout(Body));
 
-            mainWindow["Body"].Update(body);
+            mainWindow["Body"].Update(new Layout(body));
             mainWindow["HeaderTitle"].Update(HeaderTitel);
             mainWindow["HeaderSubtitle"].Update(HeaderSubtitle);
 
