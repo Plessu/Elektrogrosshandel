@@ -4,3 +4,6 @@
 *.cs
 *.vsidx
 /VSCode/Elektrogrrosshandel/.vs
+/VSCode/Elektrogrrosshandel/Elektrogrrosshandel/obj
+*.cache
+*.json
