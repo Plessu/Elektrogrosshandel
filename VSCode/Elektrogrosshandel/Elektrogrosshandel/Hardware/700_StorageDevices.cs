@@ -6,19 +6,15 @@ using System.Text;
 /*
 Pseudocode / Plan (detailliert):
 
-- Ziel: Klasse umbenennen von `StorageDevices` zu `StorageDevice` und alle internen Verweise anpassen.
-- Datei: 600_StorageDevice.cs (aktualisierter Dateiname)
-- Namespace: Elektrogrrosshandel.Hardware
+- Datei und Namespace:
+  - Datei: 700_StorageDevice.cs
+  - Namespace: Elektrogrrosshandel.Hardware
 
 - Klasse:
-  - Name: StorageDevice (internal, erbt von ComputerHardware)
-  - Privater Konstruktor mit allen Feldern
-  - Statische Fabrikmethode CreateStorageDevice, die:
-    - Prüft, ob bereits ein Gerät mit gleichem Model und Hersteller-ID in ComputerHardware.StorageDevices existiert
-    - Eine neue ArticelID über CreateArticelID erzeugt
-    - Eine neue Instanz via privatem Konstruktor zurückgibt
+  - Name: StorageDevices (internal, erbt von ComputerHardware)
+  - Privater Konstruktor, statische Fabrikmethode zur Erstellung
 
-- Felder / Eigenschaften (private, get/set):
+- Felder / Eigenschaften (private, wie in Vorlage):
   - ArticelID : int
   - ArticelName : string
   - ArticelManufacturer : string
@@ -33,24 +29,36 @@ Pseudocode / Plan (detailliert):
   - ArticelDimesnions : int[]
   - ArticelDescription : string
   - StorageCapacityGB : int
-  - StorageType : string
-  - StorageInterface : string
+  - StorageType : string (z.B. "SSD", "HDD")
+  - StorageInterface : string (z.B. "SATA", "NVMe")
   - ReadSpeedMBs : int
   - WriteSpeedMBs : int
-  - FormFactor : string
+  - FormFactor : string (z.B. "2.5\"", "M.2")
 
 - Statische Gruppendaten:
-  - ArticelGroupName, ArticelGroupID, ArticelGroupDescription
-  - ArticelIDs: List<int> zur ID-Verwaltung
+  - ArticelGroupName, ArticelGroupID (z.B. 700), ArticelGroupDescription
+  - ArticelIDs Liste zur eindeutigen ID-Generierung
+
+- Konstruktor:
+  - Privater Konstruktor nimmt alle Felder entgegen
+  - Setzt die Felder und ruft ComputerHardware.AddStorageDevice(this)
+
+- Fabrikmethode:
+  - Name: CreateStorageDevice
+  - Validierung: Prüfe, ob in ComputerHardware.StorageDevices bereits ein Gerät mit gleichem Model und Hersteller-ID existiert; falls ja, throw ArgumentException
+  - Erzeuge neues ArticelID mit CreateArticelID()
+  - Rückgabe einer neuen Instanz via privatem Konstruktor
 
 - CreateArticelID:
-  - Generiere Zufallszahl 1..9999, prüfe gegen ArticelIDs
-  - Baue ID-String: ComputerHardware.ArticelParentGroupID + ArticelGroupID + Zahl D4
-  - Parse zu int, in Liste speichern, zurückgeben
+  - Generiere zufällige 1..9999 Zahl, prüfe gegen ArticelIDs
+  - Baue ID-String: ComputerHardware.ArticelParentGroupID + ArticelGroupID + Zahl im Format D4
+  - Parse zu int, in Liste speichern und zurückgeben
 
-- Änderungen in Datei:
-  - Alle Vorkommen von `StorageDevices` (Klassenname, Konstruktor, Rückgabetyp) auf `StorageDevice` ändern
-  - Sonstige Verweise auf ComputerHardware.StorageDevices unverändert lassen (Collection im ComputerHardware)
+- Konsistenz:
+  - Stil, Namenskonventionen und Schreibweise an GraphicCard.cs anlehnen (inkl. Schreibfehler 'Articel' bewusst übernehmen)
+  - Methoden- und Feldnamen analog benennen, sodass Integration mit ComputerHardware erwartet werden kann
+
+Ende Pseudocode
 */
 
 namespace Elektrogrrosshandel.Hardware
@@ -79,7 +87,7 @@ namespace Elektrogrrosshandel.Hardware
         private string FormFactor { get; set; }
 
         private static string ArticelGroupName = "Storage Device";
-        private static int ArticelGroupID = 600;
+        private static int ArticelGroupID = 700;
         private string ArticelGroupDescription = "This category includes storage devices such as HDDs and SSDs with various interfaces and form factors.";
 
         private static List<int> ArticelIDs = new List<int>();

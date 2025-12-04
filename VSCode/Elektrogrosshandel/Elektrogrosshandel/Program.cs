@@ -1,6 +1,6 @@
 ﻿using Spectre.Console;
-using Elektrogrrosshandel.Hardware;
-using Elektrogrrosshandel.GUI;
+using Elektrogrosshandel.Hardware;
+using Elektrogrosshandel.GUI;
 
 namespace Elektrogrrosshandel
 {
