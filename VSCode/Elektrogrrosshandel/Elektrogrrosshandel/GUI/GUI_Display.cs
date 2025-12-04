@@ -33,7 +33,7 @@ namespace Elektrogrrosshandel.GUI
                 new Layout("Body"),
                 new Layout("Footer"));
             
-            mainWindow["MainWindow"].Size = 30;
+            mainWindow["MainWindow"].Size = Console.WindowHeight;
             mainWindow["Header"].Size = 3;
             mainWindow["Footer"].Size = 3;
             mainWindow["HeaderTitle"].Size = 35;

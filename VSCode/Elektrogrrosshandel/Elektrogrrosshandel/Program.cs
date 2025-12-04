@@ -2,6 +2,8 @@
 using Elektrogrrosshandel.Hardware;
 using Elektrogrrosshandel.GUI;
 using Elektrogrosshandel.GUI.GUI_Menus;
+using Elektrogrosshandel.Functions;
+    
 
 namespace Elektrogrrosshandel
 {

@@ -18,8 +18,4 @@
     <PackageReference Include="Spectre.Console.Testing" Version="0.54.0" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="GUI\GUI_Menus\" />
-  </ItemGroup>
-
 </Project>

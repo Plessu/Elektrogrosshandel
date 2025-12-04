@@ -50,12 +50,10 @@ namespace Elektrogrrosshandel
             this.ActiveBucket = Bucket.CreateBucket(accountID, "Active Bucket");
             this.SafedBuckets = new List<Bucket>(10);
 
-            AddAccountToList();
-
         }
-        private void AddAccountToList()
+        private void AddAccountToList(Account account)
         {
-            Accounts.Add(this);
+            Accounts.Add(account);
         }
         private string VerifyAccount(int SerialCode)
         {
@@ -91,7 +89,7 @@ namespace Elektrogrrosshandel
 
         }
 
-        public void newAccount(string username, string firstName, string lastName, string firmName,
+        public Account newAccount(string username, string firstName, string lastName, string firmName,
                  HashCode password, int passwordSalt, string email, string phoneNumber, int serialCode)
         {
             string accountRole = VerifyAccount(SerialCode);
@@ -111,9 +109,15 @@ namespace Elektrogrrosshandel
                 wantUSTax = true;
             }
 
-            CreateAccount(accountID, username, firstName, lastName, firmName,
+            Account account = new Account();
+
+            account.CreateAccount(accountID, username, firstName, lastName, firmName,
                  password, passwordSalt, email, phoneNumber, accountRole, serialCode,
                  isFirmAccount, wantUSTax);
+
+            AddAccountToList(account);
+
+            return account;
         }
     }
 }
