@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Elektrogrrosshandel
+namespace Elektrogrrosshandel.GUI
 {
     //Main Menu dispalyed via Spectre.Console NuGet Plugin
     internal class GUI_MainMenu
@@ -31,6 +31,11 @@ namespace Elektrogrrosshandel
         };
         private static Layout MainMenu()
         {
+            Console.BufferHeight = 3000;
+            Console.BufferWidth = 250;
+            Console.WindowHeight = 23;
+            Console.WindowWidth = 120;
+
             Layout mainMenu = new Layout("Main Menu")
                 .SplitColumns(
                     new Layout("Left").Size(35)

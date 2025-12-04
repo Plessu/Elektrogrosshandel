@@ -24,10 +24,11 @@ namespace Elektrogrrosshandel.Hardware
         private string Socket { get; set; }
         private string RamType { get; set; }
         private string FormFactor { get; set; }
+        private string PCIeVersion { get; set; }
         private string[] StorageInterfaces { get; set; }
 
         private static string ArticelGroupName = "Motherboard";
-        private static int ArticelGroupID = 100;
+        private static int ArticelGroupID = 200;
         private string ArticelGroupDescription = "This category includes all kinds of Motherrboards for computers, ranging from entry-level to high-end models designed for gaming and professional use.";
 
         private static List<int> ArticelIDs = new List<int>();
@@ -35,7 +36,8 @@ namespace Elektrogrrosshandel.Hardware
         private Motherboard(int articelID, string articelName, string articelManufacturer, string articelModel,
                             int articelYearOfProduction, int articelManufactrerID, string[] articelColors, int articelStock,
                             int articelMinStock, double articelPrice, int articelWeight, int[] articelDimesnions,
-                            string articelDescription, string Socket, string RamType, string FormFactor, string[] StorageInterfaces) : base()
+                            string articelDescription, string Socket, string RamType, string FormFactor,
+                            string[] StorageInterfaces, string pCIeVersion) : base()
         {
             ArticelID = articelID;
             ArticelName = articelName;
@@ -55,6 +57,7 @@ namespace Elektrogrrosshandel.Hardware
             this.RamType = RamType;
             this.FormFactor = FormFactor;
             this.StorageInterfaces = StorageInterfaces;
+            this.PCIeVersion = pCIeVersion;
 
             ComputerHardware.AddMotherboard(this);
         }
@@ -62,7 +65,7 @@ namespace Elektrogrrosshandel.Hardware
                             string articelModel, int articelYearOfProduction, int articelManufactrerID, 
                             string[] articelColors, int articelStock, int articelMinStock, double articelPrice, 
                             int articelWeight, int[] articelDimesnions, string articelDescription, 
-                            string Socket, string RamType, string FormFactor, string[] StorageInterfaces)
+                            string Socket, string RamType, string FormFactor, string[] StorageInterfaces, string pCIeVersion)
         {
             foreach (Motherboard item in ComputerHardware.Motherboards)
             {
@@ -77,7 +80,7 @@ namespace Elektrogrrosshandel.Hardware
             return new Motherboard(articelID, articelName, articelManufacturer, articelModel,
                                     articelYearOfProduction, articelManufactrerID, articelColors, articelStock,
                                     articelMinStock, articelPrice, articelWeight, articelDimesnions,
-                                    articelDescription, Socket, RamType, FormFactor, StorageInterfaces);
+                                    articelDescription, Socket, RamType, FormFactor, StorageInterfaces, pCIeVersion);
         }
 
         private static int CreateArticelID()
@@ -96,7 +99,7 @@ namespace Elektrogrrosshandel.Hardware
 
             articelID = ComputerHardware.ArticelParentGroupID + ArticelGroupID.ToString() + iD.ToString("D4");
             iD = int.Parse(articelID);
-
+            ArticelIDs.Add(iD);
 
             return iD;
         }

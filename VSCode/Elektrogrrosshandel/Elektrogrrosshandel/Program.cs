@@ -1,5 +1,6 @@
 ﻿using Spectre.Console;
 using Elektrogrrosshandel.Hardware;
+using Elektrogrrosshandel.GUI;
 
 namespace Elektrogrrosshandel
 {
@@ -7,10 +8,6 @@ namespace Elektrogrrosshandel
     {
         static void Main(string[] args)
         {
-            Console.BufferHeight = 3000;
-            Console.BufferWidth = 250;
-            Console.WindowHeight = 23;
-            Console.WindowWidth = 120;
             Console.OutputEncoding = System.Text.Encoding.UTF8;
             MainMenu();
         }
