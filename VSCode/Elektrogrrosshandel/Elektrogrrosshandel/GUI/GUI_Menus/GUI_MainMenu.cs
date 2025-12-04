@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Elektrogrrosshandel.GUI
+namespace Elektrogrosshandel.GUI.GUI_Menus
 {
     //Main Menu dispalyed via Spectre.Console NuGet Plugin
     internal class GUI_MainMenu
@@ -18,10 +18,10 @@ namespace Elektrogrrosshandel.GUI
         };
         private static List<Markup> menuItemsAccount = new List<Markup>
         {
-                new Markup("[#c0c0c0]  8. User[/]"),
-                new Markup("[#c0c0c0]  5. Shoping Cart[/]"),
-                new Markup("[#c0c0c0]  6. Orders[/]"),
-                new Markup("[#c0c0c0]  7. Messages[/]"),
+                new Markup("[#c0c0c0]  5. User[/]"),
+                new Markup("[#c0c0c0]  6. Shoping Cart[/]"),
+                new Markup("[#c0c0c0]  7. Orders[/]"),
+                new Markup("[#c0c0c0]  8. Messages[/]"),
         };
         private static List<Markup> menuItemsPublic = new List<Markup>
         {
@@ -107,7 +107,7 @@ namespace Elektrogrrosshandel.GUI
             panelDisplay.Height = 17;
             panelDisplay.Width = 81;
             panelDisplay.Border(BoxBorder.Rounded);
-            panelDisplay.Header("[bold #af8700 on black]Wellcome Area[/]");
+            panelDisplay.Header("[bold #af8700 on black]Welcome Area[/]");
             panelDisplay.HeaderAlignment(Justify.Left);
             return panelDisplay;
         }

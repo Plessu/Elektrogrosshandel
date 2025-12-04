@@ -21,10 +21,10 @@ namespace Elektrogrrosshandel.GUI
                            new Layout("HeaderSubtitle").Update(new Panel(
                                headersubtitle.Justify(Justify.Center)).Expand());
 
-        public static void MainWindow(Layout Body)
+        public static void DisplayWindow(Layout Body)
         {
             //Create Layout and structure
-            Layout mainWindow = new Layout("MainWindow")
+            Layout window = new Layout("Window")
                 .SplitRows(
                 new Layout("Header")
                 .SplitColumns(
@@ -33,21 +33,21 @@ namespace Elektrogrrosshandel.GUI
                 new Layout("Body"),
                 new Layout("Footer"));
             
-            mainWindow["MainWindow"].Size = 30;
-            mainWindow["Header"].Size = 3;
-            mainWindow["Footer"].Size = 3;
-            mainWindow["HeaderTitle"].Size = 35;
+            window["Window"].Size = Console.WindowHeight;
+            window["Header"].Size = 3;
+            window["Footer"].Size = 3;
+            window["HeaderTitle"].Size = 35;
 
 
-            mainWindow["Body"].Update(Body);
-            mainWindow["HeaderTitle"].Update(HeaderTitel);
-            mainWindow["HeaderSubtitle"].Update(HeaderSubtitle);
+            window["Body"].Update(Body);
+            window["HeaderTitle"].Update(HeaderTitel);
+            window["HeaderSubtitle"].Update(HeaderSubtitle);
 
 
 
 
             AnsiConsole.Clear();
-            AnsiConsole.Write(mainWindow);  
+            AnsiConsole.Write(window);  
             return;
         }
     }
