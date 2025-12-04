@@ -3,8 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\giaco\\OneDrive - LG-Academy\\Giacomo\\\u00DCbungen\\Pr\u00E4senzkurse\\Anwendungsgrundlagen\\Abschlussprojekt\\Elektrogrosshandel\\VSCode\\Elektrogrrosshandel\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3A1A6625-A825-F042-7472-6B35EF087C25}|Elektrogrrosshandel\\Elektrogrrosshandel.csproj|c:\\users\\giaco\\onedrive - lg-academy\\giacomo\\\u00FCbungen\\pr\u00E4senzkurse\\anwendungsgrundlagen\\abschlussprojekt\\elektrogrosshandel\\vscode\\elektrogrrosshandel\\elektrogrrosshandel\\hardware\\motherboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3A1A6625-A825-F042-7472-6B35EF087C25}|Elektrogrrosshandel\\Elektrogrrosshandel.csproj|solutionrelative:elektrogrrosshandel\\hardware\\motherboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\giaco\\OneDrive - LG-Academy\\Giacomo\\\u00DCbungen\\Pr\u00E4senzkurse\\Anwendungsgrundlagen\\Abschlussprojekt\\Elektrogrosshandel\\VSCode\\Elektrogrrosshandel\\Elektrogrrosshandel\\Hardware\\Motherboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Elektrogrrosshandel\\Hardware\\Motherboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3A1A6625-A825-F042-7472-6B35EF087C25}|Elektrogrrosshandel\\Elektrogrrosshandel.csproj|c:\\users\\giaco\\onedrive - lg-academy\\giacomo\\\u00FCbungen\\pr\u00E4senzkurse\\anwendungsgrundlagen\\abschlussprojekt\\elektrogrosshandel\\vscode\\elektrogrrosshandel\\elektrogrrosshandel\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -60,10 +60,8 @@
               "RelativeDocumentMoniker": "Elektrogrrosshandel\\Hardware\\Motherboard.cs",
               "ToolTip": "C:\\Users\\giaco\\OneDrive - LG-Academy\\Giacomo\\\u00DCbungen\\Pr\u00E4senzkurse\\Anwendungsgrundlagen\\Abschlussprojekt\\Elektrogrosshandel\\VSCode\\Elektrogrrosshandel\\Elektrogrrosshandel\\Hardware\\Motherboard.cs",
               "RelativeToolTip": "Elektrogrrosshandel\\Hardware\\Motherboard.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-04T13:39:22.991Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-04T13:39:22.991Z"
             },
             {
               "$type": "Document",
@@ -75,8 +73,7 @@
               "RelativeToolTip": "Elektrogrrosshandel\\Elektrogrrosshandel.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-12-04T13:37:19.867Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-04T13:37:19.867Z"
             },
             {
               "$type": "Document",
@@ -136,8 +133,7 @@
               "RelativeToolTip": "Elektrogrrosshandel\\Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-01T12:00:45.886Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-01T12:00:45.886Z"
             }
           ]
         }
