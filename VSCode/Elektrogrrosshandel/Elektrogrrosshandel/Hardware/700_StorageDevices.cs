@@ -123,7 +123,7 @@ namespace Elektrogrrosshandel.Hardware
             ComputerHardware.AddStorageDevice(this);
         }
 
-        public static StorageDevices CreateStorageDevice(string articelName, string articelManufacturer, string articelModel,
+        public static StorageDevice CreateStorageDevice(string articelName, string articelManufacturer, string articelModel,
                                                          int articelYearOfProduction, int articelManufactrerID,
                                                          string[] articelColors, int articelStock, int articelMinStock,
                                                          double articelPrice, int articelWeight, int[] articelDimesnions,

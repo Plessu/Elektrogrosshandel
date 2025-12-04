@@ -361,3 +361,4 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+/VSCode/Elektrogrrosshandel/Elektrogrrosshandel/Hardware/600_StorageDevice.cs

@@ -83,7 +83,7 @@ namespace Elektrogrrosshandel.Hardware
             RamModules = ramModules;
             RamECC = ramEcc;
 
-            ComputerHardware.AddRam(this);
+            ComputerHardware.AddRAM(this);
         }
 
         public static Ram CreateRam(string articelName, string articelManufacturer, string articelModel,
@@ -93,7 +93,7 @@ namespace Elektrogrrosshandel.Hardware
                                     string articelDescription,
                                     int ramCapacity, int ramFrequency, string ramType, int ramModules, bool ramEcc)
         {
-            foreach (var item in ComputerHardware.Rams)
+            foreach (var item in ComputerHardware.RAMs)
             {
                 if (item.ArticelModel == articelModel && item.ArticelManufactrerID == articelManufactrerID)
                 {
