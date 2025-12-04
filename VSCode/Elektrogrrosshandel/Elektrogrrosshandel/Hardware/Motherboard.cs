@@ -27,7 +27,7 @@ namespace Elektrogrrosshandel.Hardware
         private string[] StorageInterfaces { get; set; }
 
         private static string ArticelGroupName = "Motherboard";
-        private static int ArticelGroupID = 100;
+        private static int ArticelGroupID = 200;
         private string ArticelGroupDescription = "This category includes all kinds of Motherrboards for computers, ranging from entry-level to high-end models designed for gaming and professional use.";
 
         private static List<int> ArticelIDs = new List<int>();
@@ -96,7 +96,7 @@ namespace Elektrogrrosshandel.Hardware
 
             articelID = ComputerHardware.ArticelParentGroupID + ArticelGroupID.ToString() + iD.ToString("D4");
             iD = int.Parse(articelID);
-
+            ArticelIDs.Add(iD);
 
             return iD;
         }

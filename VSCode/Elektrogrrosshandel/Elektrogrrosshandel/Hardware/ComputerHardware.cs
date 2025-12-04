@@ -30,7 +30,10 @@ namespace Elektrogrrosshandel.Hardware
         {
             Devices.Add(this);
         }
-
+        public static void AddCase(Case Case)
+        {
+            Cases.Add(Case);
+        }
         public static void AddGraphicCard(GraphicCard graphicCard)
         {
             GraphicCards.Add(graphicCard);

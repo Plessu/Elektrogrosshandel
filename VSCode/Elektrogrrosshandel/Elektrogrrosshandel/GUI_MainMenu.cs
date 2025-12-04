@@ -31,6 +31,11 @@ namespace Elektrogrrosshandel
         };
         private static Layout MainMenu()
         {
+            Console.BufferHeight = 3000;
+            Console.BufferWidth = 250;
+            Console.WindowHeight = 23;
+            Console.WindowWidth = 120;
+
             Layout mainMenu = new Layout("Main Menu")
                 .SplitColumns(
                     new Layout("Left").Size(35)

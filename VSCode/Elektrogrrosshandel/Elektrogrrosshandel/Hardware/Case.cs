@@ -38,7 +38,9 @@ namespace Elektrogrrosshandel.Hardware
         private int ArticelWeight { get; set; }
         private int[] ArticelDimesnions { get; set; }
         private string ArticelDescription { get; set; }
-        private int ArticelEnergyConsumption { get; set; }
+        private string CaseFormFactor { get; set; }
+        private int CaseFanSlots { get; set; }
+        private string FrontPanelPorts { get; set; }
 
         private static string ArticelGroupName = "Case";
         private static int ArticelGroupID = 400;
@@ -49,7 +51,7 @@ namespace Elektrogrrosshandel.Hardware
         private Case(int articelID, string articelName, string articelManufacturer, string articelModel,
                             int articelYearOfProduction, int articelManufactrerID, string[] articelColors, int articelStock,
                             int articelMinStock, double articelPrice, int articelWeight, int[] articelDimesnions,
-                            string articelDescription, int articelEnergyConsumption) : base()
+                            string articelDescription, string caseFormFactor, int caseFanSlots, string frontPanelPorts) : base()
         {
             ArticelID = articelID;
             ArticelName = articelName;
@@ -64,14 +66,18 @@ namespace Elektrogrrosshandel.Hardware
             ArticelWeight = articelWeight;
             ArticelDimesnions = articelDimesnions;
             ArticelDescription = articelDescription;
-            ArticelEnergyConsumption = articelEnergyConsumption;
+
+            this.CaseFormFactor = caseFormFactor;
+            this.CaseFanSlots = caseFanSlots;
+            this.FrontPanelPorts = frontPanelPorts;
+
             ComputerHardware.AddCase(this);
         }
         public static Case CreateCase(string articelName, string articelManufacturer, string articelModel,
                                                     int articelYearOfProduction, int articelManufactrerID, 
                                                     string[] articelColors, int articelStock, int articelMinStock, 
                                                     double articelPrice, int articelWeight, int[] articelDimesnions,
-                                                    string articelDescription, int articelEnergyConsumption)
+                                                    string articelDescription, string caseFormFactor, int caseFanSlots, string frontPanelPorts)
         {
             foreach (var item in ComputerHardware.Cases)
             {
@@ -86,7 +92,7 @@ namespace Elektrogrrosshandel.Hardware
             return new Case(articelID, articelName, articelManufacturer, articelModel,
                                     articelYearOfProduction, articelManufactrerID, articelColors, articelStock,
                                     articelMinStock, articelPrice, articelWeight, articelDimesnions,
-                                    articelDescription, articelEnergyConsumption);
+                                    articelDescription, caseFormFactor, caseFanSlots, frontPanelPorts);
         }
 
         private static int CreateArticelID()
@@ -105,7 +111,7 @@ namespace Elektrogrrosshandel.Hardware
 
             articelID = ComputerHardware.ArticelParentGroupID + ArticelGroupID.ToString() + iD.ToString("D4");
             iD = int.Parse(articelID);
-
+            ArticelIDs.Add(iD);
 
             return iD;
         }

@@ -21,7 +21,7 @@ namespace Elektrogrrosshandel.Hardware
         private int ArticelWeight { get; set; }
         private int[] ArticelDimesnions { get; set; }
         private string ArticelDescription { get; set; }
-        private int ArticelEnergyConsumption { get; set; }
+        private int EnergyConsumption { get; set; }
 
         private static string ArticelGroupName = "Graphic Card";
         private static int ArticelGroupID = 400;
@@ -32,7 +32,7 @@ namespace Elektrogrrosshandel.Hardware
         private GraphicCard(int articelID, string articelName, string articelManufacturer, string articelModel,
                             int articelYearOfProduction, int articelManufactrerID, string[] articelColors, int articelStock,
                             int articelMinStock, double articelPrice, int articelWeight, int[] articelDimesnions,
-                            string articelDescription, int articelEnergyConsumption) : base()
+                            string articelDescription, int energyConsumption) : base()
         {
             ArticelID = articelID;
             ArticelName = articelName;
@@ -47,14 +47,14 @@ namespace Elektrogrrosshandel.Hardware
             ArticelWeight = articelWeight;
             ArticelDimesnions = articelDimesnions;
             ArticelDescription = articelDescription;
-            ArticelEnergyConsumption = articelEnergyConsumption;
+            this.EnergyConsumption = energyConsumption;
             ComputerHardware.AddGraphicCard(this);
         }
         public static GraphicCard CreateMotherboard(string articelName, string articelManufacturer, string articelModel,
                                                     int articelYearOfProduction, int articelManufactrerID, 
                                                     string[] articelColors, int articelStock, int articelMinStock, 
                                                     double articelPrice, int articelWeight, int[] articelDimesnions,
-                                                    string articelDescription, int articelEnergyConsumption)
+                                                    string articelDescription, int energyConsumption)
         {
             foreach (var item in ComputerHardware.GraphicCards)
             {
@@ -69,7 +69,7 @@ namespace Elektrogrrosshandel.Hardware
             return new GraphicCard(articelID, articelName, articelManufacturer, articelModel,
                                     articelYearOfProduction, articelManufactrerID, articelColors, articelStock,
                                     articelMinStock, articelPrice, articelWeight, articelDimesnions,
-                                    articelDescription, articelEnergyConsumption);
+                                    articelDescription, energyConsumption);
         }
 
         private static int CreateArticelID()
@@ -88,7 +88,7 @@ namespace Elektrogrrosshandel.Hardware
 
             articelID = ComputerHardware.ArticelParentGroupID + ArticelGroupID.ToString() + iD.ToString("D4");
             iD = int.Parse(articelID);
-
+            ArticelIDs.Add(iD);
 
             return iD;
         }
