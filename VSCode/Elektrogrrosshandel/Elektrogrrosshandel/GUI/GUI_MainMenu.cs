@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Elektrogrrosshandel.GUI
+namespace Elektrogrosshandel.GUI.GUI_Menus
 {
     //Main Menu dispalyed via Spectre.Console NuGet Plugin
     internal class GUI_MainMenu
