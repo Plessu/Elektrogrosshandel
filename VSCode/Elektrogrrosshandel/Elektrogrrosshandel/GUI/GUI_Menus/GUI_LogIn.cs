@@ -8,6 +8,8 @@ namespace Elektrogrosshandel.GUI.GUI_Menus
     //Main Menu dispalyed via Spectre.Console NuGet Plugin
     internal class GUI_LogIn
     {
+        private int maxMenuItems = menuItems.Count();
+
         //Menu Items
         private static List<Markup> menuItems = new List<Markup>
             {
@@ -15,8 +17,10 @@ namespace Elektrogrosshandel.GUI.GUI_Menus
                 new Markup("[#c0c0c0]  2. Register[/]"),
         };
 
-        private static Layout LoginMenu(string userName ="")
+        private static Layout LoginMenu(string userName)
         {
+
+
             Console.BufferHeight = 3000;
             Console.BufferWidth = 250;
             Console.WindowHeight = 12;
@@ -35,10 +39,10 @@ namespace Elektrogrosshandel.GUI.GUI_Menus
 
             return loginMenu;
         }
-            
 
-         
-        
+
+
+
         //Layout
         private static Panel PanelMenu()
         {
@@ -50,7 +54,7 @@ namespace Elektrogrosshandel.GUI.GUI_Menus
             panelMenu.BorderColor(Color.DarkGoldenrod);
             panelMenu.Header("[bold #af8700 on black]Wellcome[/]");
             panelMenu.HeaderAlignment(Justify.Left);
-            
+
             return panelMenu;
         }
 
@@ -66,10 +70,19 @@ namespace Elektrogrosshandel.GUI.GUI_Menus
             panelDisplay.HeaderAlignment(Justify.Left);
             return panelDisplay;
         }
-        public static Layout ShowLoginMenu()
+        public static Layout ShowLoginMenu(string? userName)
         {
-            Layout mainMenuLayout = LoginMenu();
-            return mainMenuLayout;
+            if (userName == null)
+            {
+                userName = "";
+            }
+            Layout logInLayout = LoginMenu(userName);
+            return logInLayout;
+        }
+
+        public static int MaxMenuItems()
+        {
+            return menuItems.Count;
         }
     }
 }

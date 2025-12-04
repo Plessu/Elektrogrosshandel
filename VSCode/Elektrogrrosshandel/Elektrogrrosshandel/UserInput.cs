@@ -5,9 +5,9 @@ using System.Text;
 
 namespace Elektrogrrosshandel
 {
-    internal class GetUserInput
+    internal class UserInput
     {
-        static internal int Choice(int MaxChoice)
+        static internal int MenuChoice(int MaxChoice)
         { 
             int confirmation = AnsiConsole.Prompt(
             new TextPrompt<int>("[bold #00afff]---[/] [bold blue]Your Choice[/] [bold #00afff]---[/]")
@@ -15,6 +15,12 @@ namespace Elektrogrrosshandel
             .AddChoice(MaxChoice));
 
             return confirmation;
+        }
+        static internal string GetStringInput(string PromptMessage)
+        {
+            string userInput = AnsiConsole.Prompt(
+            new TextPrompt<string>($"[bold #00afff]---[/] [bold blue]{PromptMessage}[/] [bold #00afff]---[/]"));
+            return userInput;
         }
     }
 }
