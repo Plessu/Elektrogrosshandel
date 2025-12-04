@@ -52,7 +52,7 @@ namespace Elektrogrosshandel.GUI.GUI_Menus
             panelMenu.Width = 35;
             panelMenu.Border(BoxBorder.Rounded);
             panelMenu.BorderColor(Color.DarkGoldenrod);
-            panelMenu.Header("[bold #af8700 on black]Wellcome[/]");
+            panelMenu.Header("[bold #af8700 on black]Welcome[/]");
             panelMenu.HeaderAlignment(Justify.Left);
 
             return panelMenu;

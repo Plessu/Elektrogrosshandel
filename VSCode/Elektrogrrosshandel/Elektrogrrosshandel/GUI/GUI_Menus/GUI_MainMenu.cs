@@ -107,7 +107,7 @@ namespace Elektrogrosshandel.GUI.GUI_Menus
             panelDisplay.Height = 17;
             panelDisplay.Width = 81;
             panelDisplay.Border(BoxBorder.Rounded);
-            panelDisplay.Header("[bold #af8700 on black]Wellcome Area[/]");
+            panelDisplay.Header("[bold #af8700 on black]Welcome Area[/]");
             panelDisplay.HeaderAlignment(Justify.Left);
             return panelDisplay;
         }
