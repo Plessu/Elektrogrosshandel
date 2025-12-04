@@ -16,7 +16,7 @@ namespace Elektrogrrosshandel.Hardware
         internal static List<PowerSupply> PowerSupplies = new List<PowerSupply>();
         internal static List<Processor> Processors = new List<Processor>();
         internal static List<GraphicsCard> GraphicsCards = new List<GraphicsCard>();
-        internal static List<Ram> Rams = new List<Ram>();
+        internal static List<Ram> RAMs = new List<Ram>();
         internal static List<StorageDevice> StorageDevices = new List<StorageDevice>();
         internal static List<CoolingSystem> CoolingSystems = new List<CoolingSystem>();
         internal static List<Peripheral> Peripherals = new List<Peripheral>();
@@ -53,9 +53,9 @@ namespace Elektrogrrosshandel.Hardware
             Processors.Add(processor);
         }
 
-        public static void AddRam(Ram ram)
+        public static void AddRAM(Ram ram)
         {
-            Rams.Add(ram);
+            RAMs.Add(ram);
         }
 
         public static void AddStorageDevice(StorageDevice storageDevice)

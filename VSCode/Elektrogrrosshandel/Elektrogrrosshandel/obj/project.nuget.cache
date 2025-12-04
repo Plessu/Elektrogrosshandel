@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "OL6/CSg9aOk=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\giaco\\OneDrive - LG-Academy\\Giacomo\\Übungen\\Präsenzkurse\\Anwendungsgrundlagen\\Abschlussprojekt\\Elektrogrosshandel\\VSCode\\Elektrogrrosshandel\\Elektrogrrosshandel\\Elektrogrrosshandel.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\giaco\\.nuget\\packages\\spectre.console\\0.54.0\\spectre.console.0.54.0.nupkg.sha512",
+    "C:\\Users\\giaco\\.nuget\\packages\\spectre.console.analyzer\\1.0.0\\spectre.console.analyzer.1.0.0.nupkg.sha512",
+    "C:\\Users\\giaco\\.nuget\\packages\\spectre.console.cli\\0.53.1\\spectre.console.cli.0.53.1.nupkg.sha512",
+    "C:\\Users\\giaco\\.nuget\\packages\\spectre.console.json\\0.54.0\\spectre.console.json.0.54.0.nupkg.sha512",
+    "C:\\Users\\giaco\\.nuget\\packages\\spectre.console.testing\\0.54.0\\spectre.console.testing.0.54.0.nupkg.sha512"
+  ],
+  "logs": []
+}
