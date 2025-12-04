@@ -35,15 +35,15 @@ namespace Elektrogrrosshandel
                 .SplitColumns(
                     new Layout("Left").Size(35)
                         .SplitRows(
-                            new Layout("Shop").Size(8),
-                            new Layout("Account").Size(8),
-                            new Layout("Public Area").Size(7)),
+                            new Layout("Shop").Size(6),
+                            new Layout("Account").Size(6),
+                            new Layout("Public Area").Size(6)),
                     new Layout("Right"));
 
-            mainMenu["Left"]["Shop"].Update(new Panel(PanelMenuShop().Expand()));
-            mainMenu["Left"]["Account"].Update(new Panel(PanelMenuAccount().Expand()));
-            mainMenu["Left"]["Public Area"].Update(new Panel(PanelMenuPublic().Expand()));
-            mainMenu["Right"].Update(new Panel(PanelDisplay().Expand()));
+            mainMenu["Left"]["Shop"].Update(PanelMenuShop().Expand());
+            mainMenu["Left"]["Account"].Update(PanelMenuAccount().Expand());
+            mainMenu["Left"]["Public Area"].Update(PanelMenuPublic().Expand());
+            mainMenu["Right"].Update(PanelDisplay().Expand());
 
             return mainMenu;
         }
@@ -88,7 +88,7 @@ namespace Elektrogrrosshandel
             panelMenu.Width = 35;
             panelMenu.Border(BoxBorder.Rounded);
             panelMenu.BorderColor(Color.DarkGoldenrod);
-            panelMenu.Header("[bold #af8700 on black]Public Area[/]");
+            panelMenu.Header("[bold #af8700 on black]Public Area[/] ");
             panelMenu.HeaderAlignment(Justify.Left);
 
             return panelMenu;
@@ -99,10 +99,10 @@ namespace Elektrogrrosshandel
             //Create Panel for Display area
             Panel panelDisplay = new Panel(
                 new Markup("[italic #00afff]Please select an option from the menu.[/]"));
-            panelDisplay.Height = 21;
+            panelDisplay.Height = 17;
             panelDisplay.Width = 81;
             panelDisplay.Border(BoxBorder.Rounded);
-            panelDisplay.Header("[bold #af8700 on black]Display Area[/]");
+            panelDisplay.Header("[bold #af8700 on black]Wellcome Area[/]");
             panelDisplay.HeaderAlignment(Justify.Left);
             return panelDisplay;
         }

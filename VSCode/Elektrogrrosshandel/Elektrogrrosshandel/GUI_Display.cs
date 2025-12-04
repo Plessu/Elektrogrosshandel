@@ -33,16 +33,13 @@ namespace Elektrogrrosshandel
                 new Layout("Body"),
                 new Layout("Footer"));
             
-            mainWindow["MainWindow"].Size = 26;
+            mainWindow["MainWindow"].Size = 30;
             mainWindow["Header"].Size = 3;
             mainWindow["Footer"].Size = 3;
             mainWindow["HeaderTitle"].Size = 35;
 
-            Layout body = 
-                new Layout("BodyMenu").Update(
-                    new Layout(Body));
 
-            mainWindow["Body"].Update(new Layout(body));
+            mainWindow["Body"].Update(Body);
             mainWindow["HeaderTitle"].Update(HeaderTitel);
             mainWindow["HeaderSubtitle"].Update(HeaderSubtitle);
 
