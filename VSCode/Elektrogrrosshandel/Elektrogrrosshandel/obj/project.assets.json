@@ -243,9 +243,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\giaco\\OneDrive - LG-Academy\\Giacomo\\Übungen\\Präsenzkurse\\Anwendungsgrundlagen\\Abschlussprojekt\\Elektrogrosshandel\\VSCode\\Elektrogrrosshandel\\Elektrogrrosshandel\\Elektrogrrosshandel.csproj",
-      "projectName": "Elektrogrrosshandel",
-      "projectPath": "C:\\Users\\giaco\\OneDrive - LG-Academy\\Giacomo\\Übungen\\Präsenzkurse\\Anwendungsgrundlagen\\Abschlussprojekt\\Elektrogrosshandel\\VSCode\\Elektrogrrosshandel\\Elektrogrrosshandel\\Elektrogrrosshandel.csproj",
+      "projectUniqueName": "C:\\Users\\giaco\\OneDrive - LG-Academy\\Giacomo\\Übungen\\Präsenzkurse\\Anwendungsgrundlagen\\Abschlussprojekt\\Elektrogrosshandel\\VSCode\\Elektrogrrosshandel\\Elektrogrrosshandel\\Elektrogrosshandel.csproj",
+      "projectName": "Elektrogrosshandel",
+      "projectPath": "C:\\Users\\giaco\\OneDrive - LG-Academy\\Giacomo\\Übungen\\Präsenzkurse\\Anwendungsgrundlagen\\Abschlussprojekt\\Elektrogrosshandel\\VSCode\\Elektrogrrosshandel\\Elektrogrrosshandel\\Elektrogrosshandel.csproj",
       "packagesPath": "C:\\Users\\giaco\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\giaco\\OneDrive - LG-Academy\\Giacomo\\Übungen\\Präsenzkurse\\Anwendungsgrundlagen\\Abschlussprojekt\\Elektrogrosshandel\\VSCode\\Elektrogrrosshandel\\Elektrogrrosshandel\\obj\\",
       "projectStyle": "PackageReference",
