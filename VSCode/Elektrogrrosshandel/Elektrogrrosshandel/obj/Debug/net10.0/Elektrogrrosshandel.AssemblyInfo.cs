@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Elektrogrrosshandel")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b7a032ba7b0b29e2d9a5dc5d8a6182bce7d22f62")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e6d9c92e82611b0092d6c03665cce5b84f1aa229")]
 [assembly: System.Reflection.AssemblyProductAttribute("Elektrogrrosshandel")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Elektrogrrosshandel")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
