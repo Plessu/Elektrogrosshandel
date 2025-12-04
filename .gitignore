@@ -3,3 +3,4 @@
 *.cache
 *.cs
 *.vsidx
+/VSCode/Elektrogrrosshandel/.vs
