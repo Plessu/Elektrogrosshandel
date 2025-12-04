@@ -1,0 +1,60 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace Elektrogrrosshandel
+{
+    internal class Bucket
+    {
+        private int BucketID { get; set; }
+        private int AccountID { get; set; }
+        private string BucketName { get; set; }
+        private DateTime CreatedAt { get; set; }
+        private List<Hardware.ComputerHardware> Articels { get; set; }
+        private List<int> Quantity { get; set; }
+        private List<int> ArticelIDs { get; set; }
+        private static List<Bucket> Buckets = new List<Bucket>();
+        private static List<int> UsedBucketIDs = new List<int>();
+        private Bucket(int bucketID, int accountID, string bucketName)
+        {
+            BucketID = bucketID;
+            AccountID = accountID;
+            BucketName = bucketName;
+            CreatedAt = DateTime.Now;
+            Articels = new List<Hardware.ComputerHardware>();
+            Quantity = new List<int>();
+            ArticelIDs = new List<int>();
+            AddBucketToList();
+        }
+        private void AddBucketToList()
+        {
+            Buckets.Add(this);
+        }
+        public static void AddArticelToBucket(Bucket bucket,int articelID, int quantity)
+        {
+            if (bucket.ArticelIDs.Contains(articelID))
+            {
+                int index = bucket.ArticelIDs.IndexOf(articelID);
+                bucket.Quantity[index] += quantity;
+            }
+            else
+            {
+                Hardware.ComputerHardware bucketHardware = Hardware.ComputerHardware.GetArticelByID(articelID);
+                bucket.ArticelIDs.Add(articelID);
+                bucket.Articels.Add(bucketHardware);
+            }
+        }
+        public static Bucket CreateBucket(int accountID, string bucketName)
+        {
+            int newBucketID;
+            
+            do
+            {
+                newBucketID = new Random().Next(100000, 999999);
+            } while (UsedBucketIDs.Contains(newBucketID));
+            UsedBucketIDs.Add(newBucketID);
+
+            return new Bucket(newBucketID, accountID, bucketName);
+        }
+    }
+}

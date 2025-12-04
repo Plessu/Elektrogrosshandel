@@ -13,7 +13,8 @@ namespace Elektrogrrosshandel
         private string FirstName { get; set; }
         private string LastName { get; set; }
         private string FirmName { get; set; }
-        private int PasswordHash { get; set; }
+        private HashCode PasswordHash { get; set; }
+        private int PasswordSalt { get; set; }
         private string Email { get; set; }
         private string PhoneNumber { get; set; }
         private DateTime CreatedAt { get; set; }
@@ -28,14 +29,16 @@ namespace Elektrogrrosshandel
         private static List<int> UsedAccountIDs = new List<int>();
 
         private void CreateAccount(int accountID, string username, string firstName, string lastName, string firmName,
-                 string password, string email, string phoneNumber, string acountRole, int serialCode, bool isFirmAccount)
+                 HashCode password, int passwordSalt, string email, string phoneNumber, string acountRole, int serialCode,
+                 bool isFirmAccount, bool wantUSTax)
         {
             this.AccountID = accountID;
             this.UserName = username;
             this.FirstName = firstName;
             this.LastName = lastName;
             this.FirmName = firmName;
-            this.PasswordHash = HashCode.Combine(password);
+            this.PasswordHash = password;
+            this.PasswordSalt = passwordSalt;
             this.Email = email;
             this.PhoneNumber = phoneNumber;
             this.CreatedAt = DateTime.Now;
@@ -43,6 +46,7 @@ namespace Elektrogrrosshandel
             this.SerialCode = serialCode;
             this.CreatedAt = DateTime.Now;
             this.IsFirmAccount = isFirmAccount;
+            this.WantUSTax = wantUSTax;
             this.ActiveBucket = Bucket.CreateBucket(accountID, "Active Bucket");
             this.SafedBuckets = new List<Bucket>(10);
 
@@ -59,24 +63,57 @@ namespace Elektrogrrosshandel
             {
                 return "Admin";
             }
-            if (SerialCode % 3 == 0)
+            else if (SerialCode % 3 == 0)
             {
-                return "Moderator";
+                return "BuisnessUser";
             }
             return "PrivateUser";
         }
+        private int CreateUserID()
+        {
+            Random rnd = new Random();
+            int iD = 0;
 
-        public Account(string AccountName, string FirmName, string Password, string Email, int SerialCode)
-        {
-            string role = VerifyAccount(SerialCode);
-            //CreateAccount(AccountName, FirmName, Password, Email, role, SerialCode);
+            do
+            {
+                iD = rnd.Next(1000, 9999);
+                if (UsedAccountIDs.Contains(iD))
+                {
+                    continue;
+                }
+                else
+                {
+                    UsedAccountIDs.Add(iD);
+                    return iD;
+                }
+
+            } while (true);
+
         }
-        public void DisplayAccountInfo()
+
+        public void newAccount(string username, string firstName, string lastName, string firmName,
+                 HashCode password, int passwordSalt, string email, string phoneNumber, int serialCode)
         {
-            Console.WriteLine($"Username: {UserName}");
-            Console.WriteLine($"Email: {Email}");
-            Console.WriteLine($"Account Role: {AcountRole}");
-            Console.WriteLine($"Created At: {CreatedAt}");
+            string accountRole = VerifyAccount(SerialCode);
+            int accountID = CreateUserID();
+            bool isFirmAccount;
+            bool wantUSTax;
+
+
+            if (accountRole == "Admin" || accountRole == "PrivateUser")
+            {
+                isFirmAccount = false;
+                wantUSTax = false;
+            }
+            else
+            {
+                isFirmAccount = true;
+                wantUSTax = true;
+            }
+
+            CreateAccount(accountID, username, firstName, lastName, firmName,
+                 password, passwordSalt, email, phoneNumber, accountRole, serialCode,
+                 isFirmAccount, wantUSTax);
         }
     }
 }

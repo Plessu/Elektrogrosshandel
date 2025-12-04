@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Elektrogrrosshandel
+namespace Elektrogrrosshandel.GUI
 {
     //Main Menu dispalyed via Spectre.Console NuGet Plugin
     internal class GUI_MainMenu
@@ -41,7 +41,7 @@ namespace Elektrogrrosshandel
                     new Layout("Right"));
 
             mainMenu["Left"]["Shop"].Update(new Panel(PanelMenuShop().Expand()));
-            mainMenu["Left"]["Account"].Update(new Panel(PanelMenuAccount().Expand()));
+            mainMenu["Left"]["Account"].Update(PanelMenuAccount().Expand());
             mainMenu["Left"]["Public Area"].Update(new Panel(PanelMenuPublic().Expand()));
             mainMenu["Right"].Update(new Panel(PanelDisplay().Expand()));
 
