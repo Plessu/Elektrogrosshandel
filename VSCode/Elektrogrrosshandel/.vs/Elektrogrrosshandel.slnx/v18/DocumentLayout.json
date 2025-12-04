@@ -78,21 +78,19 @@
               "RelativeToolTip": "Elektrogrrosshandel\\Bucket.cs",
               "ViewState": "AgIAABAAAAAAAAAAAAAwwBoAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-04T09:52:30.679Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-04T09:52:30.679Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
-              "Title": "Elektrogrrosshandel",
+              "Title": "Elektrogrrosshandel.csproj",
               "DocumentMoniker": "C:\\Users\\giaco\\OneDrive - LG-Academy\\Giacomo\\\u00DCbungen\\Pr\u00E4senzkurse\\Anwendungsgrundlagen\\Abschlussprojekt\\Elektrogrosshandel\\VSCode\\Elektrogrrosshandel\\Elektrogrrosshandel\\Elektrogrrosshandel.csproj",
               "RelativeDocumentMoniker": "Elektrogrrosshandel\\Elektrogrrosshandel.csproj",
               "ToolTip": "C:\\Users\\giaco\\OneDrive - LG-Academy\\Giacomo\\\u00DCbungen\\Pr\u00E4senzkurse\\Anwendungsgrundlagen\\Abschlussprojekt\\Elektrogrosshandel\\VSCode\\Elektrogrrosshandel\\Elektrogrrosshandel\\Elektrogrrosshandel.csproj",
               "RelativeToolTip": "Elektrogrrosshandel\\Elektrogrrosshandel.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-12-04T09:36:46.029Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-04T09:36:46.029Z"
             },
             {
               "$type": "Document",
@@ -104,8 +102,7 @@
               "RelativeToolTip": "Elektrogrrosshandel\\Hardware\\Motherboard.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAA+AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-04T09:17:14.823Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-04T09:17:14.823Z"
             },
             {
               "$type": "Document",
@@ -117,8 +114,7 @@
               "RelativeToolTip": "Elektrogrrosshandel\\Hardware\\GraphicCard.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-03T15:48:09.929Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-03T15:48:09.929Z"
             },
             {
               "$type": "Document",
@@ -130,8 +126,7 @@
               "RelativeToolTip": "Elektrogrrosshandel\\Hardware\\ComputerHardware.cs",
               "ViewState": "AgIAAAUAAAAAAAAAAADwvw0AAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-03T16:02:33.827Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-03T16:02:33.827Z"
             },
             {
               "$type": "Document",
@@ -155,8 +150,7 @@
               "RelativeToolTip": "Elektrogrrosshandel\\Account.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAHQAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-02T21:54:38.445Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-02T21:54:38.445Z"
             },
             {
               "$type": "Document",
@@ -168,8 +162,7 @@
               "RelativeToolTip": "Elektrogrrosshandel\\GetUserInput.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAQwBQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-02T12:10:57.795Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-02T12:10:57.795Z"
             },
             {
               "$type": "Document",
@@ -181,8 +174,7 @@
               "RelativeToolTip": "Elektrogrrosshandel\\GUI\\GUI_Display.cs",
               "ViewState": "AgIAABcAAAAAAAAAAAAxwCMAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-02T08:40:46.382Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-02T08:40:46.382Z"
             },
             {
               "$type": "Document",
@@ -207,8 +199,7 @@
               "RelativeToolTip": "Elektrogrrosshandel\\Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-01T12:00:45.886Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-01T12:00:45.886Z"
             }
           ]
         }
