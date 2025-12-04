@@ -15,11 +15,11 @@ namespace Elektrogrrosshandel.Hardware
         internal static List<Motherboard> Motherboards = new List<Motherboard>();
         internal static List<PowerSupply> PowerSupplies = new List<PowerSupply>();
         internal static List<Processor> Processors = new List<Processor>();
-        internal static List<GraphicCard> GraphicCards = new List<GraphicCard>();
-        internal static List<RAM> RAMs = new List<RAM>();
+        internal static List<GraphicsCard> GraphicsCards = new List<GraphicsCard>();
+        internal static List<Ram> RAMs = new List<Ram>();
         internal static List<StorageDevice> StorageDevices = new List<StorageDevice>();
         internal static List<CoolingSystem> CoolingSystems = new List<CoolingSystem>();
-        internal static List<Peripheral> ComputerPeripherals = new List<ComputerPeripheral>();
+        internal static List<Peripheral> Peripherals = new List<Peripheral>();
         internal static List<Display> Displays = new List<Display>();
         internal static List<Software> Softwares = new List<Software>();
 
@@ -34,13 +34,53 @@ namespace Elektrogrrosshandel.Hardware
         {
             Cases.Add(Case);
         }
-        public static void AddGraphicCard(GraphicCard graphicCard)
+        public static void AddGraphicsCard(GraphicsCard graphicCard)
         {
-            GraphicCards.Add(graphicCard);
+            GraphicsCards.Add(graphicCard);
         }
         public static void AddMotherboard(Motherboard motherboard)
         {
             Motherboards.Add(motherboard);
+        }
+
+        public static void AddPowerSupply(PowerSupply powerSupply)
+        {
+            PowerSupplies.Add(powerSupply);
+        }
+
+        public static void AddProcessor(Processor processor)
+        {
+            Processors.Add(processor);
+        }
+
+        public static void AddRAM(Ram ram)
+        {
+            RAMs.Add(ram);
+        }
+
+        public static void AddStorageDevice(StorageDevice storageDevice)
+        {
+            StorageDevices.Add(storageDevice);
+        }
+
+        public static void AddCoolingSystem(CoolingSystem coolingSystem)
+        {
+            CoolingSystems.Add(coolingSystem);
+        }
+
+        public static void AddPeripheral(Peripheral peripheral)
+        {
+            Peripherals.Add(peripheral);
+        }
+
+        public static void AddDisplay(Display display)
+        {
+            Displays.Add(display);
+        }
+
+        public static void AddSoftware(Software software)
+        {
+            Softwares.Add(software);
         }
 
         public static ComputerHardware GetArticelByID(int articelID)

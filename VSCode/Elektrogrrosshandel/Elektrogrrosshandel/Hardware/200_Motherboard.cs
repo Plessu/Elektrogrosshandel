@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Elektrogrrosshandel.Hardware
 {
-    internal class GraphicCard : ComputerHardware
+    internal class Motherboard : ComputerHardware
     {
 
         private int ArticelID { get; set; }
@@ -21,18 +21,23 @@ namespace Elektrogrrosshandel.Hardware
         private int ArticelWeight { get; set; }
         private int[] ArticelDimesnions { get; set; }
         private string ArticelDescription { get; set; }
-        private int EnergyConsumption { get; set; }
+        private string Socket { get; set; }
+        private string RamType { get; set; }
+        private string FormFactor { get; set; }
+        private string PCIeVersion { get; set; }
+        private string[] StorageInterfaces { get; set; }
 
-        private static string ArticelGroupName = "Graphic Card";
-        private static int ArticelGroupID = 400;
-        private string ArticelGroupDescription = "This category includes all kinds of graphic cards for computers, ranging from entry-level to high-end models designed for gaming and professional use.";
+        private static string ArticelGroupName = "Motherboard";
+        private static int ArticelGroupID = 200;
+        private string ArticelGroupDescription = "This category includes all kinds of Motherrboards for computers, ranging from entry-level to high-end models designed for gaming and professional use.";
 
         private static List<int> ArticelIDs = new List<int>();
 
-        private GraphicCard(int articelID, string articelName, string articelManufacturer, string articelModel,
+        private Motherboard(int articelID, string articelName, string articelManufacturer, string articelModel,
                             int articelYearOfProduction, int articelManufactrerID, string[] articelColors, int articelStock,
                             int articelMinStock, double articelPrice, int articelWeight, int[] articelDimesnions,
-                            string articelDescription, int energyConsumption) : base()
+                            string articelDescription, string Socket, string RamType, string FormFactor,
+                            string[] StorageInterfaces, string pCIeVersion) : base()
         {
             ArticelID = articelID;
             ArticelName = articelName;
@@ -47,29 +52,35 @@ namespace Elektrogrrosshandel.Hardware
             ArticelWeight = articelWeight;
             ArticelDimesnions = articelDimesnions;
             ArticelDescription = articelDescription;
-            this.EnergyConsumption = energyConsumption;
-            ComputerHardware.AddGraphicCard(this);
+            
+            this.Socket = Socket;
+            this.RamType = RamType;
+            this.FormFactor = FormFactor;
+            this.StorageInterfaces = StorageInterfaces;
+            this.PCIeVersion = pCIeVersion;
+
+            ComputerHardware.AddMotherboard(this);
         }
-        public static GraphicCard CreateMotherboard(string articelName, string articelManufacturer, string articelModel,
-                                                    int articelYearOfProduction, int articelManufactrerID, 
-                                                    string[] articelColors, int articelStock, int articelMinStock, 
-                                                    double articelPrice, int articelWeight, int[] articelDimesnions,
-                                                    string articelDescription, int energyConsumption)
+        public static Motherboard CreateMotherboard(string articelName, string articelManufacturer,
+                            string articelModel, int articelYearOfProduction, int articelManufactrerID, 
+                            string[] articelColors, int articelStock, int articelMinStock, double articelPrice, 
+                            int articelWeight, int[] articelDimesnions, string articelDescription, 
+                            string Socket, string RamType, string FormFactor, string[] StorageInterfaces, string pCIeVersion)
         {
-            foreach (var item in ComputerHardware.GraphicCards)
+            foreach (Motherboard item in ComputerHardware.Motherboards)
             {
                 if (item.ArticelModel == articelModel && item.ArticelManufactrerID == articelManufactrerID)
                 {
-                    throw new ArgumentException("Graphic Card with the same model and manufacturer ID already exists.");
+                    throw new ArgumentException("Motherboard with the same model and manufacturer ID already exists.");
                 }
             }
 
             int articelID = CreateArticelID();
 
-            return new GraphicCard(articelID, articelName, articelManufacturer, articelModel,
+            return new Motherboard(articelID, articelName, articelManufacturer, articelModel,
                                     articelYearOfProduction, articelManufactrerID, articelColors, articelStock,
                                     articelMinStock, articelPrice, articelWeight, articelDimesnions,
-                                    articelDescription, energyConsumption);
+                                    articelDescription, Socket, RamType, FormFactor, StorageInterfaces, pCIeVersion);
         }
 
         private static int CreateArticelID()
