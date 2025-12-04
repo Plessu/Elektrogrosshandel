@@ -11,10 +11,6 @@ namespace Elektrogrrosshandel
     {
         static void Main(string[] args)
         {
-            Console.BufferHeight = 3000;
-            Console.BufferWidth = 250;
-            Console.WindowHeight = 29;
-            Console.WindowWidth = 120;
             Console.OutputEncoding = System.Text.Encoding.UTF8;
             MainMenu();
         }

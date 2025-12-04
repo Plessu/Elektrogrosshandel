@@ -35,15 +35,22 @@ namespace Elektrogrrosshandel.GUI
                 .SplitColumns(
                     new Layout("Left").Size(35)
                         .SplitRows(
-                            new Layout("Shop").Size(8),
-                            new Layout("Account").Size(8),
-                            new Layout("Public Area").Size(7)),
+                            new Layout("Shop").Size(6),
+                            new Layout("Account").Size(6),
+                            new Layout("Public Area").Size(6)),
                     new Layout("Right"));
 
+<<<<<<< Updated upstream:VSCode/Elektrogrrosshandel/Elektrogrrosshandel/GUI/GUI_MainMenu.cs
             mainMenu["Left"]["Shop"].Update(new Panel(PanelMenuShop().Expand()));
             mainMenu["Left"]["Account"].Update(PanelMenuAccount().Expand());
             mainMenu["Left"]["Public Area"].Update(new Panel(PanelMenuPublic().Expand()));
             mainMenu["Right"].Update(new Panel(PanelDisplay().Expand()));
+=======
+            mainMenu["Left"]["Shop"].Update(PanelMenuShop().Expand());
+            mainMenu["Left"]["Account"].Update(PanelMenuAccount().Expand());
+            mainMenu["Left"]["Public Area"].Update(PanelMenuPublic().Expand());
+            mainMenu["Right"].Update(PanelDisplay().Expand());
+>>>>>>> Stashed changes:VSCode/Elektrogrrosshandel/Elektrogrrosshandel/GUI_MainMenu.cs
 
             return mainMenu;
         }
@@ -96,13 +103,12 @@ namespace Elektrogrrosshandel.GUI
 
         private static Panel PanelDisplay()
         {
-            //Create Panel for Display area
             Panel panelDisplay = new Panel(
-                new Markup("[italic #00afff]Please select an option from the menu.[/]"));
-            panelDisplay.Height = 21;
+                new Markup(" [italic #00afff]Please select an option from the menu.[/] "));
+            panelDisplay.Height = 17;
             panelDisplay.Width = 81;
             panelDisplay.Border(BoxBorder.Rounded);
-            panelDisplay.Header("[bold #af8700 on black]Display Area[/]");
+            panelDisplay.Header(" [bold #af8700 on black]Wellcome Area[/] :bright_button: ");
             panelDisplay.HeaderAlignment(Justify.Left);
             return panelDisplay;
         }
