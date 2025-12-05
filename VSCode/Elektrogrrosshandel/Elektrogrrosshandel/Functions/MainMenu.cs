@@ -1,6 +1,6 @@
 ﻿using Elektrogrosshandel.GUI.GUI_Menus;
-using Elektrogrrosshandel;
-using Elektrogrrosshandel.GUI;
+using Elektrogrosshandel;
+using Elektrogrosshandel.GUI;
 using Spectre.Console;
 using System;
 using System.Collections.Generic;

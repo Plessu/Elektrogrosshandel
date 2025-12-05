@@ -52,7 +52,7 @@ Pseudocode / Plan (detailliert) - DEUTSCH:
   - parse zu int, in ArticelIDs speichern, return int
 */
 
-namespace Elektrogrrosshandel.Hardware
+namespace Elektrogrosshandel.Hardware
 {
     internal class Software : ComputerHardware
     {

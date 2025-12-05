@@ -2,11 +2,41 @@
 
   - Änderungsverlauf (Kurzfassung)
 ------------------------------
+- 2025-12-05: `LogIn` v1.1.0 veröffentlicht.
+- 2025-12-05: `PasswordHelper` v1.0.0 veröffentlicht.
 - 2025-12-04: `LogIn` v1.0.0 veröffentlicht.
 - 2025-12-04: `MainMenu` v1.0.2 veröffentlicht.
 
 Neue/Benutzer-Releases
 ----------------------
+- Klasse: `ElektroGrosshandel.Functions.LogIn`
+  - Version: `1.1.0`
+  - Datum: `2025-12-05`
+  - Autor: `Giacomo Graef`
+  - Zusammenfassung: `PasswortHelper` integration in die LogIn-Funktion.
+  - Änderungen:
+    - Feature: `PasswordHelper` integration (Verwendung von PasswordHelper zur Passwortvalidierung)
+  - Breaking Changes:
+    - Passwortvalidierung Logik integriert (Änderung der Login-Logik)
+  - Migrationshinweise:
+    - Siehe Konstruktor `PasswordHelper` bei implementierung der LogIn-Funktion.
+  - Tests: `ElektroGrosshandel.Functions.LogIn.TestData`
+
+- Klasse: `ElektroGrosshandel.Functions.PasswordHelper`
+  - Version: `1.0.0`
+  - Datum: `2025-12-05`
+  - Autor: `Giacomo Graef`
+  - Zusammenfassung: Erste stabile Veröffentlichung der PasswordHelper-Funktion.
+  - Änderungen:
+    - Feature: `VerifyHash` hinzugefügt (Logik zum Passwort prüfen)
+    - Feature: `GetHash` hinzugefügt (Logik zur Erstellung eines Hashs)
+    - Test: `ElektroGrosshandel.Functions.LogIn.TestData`
+  - Breaking Changes:
+    - Logik in `LogIn` angepasst (Password-Hashing integriert)
+  - Migrationshinweise:
+    - Startlogik anpassen: `Login` Password-Validierung auf `PasswordHelper` umgestellt.
+  - Tests: `ElektroGrosshandel.Functions.LogIn.TestData`
+
 
 - Klasse: `ElektroGrosshandel.Functions.LogIn`
   - Version: `1.0.0`
@@ -35,7 +65,7 @@ Neue/Benutzer-Releases
   - Breaking Changes:
     - Programmstart wurde auf `LogIn` geändert (MainMenu-Startlogik verschoben)
   - Migrationshinweise:
-    - Die Darstellung des Hauptmenüs wurde in die `LogIn`-Funktion verschoben; bei direktem Aufruf von `MainMenu` prüfen, ob Init-Parameter benötigt werden.
+    - Die Darstellung des Hauptmenüs wurde in die `LogIn`-Funktion verschoben;
   - Tests: `Keine (werden später hinzugefügt)`
 
 

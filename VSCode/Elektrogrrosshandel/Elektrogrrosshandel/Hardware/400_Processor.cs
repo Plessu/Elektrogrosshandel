@@ -35,7 +35,7 @@ Pseudocode / Plan (detailliert):
   - Parse int, speichere in ArticelIDs, return int
 */
 
-namespace Elektrogrrosshandel.Hardware
+namespace Elektrogrosshandel.Hardware
 {
     internal class Processor : ComputerHardware
     {

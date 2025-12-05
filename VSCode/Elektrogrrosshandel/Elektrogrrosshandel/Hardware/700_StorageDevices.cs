@@ -61,7 +61,7 @@ Pseudocode / Plan (detailliert):
 Ende Pseudocode
 */
 
-namespace Elektrogrrosshandel.Hardware
+namespace Elektrogrosshandel.Hardware
 {
     internal class StorageDevice : ComputerHardware
     {
