@@ -7,6 +7,8 @@ Beinhaltet Einträge zu neuen Releases, Änderungen, Breaking Changes und Migrat
 Änderungsverlauf (Kurzfassung)
 ------------------------------
 
+- 2025-12-05: `GUI_UserRegistration` v1.0.0 veröffentlicht.
+- 2025-12-05: `GUI_AccountMenu` v0.1.0 veröffentlicht.
 - 2025-12-04: `GUI_Display` v1.0.0 veröffentlicht.
 - 2025-12-04: `GUI_Login` v1.0.0 veröffentlicht.
 - 2025-12-04: `GUI_MainMenu` v1.0.0 veröffentlicht.
@@ -38,7 +40,35 @@ Neue/Benutzer-Releases
     - Aufrufer anpassen: `ShowUserRegistrationMenu` erwartet Parameter-Reihenfolge `firstName, lastName, firmName, email, phoneNumber, userName, passWord, serialNumber` — prüfen und ggf. Aufrufer aktualisieren.
     - Layout-Tests: Bei anderen Terminalgrößen Panel-Größen prüfen und ggf. dynamisch anpassen statt feste Werte zu verwenden.
   - Tests: `Keine (werden später hinzugefügt)`
+  
 --- 
+
+- Klasse: `ElektroGrosshandel.GUI.GUI_Menus.GUI_AccountMenu`
+  - Version: `0.1.0`
+  - Datum: `2025-12-05`
+  - Autor: `Giacomo Graef`
+  - Zusammenfassung: Erstveröffentlichung eines einfachen Account-Menüs mit statischen Menu-Einträgen und Informationspanel; Basiskomponenten für Anzeige und Auswahl sind angelegt.
+  - Beschreibungen:
+    - Feature: `Account Menu` hinzugefügt (Panel mit Menüeinträgen für Account-Info, ShoppingCart Manager, Orders, Edit Account, Back to Main Menu).
+    - Feature: `Information Panel` hinzugefügt (Darstellung von Hilfetext/Erklärung in getrenntem Panel).
+    - Feature: Öffentliche Methode `ShowAccountMenu` angelegt (zeigt das Menü; derzeit ohne vollständiges Input-/Action-Handling).
+  - Änderungen:
+    - UI: Neues Layout `AccountMenu` mit Zeilenaufteilung (`SplitRows`) und zwei Bereichen `Menu` und `Display`.
+    - Panels: `Menu()` und `DisplayInformation()` implementiert (Header, Border, Padding, Expand).
+    - Menüitems: Liste `menuItems` definiert (Markup-Strings für die Anzeige).
+    - Code-Qualität: Empfehlungen zur Verbesserung (z. B. `private static readonly` für `menuItems`, Korrektur von Markup-Tags und Tippfehlern wie "ShopingCart" → "ShoppingCart").
+    - API: `ShowAccountMenu` existiert öffentlich und dient als Einstiegspunkt zur Anzeige; Implementierungsdetails (Benutzereingabe / Rückgabe) noch zu ergänzen.
+  - Breaking Changes:
+    - Keine direkten Breaking Changes für externe Aufrufer in dieser Version.
+    - Hinweis: Wenn später globale Konsolen-Einstellungen (`Console.Window*` / `Console.Buffer*`) hinzugefügt werden, kann das Verhalten anderer Views beeinflusst werden.
+  - Migrationshinweise:
+    - Aufrufer: `ShowAccountMenu` ist verfügbar, sollte aber in Integrationen nur verwendet werden, wenn die erwartete Rückgabe/Interaktion implementiert wurde. Prüfen Sie vorhandene Aufrufer auf null-safe / erwartete Werte.
+    - Layout-Anpassung: Panel-Größen und Layout-Parameter sind statisch; bei unterschiedlichen Terminalgrößen ggf. dynamisch anpassen.
+    - Style-/Markup-Prüfung: Achten Sie auf korrekte Markup-Schließungen (`[/]`) in Panel-Headern und Markup-Strings.
+  - Tests: `Keine (werden später hinzugefügt)`
+  
+---
+
 - Klasse: `ElektroGrosshandel.GUI_Menus.GUI_MainMenu`
   - Version: `1.0.0`
   - Datum: `2025-12-04`
@@ -57,6 +87,7 @@ Neue/Benutzer-Releases
   - Tests: `Keine (werden später hinzugefügt)`
 
 ---
+
 - Klasse: `ElektroGrosshandel.GUI.GUI_Display`
   - Version: `1.0.0`
   - Datum: `2025-12-04`
@@ -70,10 +101,17 @@ Neue/Benutzer-Releases
     - Siehe Dokumentation in `Elektrogrrosshandel/GUI/TO_GUI_Display.md` für Details zur Nutzung der Anzeige-Funktionen.
   - Tests: `Keine (werden später hinzugefügt)`
 
+
+ 
 Übersicht der GUI-Menüs und der dazugehörigen Logik.
 ----------------------------------------------
+
+  - 2025-12-05: `GUI_UserRegistration` <- `Functions.UserRegistration`.
+  - 2025-12-05: `GUI_AccountMenu` <- `Functions.AccountMenu`.
   - 2025-12-04: `GUI_Login` <- `Functions.LogIn`.
   - 2025-12-04: `GUI_MainMenu` <- `Functions.MainMenu`.
+
+
 
 Anleitung zum Hinzufügen eines neuen Eintrags
 ----------------------------------------------
