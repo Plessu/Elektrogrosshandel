@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Elektrogrosshandel
+namespace Elektrogrosshandel.User
 {
     internal class Bucket
     {

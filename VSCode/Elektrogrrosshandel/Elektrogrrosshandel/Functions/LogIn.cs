@@ -1,5 +1,4 @@
 ﻿using Elektrogrosshandel.GUI.GUI_Menus;
-using Elektrogrosshandel;
 using Elektrogrosshandel.GUI;
 using System;
 using System.Collections.Generic;
