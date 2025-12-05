@@ -13,9 +13,9 @@ Beinhaltet Einträge zu neuen Releases, Änderungen, Breaking Changes und Migrat
 - 2025-12-04: `GUI_Login` v1.0.0 veröffentlicht.
 - 2025-12-04: `GUI_MainMenu` v1.0.0 veröffentlicht.
 
+
 Neue/Benutzer-Releases
 ----------------------
-
 
 - Klasse: `ElektroGrosshandel.GUI.GUI_Menus.GUI_UserRegistration`
   - Version: `1.0.0`

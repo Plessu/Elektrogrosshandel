@@ -118,7 +118,7 @@ namespace Elektrogrosshandel.GUI.GUI_Menus
         }
         public static int MaxMenuItems()
         {
-            int maxMenuItems = menuItemsShop.Count() + menuItemsAccount.Count() + menuItemsPublic.Count();
+            int maxMenuItems = (int) menuItemsShop.LongCount() + menuItemsAccount.Count() + menuItemsPublic.Count();
             return maxMenuItems;
         }
     }

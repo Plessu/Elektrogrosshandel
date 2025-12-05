@@ -12,7 +12,7 @@ namespace Elektrogrosshandel.Functions
         static public void DisplayMainMenu()
         {
             GUI_Display.DisplayWindow(GUI_MainMenu.ShowMainMenu());
-            MenuSelection(UserInput.MenuChoice(GUI_MainMenu.MaxMenuItems()));
+            MenuSelection(5);
         }
         static void MenuSelection(int UserChoice)
         {
@@ -20,6 +20,24 @@ namespace Elektrogrosshandel.Functions
             {
                 case 1:
                     AnsiConsole.MarkupLine("[bold green]News selected.[/]");
+                    break;
+                case 5:
+                    
+                    AnsiConsole.MarkupLine("[bold green]User selected.[/]");
+                    Thread.Sleep(500);
+
+                    GUI_Display.DisplayWindow(GUI_AccountInfoMenu.ShowAccountInfoMenu());
+                    
+                    switch (UserInput.MenuChoice(GUI_AccountInfoMenu.MaxMenuItems()))
+                    {
+                        case 5:
+                            AnsiConsole.MarkupLine("[bold green]View Account Information selected.[/]");
+                            Thread.Sleep(500);
+
+                            GUI_Display.DisplayWindow(GUI_AccountInfoMenu.ShowAccountInfoMenu());
+                            break;
+                    }
+
                     break;
             }
         }

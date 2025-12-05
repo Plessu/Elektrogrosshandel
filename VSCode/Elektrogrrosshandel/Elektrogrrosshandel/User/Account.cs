@@ -7,9 +7,12 @@ using System.Text.Json;
 using System.IO;
 using Elektrogrosshandel.Functions;
 using Elektrogrosshandel.User;
+using Spectre.Console;
 
 namespace Elektrogrosshandel
 {
+
+
 
 
     internal class Account
@@ -30,16 +33,20 @@ namespace Elektrogrosshandel
         private bool WantUSTax { get; set; }
         private Bucket ActiveBucket { get; set; }
         private List<Bucket> SafedBuckets { get; set; }
+        private List<Markup> AccountInformation { get; set; }
+
 
         private static List<Account> Accounts = new List<Account>();
         private static List<int> UsedAccountIDs = new List<int>();
 
-        private void CreateAccount(int accountID, string username, string firstName, string lastName, string firmName,
+
+
+        private void CreateAccount(int accountID, string userName, string firstName, string lastName, string firmName,
                  string passwordHash, byte[] passwordSalt, string email, string phoneNumber, string acountRole, int serialCode,
                  bool isFirmAccount, bool wantUSTax)
         {
             this.AccountID = accountID;
-            this.UserName = username;
+            this.UserName = userName;
             this.FirstName = firstName;
             this.LastName = lastName;
             this.FirmName = firmName;
@@ -56,6 +63,20 @@ namespace Elektrogrosshandel
             this.ActiveBucket = Bucket.CreateBucket(accountID, "Active Bucket");
             this.SafedBuckets = new List<Bucket>(10);
 
+            List<Markup> accountInformation = new List<Markup>
+            {
+                new Markup($"FirstName: {firstName}"),
+                new Markup($"LastName: {lastName}"),
+                new Markup($"FirmName: {firmName}"),
+                new Markup($"Email: {email}"),
+                new Markup($"PhoneNumber: {phoneNumber}"),
+                new Markup($"AccountID: {accountID}"),
+                new Markup($"UserName: {userName}"),
+                new Markup($"CreatedAt: {DateTime.Now}"),
+                new Markup($"AcountRole: {acountRole}")
+            };
+
+            this.AccountInformation = accountInformation;
         }
         private void AddAccountToList(Account account)
         {
@@ -98,7 +119,8 @@ namespace Elektrogrosshandel
         public Account newAccount(string username, string firstName, string lastName, string firmName,
                  string password, string email, string phoneNumber, int serialCode)
         {
-            string accountRole = VerifyAccount(SerialCode);
+
+        string accountRole = VerifyAccount(SerialCode);
             int accountID = CreateUserID();
             bool isFirmAccount;
             bool wantUSTax;
@@ -180,6 +202,11 @@ namespace Elektrogrosshandel
                 }
             }
             return null;
+        }
+
+        public static List<Markup> GetAccountInformationList(Account account)
+        {
+            return account.AccountInformation;
         }
 
         public static void TestData()
