@@ -35,7 +35,7 @@ Neue/Benutzer-Releases
   - Breaking Changes:
     - Programmstart wurde auf `LogIn` geändert (MainMenu-Startlogik verschoben)
   - Migrationshinweise:
-    - Die Darstellung des Hauptmenüs wurde in die `LogIn`-Funktion verschoben; bei direktem Aufruf von `MainMenu` prüfen, ob Init-Parameter benötigt werden.
+    - Die Darstellung des Hauptmenüs wurde in die `LogIn`-Funktion verschoben;
   - Tests: `Keine (werden später hinzugefügt)`
 
 
