@@ -2,6 +2,7 @@
 
   - Änderungsverlauf (Kurzfassung)
 ------------------------------
+- 2025-12-05: `LogIn` v1.2.0 veröffentlicht.
 - 2025-12-05: `LogIn` v1.1.0 veröffentlicht.
 - 2025-12-05: `PasswordHelper` v1.0.0 veröffentlicht.
 - 2025-12-04: `LogIn` v1.0.0 veröffentlicht.
@@ -9,6 +10,20 @@
 
 Neue/Benutzer-Releases
 ----------------------
+- Klasse: `ElektroGrosshandel.Functions.LogIn`
+  - Version: `1.2.0`
+  - Datum: `2025-12-05`
+  - Autor: `Giacomo Graef`
+  - Zusammenfassung: `PasswortHelper` implementation was fixed.
+  - Änderungen:
+    - Bugfix: `LogIn` caused an error duue to wrong Logic in Loop when password was incorrect. 
+  - Breaking Changes:
+    - Bug fix in Login Logic (Fehlerbehebung in der Login-Logik)
+  - Migrationshinweise:
+    - Keine (bereits in 1.1.0 implementiert).
+  - Tests: `ElektroGrosshandel.Functions.LogIn.TestData` wiederholt und absichtlich fehlerhaftes Passwort getestet.
+    -Ergebnis: Korrekte Fehlermeldung und erneute Abfrage des Passworts.
+
 - Klasse: `ElektroGrosshandel.Functions.LogIn`
   - Version: `1.1.0`
   - Datum: `2025-12-05`

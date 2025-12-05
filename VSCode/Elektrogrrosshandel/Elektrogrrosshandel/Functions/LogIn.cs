@@ -18,7 +18,7 @@ namespace Elektrogrosshandel.Functions
             MenuSelection(UserInput.MenuChoice(GUI_LogIn.MaxMenuItems()));
         }
 
-        
+
         private static void MenuSelection(int Choice)
         {
             switch (Choice)
@@ -29,51 +29,49 @@ namespace Elektrogrosshandel.Functions
                     bool userExists;
                     bool passwordIsValid;
 
+                    AnsiConsole.MarkupLine("[bold green]LogIn selected.[/]");
                     do
                     {
-                        AnsiConsole.MarkupLine("[bold green]LogIn selected.[/]");
-
-                        do 
+                        userName = UserInput.GetStringInput("Please enter your username: ");
+                        userExists = Account.DoesAccountExist(userName);
+                        if (userExists == false)
                         {
-                            userName = UserInput.GetStringInput("Please enter your username: ");
-                            userExists = Account.DoesAccountExist(userName);
-                            if (!userExists)
-                            {
-                                AnsiConsole.MarkupLine("[bold red]Username does not exist. Please try again.[/]");
-                            }
-                            else
-                            {
-                                break;
-                            }
-                        } while (true);
-
+                            AnsiConsole.MarkupLine("[bold red]Username does not exist. Please try again.[/]");
+                        }
+                        else
+                        {
+                            break;
+                        }
+                    } while (true);
+                    do
+                    {
                         GUI_Display.DisplayWindow(GUI_LogIn.ShowLoginMenu(userName));
 
                         password = UserInput.GetStringInput("Please enter your password: ");
                         passwordIsValid = PasswordHelper.VerifyPassword(userName, password);
 
-                        if (passwordIsValid)
+                        if (passwordIsValid == false)
                         {
-                            AnsiConsole.MarkupLine("[bold green]Login successful![/]");
-                            Thread.Sleep(1000);
-                            MainMenu.DisplayMainMenu();
-                            break;
+                            AnsiConsole.MarkupLine("[bold red]Invalid password.[/]");
+                            Thread.Sleep(500);
+                            continue;
                         }
                         else
                         {
-                            AnsiConsole.Clear();
-                            GUI_Display.DisplayWindow(GUI_LogIn.ShowLoginMenu(userName));
-                            AnsiConsole.MarkupLine("[bold red]Invalid username or password.[/]");
+                            break;
                         }
 
-                    } while (false);
+                    } while (true);
 
+                    AnsiConsole.MarkupLine("[bold green]Login successful![/]");
+                    Thread.Sleep(1000);
+                    MainMenu.DisplayMainMenu();
                     break;
+
                 case 2:
                     AnsiConsole.MarkupLine("[bold green]Register selected.[/]");
                     break;
             }
         }
-
     }
 }
