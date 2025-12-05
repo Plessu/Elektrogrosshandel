@@ -165,6 +165,23 @@ namespace Elektrogrosshandel
             return false;
         }
 
+        public static string GetAccountNameByAccount(Account account)
+        {
+            return account.FirstName + " " + account.LastName;
+        }
+
+        public static Account GetAccountByUserName(string userName)
+        {
+            foreach (Account account in Accounts)
+            {
+                if (account.UserName == userName)
+                {
+                    return account;
+                }
+            }
+            return null;
+        }
+
         public static void TestData()
         {
             Account testAccount = new Account();

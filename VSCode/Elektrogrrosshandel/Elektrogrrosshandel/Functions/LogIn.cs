@@ -1,4 +1,6 @@
-﻿using Elektrogrosshandel.GUI.GUI_Menus;
+﻿using Elektrogrosshandel;
+using Elektrogrosshandel.User;
+using Elektrogrosshandel.GUI.GUI_Menus;
 using Elektrogrosshandel.GUI;
 using System;
 using System.Collections.Generic;
@@ -61,6 +63,9 @@ namespace Elektrogrosshandel.Functions
                         }
 
                     } while (true);
+                    
+                    Account ActiveUser = Account.GetAccountByUserName(userName);
+                    Program.SetActiveUser(ActiveUser);
 
                     AnsiConsole.MarkupLine("[bold green]Login successful![/]");
                     Thread.Sleep(1000);
@@ -68,7 +73,7 @@ namespace Elektrogrosshandel.Functions
                     break;
 
                 case 2:
-                    AnsiConsole.MarkupLine("[bold green]Register selected.[/]");
+                    UserRegistration.AddAccount();
                     break;
             }
         }

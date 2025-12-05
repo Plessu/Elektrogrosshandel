@@ -43,6 +43,9 @@ namespace Elektrogrosshandel.GUI
             window["HeaderTitle"].Update(HeaderTitel);
             window["HeaderSubtitle"].Update(HeaderSubtitle);
 
+            window["Footer"].Update(new Panel(
+                new Markup($"{Account.GetAccountNameByAccount(Program.ActiveUser)}")
+                .Justify(Justify.Center)).Expand());
 
 
 
