@@ -6,6 +6,7 @@ using System.Text;
 using System.Text.Json;
 using System.IO;
 using Elektrogrosshandel.Functions;
+using Elektrogrosshandel.User;
 
 namespace Elektrogrosshandel
 {
@@ -162,6 +163,23 @@ namespace Elektrogrosshandel
                 }
             }
             return false;
+        }
+
+        public static string GetAccountNameByAccount(Account account)
+        {
+            return account.FirstName + " " + account.LastName;
+        }
+
+        public static Account GetAccountByUserName(string userName)
+        {
+            foreach (Account account in Accounts)
+            {
+                if (account.UserName == userName)
+                {
+                    return account;
+                }
+            }
+            return null;
         }
 
         public static void TestData()

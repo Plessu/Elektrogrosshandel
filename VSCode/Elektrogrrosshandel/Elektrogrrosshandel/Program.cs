@@ -9,11 +9,18 @@ namespace Elektrogrosshandel
 {
     internal class Program
     {
+        
+        public static Account ActiveUser = new Account();
         static void Main(string[] args)
         {
             Account.TestData();
             Console.OutputEncoding = System.Text.Encoding.UTF8;
             LogIn.LogingIn();
+        }
+
+        public static void SetActiveUser(Account account)
+        {
+            ActiveUser = account;
         }
 
     }
