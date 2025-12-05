@@ -1,11 +1,11 @@
 ﻿using Spectre.Console;
-using Elektrogrrosshandel.Hardware;
-using Elektrogrrosshandel.GUI;
+using Elektrogrosshandel.Hardware;
+using Elektrogrosshandel.GUI;
 using Elektrogrosshandel.GUI.GUI_Menus;
 using Elektrogrosshandel.Functions;
     
 
-namespace Elektrogrrosshandel
+namespace Elektrogrosshandel
 {
     internal class Program
     {

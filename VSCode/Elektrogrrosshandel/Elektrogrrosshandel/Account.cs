@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.Numerics;
 using System.Text;
-
-namespace Elektrogrrosshandel
+using Elektrogrosshandel.Functions;
+namespace Elektrogrosshandel
 {
 
 
@@ -13,8 +15,8 @@ namespace Elektrogrrosshandel
         private string FirstName { get; set; }
         private string LastName { get; set; }
         private string FirmName { get; set; }
-        private HashCode PasswordHash { get; set; }
-        private int PasswordSalt { get; set; }
+        private string Password { get; set; }
+        private byte[] PasswordSalt { get; set; }
         private string Email { get; set; }
         private string PhoneNumber { get; set; }
         private DateTime CreatedAt { get; set; }
@@ -23,13 +25,13 @@ namespace Elektrogrrosshandel
         private bool IsFirmAccount { get; set; }
         private bool WantUSTax { get; set; }
         private Bucket ActiveBucket { get; set; }
-        private List<Bucket> SafedBuckets {get; set; }
+        private List<Bucket> SafedBuckets { get; set; }
 
         private static List<Account> Accounts = new List<Account>();
         private static List<int> UsedAccountIDs = new List<int>();
 
         private void CreateAccount(int accountID, string username, string firstName, string lastName, string firmName,
-                 HashCode password, int passwordSalt, string email, string phoneNumber, string acountRole, int serialCode,
+                 string passwordHash, byte[] passwordSalt, string email, string phoneNumber, string acountRole, int serialCode,
                  bool isFirmAccount, bool wantUSTax)
         {
             this.AccountID = accountID;
@@ -37,7 +39,7 @@ namespace Elektrogrrosshandel
             this.FirstName = firstName;
             this.LastName = lastName;
             this.FirmName = firmName;
-            this.PasswordHash = password;
+            this.Password = passwordHash;
             this.PasswordSalt = passwordSalt;
             this.Email = email;
             this.PhoneNumber = phoneNumber;
@@ -90,12 +92,15 @@ namespace Elektrogrrosshandel
         }
 
         public Account newAccount(string username, string firstName, string lastName, string firmName,
-                 HashCode password, int passwordSalt, string email, string phoneNumber, int serialCode)
+                 string password, string email, string phoneNumber, int serialCode)
         {
             string accountRole = VerifyAccount(SerialCode);
             int accountID = CreateUserID();
             bool isFirmAccount;
             bool wantUSTax;
+            byte[] passwordSalt = new byte[64];
+
+            string passwordHash = PasswordHelper.HashPassword(password, out passwordSalt);
 
 
             if (accountRole == "Admin" || accountRole == "PrivateUser")
@@ -112,12 +117,48 @@ namespace Elektrogrrosshandel
             Account account = new Account();
 
             account.CreateAccount(accountID, username, firstName, lastName, firmName,
-                 password, passwordSalt, email, phoneNumber, accountRole, serialCode,
+                 passwordHash, passwordSalt, email, phoneNumber, accountRole, serialCode,
                  isFirmAccount, wantUSTax);
 
             AddAccountToList(account);
 
             return account;
+        }
+
+        public static byte[] GetAccountSalt(string userName)
+        {
+            foreach (Account account in Accounts)
+            {
+                if (account.UserName == userName)
+                {
+                    return account.PasswordSalt;
+                }
+            }
+            return null;
+        }
+
+        public static string GetAccountPasswordHash(string userName)
+        {
+            foreach (Account account in Accounts)
+            {
+                if (account.UserName == userName)
+                {
+                    return account.Password;
+                }
+            }
+            return null;
+        }
+
+        public static bool DoesAccountExist(string userName)
+        {
+            foreach (Account account in Accounts)
+            {
+                if (account.UserName == userName)
+                {
+                    return true;
+                }
+            }
+            return false;
         }
     }
 }

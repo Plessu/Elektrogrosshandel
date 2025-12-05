@@ -64,7 +64,7 @@ Pseudocode / Plan (detailliert):
   - parse zu int, in ArticelIDs speichern, return int
 */
 
-namespace Elektrogrrosshandel.Hardware
+namespace Elektrogrosshandel.Hardware
 {
     internal class Peripheral : ComputerHardware
     {

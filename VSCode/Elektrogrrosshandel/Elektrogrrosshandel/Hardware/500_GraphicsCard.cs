@@ -30,7 +30,7 @@ Pseudocode / Plan (detailliert):
   - random 1..9999, prüfe gegen ArticelIDs, baue ID-String mit ComputerHardware.ArticelParentGroupID + ArticelGroupID + D4, parse int, speichern, return
 */
 
-namespace Elektrogrrosshandel.Hardware
+namespace Elektrogrosshandel.Hardware
 {
     internal class GraphicsCard : ComputerHardware
     {

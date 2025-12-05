@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Elektrogrrosshandel.GUI
+namespace Elektrogrosshandel.GUI
 {
     internal class GUI_Display
     {
