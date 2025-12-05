@@ -11,6 +11,7 @@ namespace Elektrogrosshandel
     {
         static void Main(string[] args)
         {
+            Account.TestData();
             Console.OutputEncoding = System.Text.Encoding.UTF8;
             LogIn.LogingIn();
         }
