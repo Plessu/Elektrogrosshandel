@@ -28,22 +28,28 @@ namespace Elektrogrosshandel.User
             bool userAllreadyExists = true;
             int serialCode = -1;
 
-            GUI_Display.DisplayWindow(GUI_UserRegistration.ShowUserRegistrationMenu(firstName, lastName, firmName, email, phoneNumber, userName, password, serialCodeString));
+            GUI_Display.DisplayWindow(GUI_UserRegistration.ShowUserRegistrationMenu(firstName, lastName, firmName, email, phoneNumber,
+                                                                                    userName, password, serialCodeString));
             
             firstName = UserInput.GetStringInput("Vorname");
-            GUI_Display.DisplayWindow(GUI_UserRegistration.ShowUserRegistrationMenu(firstName, lastName, firmName,email, phoneNumber, userName, password, serialCodeString));
+            GUI_Display.DisplayWindow(GUI_UserRegistration.ShowUserRegistrationMenu(firstName, lastName, firmName,email, phoneNumber, 
+                                                                                    userName, password, serialCodeString));
             
             lastName = UserInput.GetStringInput("Nachname");
-            GUI_Display.DisplayWindow(GUI_UserRegistration.ShowUserRegistrationMenu(firstName, lastName, firmName, email, phoneNumber, userName, password, serialCodeString));
+            GUI_Display.DisplayWindow(GUI_UserRegistration.ShowUserRegistrationMenu(firstName, lastName, firmName, email, phoneNumber,
+                                                                                    userName, password, serialCodeString));
             
             firmName = UserInput.GetStringInput("Firmenname ( \"-\" falls nicht gewünscht)");
-            GUI_Display.DisplayWindow(GUI_UserRegistration.ShowUserRegistrationMenu(firstName, lastName, firmName, email, phoneNumber, userName, password, serialCodeString));
+            GUI_Display.DisplayWindow(GUI_UserRegistration.ShowUserRegistrationMenu(firstName, lastName, firmName, email, phoneNumber, 
+                                                                                    userName, password, serialCodeString));
 
             email = UserInput.GetStringInput("E-Mail Adresse");
-            GUI_Display.DisplayWindow(GUI_UserRegistration.ShowUserRegistrationMenu(firstName, lastName, firmName, email, phoneNumber, userName, password, serialCodeString));
+            GUI_Display.DisplayWindow(GUI_UserRegistration.ShowUserRegistrationMenu(firstName, lastName, firmName, email, phoneNumber,
+                                                                                    userName, password, serialCodeString));
 
             phoneNumber = UserInput.GetStringInput("Telefonnummer");
-            GUI_Display.DisplayWindow(GUI_UserRegistration.ShowUserRegistrationMenu(firstName, lastName, firmName, email, phoneNumber, userName, password, serialCodeString));
+            GUI_Display.DisplayWindow(GUI_UserRegistration.ShowUserRegistrationMenu(firstName, lastName, firmName, email, phoneNumber, 
+                                                                                    userName, password, serialCodeString));
 
             do
             {
@@ -60,15 +66,18 @@ namespace Elektrogrosshandel.User
 
             } while (true);
 
-            GUI_Display.DisplayWindow(GUI_UserRegistration.ShowUserRegistrationMenu(firstName, lastName, firmName, userName, password, email, phoneNumber, serialCodeString));
+            GUI_Display.DisplayWindow(GUI_UserRegistration.ShowUserRegistrationMenu(firstName, lastName, firmName, email, phoneNumber, userName,
+                                                                                    password, serialCodeString));
 
             pass = UserInput.GetPasswordInput("Passwort");
             password = "********";
-            GUI_Display.DisplayWindow(GUI_UserRegistration.ShowUserRegistrationMenu(firstName, lastName, firmName, userName, password, email, phoneNumber, serialCodeString));
+            GUI_Display.DisplayWindow(GUI_UserRegistration.ShowUserRegistrationMenu(firstName, lastName, firmName,email, phoneNumber, userName, 
+                                                                                    password, serialCodeString));
 
             serialCode = UserInput.GetIntInput("Seriencode (Nur Zahlen)");
             serialCodeString = serialCode.ToString();
-            GUI_Display.DisplayWindow(GUI_UserRegistration.ShowUserRegistrationMenu(firstName, lastName, firmName, userName, password, email, phoneNumber, serialCodeString));
+            GUI_Display.DisplayWindow(GUI_UserRegistration.ShowUserRegistrationMenu(firstName, lastName, firmName, email, phoneNumber, userName, 
+                                                                                    password, serialCodeString));
 
 
             Account account = new Account();
