@@ -7,20 +7,6 @@ namespace Elektrogrosshandel.Hardware
 {
     internal class Motherboard : ComputerHardware
     {
-
-        private int ArticelID { get; set; }
-        private string ArticelName { get; set; }
-        private string ArticelManufacturer { get; set; }
-        private string ArticelModel { get; set; }
-        private int ArticelYearOfProduction { get; set; }
-        private int ArticelManufactrerID { get; set; }
-        private string[] ArticelColors { get; set; }
-        private int ArticelStock { get; set; }
-        private int ArticelMinStock { get; set; }
-        private double ArticelPrice { get; set; }
-        private int ArticelWeight { get; set; }
-        private int[] ArticelDimesnions { get; set; }
-        private string ArticelDescription { get; set; }
         private string Socket { get; set; }
         private string RamType { get; set; }
         private string FormFactor { get; set; }
@@ -33,26 +19,16 @@ namespace Elektrogrosshandel.Hardware
 
         private static List<int> ArticelIDs = new List<int>();
 
-        private Motherboard(int articelID, string articelName, string articelManufacturer, string articelModel,
+        public Motherboard( string articelName, string articelManufacturer, string articelModel,
                             int articelYearOfProduction, int articelManufactrerID, string[] articelColors, int articelStock,
                             int articelMinStock, double articelPrice, int articelWeight, int[] articelDimesnions,
                             string articelDescription, string Socket, string RamType, string FormFactor,
-                            string[] StorageInterfaces, string pCIeVersion) : base()
+                            string[] StorageInterfaces, string pCIeVersion) : base(CreateArticelID(), articelName, articelManufacturer, articelModel,
+                            articelYearOfProduction, articelManufactrerID, articelColors, articelStock,
+                            articelMinStock, articelPrice, articelWeight, articelDimesnions,
+                            articelDescription)
         {
-            ArticelID = articelID;
-            ArticelName = articelName;
-            ArticelManufacturer = articelManufacturer;
-            ArticelModel = articelModel;
-            ArticelYearOfProduction = articelYearOfProduction;
-            ArticelManufactrerID = articelManufactrerID;
-            ArticelColors = articelColors;
-            ArticelStock = articelStock;
-            ArticelMinStock = articelMinStock;
-            ArticelPrice = articelPrice;
-            ArticelWeight = articelWeight;
-            ArticelDimesnions = articelDimesnions;
-            ArticelDescription = articelDescription;
-            
+
             this.Socket = Socket;
             this.RamType = RamType;
             this.FormFactor = FormFactor;
@@ -60,27 +36,6 @@ namespace Elektrogrosshandel.Hardware
             this.PCIeVersion = pCIeVersion;
 
             ComputerHardware.AddMotherboard(this);
-        }
-        public static Motherboard CreateMotherboard(string articelName, string articelManufacturer,
-                            string articelModel, int articelYearOfProduction, int articelManufactrerID, 
-                            string[] articelColors, int articelStock, int articelMinStock, double articelPrice, 
-                            int articelWeight, int[] articelDimesnions, string articelDescription, 
-                            string Socket, string RamType, string FormFactor, string[] StorageInterfaces, string pCIeVersion)
-        {
-            foreach (Motherboard item in ComputerHardware.Motherboards)
-            {
-                if (item.ArticelModel == articelModel && item.ArticelManufactrerID == articelManufactrerID)
-                {
-                    throw new ArgumentException("Motherboard with the same model and manufacturer ID already exists.");
-                }
-            }
-
-            int articelID = CreateArticelID();
-
-            return new Motherboard(articelID, articelName, articelManufacturer, articelModel,
-                                    articelYearOfProduction, articelManufactrerID, articelColors, articelStock,
-                                    articelMinStock, articelPrice, articelWeight, articelDimesnions,
-                                    articelDescription, Socket, RamType, FormFactor, StorageInterfaces, pCIeVersion);
         }
 
         private static int CreateArticelID()

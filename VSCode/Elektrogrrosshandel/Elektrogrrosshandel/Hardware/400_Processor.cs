@@ -39,20 +39,6 @@ namespace Elektrogrosshandel.Hardware
 {
     internal class Processor : ComputerHardware
     {
-        private int ArticelID { get; set; }
-        private string ArticelName { get; set; }
-        private string ArticelManufacturer { get; set; }
-        private string ArticelModel { get; set; }
-        private int ArticelYearOfProduction { get; set; }
-        private int ArticelManufactrerID { get; set; }
-        private string[] ArticelColors { get; set; }
-        private int ArticelStock { get; set; }
-        private int ArticelMinStock { get; set; }
-        private double ArticelPrice { get; set; }
-        private int ArticelWeight { get; set; }
-        private int[] ArticelDimesnions { get; set; }
-        private string ArticelDescription { get; set; }
-
         private int CoreCount { get; set; }
         private int ThreadCount { get; set; }
         private int BaseClockMHz { get; set; }
@@ -70,26 +56,16 @@ namespace Elektrogrosshandel.Hardware
 
         private static List<int> ArticelIDs = new List<int>();
 
-        private Processor(int articelID, string articelName, string articelManufacturer, string articelModel,
+        public Processor(string articelName, string articelManufacturer, string articelModel,
                           int articelYearOfProduction, int articelManufactrerID, string[] articelColors, int articelStock,
                           int articelMinStock, double articelPrice, int articelWeight, int[] articelDimesnions,
                           string articelDescription,
                           int coreCount, int threadCount, int baseClockMHz, int boostClockMHz, int tdpWatts,
-                          string socket, bool integratedGraphics, int lithographyNm, int cacheMB, int powerConsumptionWatts) : base()
+                          string socket, bool integratedGraphics, int lithographyNm, int cacheMB, int powerConsumptionWatts) : base(CreateArticelID(), articelName, articelManufacturer, articelModel,
+                            articelYearOfProduction, articelManufactrerID, articelColors, articelStock,
+                            articelMinStock, articelPrice, articelWeight, articelDimesnions,
+                            articelDescription)
         {
-            ArticelID = articelID;
-            ArticelName = articelName;
-            ArticelManufacturer = articelManufacturer;
-            ArticelModel = articelModel;
-            ArticelYearOfProduction = articelYearOfProduction;
-            ArticelManufactrerID = articelManufactrerID;
-            ArticelColors = articelColors;
-            ArticelStock = articelStock;
-            ArticelMinStock = articelMinStock;
-            ArticelPrice = articelPrice;
-            ArticelWeight = articelWeight;
-            ArticelDimesnions = articelDimesnions;
-            ArticelDescription = articelDescription;
 
             CoreCount = coreCount;
             ThreadCount = threadCount;
@@ -103,32 +79,6 @@ namespace Elektrogrosshandel.Hardware
             PowerConsumptionWatts = powerConsumptionWatts;
 
             ComputerHardware.AddProcessor(this);
-        }
-
-        public static Processor CreateProcessor(string articelName, string articelManufacturer, string articelModel,
-                                                int articelYearOfProduction, int articelManufactrerID,
-                                                string[] articelColors, int articelStock, int articelMinStock,
-                                                double articelPrice, int articelWeight, int[] articelDimesnions,
-                                                string articelDescription,
-                                                int coreCount, int threadCount, int baseClockMHz, int boostClockMHz, int tdpWatts,
-                                                string socket, bool integratedGraphics, int lithographyNm, int cacheMB, int powerConsumptionWatts)
-        {
-            foreach (var item in ComputerHardware.Processors)
-            {
-                if (item.ArticelModel == articelModel && item.ArticelManufactrerID == articelManufactrerID)
-                {
-                    throw new ArgumentException("Processor with the same model and manufacturer ID already exists.");
-                }
-            }
-
-            int articelID = CreateArticelID();
-
-            return new Processor(articelID, articelName, articelManufacturer, articelModel,
-                                 articelYearOfProduction, articelManufactrerID, articelColors, articelStock,
-                                 articelMinStock, articelPrice, articelWeight, articelDimesnions,
-                                 articelDescription,
-                                 coreCount, threadCount, baseClockMHz, boostClockMHz, tdpWatts,
-                                 socket, integratedGraphics, lithographyNm, cacheMB, powerConsumptionWatts);
         }
 
         private static int CreateArticelID()

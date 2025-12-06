@@ -1,4 +1,5 @@
-﻿using Spectre.Console;
+﻿using Elektrogrosshandel.Hardware;
+using Spectre.Console;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -8,7 +9,7 @@ namespace Elektrogrosshandel.User
     internal class Bucket
     {
         private int BucketID { get; set; }
-        private int BucketValue { get; set; }
+        private double BucketValue { get; set; }
         private string BucketName { get; set; }
         private DateTime CreatedAt { get; set; }
         private List<Hardware.ComputerHardware> Articels { get; set; }
@@ -19,7 +20,7 @@ namespace Elektrogrosshandel.User
         private static List<int> UsedBucketIDs = new List<int>();
 
 
-        private Bucket(int bucketID, string bucketName, int bucketValue)
+        private Bucket(int bucketID, string bucketName, double bucketValue)
         {
             BucketID = bucketID;
             BucketValue = bucketValue;
@@ -46,13 +47,13 @@ namespace Elektrogrosshandel.User
                 bucket.Articels.Add(bucketHardware);
             }
 
-            bucket.BucketValue += ;
+            bucket.BucketValue += ComputerHardware.GetArticelPriceByID(articelID) * quantity;
 
         }
         public static Bucket CreateBucket(int accountID, string bucketName)
         {
             int newBucketID;
-            int bucketValue = 0;
+            double bucketValue = 0;
 
             do
             {
