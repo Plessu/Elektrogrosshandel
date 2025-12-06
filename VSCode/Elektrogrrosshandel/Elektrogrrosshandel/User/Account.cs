@@ -210,18 +210,17 @@ namespace Elektrogrosshandel
             return account.AccountInformation;
         }
 
-        public static void TestData()
+        public static Bucket GetActiveBucket(Account account)
         {
-            Account testAccount = new Account();
-            testAccount.newAccount("a", "Giacomo", "Graef", "Graef Enterprise", "a", "g.graef@graef.graef", "0123/12adbe", 2);
-
-
+            return account.ActiveBucket;
         }
 
         public static List<Markup> GetSafedBuckets(Account account)
         {
             List<Markup> bucketInfo = new List<Markup>();
             
+            bucketInfo.Add(Program.ActiveUser.ActiveBucket.GetBucketInformation());
+
             foreach (Bucket bucket in account.SafedBuckets)
             {
                 bucketInfo.Add(bucket.GetBucketInformation());
@@ -233,6 +232,15 @@ namespace Elektrogrosshandel
         public static List<Account> GetAllAccounts()
         {
             return Accounts;
+        }
+
+
+        public static void TestData()
+        {
+            Account testAccount = new Account();
+            testAccount.newAccount("a", "Giacomo", "Graef", "Graef Enterprise", "a", "g.graef@graef.graef", "0123/12adbe", 2);
+
+
         }
 
     }

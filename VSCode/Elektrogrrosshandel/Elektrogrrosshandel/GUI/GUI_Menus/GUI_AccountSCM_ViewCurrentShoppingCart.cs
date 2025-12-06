@@ -2,10 +2,11 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Elektrogrosshandel.User;
 
 namespace Elektrogrosshandel.GUI.GUI_Menus
 {
-    internal class GUI_AccountShoppingCartManager
+    internal class GUI_AccountSCM_ViewCurrentShoppingCart
     {
         private static List<Markup> menuItems = new List<Markup>
         {
@@ -26,11 +27,13 @@ namespace Elektrogrosshandel.GUI.GUI_Menus
             Layout accountShoppingCartManager = new Layout("AccountMenu")
                         .SplitColumns(
                             new Layout("Menu"),
+                            new Layout("MenuShoppingCartManager"),
                             new Layout("Display"));
 
             accountShoppingCartManager["AccountMenu"].Size(18);
             accountShoppingCartManager["Menu"].Size(35);
-            accountShoppingCartManager["Display"].Size(85);
+            accountShoppingCartManager["MenuShoppingCartManager"].Size(30);
+            accountShoppingCartManager["Display"].Size(55);
 
             accountShoppingCartManager["Menu"].Update(Menu());
             accountShoppingCartManager["Display"].Update(DisplayInformation());
@@ -52,11 +55,33 @@ namespace Elektrogrosshandel.GUI.GUI_Menus
             return menuPanel;
         }
 
+        private static Panel MenuShoppingCartManager()
+        {
+            List<Markup> menuShoppingCartManagerItems = new List<Markup>
+            {
+                new Markup("[bold yellow]1.[/] [bold]View ShoppingCart[/]"),
+                new Markup("[yellow]2.[/] Save Current ShoppingCart"),
+                new Markup("\n[yellow]3.[/] View Saved ShoppingCarts"),
+                new Markup("[yellow]4.[/] Delete Saved ShoppingCart"),
+                new Markup("\n[yellow]5.[/] Back to Account Menu")
+            };
+            var menuShoppingCartManagerPanel = new Panel(new Rows(menuShoppingCartManagerItems))
+            {
+                Header = new PanelHeader("[bold #af8700 on black]ShopingCart Menu[/]", Justify.Center),
+                Height = 15,
+                Width = 30,
+                Border = BoxBorder.Rounded,
+                Padding = new Padding(2, 1),
+                Expand = true
+            };
+            return menuShoppingCartManagerPanel;
+        }
+
         private static Panel DisplayInformation()
         {
             List<Markup> infoLines = new List<Markup>(0);
 
-            infoLines = Account.GetSafedBuckets(Program.ActiveUser);
+            infoLines = Bucket.GetArticelsInBucket(Account.GetActiveBucket(Program.ActiveUser));
 
             var infoPanel = new Panel(new Rows(infoLines))
             {

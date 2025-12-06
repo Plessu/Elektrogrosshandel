@@ -69,5 +69,20 @@ namespace Elektrogrosshandel.User
         {
             return new Markup($"[bold yellow]Bucket ID:[/] {BucketID}\n[bold yellow]Bucket Name:[/] {BucketName}\n[bold yellow]Created At:[/] {CreatedAt}\n[bold yellow]Number of Articels:[/] {Articels.Count}");
         }
+
+        public static List<Markup> GetArticelsInBucket(Bucket bucket)
+        {
+            List<Markup> articelsInBucket = new List<Markup>();
+
+            foreach (ComputerHardware articel in bucket.Articels)
+            {
+                int index = bucket.Articels.IndexOf(articel);
+                int quantity = bucket.Quantity[index];
+                Markup articelInfo = new Markup($"[bold yellow]Articel Name:[/] {ComputerHardware.GetArticelName(articel)}\n[bold yellow]Quantity:[/] {quantity}\n[bold yellow]Price per unit:[/] {ComputerHardware.GetArticelPrice(articel)}\n[bold yellow]Total Price:[/] {ComputerHardware.GetArticelPrice(articel) * quantity}\n");
+                articelsInBucket.Add(articelInfo);
+            }
+
+            return articelsInBucket;
+        }
     }
 }

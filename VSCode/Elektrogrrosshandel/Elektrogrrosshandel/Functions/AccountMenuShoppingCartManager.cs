@@ -14,8 +14,8 @@ namespace Elektrogrosshandel.Functions
             AnsiConsole.MarkupLine("[bold green]ShoppingCart Manager selected.[/]");
             Thread.Sleep(500);
 
-            GUI_Display.DisplayWindow(GUI_AccountShoppingCartManager.ShowShoppingCartManager());
-            choice = UserInput.MenuChoice(GUI_AccountShoppingCartManager.MaxMenuItems());
+            GUI_Display.DisplayWindow(GUI_AccountSCM_ViewCurrentShoppingCart.ShowShoppingCartManager());
+            choice = UserInput.MenuChoice(GUI_AccountSCM_ViewCurrentShoppingCart.MaxMenuItems());
             return;
         }
     }
