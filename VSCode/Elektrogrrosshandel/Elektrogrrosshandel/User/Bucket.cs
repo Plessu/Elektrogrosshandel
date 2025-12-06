@@ -13,7 +13,6 @@ namespace Elektrogrosshandel.User
         private List<Hardware.ComputerHardware> Articels { get; set; }
         private List<int> Quantity { get; set; }
         private List<int> ArticelIDs { get; set; }
-        private static List<Bucket> Buckets = new List<Bucket>();
         private static List<int> UsedBucketIDs = new List<int>();
         private Bucket(int bucketID, int accountID, string bucketName)
         {
@@ -24,12 +23,8 @@ namespace Elektrogrosshandel.User
             Articels = new List<Hardware.ComputerHardware>();
             Quantity = new List<int>();
             ArticelIDs = new List<int>();
-            AddBucketToList();
         }
-        private void AddBucketToList()
-        {
-            Buckets.Add(this);
-        }
+
         public static void AddArticelToBucket(Bucket bucket,int articelID, int quantity)
         {
             if (bucket.ArticelIDs.Contains(articelID))

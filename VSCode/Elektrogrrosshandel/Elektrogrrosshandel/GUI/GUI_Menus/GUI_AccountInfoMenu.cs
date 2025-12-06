@@ -22,7 +22,7 @@ namespace Elektrogrosshandel.GUI.GUI_Menus
         {
             Console.BufferHeight = 3000;
             Console.BufferWidth = 250;
-            Console.WindowHeight = 18;
+            Console.WindowHeight = 19;
             Console.WindowWidth = 120;
 
             Layout accountMenu = new Layout("AccountMenu")
@@ -30,7 +30,7 @@ namespace Elektrogrosshandel.GUI.GUI_Menus
                             new Layout("Menu"),
                             new Layout("Display"));
 
-            accountMenu["AccountMenu"].Size(15);
+            accountMenu["AccountMenu"].Size(18);
             accountMenu["Menu"].Size(35);
             accountMenu["Display"].Size(85);
 
