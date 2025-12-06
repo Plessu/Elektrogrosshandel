@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Spectre.Console;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -7,22 +8,28 @@ namespace Elektrogrosshandel.User
     internal class Bucket
     {
         private int BucketID { get; set; }
-        private int AccountID { get; set; }
+        private int BucketValue { get; set; }
         private string BucketName { get; set; }
         private DateTime CreatedAt { get; set; }
         private List<Hardware.ComputerHardware> Articels { get; set; }
         private List<int> Quantity { get; set; }
         private List<int> ArticelIDs { get; set; }
+
+
         private static List<int> UsedBucketIDs = new List<int>();
-        private Bucket(int bucketID, int accountID, string bucketName)
+
+
+        private Bucket(int bucketID, string bucketName, int bucketValue)
         {
             BucketID = bucketID;
-            AccountID = accountID;
+            BucketValue = bucketValue;
             BucketName = bucketName;
+
             CreatedAt = DateTime.Now;
             Articels = new List<Hardware.ComputerHardware>();
             Quantity = new List<int>();
             ArticelIDs = new List<int>();
+ 
         }
 
         public static void AddArticelToBucket(Bucket bucket,int articelID, int quantity)
@@ -38,18 +45,28 @@ namespace Elektrogrosshandel.User
                 bucket.ArticelIDs.Add(articelID);
                 bucket.Articels.Add(bucketHardware);
             }
+
+            bucket.BucketValue += ;
+
         }
         public static Bucket CreateBucket(int accountID, string bucketName)
         {
             int newBucketID;
-            
+            int bucketValue = 0;
+
             do
             {
                 newBucketID = new Random().Next(100000, 999999);
             } while (UsedBucketIDs.Contains(newBucketID));
+
             UsedBucketIDs.Add(newBucketID);
 
-            return new Bucket(newBucketID, accountID, bucketName);
+            return new Bucket(newBucketID, bucketName, bucketValue);
+        }
+
+        public Markup GetBucketInformation()
+        {
+            return new Markup($"[bold yellow]Bucket ID:[/] {BucketID}\n[bold yellow]Bucket Name:[/] {BucketName}\n[bold yellow]Created At:[/] {CreatedAt}\n[bold yellow]Number of Articels:[/] {Articels.Count}");
         }
     }
 }

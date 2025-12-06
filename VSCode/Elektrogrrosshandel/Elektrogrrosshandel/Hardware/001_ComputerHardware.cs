@@ -95,5 +95,16 @@ namespace Elektrogrosshandel.Hardware
             }
             return null;
         }
+
+        public static double GetArticelPriceByID(int articelID)
+        {
+            int price = 0;
+            foreach (ComputerHardware device in Devices)
+            {
+                if (device.ArticalID == articelID)
+                    price = device.GetPrice();
+            }
+            return price;
+        }
     }
 }
