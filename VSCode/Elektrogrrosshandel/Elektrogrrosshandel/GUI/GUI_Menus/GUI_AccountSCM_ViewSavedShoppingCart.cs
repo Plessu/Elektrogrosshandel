@@ -6,7 +6,7 @@ using Elektrogrosshandel.User;
 
 namespace Elektrogrosshandel.GUI.GUI_Menus
 {
-    internal class GUI_AccountSCM_CurrentShoppingCart
+    internal class GUI_AccountSCM_ViewSavedShoppingCart
     {
         private static List<Markup> menuItems = new List<Markup>
         {
@@ -81,21 +81,21 @@ namespace Elektrogrosshandel.GUI.GUI_Menus
         {
             List<Markup> infoLines = new List<Markup>(0);
 
-            infoLines = Bucket.GetArticelsInBucket(Account.GetActiveBucket(Program.ActiveUser));
+            infoLines = Account.GetSafedBuckets(Program.ActiveUser);
 
             var infoPanel = new Panel(new Rows(infoLines))
             {
-                Header = new PanelHeader("[bold #af8700 on black]ShopingCart Manager[/]", Justify.Center),
+                Header = new PanelHeader("[bold #af8700 on black]Saved Shopping Carts[/]", Justify.Center),
                 Height = 15,
                 Width = 85,
                 Border = BoxBorder.Rounded,
                 Padding = new Padding(2, 1),
                 Expand = true
             };
-            return infoPanel; 
+            return infoPanel;
         }
 
-        public static Layout ShowShoppingCartManager()
+        public static Layout ShowSCM_SavedCarts()
         {
             return AccountShoppingCartManager();
         }
@@ -106,3 +106,4 @@ namespace Elektrogrosshandel.GUI.GUI_Menus
         }
     }
 }
+
