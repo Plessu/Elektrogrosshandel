@@ -56,21 +56,21 @@ namespace Elektrogrosshandel.GUI.GUI_Menus
         {
             List<Markup> infoLines = new List<Markup>(0);
 
-            infoLines = Account.GetAccountInformationList(Program.ActiveUser);
+            infoLines = Account.GetSafedBuckets(Program.ActiveUser);
 
             var infoPanel = new Panel(new Rows(infoLines))
             {
-                Header = new PanelHeader("[bold #af8700 on black]Information[/]", Justify.Center),
+                Header = new PanelHeader("[bold #af8700 on black]ShopingCart Manager[/]", Justify.Center),
                 Height = 15,
                 Width = 85,
                 Border = BoxBorder.Rounded,
                 Padding = new Padding(2, 1),
                 Expand = true
             };
-            return infoPanel;
+            return infoPanel; 
         }
 
-        public static Layout ShowAccountInfoMenu()
+        public static Layout ShowShoppingCartManager()
         {
             return AccountShoppingCartManager();
         }

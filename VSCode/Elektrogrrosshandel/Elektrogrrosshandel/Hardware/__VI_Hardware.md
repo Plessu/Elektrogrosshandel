@@ -24,10 +24,35 @@ Beinhaltet Einträge zu neuen Releases, Änderungen, Breaking Changes und Migratio
 Änderungsverlauf (Kurzfassung)
 ------------------------------
 
+- 2025-12-05: `Hardware.ComputerHardware` v2.0.0 veröffentlicht.
 - 2025-12-05: `Hardware.ComputerHardware` v1.0 veröffentlicht.
 
 Neue/Benutzer-Releases
 ----------------------
+
+- Klasse: `ElektroGrosshandel.Hardware.ComputerHardware`
+  - Version: `2.0.0`
+  - Datum: `2025-12-04`
+  - Autor: `Giacomo Graef`
+  - Zusammenfassung: Variablen aus Subklassen in Basisklasse `ComputerHardware` verschoben.
+  - Beschreibungen:
+    - Feature: Grundlegende Logik und Struktur für Computer Hardware-Komponenten überarbeitet.
+    - Feature: Aufrfe zu Geräteinfo ermöglicht durch Basisklasse.
+  - Änderungen:
+    - Struktur: `Basisklasse` - gemeinsame Variablen und Methoden für Hardware-Komponenten.
+                `Subklassen`  - spezifische Variablen zur Hardware-Komponente.
+    - Update: Alle Subklassen angepasst, um von `ComputerHardware` zu erben.
+    - Update: Konstruktoren der Subklassen angepasst.
+    - Update: Methoden zur Geräteinfo in Basisklasse implementiert und aus Subklassen entfernt.
+  - Breaking Changes:
+    - Komplette Logik und Struktur für Hardware-Komponenten neu definiert und implementiert.
+    - Trennung von gemeinsamen und spezifischen Variablen in Basisklasse und Subklassen.
+  - Migrationshinweise:
+    - Logik anpassen: Nutzen Sie die Basisklasse `ComputerHardware` für gemeinsame Variablen.
+                      Nutzen Sie die Subklassen für spezifische Hardware-Komponenten.
+  - Tests: `Keine (werden später hinzugefügt)`
+
+---
 
 - Klasse: `ElektroGrosshandel.Hardware.ComputerHardware`
   - Version: `1.0.0`

@@ -21,9 +21,9 @@ namespace Elektrogrosshandel.Functions
                 case 1:
                     AnsiConsole.MarkupLine("[bold green]News selected.[/]");
                     break;
+
                 case 5:
-                    
-                    AccountInfo.ShowAccountInfo();
+                    AccountMenu.ShowAccountMenu();
                     break;
 
             }

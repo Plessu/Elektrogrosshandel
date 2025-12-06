@@ -3,6 +3,10 @@
   - Änderungsverlauf (Kurzfassung)
 ------------------------------
 
+- 2025-12-06: `AccountMenuShoppingCartManager` v1.0.0 veröffentlicht.
+- 2025-12-06: `AccountMenuInfo` v1.0.0 veröffentlicht.
+- 2025-12-06: `AccountMenu` v1.0.0 veröffentlicht.
+- 2025-12-06: `MainMenu` v1.1.0 veröffentlicht.
 - 2025-12-05: `LogIn` v1.1.0 veröffentlicht.
 - 2025-12-05: `PasswordHelper` v1.0.0 veröffentlicht.
 - 2025-12-04: `LogIn` v1.0.0 veröffentlicht.
@@ -10,6 +14,77 @@
 
 Neue/Benutzer-Releases
 ----------------------
+
+- - Klasse: `ElektroGrosshandel.Functions.AccountMenuShoppingCartManager`
+  - Version: `1.0.0`
+  - Datum: `2025-12-06`
+  - Autor: `Giacomo Graef`
+  - Zusammenfassung: `AccountMenuShoppingCartManager` forged.
+  - Änderungen:
+    - Feature: `AccountMenuShoppingCartManager` regelt die Anzeige des ShoppingCart Managers.
+  - Breaking Changes:
+    - Einführung von `AccountMenuShoppingCartManager` (Änderung der Menüführung durch `AccountMenu`)
+    - Menüführung wird über `AccountMenu` gehandhabt.
+    - Logik für GUI-Aufruf des Submenüs `GUI_AcountShoppingCartManager`
+  - Migrationshinweise:
+    - Siehe `AccountMenu` für Integratonshinweise zu Submenüs/Subklassen.
+    - Beachte out int choice in `AccountMenu` für Menüauswahl.
+  - Tests: `Keine`
+
+---
+
+- Klasse: `ElektroGrosshandel.Functions.AccountMenuInfo`
+  - Version: `1.0.0`
+  - Datum: `2025-12-06`
+  - Autor: `Giacomo Graef`
+  - Zusammenfassung: `AccountMenuInfo` forged.
+  - Änderungen:
+    - Feature: `AccountMenuInfo` regelt die Anzeige des Benutzer Info Menüs.
+  - Breaking Changes:
+    - Einführung von `AccountMenuInfo` (Änderung der Menüführung durch `AccountMenu`)
+    - Menüführung wird über `AccountMenu` gehandhabt.
+    - Logik für GUI-Aufruf des Submenüs `GUI_AcountMenuInfo`
+  - Migrationshinweise:
+    - Siehe `AccountMenu` für Integratonshinweise zu Submenüs/Subklassen.
+    - Beachte out int choice in `AccountMenu` für Menüauswahl.
+  - Tests: `Keine`
+
+---
+
+- Klasse: `ElektroGrosshandel.Functions.AccountMenu`
+  - Version: `1.0.0`
+  - Datum: `2025-12-06`
+  - Autor: `Giacomo Graef`
+  - Zusammenfassung: `AccountMenu` forged.
+  - Änderungen:
+    - Feature: `AccountMenu` regelt die Anzeige und Auswahl des Benutzerkontomenüs.
+  - Breaking Changes:
+    - Einführung von `AccountMenu` (Änderung der Menüstruktur)
+    - Menüfunktionalität ausgelagert von `MainMenu` zu `AccountMenu`.
+    - Menüführung wird jetzt über `AccountMenu` gehandhabt.
+    - Logik für GUI-Aufruf der Submenüs in Subklassen ausgelagert.
+  - Migrationshinweise:
+    - Siehe `AccountMenu` für Integratonshinweise zu Submenüs/Subklassen.
+  - Tests: `Keine`
+
+
+---
+
+- Klasse: `ElektroGrosshandel.Functions.MainMenu`
+  - Version: `1.1.0`
+  - Datum: `2025-12-06`
+  - Autor: `Giacomo Graef`
+  - Zusammenfassung: `AccountMenu` integration.
+  - Änderungen:
+    - Feature: `AccountMenu` integration (Logik für User Menü Option)
+  - Breaking Changes:
+    - Einführung von `AccountMenu` (Änderung der Menüstruktur)
+  - Migrationshinweise:
+    - Siehe `AccountMenu` für Integration in `MainMenu`.
+  - Tests: `Keine`
+
+
+---
 
 - Klasse: `ElektroGrosshandel.Functions.LogIn`
   - Version: `1.1.0`
@@ -23,6 +98,8 @@ Neue/Benutzer-Releases
   - Migrationshinweise:
     - Siehe Konstruktor `PasswordHelper` bei implementierung der LogIn-Funktion.
   - Tests: `ElektroGrosshandel.Functions.LogIn.TestData`
+
+---
 
 - Klasse: `ElektroGrosshandel.Functions.PasswordHelper`
   - Version: `1.0.0`
@@ -39,6 +116,7 @@ Neue/Benutzer-Releases
     - Startlogik anpassen: `Login` Password-Validierung auf `PasswordHelper` umgestellt.
   - Tests: `ElektroGrosshandel.Functions.LogIn.TestData`
 
+---
 
 - Klasse: `ElektroGrosshandel.Functions.LogIn`
   - Version: `1.0.0`
@@ -53,7 +131,8 @@ Neue/Benutzer-Releases
     - Programmstart wurde auf `LogIn` geändert (Startpunkt des Programms verschoben)
   - Migrationshinweise:
     - Startlogik anpassen: Altes Startskript/Initialisierung auf `LogIn` umleiten.
-  - Tests: `Keine (werden später hinzugefügt)`
+
+---
 
 - Klasse: `ElektroGrosshandel.Functions.MainMenu`
   - Version: `1.0.2`

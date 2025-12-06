@@ -218,5 +218,22 @@ namespace Elektrogrosshandel
 
         }
 
+        public static List<Markup> GetSafedBuckets(Account account)
+        {
+            List<Markup> bucketInfo = new List<Markup>();
+            
+            foreach (Bucket bucket in account.SafedBuckets)
+            {
+                bucketInfo.Add(bucket.GetBucketInformation());
+
+                return bucketInfo;
+            }
+            return null;
+        }
+        public static List<Account> GetAllAccounts()
+        {
+            return Accounts;
+        }
+
     }
 }
