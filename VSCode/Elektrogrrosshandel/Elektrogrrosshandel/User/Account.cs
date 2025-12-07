@@ -7,6 +7,7 @@ using System.Text.Json;
 using System.IO;
 using Elektrogrosshandel.Functions;
 using Elektrogrosshandel.User;
+using Elektrogrosshandel.Hardware;
 using Spectre.Console;
 
 namespace Elektrogrosshandel
@@ -34,6 +35,7 @@ namespace Elektrogrosshandel
         private Bucket ActiveBucket { get; set; }
         private List<Bucket> SafedBuckets { get; set; }
         private List<Markup> AccountInformation { get; set; }
+       private List<Order> Orders { get; set; }
 
 
         private static List<Account> Accounts = new List<Account>();
@@ -62,6 +64,7 @@ namespace Elektrogrosshandel
             this.WantUSTax = wantUSTax;
             this.ActiveBucket = Bucket.CreateBucket(accountID, "Active Bucket");
             this.SafedBuckets = new List<Bucket>();
+            this.Orders = new List<Order>();
 
             List<Markup> accountInformation = new List<Markup>
             {
@@ -78,6 +81,7 @@ namespace Elektrogrosshandel
             };
 
             this.AccountInformation = accountInformation;
+
         }
         private void AddAccountToList(Account account)
         {
@@ -279,6 +283,11 @@ namespace Elektrogrosshandel
         public static int GetAccountID(Account account)
         {
             return account.AccountID;
+        }
+
+        public static void AddOrderToAccount(Account account, Order order)
+        {
+            account.Orders.Add(order);
         }
 
         public static List<Account> GetAllAccounts()

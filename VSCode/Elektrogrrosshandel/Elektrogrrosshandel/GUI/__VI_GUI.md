@@ -7,6 +7,8 @@ Beinhaltet Einträge zu neuen Releases, Änderungen, Breaking Changes und Migrat
 Änderungsverlauf (Kurzfassung)
 ------------------------------
 
+- 2025-12-07: `GUI_PlaceOrder` v1.0.0 veröffentlicht.
+- 2025-12-06: `GUI_SCM_*` v1.0.0 veröffentlicht.
 - 2025-12-05: `GUI_UserRegistration` v1.0.0 veröffentlicht.
 - 2025-12-05: `GUI_AccountMenu` v0.1.0 veröffentlicht.
 - 2025-12-04: `GUI_Display` v1.0.0 veröffentlicht.
@@ -16,6 +18,42 @@ Beinhaltet Einträge zu neuen Releases, Änderungen, Breaking Changes und Migrat
 
 Neue/Benutzer-Releases
 ----------------------
+
+- Klasse: `ElektroGrosshandel.GUI.GUI_Menus.GUI_PlaceOrder`
+  - Version: `1.0.0`
+  - Datum: `2025-12-07`
+  - Autor: `Giacomo Graef`
+  - Zusammenfassung: Erstveröffentlichung des Place-Order-Layouts mit Panels für Produktliste und Bestellübersicht.
+  - Beschreibungen:
+    - Feature: `PlaceOrder` Window hinzugefügt (Layout mit getrennten Panels für Produktliste und Bestellübersicht).
+    - Feature: `Bucket` Integration zur Anzeige der Artikel im Warenkorb.
+  - Änderungen:
+    - 
+  - Breaking Changes:
+    - Funktionsweise der Bestellübersicht und Produktanzeige neu definiert.
+  - Migrationshinweise:
+    - Siehe `Functions.PlaceOrder` für Details zur Nutzung des Place-Order-GUI.
+  - Tests: `Keine (werden später hinzugefügt)`
+
+---
+
+- Klasse: `ElektroGrosshandel.GUI.GUI_Menus.GUI_SCM_*`
+  - Version: `1.0.0`
+  - Datum: `2025-12-06`
+  - Autor: `Giacomo Graef`
+  - Zusammenfassung: Erstveröffentlichung des `ShoppingCartManagers` und der zugehörigen GUI-Komponenten.
+  - Beschreibungen:
+    - Feature: `Functions.ShoppingCartManager` regelt Menüführung und Logik für den Einkaufswagen-Manager.
+  - Änderungen:
+    - Integration: GUI-Komponenten für `ShoppingCartManager` hinzugefügt.
+    - Klassen: `GUI_SCM_CurrentShoppingCart`, `GUI_SCM_SavedShoppingCarts`, `GUI_SCM_SaveCart`, `GUI_SCM_DeleteOrder` implementiert.
+  - Breaking Changes:
+    - `ShoppingCartManager` als neue Funktionalität hinzugefügt.
+  - Migrationshinweise:
+    - Siehe `Functions.ShoppingCartManager` für Details zur Nutzung des ShoppingCartManager-GUI.
+  - Tests: `Keine (werden später hinzugefügt)`
+  
+--- 
 
 - Klasse: `ElektroGrosshandel.GUI.GUI_Menus.GUI_UserRegistration`
   - Version: `1.0.0`
