@@ -148,12 +148,23 @@ namespace Elektrogrosshandel.Hardware
             return name;
         }
 
-        public static double GetArticelPrice(ComputerHardware articel)
+        public static double GetArticelPriceByHardware(ComputerHardware articel)
         {
             double price = 0;
             foreach (ComputerHardware device in Devices)
             {
                 if (device.ArticelID == articel.ArticelID)
+                    price = device.ArticelPrice;
+            }
+            return price;
+        }
+
+        public static double GetArticelPriceByID(int articelID)
+        {
+            double price = 0;
+            foreach (ComputerHardware device in Devices)
+            {
+                if (device.ArticelID == articelID)
                     price = device.ArticelPrice;
             }
             return price;

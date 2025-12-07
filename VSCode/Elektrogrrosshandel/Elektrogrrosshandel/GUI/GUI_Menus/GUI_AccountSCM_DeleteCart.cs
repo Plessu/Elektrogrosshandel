@@ -6,7 +6,7 @@ using Elektrogrosshandel.User;
 
 namespace Elektrogrosshandel.GUI.GUI_Menus
 {
-    internal class GUI_AccountSCM_ViewSavedShoppingCart
+    internal class GUI_AccountSCM_DeleteShoppingCart
     {
         private static List<Markup> menuItems = new List<Markup>
         {
@@ -17,7 +17,7 @@ namespace Elektrogrosshandel.GUI.GUI_Menus
             new Markup("[yellow]5.[/] Back to Main Menu")
         };
 
-        private static Layout AccountShoppingCartManager()
+        private static Layout AccountDeleteCart()
         {
             Console.BufferHeight = 3000;
             Console.BufferWidth = 250;
@@ -36,7 +36,7 @@ namespace Elektrogrosshandel.GUI.GUI_Menus
             accountShoppingCartManager["Display"].Size(55);
 
             accountShoppingCartManager["Menu"].Update(Menu());
-            accountShoppingCartManager["Display"].Update(DisplayInformation());
+            accountShoppingCartManager["Display"].Update(DisplayDeleteCart());
 
             return accountShoppingCartManager;
         }
@@ -59,11 +59,11 @@ namespace Elektrogrosshandel.GUI.GUI_Menus
         {
             List<Markup> menuShoppingCartManagerItems = new List<Markup>
             {
-                new Markup("[bold yellow]1.[/] [bold]View ShoppingCart[/]"),
-                new Markup("[yellow]2.[/] Save Current ShoppingCart"),
-                new Markup("\n[yellow]3.[/] View Saved ShoppingCarts"),
-                new Markup("[yellow]4.[/] Delete Saved ShoppingCart"),
-                new Markup("\n[yellow]5.[/] Back to Account Menu")
+                new Markup("[yellow]1.[/] View ShoppingCart"),
+                new Markup("[yellow]2.[/] View Saved ShoppingCarts"),
+                new Markup("[yellow]3.[/] Save Current ShoppingCart"),
+                new Markup("[bold yellow]5.[/] [bold]Delete Saved ShoppingCart[/]"),
+                new Markup("\n[yellow]6.[/] Back to Account Menu")
             };
             var menuShoppingCartManagerPanel = new Panel(new Rows(menuShoppingCartManagerItems))
             {
@@ -77,15 +77,15 @@ namespace Elektrogrosshandel.GUI.GUI_Menus
             return menuShoppingCartManagerPanel;
         }
 
-        private static Panel DisplayInformation()
+        private static Panel DisplayDeleteCart()
         {
-            List<Markup> infoLines = new List<Markup>(0);
+            Markup infoText = new Markup("[bold yellow]Delete Saved ShoppingCart[/]\n\n" +
+                "Here you can delete your saved shopping carts. Please select the cart you wish to delete from your list of saved carts. " +
+                "Be cautious, as this action cannot be undone. Confirm your selection to permanently remove the cart from your account.");
 
-            infoLines = Account.GetSafedBuckets(Program.ActiveUser);
-
-            var infoPanel = new Panel(new Rows(infoLines))
+            var infoPanel = new Panel(infoText)
             {
-                Header = new PanelHeader("[bold #af8700 on black]Saved Shopping Carts[/]", Justify.Center),
+                Header = new PanelHeader("[bold #af8700 on black]Delete Cart[/]", Justify.Center),
                 Height = 15,
                 Width = 85,
                 Border = BoxBorder.Rounded,
@@ -95,9 +95,9 @@ namespace Elektrogrosshandel.GUI.GUI_Menus
             return infoPanel;
         }
 
-        public static Layout ShowSCM_SavedCarts()
+        public static Layout ShowDeleteCart()
         {
-            return AccountShoppingCartManager();
+            return AccountDeleteCart();
         }
 
         public static int MaxMenuItems()

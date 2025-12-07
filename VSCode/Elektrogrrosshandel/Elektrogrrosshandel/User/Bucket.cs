@@ -8,7 +8,7 @@ namespace Elektrogrosshandel.User
 {
     internal class Bucket
     {
-        private int BucketID { get; set; }
+        public int BucketID { get; set; }
         private double BucketValue { get; set; }
         private string BucketName { get; set; }
         private DateTime CreatedAt { get; set; }
@@ -65,6 +65,11 @@ namespace Elektrogrosshandel.User
             return new Bucket(newBucketID, bucketName, bucketValue);
         }
 
+        public static void ChangeBucketName(Bucket bucket, string newBucketName)
+        {
+            bucket.BucketName = newBucketName;
+        }
+
         public Markup GetBucketInformation()
         {
             return new Markup($"[bold yellow]Bucket ID:[/] {BucketID}\n[bold yellow]Bucket Name:[/] {BucketName}\n[bold yellow]Created At:[/] {CreatedAt}\n[bold yellow]Number of Articels:[/] {Articels.Count}");
@@ -78,7 +83,7 @@ namespace Elektrogrosshandel.User
             {
                 int index = bucket.Articels.IndexOf(articel);
                 int quantity = bucket.Quantity[index];
-                Markup articelInfo = new Markup($"[bold yellow]Articel Name:[/] {ComputerHardware.GetArticelName(articel)}\n[bold yellow]Quantity:[/] {quantity}\n[bold yellow]Price per unit:[/] {ComputerHardware.GetArticelPrice(articel)}\n[bold yellow]Total Price:[/] {ComputerHardware.GetArticelPrice(articel) * quantity}\n");
+                Markup articelInfo = new Markup($"[bold yellow]Articel Name:[/] {ComputerHardware.GetArticelName(articel)}\n[bold yellow]Quantity:[/] {quantity}\n[bold yellow]Price per unit:[/] {ComputerHardware.GetArticelPriceByHardware(articel)}\n[bold yellow]Total Price:[/] {ComputerHardware.GetArticelPriceByHardware(articel) * quantity}\n");
                 articelsInBucket.Add(articelInfo);
             }
 

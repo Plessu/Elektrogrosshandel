@@ -1,5 +1,6 @@
 ﻿using Elektrogrosshandel.GUI;
 using Elektrogrosshandel.GUI.GUI_Menus;
+using Spectre.Console;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -10,23 +11,34 @@ namespace Elektrogrosshandel.Functions
     {
         public static void ShowAccountMenu()
         {
-            int choice;
-
-            AccountMenuInfo.ShowAccountInfo(out choice);
-            MenuSelector(choice);
+            MenuSelector(1);
         }
 
         private static void MenuSelector(int choice)
         {
-            int newChoice;
-
             switch (choice)
             {
                 case 1:
-                    AccountMenuInfo.ShowAccountInfo(out newChoice);
-                    MenuSelector(newChoice);
+
+                    AnsiConsole.MarkupLine("[bold green]User selected.[/]");
+                    Thread.Sleep(500);
+
+                    GUI_Display.DisplayWindow(GUI_AccountInfoMenu.ShowAccountInfoMenu());
+
+                    AnsiConsole.MarkupLine("\n[bold yellow]What would you like to do next? ( 1 - 5 )[/]");
+                    MenuSelector(UserInput.MenuChoice(5));
+                    
+
                     break;
+
                 case 2:
+
+                    AnsiConsole.MarkupLine("[bold green]ShoppingCart Manager selected.[/]");
+                    Thread.Sleep(500);
+
+                    AccountMenuShoppingCartManager.ShowShoppingCartManager();
+
+                    break;
             }
         }
     }

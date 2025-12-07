@@ -6,7 +6,7 @@ using Elektrogrosshandel.User;
 
 namespace Elektrogrosshandel.GUI.GUI_Menus
 {
-    internal class GUI_AccountSCM_CurrentShoppingCart
+    internal class GUI_AccountSCM_SaveCart
     {
         private static List<Markup> menuItems = new List<Markup>
         {
@@ -17,7 +17,7 @@ namespace Elektrogrosshandel.GUI.GUI_Menus
             new Markup("[yellow]5.[/] Back to Main Menu")
         };
 
-        private static Layout AccountShoppingCartManager()
+        private static Layout AccountSaveCart()
         {
             Console.BufferHeight = 3000;
             Console.BufferWidth = 250;
@@ -36,7 +36,7 @@ namespace Elektrogrosshandel.GUI.GUI_Menus
             accountShoppingCartManager["Display"].Size(55);
 
             accountShoppingCartManager["Menu"].Update(Menu());
-            accountShoppingCartManager["Display"].Update(DisplayInformation());
+            accountShoppingCartManager["Display"].Update(DisplaySaveCart());
 
             return accountShoppingCartManager;
         }
@@ -59,11 +59,11 @@ namespace Elektrogrosshandel.GUI.GUI_Menus
         {
             List<Markup> menuShoppingCartManagerItems = new List<Markup>
             {
-                new Markup("[bold yellow]1.[/] [bold]View ShoppingCart[/]"),
-                new Markup("[yellow]2.[/] Save Current ShoppingCart"),
-                new Markup("\n[yellow]3.[/] View Saved ShoppingCarts"),
-                new Markup("[yellow]4.[/] Delete Saved ShoppingCart"),
-                new Markup("\n[yellow]5.[/] Back to Account Menu")
+                new Markup("[yellow]1.[/] View ShoppingCart"),
+                new Markup("[yellow]2.[/] View Saved ShoppingCarts"),
+                new Markup("[bold yellow]3.[/] [bold]Save Current ShoppingCart[/]"),
+                new Markup("[yellow]5.[/] Delete Saved ShoppingCart"),
+                new Markup("\n[yellow]6.[/] Back to Account Menu")
             };
             var menuShoppingCartManagerPanel = new Panel(new Rows(menuShoppingCartManagerItems))
             {
@@ -77,27 +77,30 @@ namespace Elektrogrosshandel.GUI.GUI_Menus
             return menuShoppingCartManagerPanel;
         }
 
-        private static Panel DisplayInformation()
+        private static Panel DisplaySaveCart()
         {
-            List<Markup> infoLines = new List<Markup>(0);
+            Markup infoText = new Markup("[bold yellow]Save Current ShoppingCart[/]\n\n" +
+                "To save your current shopping cart, please follow these steps:\n\n" +
+                "1. Review the items in your shopping cart to ensure everything is correct.\n\n" +
+                "2. Choose a name for your saved cart that will help you identify it later.\n\n" +
+                "3. Confirm the save action by selecting the appropriate option.\n\n" +
+                "Once saved, you can access your saved shopping carts from the 'View Saved ShoppingCarts' menu option.");
 
-            infoLines = Bucket.GetArticelsInBucket(Account.GetActiveBucket(Program.ActiveUser));
-
-            var infoPanel = new Panel(new Rows(infoLines))
+            var infoPanel = new Panel(infoText)
             {
-                Header = new PanelHeader("[bold #af8700 on black]ShopingCart Manager[/]", Justify.Center),
+                Header = new PanelHeader("[bold #af8700 on black]Save Current Cart[/]", Justify.Center),
                 Height = 15,
                 Width = 85,
                 Border = BoxBorder.Rounded,
                 Padding = new Padding(2, 1),
                 Expand = true
             };
-            return infoPanel; 
+            return infoPanel;
         }
 
-        public static Layout ShowShoppingCartManager()
+        public static Layout ShowSaveCart()
         {
-            return AccountShoppingCartManager();
+            return AccountSaveCart();
         }
 
         public static int MaxMenuItems()
@@ -106,3 +109,4 @@ namespace Elektrogrosshandel.GUI.GUI_Menus
         }
     }
 }
+
