@@ -14,11 +14,6 @@ namespace Elektrogrosshandel.GUI.GUI_Menus
         private static Layout UserRegistrationMenu(string FirstName, string LastName, string FirmName, string Email, string PhoneNumber,
                                                     string UserName, string SerialCode, string Password)
         {
-            Console.BufferHeight = 3000;
-            Console.BufferWidth = 250;
-            Console.WindowHeight = 28;
-            Console.WindowWidth = 120;
-
             Layout userRegistrationMenu = new Layout("User Registration")
                 .SplitColumns(
                     new Layout("User").Size(35)

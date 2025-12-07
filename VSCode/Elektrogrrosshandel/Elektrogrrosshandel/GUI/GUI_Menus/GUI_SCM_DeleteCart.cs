@@ -20,17 +20,11 @@ namespace Elektrogrosshandel.GUI.GUI_Menus
 
         private static Layout DeleteCart()
         {
-            Console.BufferHeight = 3000;
-            Console.BufferWidth = 250;
-            Console.WindowHeight = 19;
-            Console.WindowWidth = 120;
-
             Layout accountShoppingCartManager = new Layout("AccountMenu")
                         .SplitColumns(
                             new Layout("MenuShoppingCartManager"),
                             new Layout("Display"));
 
-            accountShoppingCartManager["AccountMenu"].Size(18);
             accountShoppingCartManager["MenuShoppingCartManager"].Size(40);
             accountShoppingCartManager["Display"].Size(80);
 

@@ -12,7 +12,7 @@ namespace Elektrogrosshandel.Functions
         static public void DisplayMainMenu()
         {
             GUI_Display.DisplayWindow(GUI_MainMenu.ShowMainMenu());
-            MenuSelection(UserInput.MenuChoice(GUI_AccountInfoMenu.MaxMenuItems()));
+            MenuSelection(UserInput.MenuChoice(GUI_MainMenu.MaxMenuItems()));
         }
         static void MenuSelection(int UserChoice)
         {

@@ -23,6 +23,9 @@ namespace Elektrogrosshandel.GUI
 
         public static void DisplayWindow(Layout Body)
         {
+            int consoleHight = Console.WindowHeight;
+            int bodyHeiht = (int) (consoleHight * 0.75);
+
             //Create Layout and structure
             Layout window = new Layout("Window")
                 .SplitRows(
@@ -33,13 +36,12 @@ namespace Elektrogrosshandel.GUI
                 new Layout("Body"),
                 new Layout("Footer"));
             
-            window["Window"].Size = Console.WindowHeight;
+            window["Window"].Size = 28;
             window["Header"].Size = 3;
             window["Footer"].Size = 3;
             window["HeaderTitle"].Size = 35;
 
-
-            window["Body"].Update(Body);
+            window["Body"].Update(Body).Size(bodyHeiht);
             window["HeaderTitle"].Update(HeaderTitel);
             window["HeaderSubtitle"].Update(HeaderSubtitle);
 

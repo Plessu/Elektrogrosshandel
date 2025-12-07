@@ -17,29 +17,24 @@ namespace Elektrogrosshandel.GUI.GUI_Menus
         };
         private static List<Markup> menuItemsAccount = new List<Markup>
         {
-                new Markup("[#c0c0c0]  5. User[/]"),
-                new Markup("[#c0c0c0]  6. Shopping Cart[/]"),
-                new Markup("[#c0c0c0]  7. Place Order[/]")
+                new Markup("[#c0c0c0]  4. User[/]"),
+                new Markup("[#c0c0c0]  5. Shopping Cart[/]"),
+                new Markup("[#c0c0c0]  6. Place Order[/]")
         };
         private static List<Markup> menuItemsPublic = new List<Markup>
         {
-                new Markup("[#c0c0c0]  9. Customer Support[/]"),
-                new Markup("[#c0c0c0] 10. Impressum[/]")
+                new Markup("[#c0c0c0]  7. Customer Support[/]"),
+                new Markup("[#c0c0c0]  8. Impressum[/]")
         };
         private static Layout MainMenu()
         {
-            Console.BufferHeight = 3000;
-            Console.BufferWidth = 250;
-            Console.WindowHeight = 23;
-            Console.WindowWidth = 120;
-
             Layout mainMenu = new Layout("Main Menu")
                 .SplitColumns(
                     new Layout("Left").Size(35)
                         .SplitRows(
-                            new Layout("Shop").Size(6),
-                            new Layout("Account").Size(6),
-                            new Layout("Public Area").Size(6)),
+                            new Layout("Shop").Size(5),
+                            new Layout("Account").Size(5),
+                            new Layout("Public Area").Size(5)),
                     new Layout("Right"));
 
             mainMenu["Left"]["Shop"].Update(PanelMenuShop().Expand());
@@ -58,7 +53,7 @@ namespace Elektrogrosshandel.GUI.GUI_Menus
         {
             Panel panelMenu = new Panel(
                 Align.Left(new Rows(menuItemsShop), VerticalAlignment.Top));
-            panelMenu.Height = 6;
+            panelMenu.Height = 5;
             panelMenu.Width = 35;
             panelMenu.Border(BoxBorder.Rounded);
             panelMenu.BorderColor(Color.DarkGoldenrod);
@@ -72,7 +67,7 @@ namespace Elektrogrosshandel.GUI.GUI_Menus
         {
             Panel panelMenu = new Panel(
                 Align.Left(new Rows(menuItemsAccount), VerticalAlignment.Top));
-            panelMenu.Height = 6;
+            panelMenu.Height = 5;
             panelMenu.Width = 35;
             panelMenu.Border(BoxBorder.Rounded);
             panelMenu.BorderColor(Color.DarkGoldenrod);
@@ -85,7 +80,7 @@ namespace Elektrogrosshandel.GUI.GUI_Menus
         private static Panel PanelMenuPublic()
         {
             Panel panelMenu = new Panel(
-                Align.Left(new Rows(menuItemsPublic), VerticalAlignment.Top));
+                Align.Left(new Rows(menuItemsPublic), VerticalAlignment.Middle));
             panelMenu.Height = 5;
             panelMenu.Width = 35;
             panelMenu.Border(BoxBorder.Rounded);
@@ -101,7 +96,7 @@ namespace Elektrogrosshandel.GUI.GUI_Menus
             //Create Panel for Display area
             Panel panelDisplay = new Panel(
                 new Markup("[italic #00afff]Please select an option from the menu.[/]"));
-            panelDisplay.Height = 17;
+            panelDisplay.Height = 15;
             panelDisplay.Width = 81;
             panelDisplay.Border(BoxBorder.Rounded);
             panelDisplay.Header("[bold #af8700 on black]Welcome Area[/]");
