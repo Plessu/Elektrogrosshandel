@@ -271,6 +271,16 @@ namespace Elektrogrosshandel
             return bucketInfo;
         }
 
+        public static Bucket GetActiveBucketOfAccount(Account account)
+        {
+            return account.ActiveBucket;
+        }
+
+        public static int GetAccountID(Account account)
+        {
+            return account.AccountID;
+        }
+
         public static List<Account> GetAllAccounts()
         {
             return Accounts;

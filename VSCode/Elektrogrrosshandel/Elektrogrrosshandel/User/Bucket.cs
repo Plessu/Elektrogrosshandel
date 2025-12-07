@@ -65,6 +65,11 @@ namespace Elektrogrosshandel.User
             return new Bucket(newBucketID, bucketName, bucketValue);
         }
 
+        public static double GetBucketValue(Bucket bucket)
+        {
+            return bucket.BucketValue;
+        }
+
         public static void ChangeBucketName(Bucket bucket, string newBucketName)
         {
             bucket.BucketName = newBucketName;

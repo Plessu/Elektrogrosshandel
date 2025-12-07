@@ -18,11 +18,11 @@ namespace Elektrogrosshandel.GUI.GUI_Menus
         private static List<Markup> menuItemsAccount = new List<Markup>
         {
                 new Markup("[#c0c0c0]  5. User[/]"),
-                new Markup("[#c0c0c0]  6. Shopping Cart[/]")
+                new Markup("[#c0c0c0]  6. Shopping Cart[/]"),
+                new Markup("[#c0c0c0]  7. Place Order[/]")
         };
         private static List<Markup> menuItemsPublic = new List<Markup>
         {
-                new Markup("[#c0c0c0]  8. News[/]"),
                 new Markup("[#c0c0c0]  9. Customer Support[/]"),
                 new Markup("[#c0c0c0] 10. Impressum[/]")
         };
