@@ -3,6 +3,15 @@
   - Änderungsverlauf (Kurzfassung)
 ------------------------------
 
+- 2025-12-07: `MainMenu` v2.0.0 veröffentlicht.
+- 2025-12-07: `AccountMenu` v2.0.0 veröffentlicht.
+- 2025-12-07: `AccountMenuInfo` v1.0.0 enternt -> `AccountMenu`.
+- 2025-12-07: `ShoppingCartManager` v2.0.0 veröffentlicht.
+- 2025-12-07: `AccountMenuShoppingCartManager` v1.0.0 enternt - > `ShoppingCartManager`.
+- 2025-12-06: `AccountMenuShoppingCartManager` v1.0.0 veröffentlicht.
+- 2025-12-06: `AccountMenuInfo` v1.0.0 veröffentlicht.
+- 2025-12-06: `AccountMenu` v1.0.0 veröffentlicht.
+- 2025-12-06: `MainMenu` v1.1.0 veröffentlicht.
 - 2025-12-05: `LogIn` v1.1.0 veröffentlicht.
 - 2025-12-05: `PasswordHelper` v1.0.0 veröffentlicht.
 - 2025-12-04: `LogIn` v1.0.0 veröffentlicht.
@@ -10,6 +19,144 @@
 
 Neue/Benutzer-Releases
 ----------------------
+
+- Klasse: `ElektroGrosshandel.Functions.MainMenu`
+  - Version: `2.0.0`
+  - Datum: `2025-12-07`
+  - Autor: `Giacomo Graef`
+  - Zusammenfassung: `ShoppingCartManager` added, `Orders` moved to `AccountMenu`.
+  - Änderungen:
+    - Logik: `AccountMenuInfo` in `AccountMenu` integriert.
+  - Breaking Changes:
+    - Deletion von `AccountMenuInfo`.
+  - Migrationshinweise:
+    - Siehe `AccountMenu` für Integratonshinweise zu Submenüs/Subklassen.
+  - Tests: `Keine`
+
+---
+
+- Klasse: `ElektroGrosshandel.Functions.AccountMenu`
+  - Version: `2.0.0`
+  - Datum: `2025-12-07`
+  - Autor: `Giacomo Graef`
+  - Zusammenfassung: `AccountMenu` merged from  `AccountMenuInfo`, `Orders` integriert from `MainMenu`.
+  - Änderungen:
+    - Logik: `AccountMenuInfo` in `AccountMenu` integriert.
+    - Logik: `Orders` in `AccountMenu` integriert, aus `MainMenu` verschoben.
+  - Breaking Changes:
+    - Deletion von `AccountMenuInfo`.
+    - Integration von `Orders` aus `MainMenu`.
+  - Migrationshinweise:
+    - Siehe `AccountMenu` für Integratonshinweise zu Submenüs/Subklassen.
+    - Siehe `MainMenu` für Änderungen bezüglich der Menüstruktur.
+  - Tests: `Keine`
+
+---
+
+- Klasse: `ElektroGrosshandel.Functions.AccountMenuInfo`
+  - Version: `entfernt`
+  - Datum: `2025-12-07`
+  - Autor: `Giacomo Graef`
+  - Zusammenfassung: `AccountMenuInfo` merged into  `AccountMenu`.
+  - Änderungen:
+    - Logik: in `AccountMenu` integriert.
+  - Breaking Changes:
+    - Deletion von `AccountMenuInfo`.
+  - Migrationshinweise:
+    - Siehe `AccountMenu` für Integratonshinweise zu Submenüs/Subklassen.
+  - Tests: `Keine`
+
+---
+
+- Klasse: `ElektroGrosshandel.Functions.ShoppingCartManager`
+  - Version: `2.0.0`
+  - Datum: `2025-12-07`
+  - Autor: `Giacomo Graef`
+  - Zusammenfassung: `ShoppingCartManager` forged out of `AccountMenuShoppingCartManager`.
+  - Änderungen:
+    - Logik: `ShoppingCartManager` regelt die Anzeige des ShoppingCart Managers. -> Ausgelagert aus `AccountMenuShoppingCartManager`.
+    - Subklasse: `ShoppingCartManager` nutzt jetzt `GUI_SCM_*` Klassen zur Menführung.
+    - Struktur: `ShoppingCartManager` wird direkt aus  `MainMenu` aufgerufen.
+  - Breaking Changes:
+    - Einführung von `ShoppingCartManager` (Änderung der Menüführung durch `MainMenu`)
+    - Menüführung wird nicht mehr über `AccountMenu` gehandhabt.
+    - Logik für GUI-Aufruf des Submenüs `GUI_SCM_*` in `ShoppingCartManager` verschoben.
+  - Migrationshinweise:
+    - Siehe `ShopingCartManager` für Integratonshinweise zu Submenüs/Subklassen.
+  - Tests: `Keine`
+
+---
+
+- - Klasse: `ElektroGrosshandel.Functions.AccountMenuShoppingCartManager`
+  - Version: `1.0.0`
+  - Datum: `2025-12-06`
+  - Autor: `Giacomo Graef`
+  - Zusammenfassung: `AccountMenuShoppingCartManager` forged.
+  - Änderungen:
+    - Feature: `AccountMenuShoppingCartManager` regelt die Anzeige des ShoppingCart Managers.
+  - Breaking Changes:
+    - Einführung von `AccountMenuShoppingCartManager` (Änderung der Menüführung durch `AccountMenu`)
+    - Menüführung wird über `AccountMenu` gehandhabt.
+    - Logik für GUI-Aufruf des Submenüs `GUI_AcountShoppingCartManager`
+  - Migrationshinweise:
+    - Siehe `AccountMenu` für Integratonshinweise zu Submenüs/Subklassen.
+    - Beachte out int choice in `AccountMenu` für Menüauswahl.
+  - Tests: `Keine`
+
+---
+
+- Klasse: `ElektroGrosshandel.Functions.AccountMenuInfo`
+  - Version: `1.0.0`
+  - Datum: `2025-12-06`
+  - Autor: `Giacomo Graef`
+  - Zusammenfassung: `AccountMenuInfo` forged.
+  - Änderungen:
+    - Feature: `AccountMenuInfo` regelt die Anzeige des Benutzer Info Menüs.
+  - Breaking Changes:
+    - Einführung von `AccountMenuInfo` (Änderung der Menüführung durch `AccountMenu`)
+    - Menüführung wird über `AccountMenu` gehandhabt.
+    - Logik für GUI-Aufruf des Submenüs `GUI_AcountMenuInfo`
+  - Migrationshinweise:
+    - Siehe `AccountMenu` für Integratonshinweise zu Submenüs/Subklassen.
+    - Beachte out int choice in `AccountMenu` für Menüauswahl.
+  - Tests: `Keine`
+
+---
+
+- Klasse: `ElektroGrosshandel.Functions.AccountMenu`
+  - Version: `1.0.0`
+  - Datum: `2025-12-06`
+  - Autor: `Giacomo Graef`
+  - Zusammenfassung: `AccountMenu` forged.
+  - Änderungen:
+    - Feature: `AccountMenu` regelt die Anzeige und Auswahl des Benutzerkontomenüs.
+  - Breaking Changes:
+    - Einführung von `AccountMenu` (Änderung der Menüstruktur)
+    - Menüfunktionalität ausgelagert von `MainMenu` zu `AccountMenu`.
+    - Menüführung wird jetzt über `AccountMenu` gehandhabt.
+    - Logik für GUI-Aufruf der Submenüs in Subklassen ausgelagert.
+  - Migrationshinweise:
+    - Siehe `AccountMenu` für Integratonshinweise zu Submenüs/Subklassen.
+  - Tests: `Keine`
+
+
+---
+
+- Klasse: `ElektroGrosshandel.Functions.MainMenu`
+  - Version: `1.1.0`
+  - Datum: `2025-12-06`
+  - Autor: `Giacomo Graef`
+  - Zusammenfassung: `AccountMenu` integration.
+  - Änderungen:
+    - Feature: `AccountMenu` integration (Logik für User Menü Option)
+  - Breaking Changes:
+    - Einführung von `AccountMenu` (Änderung der Menüstruktur)
+  - Migrationshinweise:
+    - Siehe `AccountMenu` für Integration in `MainMenu`.
+  - Tests: `Keine`
+
+
+---
 
 - Klasse: `ElektroGrosshandel.Functions.LogIn`
   - Version: `1.1.0`
@@ -23,6 +170,8 @@ Neue/Benutzer-Releases
   - Migrationshinweise:
     - Siehe Konstruktor `PasswordHelper` bei implementierung der LogIn-Funktion.
   - Tests: `ElektroGrosshandel.Functions.LogIn.TestData`
+
+---
 
 - Klasse: `ElektroGrosshandel.Functions.PasswordHelper`
   - Version: `1.0.0`
@@ -39,6 +188,7 @@ Neue/Benutzer-Releases
     - Startlogik anpassen: `Login` Password-Validierung auf `PasswordHelper` umgestellt.
   - Tests: `ElektroGrosshandel.Functions.LogIn.TestData`
 
+---
 
 - Klasse: `ElektroGrosshandel.Functions.LogIn`
   - Version: `1.0.0`
@@ -53,7 +203,8 @@ Neue/Benutzer-Releases
     - Programmstart wurde auf `LogIn` geändert (Startpunkt des Programms verschoben)
   - Migrationshinweise:
     - Startlogik anpassen: Altes Startskript/Initialisierung auf `LogIn` umleiten.
-  - Tests: `Keine (werden später hinzugefügt)`
+
+---
 
 - Klasse: `ElektroGrosshandel.Functions.MainMenu`
   - Version: `1.0.2`

@@ -7,12 +7,50 @@ Beinhaltet Einträge zu neuen Releases, Änderungen, Breaking Changes und Migrat
 - Änderungsverlauf (Kurzfassung)
 ------------------------------
 
+- 2025-12-05: `User.Account` v2.0.0 veröffentlicht.
+- 2025-12-05: `User.Bucket` v2.0.0 veröffentlicht.
 - 2025-12-05: `UserRegistration` v1.0.0 veröffentlicht.
 - 2025-12-05: `Account` v1.2.0 veröffentlicht.
 - 2025-12-05: `Bucket` v1.1.0 veröffentlicht.
 
 Neue/Benutzer-Releases
 ----------------------
+
+- Klasse: `ElektroGrosshandel.User.Account`
+  - Version: `2.0.0`
+  - Datum: `2025-12-05`
+  - Autor: `Giacomo Graef`
+  - Zusammenfassung: `Bucket` Verwaltung zu Account verschoben, Bucket Verwaltng aus `User.Bucket` entfernt.
+  - Änderungen:
+    - Logik: `BucketList` wird nun zur Verwaltung in `Account` gehalten. 
+    - Methoden: `AddBucket`, `RemoveBucket`, `GetActiveBucket`, `SetActiveBucket`, `GetSafedBuckets` in `Account` hinzugefügt.
+  - Breaking Changes:
+    - `User.Bucket` wird nicht mehr für Bucket-Verwaltung genutzt — siehe `Account`.
+    - Aufrufe an `User.Bucket` entsprechen geändert auf neue Logik.
+    - Neue Methoden in `Account` für Bucket-Verwaltung.
+  - Migrationshinweise:
+    - Siehe `Account` für neue Bucket-Verwaltung.
+    - Beachte neue Methoden für Bucket-Management.
+  - Tests: `Keine Tests`
+
+---
+
+  - Klasse: `ElektroGrosshandel.User.Bucket`
+  - Version: `2.0.0`
+  - Datum: `2025-12-05`
+  - Autor: `Giacomo Graef`
+  - Zusammenfassung: `Fehlerbehebungen, API-Verbesserungen für Bucket-Management.`
+  - Änderungen:
+    - Logik: `BucketList` wurde entfernt (nicht genutzt).
+    - Logik: `ActiveBucket` und `SafedBuckets` wurden in `Account` verschoben.
+  - Breaking Changes:
+    - Logik: `BucketList`, `ActiveBucket` und `SafedBuckets` wurden entfernt — in `Account` verschoben.
+  - Migrationshinweise:
+    - Siehe `Account` für neue Bucket-Verwaltung.
+  - Tests: `Keine Tests`
+
+---
+
 - Klasse: `ElektroGrosshandel.User.UserRegistration`
   - Version: `1.0.0`
   - Datum: `2025-12-05`
@@ -25,6 +63,7 @@ Neue/Benutzer-Releases
     - `AddAccount` beachten
   - Tests: `ElektroGrosshandel.User.Account.TestData`, `ElektroGrosshandel.User.Account.SerializationTests`
 
+---
 
 - Klasse: `ElektroGrosshandel.User.Account`
   - Version: `1.2.0`
@@ -44,7 +83,9 @@ Neue/Benutzer-Releases
     - Prüfe Persistenz: sensible Daten werden in Klartext-JSON geschrieben — optional schützen.
   - Tests: `ElektroGrosshandel.User.Account.TestData`, `ElektroGrosshandel.User.Account.SerializationTests`
 
-- Klasse: `ElektroGrosshandel.User.Bucket`
+---
+
+  - - Klasse: `ElektroGrosshandel.User.Bucket`
   - Version: `1.1.0`
   - Datum: `2025-12-05`
   - Autor: `Giacomo Graef`

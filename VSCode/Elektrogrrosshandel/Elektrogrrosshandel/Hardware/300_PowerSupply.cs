@@ -38,19 +38,6 @@ namespace Elektrogrosshandel.Hardware
 {
     internal class PowerSupply : ComputerHardware
     {
-        private int ArticelID { get; set; }
-        private string ArticelName { get; set; }
-        private string ArticelManufacturer { get; set; }
-        private string ArticelModel { get; set; }
-        private int ArticelYearOfProduction { get; set; }
-        private int ArticelManufactrerID { get; set; }
-        private string[] ArticelColors { get; set; }
-        private int ArticelStock { get; set; }
-        private int ArticelMinStock { get; set; }
-        private double ArticelPrice { get; set; }
-        private int ArticelWeight { get; set; }
-        private int[] ArticelDimesnions { get; set; }
-        private string ArticelDescription { get; set; }
         private int Wattage { get; set; }
 
         private static string ArticelGroupName = "Power Supply";
@@ -59,48 +46,17 @@ namespace Elektrogrosshandel.Hardware
 
         private static List<int> ArticelIDs = new List<int>();
 
-        private PowerSupply(int articelID, string articelName, string articelManufacturer, string articelModel,
+        public PowerSupply(string articelName, string articelManufacturer, string articelModel,
                             int articelYearOfProduction, int articelManufactrerID, string[] articelColors, int articelStock,
                             int articelMinStock, double articelPrice, int articelWeight, int[] articelDimesnions,
-                            string articelDescription, int wattage) : base()
+                            string articelDescription, int wattage) : base(CreateArticelID(), articelName, articelManufacturer, articelModel,
+                            articelYearOfProduction, articelManufactrerID, articelColors, articelStock,
+                            articelMinStock, articelPrice, articelWeight, articelDimesnions,
+                            articelDescription)
         {
-            ArticelID = articelID;
-            ArticelName = articelName;
-            ArticelManufacturer = articelManufacturer;
-            ArticelModel = articelModel;
-            ArticelYearOfProduction = articelYearOfProduction;
-            ArticelManufactrerID = articelManufactrerID;
-            ArticelColors = articelColors;
-            ArticelStock = articelStock;
-            ArticelMinStock = articelMinStock;
-            ArticelPrice = articelPrice;
-            ArticelWeight = articelWeight;
-            ArticelDimesnions = articelDimesnions;
-            ArticelDescription = articelDescription;
+
             this.Wattage = wattage;
             ComputerHardware.AddPowerSupply(this);
-        }
-
-        public static PowerSupply CreatePowerSupply(string articelName, string articelManufacturer, string articelModel,
-                                                    int articelYearOfProduction, int articelManufactrerID,
-                                                    string[] articelColors, int articelStock, int articelMinStock,
-                                                    double articelPrice, int articelWeight, int[] articelDimesnions,
-                                                    string articelDescription, int wattage)
-        {
-            foreach (var item in ComputerHardware.PowerSupplies)
-            {
-                if (item.ArticelModel == articelModel && item.ArticelManufactrerID == articelManufactrerID)
-                {
-                    throw new ArgumentException("Power Supply with the same model and manufacturer ID already exists.");
-                }
-            }
-
-            int articelID = CreateArticelID();
-
-            return new PowerSupply(articelID, articelName, articelManufacturer, articelModel,
-                                    articelYearOfProduction, articelManufactrerID, articelColors, articelStock,
-                                    articelMinStock, articelPrice, articelWeight, articelDimesnions,
-                                    articelDescription, wattage);
         }
 
         private static int CreateArticelID()

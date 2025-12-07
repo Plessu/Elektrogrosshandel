@@ -56,69 +56,25 @@ namespace Elektrogrosshandel.Hardware
 {
     internal class Software : ComputerHardware
     {
-        private int ArticelID { get; set; }
-        private string ArticelName { get; set; }
-        private string ArticelPublisher { get; set; }
-        private string ArticelVersion { get; set; }
-        private int ArticelYearOfRelease { get; set; }
-        private int ArticelPublisherID { get; set; }
-        private string[] ArticelSupportedOS { get; set; }
-        private string ArticelLicenseType { get; set; }
-        private bool ArticelIsSubscription { get; set; }
-        private string[] ArticelLanguages { get; set; }
-        private int ArticelStock { get; set; }
-        private int ArticelMinStock { get; set; }
-        private double ArticelPrice { get; set; }
-        private string ArticelDescription { get; set; }
-
+        private string OperatingSystem { get; set; }
         private static string ArticelGroupName = "Software";
         private static int ArticelGroupID = 950;
         private string ArticelGroupDescription = "Softwareprodukte, Lizenzen und digitale Güter.";
 
         private static List<int> ArticelIDs = new List<int>();
 
-        private Software(int articelID, string articelName, string articelPublisher, string articelVersion,
-                         int articelYearOfRelease, int articelPublisherID, string[] articelSupportedOS,
-                         string articelLicenseType, bool articelIsSubscription, string[] articelLanguages,
-                         int articelStock, int articelMinStock, double articelPrice, string articelDescription) : base()
+        private Software(string articelName, string articelManufacturer, string articelModel,
+                        int articelYearOfProduction, int articelManufactrerID, string[] articelColors, int articelStock,
+                        int articelMinStock, double articelPrice, int articelWeight, int[] articelDimesnions,
+                        string articelDescription,string operatingSystem) : base(CreateArticelID(), articelName, articelManufacturer, articelModel,
+                            articelYearOfProduction, articelManufactrerID, articelColors, articelStock,
+                            articelMinStock, articelPrice, articelWeight, articelDimesnions,
+                            articelDescription)
         {
-            ArticelID = articelID;
-            ArticelName = articelName;
-            ArticelPublisher = articelPublisher;
-            ArticelVersion = articelVersion;
-            ArticelYearOfRelease = articelYearOfRelease;
-            ArticelPublisherID = articelPublisherID;
-            ArticelSupportedOS = articelSupportedOS;
-            ArticelLicenseType = articelLicenseType;
-            ArticelIsSubscription = articelIsSubscription;
-            ArticelLanguages = articelLanguages;
-            ArticelStock = articelStock;
-            ArticelMinStock = articelMinStock;
-            ArticelPrice = articelPrice;
-            ArticelDescription = articelDescription;
+
+            OperatingSystem = operatingSystem;
 
             ComputerHardware.AddSoftware(this);
-        }
-
-        public static Software CreateSoftware(string articelName, string articelPublisher, string articelVersion,
-                                              int articelYearOfRelease, int articelPublisherID, string[] articelSupportedOS,
-                                              string articelLicenseType, bool articelIsSubscription, string[] articelLanguages,
-                                              int articelStock, int articelMinStock, double articelPrice, string articelDescription)
-        {
-            foreach (var item in ComputerHardware.Softwares)
-            {
-                if (item.ArticelVersion == articelVersion && item.ArticelPublisherID == articelPublisherID)
-                {
-                    throw new ArgumentException("Software mit derselben Version und Publisher-ID existiert bereits.");
-                }
-            }
-
-            int articelID = CreateArticelID();
-
-            return new Software(articelID, articelName, articelPublisher, articelVersion,
-                                articelYearOfRelease, articelPublisherID, articelSupportedOS,
-                                articelLicenseType, articelIsSubscription, articelLanguages,
-                                articelStock, articelMinStock, articelPrice, articelDescription);
         }
 
         private static int CreateArticelID()

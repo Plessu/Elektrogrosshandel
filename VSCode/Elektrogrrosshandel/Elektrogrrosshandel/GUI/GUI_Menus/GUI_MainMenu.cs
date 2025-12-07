@@ -10,24 +10,21 @@ namespace Elektrogrosshandel.GUI.GUI_Menus
     {
         //Menu Items
         private static List<Markup> menuItemsShop = new List<Markup>
-            {
+        {
                 new Markup("[#c0c0c0]  1. Product Catalog[/]"),
                 new Markup("[#c0c0c0]  2. Discount Promotion[/]"),
-                new Markup("[#c0c0c0]  3. PC Builder[/]"),
-                new Markup("[#c0c0c0]  4. Rack Builder[/]")
+                new Markup("[#c0c0c0]  3. PC Builder[/]")
         };
         private static List<Markup> menuItemsAccount = new List<Markup>
         {
                 new Markup("[#c0c0c0]  5. User[/]"),
-                new Markup("[#c0c0c0]  6. Shoping Cart[/]"),
-                new Markup("[#c0c0c0]  7. Orders[/]"),
-                new Markup("[#c0c0c0]  8. Messages[/]"),
+                new Markup("[#c0c0c0]  6. Shopping Cart[/]")
         };
         private static List<Markup> menuItemsPublic = new List<Markup>
         {
-                new Markup("[#c0c0c0]  9. News[/]"),
-                new Markup("[#c0c0c0] 10. Customer Support[/]"),
-                new Markup("[#c0c0c0] 11. Impressum[/]")
+                new Markup("[#c0c0c0]  8. News[/]"),
+                new Markup("[#c0c0c0]  9. Customer Support[/]"),
+                new Markup("[#c0c0c0] 10. Impressum[/]")
         };
         private static Layout MainMenu()
         {
@@ -118,7 +115,7 @@ namespace Elektrogrosshandel.GUI.GUI_Menus
         }
         public static int MaxMenuItems()
         {
-            int maxMenuItems = menuItemsShop.Count() + menuItemsAccount.Count() + menuItemsPublic.Count();
+            int maxMenuItems = (int) menuItemsShop.LongCount() + menuItemsAccount.Count() + menuItemsPublic.Count();
             return maxMenuItems;
         }
     }

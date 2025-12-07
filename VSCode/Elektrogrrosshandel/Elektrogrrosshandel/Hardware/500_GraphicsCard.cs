@@ -34,20 +34,6 @@ namespace Elektrogrosshandel.Hardware
 {
     internal class GraphicsCard : ComputerHardware
     {
-        private int ArticelID { get; set; }
-        private string ArticelName { get; set; }
-        private string ArticelManufacturer { get; set; }
-        private string ArticelModel { get; set; }
-        private int ArticelYearOfProduction { get; set; }
-        private int ArticelManufactrerID { get; set; }
-        private string[] ArticelColors { get; set; }
-        private int ArticelStock { get; set; }
-        private int ArticelMinStock { get; set; }
-        private double ArticelPrice { get; set; }
-        private int ArticelWeight { get; set; }
-        private int[] ArticelDimesnions { get; set; }
-        private string ArticelDescription { get; set; }
-
         private int VRAM_GB { get; set; }
         private string MemoryType { get; set; }
         private int CoreClockMHz { get; set; }
@@ -66,26 +52,16 @@ namespace Elektrogrosshandel.Hardware
 
         private static List<int> ArticelIDs = new List<int>();
 
-        private GraphicsCard(int articelID, string articelName, string articelManufacturer, string articelModel,
+        public GraphicsCard(string articelName, string articelManufacturer, string articelModel,
                               int articelYearOfProduction, int articelManufactrerID, string[] articelColors, int articelStock,
                               int articelMinStock, double articelPrice, int articelWeight, int[] articelDimesnions,
                               string articelDescription,
                               int vramGB, string memoryType, int coreClockMHz, int boostClockMHz, int tdpWatts,
-                              string pcieVersion, string[] outputs, int powerConsumptionWatts) : base()
+                              string pcieVersion, string[] outputs, int powerConsumptionWatts) : base(CreateArticelID(), articelName, articelManufacturer, articelModel,
+                            articelYearOfProduction, articelManufactrerID, articelColors, articelStock,
+                            articelMinStock, articelPrice, articelWeight, articelDimesnions,
+                            articelDescription)
         {
-            ArticelID = articelID;
-            ArticelName = articelName;
-            ArticelManufacturer = articelManufacturer;
-            ArticelModel = articelModel;
-            ArticelYearOfProduction = articelYearOfProduction;
-            ArticelManufactrerID = articelManufactrerID;
-            ArticelColors = articelColors;
-            ArticelStock = articelStock;
-            ArticelMinStock = articelMinStock;
-            ArticelPrice = articelPrice;
-            ArticelWeight = articelWeight;
-            ArticelDimesnions = articelDimesnions;
-            ArticelDescription = articelDescription;
 
             VRAM_GB = vramGB;
             MemoryType = memoryType;
@@ -98,32 +74,6 @@ namespace Elektrogrosshandel.Hardware
 
             ComputerHardware.AddGraphicsCard(this);
 
-        }
-
-        public static GraphicsCard CreateGraphicsCard(string articelName, string articelManufacturer, string articelModel,
-                                                      int articelYearOfProduction, int articelManufactrerID,
-                                                      string[] articelColors, int articelStock, int articelMinStock,
-                                                      double articelPrice, int articelWeight, int[] articelDimesnions,
-                                                      string articelDescription,
-                                                      int vramGB, string memoryType, int coreClockMHz, int boostClockMHz, int tdpWatts,
-                                                      string pcieVersion, string[] outputs, int powerConsumptionWatts)
-        {
-            foreach (var item in ComputerHardware.GraphicsCards)
-            {
-                if (item.ArticelModel == articelModel && item.ArticelManufactrerID == articelManufactrerID)
-                {
-                    throw new ArgumentException("Graphics card with the same model and manufacturer ID already exists.");
-                }
-            }
-
-            int articelID = CreateArticelID();
-
-            return new GraphicsCard(articelID, articelName, articelManufacturer, articelModel,
-                                     articelYearOfProduction, articelManufactrerID, articelColors, articelStock,
-                                     articelMinStock, articelPrice, articelWeight, articelDimesnions,
-                                     articelDescription,
-                                     vramGB, memoryType, coreClockMHz, boostClockMHz, tdpWatts,
-                                     pcieVersion, outputs, powerConsumptionWatts);
         }
 
         private static int CreateArticelID()

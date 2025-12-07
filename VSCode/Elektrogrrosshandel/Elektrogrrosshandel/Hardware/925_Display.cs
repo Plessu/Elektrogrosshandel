@@ -70,20 +70,6 @@ namespace Elektrogrosshandel.Hardware
 {
     internal class Display : ComputerHardware
     {
-        private int ArticelID { get; set; }
-        private string ArticelName { get; set; }
-        private string ArticelManufacturer { get; set; }
-        private string ArticelModel { get; set; }
-        private int ArticelYearOfProduction { get; set; }
-        private int ArticelManufactrerID { get; set; }
-        private string[] ArticelColors { get; set; }
-        private int ArticelStock { get; set; }
-        private int ArticelMinStock { get; set; }
-        private double ArticelPrice { get; set; }
-        private int ArticelWeight { get; set; }
-        private int[] ArticelDimesnions { get; set; }
-        private string ArticelDescription { get; set; }
-
         private string Resolution { get; set; }
         private int RefreshRate { get; set; }
         private string PanelType { get; set; }
@@ -102,26 +88,16 @@ namespace Elektrogrosshandel.Hardware
 
         private static List<int> ArticelIDs = new List<int>();
 
-        private Display(int articelID, string articelName, string articelManufacturer, string articelModel,
+        private Display(string articelName, string articelManufacturer, string articelModel,
                         int articelYearOfProduction, int articelManufactrerID, string[] articelColors, int articelStock,
                         int articelMinStock, double articelPrice, int articelWeight, int[] articelDimesnions,
                         string articelDescription,
                         string resolution, int refreshRate, string panelType, double sizeInInches, bool hdr,
-                        string[] ports, string adaptiveSync, bool curved, bool touch, int brightnessNits, string aspectRatio) : base()
+                        string[] ports, string adaptiveSync, bool curved, bool touch, int brightnessNits, string aspectRatio) : base(CreateArticelID(), articelName, articelManufacturer, articelModel,
+                            articelYearOfProduction, articelManufactrerID, articelColors, articelStock,
+                            articelMinStock, articelPrice, articelWeight, articelDimesnions,
+                            articelDescription)
         {
-            ArticelID = articelID;
-            ArticelName = articelName;
-            ArticelManufacturer = articelManufacturer;
-            ArticelModel = articelModel;
-            ArticelYearOfProduction = articelYearOfProduction;
-            ArticelManufactrerID = articelManufactrerID;
-            ArticelColors = articelColors;
-            ArticelStock = articelStock;
-            ArticelMinStock = articelMinStock;
-            ArticelPrice = articelPrice;
-            ArticelWeight = articelWeight;
-            ArticelDimesnions = articelDimesnions;
-            ArticelDescription = articelDescription;
 
             Resolution = resolution;
             RefreshRate = refreshRate;
@@ -136,32 +112,6 @@ namespace Elektrogrosshandel.Hardware
             AspectRatio = aspectRatio;
 
             ComputerHardware.AddDisplay(this);
-        }
-
-        public static Display CreateDisplay(string articelName, string articelManufacturer, string articelModel,
-                                            int articelYearOfProduction, int articelManufactrerID,
-                                            string[] articelColors, int articelStock, int articelMinStock,
-                                            double articelPrice, int articelWeight, int[] articelDimesnions,
-                                            string articelDescription,
-                                            string resolution, int refreshRate, string panelType, double sizeInInches, bool hdr,
-                                            string[] ports, string adaptiveSync, bool curved, bool touch, int brightnessNits, string aspectRatio)
-        {
-            foreach (var item in ComputerHardware.Displays)
-            {
-                if (item.ArticelModel == articelModel && item.ArticelManufactrerID == articelManufactrerID)
-                {
-                    throw new ArgumentException("Display with the same model and manufacturer ID already exists.");
-                }
-            }
-
-            int articelID = CreateArticelID();
-
-            return new Display(articelID, articelName, articelManufacturer, articelModel,
-                               articelYearOfProduction, articelManufactrerID, articelColors, articelStock,
-                               articelMinStock, articelPrice, articelWeight, articelDimesnions,
-                               articelDescription,
-                               resolution, refreshRate, panelType, sizeInInches, hdr,
-                               ports, adaptiveSync, curved, touch, brightnessNits, aspectRatio);
         }
 
         private static int CreateArticelID()

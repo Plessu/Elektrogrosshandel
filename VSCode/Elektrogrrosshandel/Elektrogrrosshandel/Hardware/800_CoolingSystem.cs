@@ -39,21 +39,6 @@ namespace Elektrogrosshandel.Hardware
 {
     internal class CoolingSystem : ComputerHardware
     {
-        private int ArticelID { get; set; }
-        private string ArticelName { get; set; }
-        private string ArticelManufacturer { get; set; }
-        private string ArticelModel { get; set; }
-        private int ArticelYearOfProduction { get; set; }
-        private int ArticelManufactrerID { get; set; }
-        private string[] ArticelColors { get; set; }
-        private int ArticelStock { get; set; }
-        private int ArticelMinStock { get; set; }
-        private double ArticelPrice { get; set; }
-        private int ArticelWeight { get; set; }
-        private int[] ArticelDimesnions { get; set; }
-        private string ArticelDescription { get; set; }
-
-
         private int FanSpeedRPM { get; set; }
         private bool LiquidCooled { get; set; }
         private int TDPRatingWatts { get; set; }
@@ -65,25 +50,15 @@ namespace Elektrogrosshandel.Hardware
 
         private static List<int> ArticelIDs = new List<int>();
 
-        private CoolingSystem(int articelID, string articelName, string articelManufacturer, string articelModel,
+        public CoolingSystem(int articelID, string articelName, string articelManufacturer, string articelModel,
                               int articelYearOfProduction, int articelManufactrerID, string[] articelColors, int articelStock,
                               int articelMinStock, double articelPrice, int articelWeight, int[] articelDimesnions,
                               string articelDescription,
-                              int fanSpeedRPM,bool liquidCooled, int tdpRatingWatts, string[] compatibilitySockets) : base()
+                              int fanSpeedRPM,bool liquidCooled, int tdpRatingWatts, string[] compatibilitySockets) : base(CreateArticelID(), articelName, articelManufacturer, articelModel,
+                            articelYearOfProduction, articelManufactrerID, articelColors, articelStock,
+                            articelMinStock, articelPrice, articelWeight, articelDimesnions,
+                            articelDescription)
         {
-            ArticelID = articelID;
-            ArticelName = articelName;
-            ArticelManufacturer = articelManufacturer;
-            ArticelModel = articelModel;
-            ArticelYearOfProduction = articelYearOfProduction;
-            ArticelManufactrerID = articelManufactrerID;
-            ArticelColors = articelColors;
-            ArticelStock = articelStock;
-            ArticelMinStock = articelMinStock;
-            ArticelPrice = articelPrice;
-            ArticelWeight = articelWeight;
-            ArticelDimesnions = articelDimesnions;
-            ArticelDescription = articelDescription;
 
             FanSpeedRPM = fanSpeedRPM;
             LiquidCooled = liquidCooled;
@@ -91,31 +66,6 @@ namespace Elektrogrosshandel.Hardware
             CompatibilitySockets = compatibilitySockets;
 
             ComputerHardware.AddCoolingSystem(this);
-        }
-
-        public static CoolingSystem CreateCoolingSystem(string articelName, string articelManufacturer, string articelModel,
-                                                        int articelYearOfProduction, int articelManufactrerID,
-                                                        string[] articelColors, int articelStock, int articelMinStock,
-                                                        double articelPrice, int articelWeight, int[] articelDimesnions,
-                                                        string articelDescription,
-                                                        int fanCount, int fanSpeedRPM, int radiatorSizeMM, bool liquidCooled, int tdpRatingWatts,
-                                                        double noiseLevelDB, string[] compatibilitySockets, string material, bool rgb, int pumpSpeedRPM)
-        {
-            foreach (var item in ComputerHardware.CoolingSystems)
-            {
-                if (item.ArticelModel == articelModel && item.ArticelManufactrerID == articelManufactrerID)
-                {
-                    throw new ArgumentException("CoolingSystem with the same model and manufacturer ID already exists.");
-                }
-            }
-
-            int articelID = CreateArticelID();
-
-            return new CoolingSystem(articelID, articelName, articelManufacturer, articelModel,
-                                     articelYearOfProduction, articelManufactrerID, articelColors, articelStock,
-                                     articelMinStock, articelPrice, articelWeight, articelDimesnions,
-                                     articelDescription,
-                                     fanSpeedRPM, liquidCooled, tdpRatingWatts, compatibilitySockets);
         }
 
         private static int CreateArticelID()

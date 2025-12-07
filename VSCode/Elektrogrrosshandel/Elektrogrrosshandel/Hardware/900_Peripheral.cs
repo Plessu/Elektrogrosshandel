@@ -68,20 +68,6 @@ namespace Elektrogrosshandel.Hardware
 {
     internal class Peripheral : ComputerHardware
     {
-        private int ArticelID { get; set; }
-        private string ArticelName { get; set; }
-        private string ArticelManufacturer { get; set; }
-        private string ArticelModel { get; set; }
-        private int ArticelYearOfProduction { get; set; }
-        private int ArticelManufactrerID { get; set; }
-        private string[] ArticelColors { get; set; }
-        private int ArticelStock { get; set; }
-        private int ArticelMinStock { get; set; }
-        private double ArticelPrice { get; set; }
-        private int ArticelWeight { get; set; }
-        private int[] ArticelDimesnions { get; set; }
-        private string ArticelDescription { get; set; }
-
         private string PeripheralType { get; set; }
         private string InterfaceType { get; set; }
         private bool Wireless { get; set; }
@@ -98,26 +84,13 @@ namespace Elektrogrosshandel.Hardware
 
         private static List<int> ArticelIDs = new List<int>();
 
-        private Peripheral(int articelID, string articelName, string articelManufacturer, string articelModel,
+        private Peripheral(string articelName, string articelManufacturer, string articelModel,
                            int articelYearOfProduction, int articelManufactrerID, string[] articelColors, int articelStock,
                            int articelMinStock, double articelPrice, int articelWeight, int[] articelDimesnions,
                            string articelDescription,
                            string peripheralType, string interfaceType, bool wireless, int batteryLifeHours,
                            int buttonsCount, int dpi, string keySwitchType, bool rgb, string[] connectivityOptions) : base()
         {
-            ArticelID = articelID;
-            ArticelName = articelName;
-            ArticelManufacturer = articelManufacturer;
-            ArticelModel = articelModel;
-            ArticelYearOfProduction = articelYearOfProduction;
-            ArticelManufactrerID = articelManufactrerID;
-            ArticelColors = articelColors;
-            ArticelStock = articelStock;
-            ArticelMinStock = articelMinStock;
-            ArticelPrice = articelPrice;
-            ArticelWeight = articelWeight;
-            ArticelDimesnions = articelDimesnions;
-            ArticelDescription = articelDescription;
 
             PeripheralType = peripheralType;
             InterfaceType = interfaceType;
@@ -130,32 +103,6 @@ namespace Elektrogrosshandel.Hardware
             ConnectivityOptions = connectivityOptions;
 
             ComputerHardware.AddPeripheral(this);
-        }
-
-        public static Peripheral CreatePeripheral(string articelName, string articelManufacturer, string articelModel,
-                                                   int articelYearOfProduction, int articelManufactrerID,
-                                                   string[] articelColors, int articelStock, int articelMinStock,
-                                                   double articelPrice, int articelWeight, int[] articelDimesnions,
-                                                   string articelDescription,
-                                                   string peripheralType, string interfaceType, bool wireless, int batteryLifeHours,
-                                                   int buttonsCount, int dpi, string keySwitchType, bool rgb, string[] connectivityOptions)
-        {
-            foreach (var item in ComputerHardware.Peripherals)
-            {
-                if (item.ArticelModel == articelModel && item.ArticelManufactrerID == articelManufactrerID)
-                {
-                    throw new ArgumentException("Peripheral with the same model and manufacturer ID already exists.");
-                }
-            }
-
-            int articelID = CreateArticelID();
-
-            return new Peripheral(articelID, articelName, articelManufacturer, articelModel,
-                                  articelYearOfProduction, articelManufactrerID, articelColors, articelStock,
-                                  articelMinStock, articelPrice, articelWeight, articelDimesnions,
-                                  articelDescription,
-                                  peripheralType, interfaceType, wireless, batteryLifeHours,
-                                  buttonsCount, dpi, keySwitchType, rgb, connectivityOptions);
         }
 
         private static int CreateArticelID()
