@@ -10,17 +10,15 @@ namespace Elektrogrosshandel.GUI.GUI_Menus
     {
         //Menu Items
         private static List<Markup> menuItemsShop = new List<Markup>
-            {
+        {
                 new Markup("[#c0c0c0]  1. Product Catalog[/]"),
                 new Markup("[#c0c0c0]  2. Discount Promotion[/]"),
-                new Markup("[#c0c0c0]  3. PC Builder[/]"),
-                new Markup("[#c0c0c0]  4. Rack Builder[/]")
+                new Markup("[#c0c0c0]  3. PC Builder[/]")
         };
         private static List<Markup> menuItemsAccount = new List<Markup>
         {
                 new Markup("[#c0c0c0]  5. User[/]"),
-                new Markup("[#c0c0c0]  6. Orders[/]"),
-                new Markup("[#c0c0c0]  7. Messages[/]"),
+                new Markup("[#c0c0c0]  6. Shopping Cart[/]")
         };
         private static List<Markup> menuItemsPublic = new List<Markup>
         {

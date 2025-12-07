@@ -8,11 +8,10 @@ namespace Elektrogrosshandel.Functions
     internal class UserInput
     {
         static internal int MenuChoice(int MaxChoice)
-        { 
+        {
             int confirmation = AnsiConsole.Prompt(
-            new TextPrompt<int>("[bold #00afff]---[/] [bold blue]Your Choice[/] [bold #00afff]---[/]")
-            .AddChoice(1)
-            .AddChoice(MaxChoice));
+                                    new TextPrompt<int>("[bold #00afff]---[/] [bold blue]Your Choice[/] [bold #00afff]---[/]")
+                                                    .AddChoices(GenerateChoices(MaxChoice)));
 
             return confirmation;
         }
@@ -36,6 +35,16 @@ namespace Elektrogrosshandel.Functions
             int userInput = AnsiConsole.Prompt(
             new TextPrompt<int>($"[bold #00afff]---[/] [bold blue]{PromptMessage}[/] [bold #00afff]---[/]"));
             return userInput;
+        }
+
+        static private List<int> GenerateChoices(int MaxChoice)
+        {
+            List<int> choices = new List<int>();
+            for (int i = 1; i <= MaxChoice; i++)
+            {
+                choices.Add(i);
+            }
+            return choices;
         }
     }
 }

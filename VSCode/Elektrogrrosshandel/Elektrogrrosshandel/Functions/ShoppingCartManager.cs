@@ -8,17 +8,11 @@ using System.Text;
 
 namespace Elektrogrosshandel.Functions
 {
-    internal class AccountMenuShoppingCartManager
+    internal class ShoppingCartManager
     {
         public static void ShowShoppingCartManager()
         {
-            int menuchoice;
-
-            GUI_Display.DisplayWindow(GUI_AccountSCM_CurrentShoppingCart.ShowSCM_CurrentCart());
-
-            menuchoice = UserInput.MenuChoice(GUI_AccountSCM_CurrentShoppingCart.MaxMenuItems());
-
-
+            NavigateShoppingCartManager(1);
         }
 
         private static void NavigateShoppingCartManager(int menuchoice)
@@ -29,20 +23,20 @@ namespace Elektrogrosshandel.Functions
             {
                 case 1:
                 
-                    GUI_Display.DisplayWindow(GUI_AccountSCM_CurrentShoppingCart.ShowSCM_CurrentCart());
+                    GUI_Display.DisplayWindow(GUI_SCM_CurrentShoppingCart.ShowSCM_CurrentCart());
                     
                     AnsiConsole.MarkupLine("[bold green]Current Shopping Cart displayed.[/]");
                     
-                    choice = UserInput.MenuChoice(GUI_AccountSCM_CurrentShoppingCart.MaxMenuItems());
+                    choice = UserInput.MenuChoice(GUI_SCM_CurrentShoppingCart.MaxMenuItems());
                     NavigateShoppingCartManager(choice);
                     
                     break;
                 
                 case 2:
                     
-                    GUI_Display.DisplayWindow(GUI_AccountSCM_SaveCart.ShowSaveCart());
+                    GUI_Display.DisplayWindow(GUI_SCM_SaveCart.ShowSaveCart());
                     
-                    Account.SaveCurrentBucket(UserInput.GetStringInput("[bold yellow]Please enter a Name for the Bucket."));
+                    Account.SaveCurrentBucket(UserInput.GetStringInput("[bold yellow]Please enter a Name for the Bucket.[/]"));
                     
                     AnsiConsole.MarkupLine("[bold green]Shopping Cart saved successfully![/]");
                     Thread.Sleep(200);
@@ -55,9 +49,9 @@ namespace Elektrogrosshandel.Functions
 
                     string cartloadchoice;
 
-                    GUI_Display.DisplayWindow(GUI_AccountSCM_SavedShoppingCarts.ShowSavedCarts());
+                    GUI_Display.DisplayWindow(GUI_SCM_SavedShoppingCarts.ShowSavedCarts());
                     AnsiConsole.MarkupLine("[bold green]Saved Shopping Carts displayed.[/]");
-                    AnsiConsole.MarkupLine("[bold yellow]Choose to Load a Cart or switch to another Menu (\" Load \" or 1 - 4)[/]");
+                    AnsiConsole.MarkupLine("[bold yellow]Choose to Load a Cart or switch to another Menu (\" Load \" or 1 - 5)[/]");
 
                     do
                     {
@@ -68,7 +62,7 @@ namespace Elektrogrosshandel.Functions
                             bool isInt;
                             string cartid;
 
-                            GUI_Display.DisplayWindow(GUI_AccountSCM_SavedShoppingCarts.ShowSavedCarts());
+                            GUI_Display.DisplayWindow(GUI_SCM_SavedShoppingCarts.ShowSavedCarts());
                             AnsiConsole.MarkupLine("[bold green]Load Shopping Cart selected.[/]");
                             AnsiConsole.MarkupLine("[bold yellow]Please enter the ID of the Shopping Cart you wish to load.[/]");
 
@@ -84,7 +78,7 @@ namespace Elektrogrosshandel.Functions
 
                                 isInt = int.TryParse(cartid, out int temp);
 
-                                if (!isInt)
+                                if (isInt == false)
                                 {
                                     AnsiConsole.MarkupLine("[bold red]Invalid ID format. Please enter a numeric ID.[/]");
                                     Thread.Sleep(200);
@@ -95,7 +89,7 @@ namespace Elektrogrosshandel.Functions
                                 {
                                     if (Account.LoadSavedBucket(temp))
                                     {
-                                        GUI_Display.DisplayWindow(GUI_AccountSCM_SavedShoppingCarts.ShowSavedCarts());
+                                        GUI_Display.DisplayWindow(GUI_SCM_SavedShoppingCarts.ShowSavedCarts());
                                         AnsiConsole.MarkupLine("[bold green]Shopping Cart loaded successfully![/]");
                                         break;
                                     }
@@ -110,7 +104,7 @@ namespace Elektrogrosshandel.Functions
 
                         else if (int.TryParse(cartloadchoice, out choice))
                         {
-                            if (choice > 4 || choice < 1)
+                            if (choice > 5 || choice < 1)
                             {
                                 AnsiConsole.MarkupLine("[bold red]Invalid choice. Please try again.[/]");
                                 Thread.Sleep(200);
@@ -136,7 +130,7 @@ namespace Elektrogrosshandel.Functions
                     string cartdeletechoice;
                     bool isInteger;
 
-                    GUI_Display.DisplayWindow(GUI_AccountSCM_DeleteShoppingCart.ShowDeleteCart());
+                    GUI_Display.DisplayWindow(GUI_SCM_DeleteShoppingCart.ShowDeleteCart());
                     AnsiConsole.MarkupLine("[bold green]Delete Shopping Cart selected.[/]");
 
                     do
@@ -156,7 +150,7 @@ namespace Elektrogrosshandel.Functions
 
                         if (Account.DeleteSavedBucket(deleteID))
                         {
-                            GUI_Display.DisplayWindow(GUI_AccountSCM_DeleteShoppingCart.ShowDeleteCart());
+                            GUI_Display.DisplayWindow(GUI_SCM_DeleteShoppingCart.ShowDeleteCart());
 
                             AnsiConsole.MarkupLine("[bold green]Shopping Cart deleted successfully![/]");
                             AnsiConsole.MarkupLine("[bold yellow]Returning to Shopping Cart Manager...[/]");

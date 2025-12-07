@@ -72,12 +72,14 @@ namespace Elektrogrosshandel.User
 
         public Markup GetBucketInformation()
         {
-            return new Markup($"[bold yellow]Bucket ID:[/] {BucketID}\n[bold yellow]Bucket Name:[/] {BucketName}\n[bold yellow]Created At:[/] {CreatedAt}\n[bold yellow]Number of Articels:[/] {Articels.Count}");
+            return new Markup($"[bold yellow]Bucket ID:[/] {BucketID} | [bold yellow]Bucket Name:[/] {BucketName}");
         }
 
         public static List<Markup> GetArticelsInBucket(Bucket bucket)
         {
             List<Markup> articelsInBucket = new List<Markup>();
+
+            articelsInBucket.Add(new Markup($"[yellow]BucketID:[/] {bucket.BucketID}  [yellow]Bucket Name:[/] {bucket.BucketName}\n[bold blue underline]Articels in Bucket[/]"));
 
             foreach (ComputerHardware articel in bucket.Articels)
             {

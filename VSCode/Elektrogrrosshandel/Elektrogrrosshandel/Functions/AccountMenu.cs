@@ -11,10 +11,10 @@ namespace Elektrogrosshandel.Functions
     {
         public static void ShowAccountMenu()
         {
-            MenuSelector(1);
+            AccountMenuSelector(1);
         }
 
-        private static void MenuSelector(int choice)
+        private static void AccountMenuSelector(int choice)
         {
             switch (choice)
             {
@@ -26,18 +26,20 @@ namespace Elektrogrosshandel.Functions
                     GUI_Display.DisplayWindow(GUI_AccountInfoMenu.ShowAccountInfoMenu());
 
                     AnsiConsole.MarkupLine("\n[bold yellow]What would you like to do next? ( 1 - 5 )[/]");
-                    MenuSelector(UserInput.MenuChoice(5));
+                    AccountMenuSelector(UserInput.MenuChoice(5));
                     
 
                     break;
 
                 case 2:
 
-                    AnsiConsole.MarkupLine("[bold green]ShoppingCart Manager selected.[/]");
-                    Thread.Sleep(500);
 
-                    AccountMenuShoppingCartManager.ShowShoppingCartManager();
 
+                    break;
+
+                case 5:
+
+                    MainMenu.DisplayMainMenu();
                     break;
             }
         }

@@ -12,7 +12,6 @@ namespace Elektrogrosshandel.GUI.GUI_Menus
         private static List<Markup> menuItems = new List<Markup>
         {
             new Markup("[yellow]1.[/] [bold white]Account Info[/]"),
-            new Markup("[yellow]2.[/] ShopingCart Manager"),
             new Markup("[yellow]3.[/] Orders"),
             new Markup("[yellow]4.[/] Edit Account"),
             new Markup("[yellow]5.[/] Back to Main Menu")

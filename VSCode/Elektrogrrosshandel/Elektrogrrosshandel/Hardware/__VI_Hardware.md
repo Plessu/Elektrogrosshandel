@@ -25,7 +25,7 @@ Beinhaltet Einträge zu neuen Releases, Änderungen, Breaking Changes und Migratio
 ------------------------------
 
 - 2025-12-05: `Hardware.ComputerHardware` v2.0.0 veröffentlicht.
-- 2025-12-05: `Hardware.ComputerHardware` v1.0 veröffentlicht.
+- 2025-12-05: `Hardware.ComputerHardware` v1.0.0 veröffentlicht.
 
 Neue/Benutzer-Releases
 ----------------------

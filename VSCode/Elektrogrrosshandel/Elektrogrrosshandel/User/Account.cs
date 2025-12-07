@@ -218,8 +218,9 @@ namespace Elektrogrosshandel
         public static void SaveCurrentBucket(string bucketName)
         {
             Bucket currentBucket = Program.ActiveUser.ActiveBucket;
-            Account.SaveCurrentBucket(bucketName);
+            Bucket.ChangeBucketName(currentBucket, bucketName);
             Program.ActiveUser.SafedBuckets.Add(currentBucket);
+            Program.ActiveUser.ActiveBucket = Bucket.CreateBucket(Program.ActiveUser.AccountID, "Active Bucket");
             return;
         }
 
@@ -253,9 +254,12 @@ namespace Elektrogrosshandel
 
         public static List<Markup> GetSafedBuckets(Account account)
         {
-            List<Markup> bucketInfo = new List<Markup>();
-            
-            bucketInfo.Add(Program.ActiveUser.ActiveBucket.GetBucketInformation());
+            List<Markup> bucketInfo = new List<Markup>(0);
+
+            if (account.SafedBuckets.Count == 0)
+            {
+                bucketInfo.Add(new Markup("No saved buckets found."));
+            }
 
             foreach (Bucket bucket in account.SafedBuckets)
             {
@@ -263,7 +267,8 @@ namespace Elektrogrosshandel
 
                 return bucketInfo;
             }
-            return null;
+
+            return bucketInfo;
         }
 
         public static List<Account> GetAllAccounts()

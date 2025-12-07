@@ -3,6 +3,11 @@
   - Änderungsverlauf (Kurzfassung)
 ------------------------------
 
+- 2025-12-07: `MainMenu` v2.0.0 veröffentlicht.
+- 2025-12-07: `AccountMenu` v2.0.0 veröffentlicht.
+- 2025-12-07: `AccountMenuInfo` v1.0.0 enternt -> `AccountMenu`.
+- 2025-12-07: `ShoppingCartManager` v2.0.0 veröffentlicht.
+- 2025-12-07: `AccountMenuShoppingCartManager` v1.0.0 enternt - > `ShoppingCartManager`.
 - 2025-12-06: `AccountMenuShoppingCartManager` v1.0.0 veröffentlicht.
 - 2025-12-06: `AccountMenuInfo` v1.0.0 veröffentlicht.
 - 2025-12-06: `AccountMenu` v1.0.0 veröffentlicht.
@@ -14,6 +19,73 @@
 
 Neue/Benutzer-Releases
 ----------------------
+
+- Klasse: `ElektroGrosshandel.Functions.MainMenu`
+  - Version: `2.0.0`
+  - Datum: `2025-12-07`
+  - Autor: `Giacomo Graef`
+  - Zusammenfassung: `ShoppingCartManager` added, `Orders` moved to `AccountMenu`.
+  - Änderungen:
+    - Logik: `AccountMenuInfo` in `AccountMenu` integriert.
+  - Breaking Changes:
+    - Deletion von `AccountMenuInfo`.
+  - Migrationshinweise:
+    - Siehe `AccountMenu` für Integratonshinweise zu Submenüs/Subklassen.
+  - Tests: `Keine`
+
+---
+
+- Klasse: `ElektroGrosshandel.Functions.AccountMenu`
+  - Version: `2.0.0`
+  - Datum: `2025-12-07`
+  - Autor: `Giacomo Graef`
+  - Zusammenfassung: `AccountMenu` merged from  `AccountMenuInfo`, `Orders` integriert from `MainMenu`.
+  - Änderungen:
+    - Logik: `AccountMenuInfo` in `AccountMenu` integriert.
+    - Logik: `Orders` in `AccountMenu` integriert, aus `MainMenu` verschoben.
+  - Breaking Changes:
+    - Deletion von `AccountMenuInfo`.
+    - Integration von `Orders` aus `MainMenu`.
+  - Migrationshinweise:
+    - Siehe `AccountMenu` für Integratonshinweise zu Submenüs/Subklassen.
+    - Siehe `MainMenu` für Änderungen bezüglich der Menüstruktur.
+  - Tests: `Keine`
+
+---
+
+- Klasse: `ElektroGrosshandel.Functions.AccountMenuInfo`
+  - Version: `entfernt`
+  - Datum: `2025-12-07`
+  - Autor: `Giacomo Graef`
+  - Zusammenfassung: `AccountMenuInfo` merged into  `AccountMenu`.
+  - Änderungen:
+    - Logik: in `AccountMenu` integriert.
+  - Breaking Changes:
+    - Deletion von `AccountMenuInfo`.
+  - Migrationshinweise:
+    - Siehe `AccountMenu` für Integratonshinweise zu Submenüs/Subklassen.
+  - Tests: `Keine`
+
+---
+
+- Klasse: `ElektroGrosshandel.Functions.ShoppingCartManager`
+  - Version: `2.0.0`
+  - Datum: `2025-12-07`
+  - Autor: `Giacomo Graef`
+  - Zusammenfassung: `ShoppingCartManager` forged out of `AccountMenuShoppingCartManager`.
+  - Änderungen:
+    - Logik: `ShoppingCartManager` regelt die Anzeige des ShoppingCart Managers. -> Ausgelagert aus `AccountMenuShoppingCartManager`.
+    - Subklasse: `ShoppingCartManager` nutzt jetzt `GUI_SCM_*` Klassen zur Menführung.
+    - Struktur: `ShoppingCartManager` wird direkt aus  `MainMenu` aufgerufen.
+  - Breaking Changes:
+    - Einführung von `ShoppingCartManager` (Änderung der Menüführung durch `MainMenu`)
+    - Menüführung wird nicht mehr über `AccountMenu` gehandhabt.
+    - Logik für GUI-Aufruf des Submenüs `GUI_SCM_*` in `ShoppingCartManager` verschoben.
+  - Migrationshinweise:
+    - Siehe `ShopingCartManager` für Integratonshinweise zu Submenüs/Subklassen.
+  - Tests: `Keine`
+
+---
 
 - - Klasse: `ElektroGrosshandel.Functions.AccountMenuShoppingCartManager`
   - Version: `1.0.0`

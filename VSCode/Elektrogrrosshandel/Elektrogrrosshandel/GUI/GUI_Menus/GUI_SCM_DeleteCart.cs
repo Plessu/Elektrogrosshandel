@@ -6,18 +6,19 @@ using Elektrogrosshandel.User;
 
 namespace Elektrogrosshandel.GUI.GUI_Menus
 {
-    internal class GUI_AccountSCM_DeleteShoppingCart
+    internal class GUI_SCM_DeleteShoppingCart
     {
-        private static List<Markup> menuItems = new List<Markup>
-        {
-            new Markup("[yellow]1.[/] Account Info"),
-            new Markup("[yellow]2.[/] [bold white]ShopingCart Manager[/]"),
-            new Markup("[yellow]3.[/] Orders"),
-            new Markup("[yellow]4.[/] Edit Account"),
-            new Markup("[yellow]5.[/] Back to Main Menu")
-        };
 
-        private static Layout AccountDeleteCart()
+        private static List<Markup> menuShoppingCartManagerItems = new List<Markup>
+            {
+                new Markup("[yellow]1.[/] View ShoppingCart"),
+                new Markup("[yellow]2.[/] Save Current ShoppingCart"),
+                new Markup("[yellow]3.[/] View Saved ShoppingCarts"),
+                new Markup("[bold yellow]4.[/] [bold]Delete Saved ShoppingCart[/]"),
+                new Markup("\n[yellow]5.[/] Back to Account Menu")
+            };
+
+        private static Layout DeleteCart()
         {
             Console.BufferHeight = 3000;
             Console.BufferWidth = 250;
@@ -26,45 +27,22 @@ namespace Elektrogrosshandel.GUI.GUI_Menus
 
             Layout accountShoppingCartManager = new Layout("AccountMenu")
                         .SplitColumns(
-                            new Layout("Menu"),
                             new Layout("MenuShoppingCartManager"),
                             new Layout("Display"));
 
             accountShoppingCartManager["AccountMenu"].Size(18);
-            accountShoppingCartManager["Menu"].Size(35);
-            accountShoppingCartManager["MenuShoppingCartManager"].Size(30);
-            accountShoppingCartManager["Display"].Size(55);
+            accountShoppingCartManager["MenuShoppingCartManager"].Size(40);
+            accountShoppingCartManager["Display"].Size(80);
 
-            accountShoppingCartManager["Menu"].Update(Menu());
+            accountShoppingCartManager["MenuShoppingCartManager"].Update(MenuShoppingCartManager());
             accountShoppingCartManager["Display"].Update(DisplayDeleteCart());
 
             return accountShoppingCartManager;
         }
 
-        private static Panel Menu()
-        {
-            var menuPanel = new Panel(new Rows(menuItems))
-            {
-                Header = new PanelHeader("[bold #af8700 on black]Account Menu[/]", Justify.Center),
-                Height = 15,
-                Width = 35,
-                Border = BoxBorder.Rounded,
-                Padding = new Padding(2, 1),
-                Expand = true
-            };
-            return menuPanel;
-        }
-
         private static Panel MenuShoppingCartManager()
         {
-            List<Markup> menuShoppingCartManagerItems = new List<Markup>
-            {
-                new Markup("[yellow]1.[/] View ShoppingCart"),
-                new Markup("[yellow]2.[/] View Saved ShoppingCarts"),
-                new Markup("[yellow]3.[/] Save Current ShoppingCart"),
-                new Markup("[bold yellow]5.[/] [bold]Delete Saved ShoppingCart[/]"),
-                new Markup("\n[yellow]6.[/] Back to Account Menu")
-            };
+
             var menuShoppingCartManagerPanel = new Panel(new Rows(menuShoppingCartManagerItems))
             {
                 Header = new PanelHeader("[bold #af8700 on black]ShopingCart Menu[/]", Justify.Center),
@@ -97,12 +75,12 @@ namespace Elektrogrosshandel.GUI.GUI_Menus
 
         public static Layout ShowDeleteCart()
         {
-            return AccountDeleteCart();
+            return DeleteCart();
         }
 
         public static int MaxMenuItems()
         {
-            return menuItems.Count();
+            return menuShoppingCartManagerItems.Count();
         }
     }
 }

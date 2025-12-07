@@ -25,6 +25,9 @@ namespace Elektrogrosshandel.Functions
                 case 5:
                     AccountMenu.ShowAccountMenu();
                     break;
+                case 6:
+                    ShoppingCartManager.ShowShoppingCartManager();
+                    break;
 
             }
         }
