@@ -24,11 +24,33 @@ Beinhaltet Einträge zu neuen Releases, Änderungen, Breaking Changes und Migratio
 Änderungsverlauf (Kurzfassung)
 ------------------------------
 
+- 2025-12-07: `Hardware.Order` v1.0.0 veröffentlicht.
 - 2025-12-05: `Hardware.ComputerHardware` v2.0.0 veröffentlicht.
 - 2025-12-05: `Hardware.ComputerHardware` v1.0.0 veröffentlicht.
 
 Neue/Benutzer-Releases
 ----------------------
+
+
+- Klasse: `ElektroGrosshandel.Hardware.Order`
+  - Version: `1.0.0`
+  - Datum: `2025-12-07`
+  - Autor: `Giacomo Graef`
+  - Zusammenfassung: `Order` Klasse erstellt zur Verwaltung von Bestellungen.
+  - Beschreibungen:
+    - Feature: Grundlegende Logik und Struktur für `PlaceOrder` und `CancelOrder` Methoden.
+    - Feature: `Bucket` Klasse bei erstellen von Bestellungen integriert.
+    - Feature: Aufrufe zu Bestellinfo ermöglicht durch `Order` Klasse.
+    - Íntegration: `Order` Klasse integriert in `Account` durch `Account.Orders` Liste.
+  - Änderungen:
+    - Struktur: `Functions.PlaceOrder` - Regelt Methoden zur Bestellung und Menüführung.
+  - Breaking Changes:
+    - Komplette Logik und Struktur für Order-Management neu definiert und implementiert.
+  - Migrationshinweise:
+    - Logik anpassen: `MainMenu` ruft nun `PlaceOrder` auf, um Bestellungen auszulösen.
+  - Tests: `Keine (werden später hinzugefügt)`
+
+---
 
 - Klasse: `ElektroGrosshandel.Hardware.ComputerHardware`
   - Version: `2.0.0`
