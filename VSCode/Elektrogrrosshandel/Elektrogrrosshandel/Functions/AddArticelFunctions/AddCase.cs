@@ -1,8 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Elektrogrosshandel.GUI;
+using Elektrogrosshandel.GUI.GUI_Menus;
 using Elektrogrosshandel.Hardware;
 using Spectre.Console;
+using System;
+using System.Collections.Generic;
+using System.Text;
 
 namespace Elektrogrosshandel.Functions.AddArticelFunctions
 {
@@ -81,6 +83,8 @@ namespace Elektrogrosshandel.Functions.AddArticelFunctions
             articlename = UserInput.GetStringInput(addCaseItems[0]);
             articlemanufacturer = UserInput.GetStringInput(addCaseItems[1]);
             articlemodel = UserInput.GetStringInput(addCaseItems[2]);
+
+            GUI_Display.DisplayWindow(GUI_AdminMenuMenuAddArticel.ShowAdminMenu());
 
             do
             {
