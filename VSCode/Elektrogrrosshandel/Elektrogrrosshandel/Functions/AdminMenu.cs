@@ -12,7 +12,7 @@ namespace Elektrogrosshandel.Functions
     internal class AdminMenu
     {
 
-                static public void ShowAdminMenu()
+        static public void ShowAdminMenu()
         {
             MenuSelection(1);
         }
@@ -25,6 +25,21 @@ namespace Elektrogrosshandel.Functions
 
                     string userinput;
 
+                    string[] addOptions = new string[]
+                    {
+                        "Case",
+                        "Mainboard",
+                        "CPU",
+                        "RAM",
+                        "GPU",
+                        "PSU",
+                        "Storage",
+                        "Cooling",
+                        "Peripherie",
+                        "Display",
+                        "Software"
+                    };
+
                     GUI_Display.DisplayWindow(GUI_AdminMenuMenuAddArticel.ShowAdminMenu());
                     AnsiConsole.MarkupLine("[bold green]Add Artikel selected.[/]");
                     
@@ -34,61 +49,14 @@ namespace Elektrogrosshandel.Functions
                     {
                         userinput = UserInput.GetStringInput("Was für einen Artikel möchten Sie hinzufügen?");
                     
-                        if (userinput.ToLower() == "case")
+                        foreach (string option in addOptions)
                         {
-                            AddCase.AddCaseMenu();
+                            if (userinput.ToLower() == option.ToLower())
+                            {
+                                AddArticelSelector.ShowAddSelector(option);
+                                break;
+                            }
                         }
-
-                        if (userinput.ToLower() == "mainboard")
-                        {
-                            AddMainboard.AddMainboardMenu();
-                        }
-
-                        if (userinput.ToLower() == "cpu")
-                        {
-                            AddCPU.AddCPUMenu();
-                        }
-
-                        if (userinput.ToLower() == "ram")
-                        {
-                            AddRAM.AddRAMMenu();
-                        }
-
-                        if (userinput.ToLower() == "gpu")
-                        {
-                            AddGPU.AddGPUMenu();
-                        }
-
-                        if (userinput.ToLower() == "psu")
-                        {
-                            AddPSU.AddPSUMenu();
-                        }
-
-                        if (userinput.ToLower() == "storage")
-                        {
-                            AddStorage.AddStorageMenu();
-                        }
-
-                        if (userinput.ToLower() == "cooling")
-                        {
-                            AddCooling.AddCoolingMenu();
-                        }
-
-                        if (userinput.ToLower() == "Peripherie")
-                        {
-                            AddPeripherie.AddPeripherieMenu();
-                        }
-
-                        if (userinput.ToLower() == "Display")
-                        {
-                            AddDisplay.AddDisplayMenu();
-                        }
-
-                        if (userinput.ToLower() == "Software")
-                        {
-                            AddSoftware.AddSoftwareMenu();
-                        }
-
                     }
                     else
                     {
