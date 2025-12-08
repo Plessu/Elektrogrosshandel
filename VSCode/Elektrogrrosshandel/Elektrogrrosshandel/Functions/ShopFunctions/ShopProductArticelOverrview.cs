@@ -14,24 +14,30 @@ namespace Elektrogrosshandel.Functions.ShopFunctions
     {
         public static void ShowArticelOverview(string articelID)
         {
+            bool success = false;
             string userinput;
             int quantity;
 
             GUI_Display.DisplayWindow(GUI_ProductCatalogArticelOverview.ShowArticelOverview(articelID));
 
-            userinput = Functions.UserInput.GetStringInput("Möchten Sie den Artikel hinzufügen \"add + Quantity\" oder \"back\" um in den Produktkatalog zurückzukehren.");
+            userinput = Functions.UserInput.GetStringInput("Möchten Sie den Artikel hinzufügen \"add,Quantity\" oder \"back\" um in den Produktkatalog zurückzukehren.");
 
             if (userinput.ToLower().StartsWith("add"))
             {
-                userinput = userinput.ToLower().Replace("add ", "");
-                userinput = userinput.Replace("+", "");
+                userinput = userinput.ToLower().Replace("add,", "");
                 userinput = userinput.Trim();
 
-                if (int.TryParse(userinput, out quantity) && quantity > 0)
+                if (success = int.TryParse(userinput, out quantity))
                 {
-                    bool success = false;
-                    
-                    success = Bucket.AddArticelToBucket(Account.GetActiveBucket(Program.ActiveUser), Int64.Parse(articelID), quantity);
+                    if (quantity <= 0)
+                    {
+                        AnsiConsole.MarkupLine("[red]Die Menge muss größer als 0 sein. Bitte versuchen Sie es erneut.[/]");
+                        Thread.Sleep(200);
+
+                        ShowArticelOverview(articelID);
+                        return;
+                    }
+                success = Bucket.AddArticelToBucket(Account.GetActiveBucket(Program.ActiveUser), Int64.Parse(articelID), quantity);
 
                     if (success)
                     {

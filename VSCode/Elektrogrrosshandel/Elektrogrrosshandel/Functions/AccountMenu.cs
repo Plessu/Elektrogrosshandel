@@ -25,19 +25,21 @@ namespace Elektrogrosshandel.Functions
 
                     GUI_Display.DisplayWindow(GUI_AccountInfoMenu.ShowAccountInfoMenu());
 
-                    AnsiConsole.MarkupLine("\n[bold yellow]What would you like to do next? ( 1 - 5 )[/]");
-                    AccountMenuSelector(UserInput.MenuChoice(5));
+                    AnsiConsole.MarkupLine("\n[bold yellow]What would you like to do next? ( 1 - 4 )[/]");
+                    AccountMenuSelector(UserInput.MenuChoice(4));
                     
 
                     break;
 
                 case 2:
-
-
-
+                    MainMenu.ShowMainMenu();
                     break;
 
-                case 5:
+                case 3:
+                    MainMenu.ShowMainMenu();
+                    break;
+
+                case 4:
 
                     MainMenu.ShowMainMenu();
                     break;

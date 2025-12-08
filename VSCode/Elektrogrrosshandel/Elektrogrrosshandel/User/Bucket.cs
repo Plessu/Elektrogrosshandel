@@ -45,7 +45,7 @@ namespace Elektrogrosshandel.User
 
                 if (bucket.ArticelIDs.Contains(articelID))
                 {
-                    int index = bucket.ArticelIDs.IndexOf(articelID);
+                    int index = bucket.Articels.IndexOf(articel);
                     bucket.Quantity[index] += quantity;
                 }
                 else
@@ -53,6 +53,7 @@ namespace Elektrogrosshandel.User
                     Hardware.ComputerHardware bucketHardware = Hardware.ComputerHardware.GetArticelByID(articelID);
                     bucket.ArticelIDs.Add(articelID);
                     bucket.Articels.Add(bucketHardware);
+                    bucket.Quantity.Add(quantity);
                 }
 
                 bucket.BucketValue += ComputerHardware.GetArticelPriceByID(articelID) * quantity;
