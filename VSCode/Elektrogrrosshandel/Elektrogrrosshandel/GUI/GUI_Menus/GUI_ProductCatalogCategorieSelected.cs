@@ -1,21 +1,23 @@
-﻿using Spectre.Console;
+﻿using Elektrogrosshandel.Hardware;
+using Spectre.Console;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace Elektrogrosshandel.GUI.GUI_Menus
 {
-    internal class GUI_ProductCatalogCategories
+    internal class GUI_ProductCatalogCategorieSelected
     {
+        private static string Category = "";
         //Menu Items
         private static List<Markup> menuProductCatalog = new List<Markup>
         {
                 new Markup("[bold #c0c0c0]  1. Produktkategorien[/]"),
                 new Markup("[#c0c0c0]  2. Hersteller[/]"),
-                new Markup("[#c0c0c0]  3. Back to MainMenu[/]")
+                new Markup("[#c0c0c0]  \n3. Back to MainMenu[/]")
         };
 
-        private static Layout ProductCategorie()
+        private static Layout ProductCategoriesSelected(List<Markup> ItemsInCategorie)
         {
             Layout mainMenu = new Layout("Shop Menu")
                 .SplitColumns(
@@ -23,7 +25,7 @@ namespace Elektrogrosshandel.GUI.GUI_Menus
                     new Layout("Kategorien"));
 
             mainMenu["Menu"].Update(PanelMenu().Expand());
-            mainMenu["Kategorien"].Update(PanelCategories().Expand());
+            mainMenu["Kategorien"].Update(PanelCategoriesSelected(ItemsInCategorie).Expand());
 
             return mainMenu;
         }
@@ -43,34 +45,12 @@ namespace Elektrogrosshandel.GUI.GUI_Menus
             return panelMenu;
         }
 
-        private static Panel PanelCategories()
+        private static Panel PanelCategoriesSelected(List<Markup> ItemsInCategorie)
         {
-            string[] addOptions = new string[]
-            {
-                        "Case",
-                        "Mainboard",
-                        "CPU",
-                        "RAM",
-                        "GPU",
-                        "PSU",
-                        "Storage",
-                        "Cooling",
-                        "Peripherie",
-                        "Display",
-                        "Software"
-            };
-
-            List<Markup> categoryItems = new List<Markup>();
-            categoryItems.Add(new Markup("[italic #00afff]Please select an categorie or change Menu (1 - 3).[/]"));
-            categoryItems.Add(new Markup("\n[bold #c0c0c0] Produktkategorien:[/]"));
-            foreach (string category in addOptions)
-            {
-                categoryItems.Add(new Markup($"[#c0c0c0] - {category}[/]"));
-            }
-
+            
             //Create Panel for Display area
             Panel panelDisplay = new Panel(
-                Align.Left(new Rows(categoryItems), VerticalAlignment.Top));
+                Align.Left(new Rows(ItemsInCategorie), VerticalAlignment.Top));
             panelDisplay.Width = 90;
             panelDisplay.Border(BoxBorder.Rounded);
             panelDisplay.Header("[bold #af8700 on black]Product Categories[/]");
@@ -79,10 +59,11 @@ namespace Elektrogrosshandel.GUI.GUI_Menus
             panelDisplay.Expand();
             return panelDisplay;
         }
-        public static Layout ShowProductCatalog()
+        public static Layout ShowCategorieSelected(List<Markup> ItemsInCategorie)
         {
-            Layout shopCategorieLayout = ProductCategorie();
-            return shopCategorieLayout;
+            
+            Layout manufacturerSelected = ProductCategoriesSelected(ItemsInCategorie);
+            return manufacturerSelected;
         }
         public static int MaxMenuItems()
         {

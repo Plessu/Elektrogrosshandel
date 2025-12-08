@@ -13,7 +13,7 @@ namespace Elektrogrosshandel.GUI.GUI_Menus
         {
                 new Markup("[#c0c0c0]  1. Produktkategorien[/]"),
                 new Markup("[bold #c0c0c0]  2. Hersteller[/]"),
-                new Markup("[#c0c0c0]  \n3. Back to MainMenu[/]")
+                new Markup("[#c0c0c0]  3. Back to MainMenu[/]")
         };
 
         private static Layout ProductManufacturer()
@@ -49,7 +49,7 @@ namespace Elektrogrosshandel.GUI.GUI_Menus
             List<Markup> manufacturersItems = new List<Markup>();
             List<string> manufacturers = new List<string>();
             manufacturers = ComputerHardware.GetAllManufacturers();
-            manufacturersItems.Add(new Markup("[italic #00afff]Please select an categorie or change Menu (1 - 3).[/]"));
+            manufacturersItems.Add(new Markup("[italic #00afff]Please select an manufacturer or change Menu (1 - 3).[/]"));
             manufacturersItems.Add(new Markup("\n[bold blue]Hersteller:[/]"));
             
             foreach (string manufacturer in manufacturers)
@@ -62,7 +62,7 @@ namespace Elektrogrosshandel.GUI.GUI_Menus
                 Align.Left(new Rows(manufacturersItems), VerticalAlignment.Top));
             panelDisplay.Width = 90;
             panelDisplay.Border(BoxBorder.Rounded);
-            panelDisplay.Header("[bold #af8700 on black]Product Categories[/]");
+            panelDisplay.Header("[bold #af8700 on black]Product Manufacturers[/]");
             panelDisplay.HeaderAlignment(Justify.Left);
             panelDisplay.Padding = new Padding(1, 1, 1, 1);
             panelDisplay.Expand();

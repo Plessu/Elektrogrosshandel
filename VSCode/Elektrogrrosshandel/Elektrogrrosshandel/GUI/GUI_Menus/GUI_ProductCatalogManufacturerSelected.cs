@@ -8,24 +8,23 @@ namespace Elektrogrosshandel.GUI.GUI_Menus
 {
     internal class GUI_ProductCatalogManufacturerSelected
     {
-        private static string Manufacturer = "";
         //Menu Items
         private static List<Markup> menuProductCatalog = new List<Markup>
         {
-                new Markup("[bold #c0c0c0]  1. Produktkategorien[/]"),
-                new Markup("[#c0c0c0]  2. Hersteller[/]"),
-                new Markup("[#c0c0c0]  \n3. Back to MainMenu[/]")
+                new Markup("[#c0c0c0]  1. Produktkategorien[/]"),
+                new Markup("[bold #c0c0c0]  2. Hersteller[/]"),
+                new Markup("[#c0c0c0]  3. Back to MainMenu[/]")
         };
 
-        private static Layout ProductManufacturerSelected()
+        private static Layout ProductManufacturerSelected(string Manufacturer)
         {
             Layout mainMenu = new Layout("Shop Menu")
                 .SplitColumns(
                     new Layout("Menu").Size(35),
-                    new Layout("Kategorien"));
+                    new Layout("Hersteller"));
 
             mainMenu["Menu"].Update(PanelMenu().Expand());
-            mainMenu["Kategorien"].Update(PanelCategories().Expand());
+            mainMenu["Hersteller"].Update(PanelManufacturers(Manufacturer).Expand());
 
             return mainMenu;
         }
@@ -45,23 +44,17 @@ namespace Elektrogrosshandel.GUI.GUI_Menus
             return panelMenu;
         }
 
-        private static Panel PanelCategories()
+        private static Panel PanelManufacturers(string Manufacturer)
         {
-            List<ComputerHardware> itemsInCategorie = new List<ComputerHardware>();
-            itemsInCategorie = ComputerHardware.GetArticelbyManufacturer(Manufacturer);
-            List<Markup> categoryItems = new List<Markup>();
+            List<Markup> categoryItems = ComputerHardware.GetArticelbyManufacturer(Manufacturer);
 
-            foreach (ComputerHardware item in itemsInCategorie)
-            {
-                categoryItems.Add(ComputerHardware.GetArticelInfoByArticel(item));
-            }
 
             //Create Panel for Display area
             Panel panelDisplay = new Panel(
                 Align.Left(new Rows(categoryItems), VerticalAlignment.Top));
             panelDisplay.Width = 90;
             panelDisplay.Border(BoxBorder.Rounded);
-            panelDisplay.Header("[bold #af8700 on black]Product Categories[/]");
+            panelDisplay.Header("[bold #af8700 on black]Product Manufacturers[/]");
             panelDisplay.HeaderAlignment(Justify.Left);
             panelDisplay.Padding = new Padding(1, 1, 1, 1);
             panelDisplay.Expand();
@@ -69,8 +62,7 @@ namespace Elektrogrosshandel.GUI.GUI_Menus
         }
         public static Layout ShowManufacturerSelected(string manufacturer)
         {
-            Manufacturer = manufacturer;
-            Layout manufacturerSelected = ProductManufacturerSelected();
+            Layout manufacturerSelected = ProductManufacturerSelected(manufacturer);
             return manufacturerSelected;
         }
         public static int MaxMenuItems()

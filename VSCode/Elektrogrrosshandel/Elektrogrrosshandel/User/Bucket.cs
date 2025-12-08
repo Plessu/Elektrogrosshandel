@@ -14,7 +14,7 @@ namespace Elektrogrosshandel.User
         private DateTime CreatedAt { get; set; }
         private List<Hardware.ComputerHardware> Articels { get; set; }
         private List<int> Quantity { get; set; }
-        private List<int> ArticelIDs { get; set; }
+        private List<Int64> ArticelIDs { get; set; }
 
 
         private static List<int> UsedBucketIDs = new List<int>();
@@ -29,13 +29,13 @@ namespace Elektrogrosshandel.User
             CreatedAt = DateTime.Now;
             Articels = new List<Hardware.ComputerHardware>();
             Quantity = new List<int>();
-            ArticelIDs = new List<int>();
+            ArticelIDs = new List<Int64>();
  
         }
 
-        public static bool AddArticelToBucket(Bucket bucket, int articelID, int quantity)
+        public static bool AddArticelToBucket(Bucket bucket, Int64 articelID, int quantity)
         {
-            ComputerHardware articel = Hardware.ComputerHardware.GetArticelByID(articelID);
+            ComputerHardware articel = ComputerHardware.GetArticelByID(articelID);
             if (articel == null)
             {
                 return false;

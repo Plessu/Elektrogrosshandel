@@ -48,7 +48,7 @@ namespace Elektrogrosshandel.Hardware
         private static int ArticelGroupID = 800;
         private string ArticelGroupDescription = "This category includes air and liquid cooling solutions for CPUs and other components.";
 
-        private static List<int> ArticelIDs = new List<int>();
+        private static List<Int64> ArticelIDs = new List<Int64>();
 
         public CoolingSystem (string articelName, string articelManufacturer, string articelModel,
                               int articelYearOfProduction, int articelManufactrerID, string[] articelColors, int articelStock,
@@ -68,10 +68,10 @@ namespace Elektrogrosshandel.Hardware
             ComputerHardware.AddCoolingSystem(this);
         }
 
-        private static int CreateArticelID()
+        private static Int64 CreateArticelID()
         {
             string articelID;
-            int iD;
+            Int64 iD;
             Random random = new Random();
             do
             {
@@ -83,7 +83,7 @@ namespace Elektrogrosshandel.Hardware
             } while (true);
 
             articelID = ComputerHardware.ArticelParentGroupID + ArticelGroupID.ToString() + iD.ToString("D4");
-            iD = int.Parse(articelID);
+            iD = Int64.Parse(articelID);
             ArticelIDs.Add(iD);
 
             return iD;

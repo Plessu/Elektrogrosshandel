@@ -24,7 +24,7 @@ namespace Elektrogrosshandel.GUI.GUI_Menus
         private static Panel PanelArtikelInfo()
         {
             List<Markup> articelInfo = new List<Markup>();
-            articelInfo = ComputerHardware.GetArticelInfoByID(int.Parse(ArticelID));
+            articelInfo = ComputerHardware.GetArticelInfoByID(Int64.Parse(ArticelID));
 
             if (articelInfo.Count == 0)
             {

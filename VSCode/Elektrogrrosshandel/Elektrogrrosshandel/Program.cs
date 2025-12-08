@@ -13,7 +13,7 @@ namespace Elektrogrosshandel
         public static Account ActiveUser = new Account();
         static void Main(string[] args)
         {
-            Account.TestData();
+            TestData.InitializeTestData();
             Console.OutputEncoding = System.Text.Encoding.UTF8;
             LogIn.LogingIn();
         }

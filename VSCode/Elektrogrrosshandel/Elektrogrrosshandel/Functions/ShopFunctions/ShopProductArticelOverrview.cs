@@ -27,11 +27,11 @@ namespace Elektrogrosshandel.Functions.ShopFunctions
                 userinput = userinput.Replace("+", "");
                 userinput = userinput.Trim();
 
-                if (int.TryParse(articelID, out quantity) && quantity > 0)
+                if (int.TryParse(userinput, out quantity) && quantity > 0)
                 {
                     bool success = false;
                     
-                    success = Bucket.AddArticelToBucket(Account.GetActiveBucket(Program.ActiveUser), int.Parse(articelID), quantity);
+                    success = Bucket.AddArticelToBucket(Account.GetActiveBucket(Program.ActiveUser), Int64.Parse(articelID), quantity);
 
                     if (success)
                     {
@@ -48,12 +48,12 @@ namespace Elektrogrosshandel.Functions.ShopFunctions
             }
             else if (userinput.ToLower() == "back")
             {
-                GUI_ProductCatalog.ShowProductCatalog();
+                ProductCatalog.ShowProductCatalog(1);
             }
             else
             {
                 AnsiConsole.MarkupLine("[red]Ungültige Eingabe. Bitte versuchen Sie es erneut.[/]");
-                ShowArticelOverview(UserInput);
+                ShowArticelOverview(articelID);
             }
         }
     }

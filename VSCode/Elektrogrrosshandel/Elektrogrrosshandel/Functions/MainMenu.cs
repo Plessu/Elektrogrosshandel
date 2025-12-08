@@ -29,6 +29,7 @@ namespace Elektrogrosshandel.Functions
                 case 1:
                     AnsiConsole.MarkupLine("[bold green]Shop selected.[/]");
                     Thread.Sleep(200);
+
                     ProductCatalog.ShowProductCatalog(1);
                     break;
 

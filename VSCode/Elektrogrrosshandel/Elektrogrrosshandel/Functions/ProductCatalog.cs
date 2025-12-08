@@ -40,7 +40,7 @@ namespace Elektrogrosshandel.Functions
 
                     else
                     {
-                        ShopProductCategories.ShowCategorieSelected(userInputCategorie);
+                        ShopProductCategories.ShowShopProductCategories(userInputCategorie);
                         break;
                     }
                     break;
@@ -53,9 +53,9 @@ namespace Elektrogrosshandel.Functions
 
                     GUI_Display.DisplayWindow(GUI_ProductCatalogManufacturers.ShowProductCatalog());
 
-                    userInputCategorie = UserInput.GetStringInput("Geben Sie den Namen der Kategorie ein, die Sie anzeigen möchten oder 1 - 3:");
+                    userInputManufacturer = UserInput.GetStringInput("Geben Sie den Namen des Herstellers ein, die Sie anzeigen möchten oder 1 - 3:");
 
-                    if (validMenuOption = (int.TryParse(userInputCategorie, out choice)))
+                    if (validMenuOption = (int.TryParse(userInputManufacturer, out choice)))
                     {
                         if (choice >= 1 && choice <= GUI_ProductCatalogCategories.MaxMenuItems())
                         {
