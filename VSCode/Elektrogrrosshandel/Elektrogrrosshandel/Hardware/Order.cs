@@ -1,9 +1,11 @@
 ﻿using Elektrogrosshandel;
 using Elektrogrosshandel.User;
+using Spectre.Console;
 using System;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using System.Text;
+using System.Globalization;
 
 namespace Elektrogrosshandel.Hardware
 {
@@ -46,6 +48,24 @@ namespace Elektrogrosshandel.Hardware
             newOrder.CreateOrder(newOrderID, orderName);
 
             return newOrder;
+        }
+
+        public static Markup GetOrdersInfo(Order order)
+        {
+            Markup orderInfo = new Markup($"[bold yellow]Order ID:[/] {order.OrderID} | [bold yellow]Order Name:[/] {order.OrderName} | [bold yellow]Order Total Price:[/] {order.OrderTotalPrice.ToString("C", CultureInfo.CreateSpecificCulture("de-DE"))} | [bold yellow]Order Date:[/] {order.OrderDate.ToString("g")}");
+
+            return orderInfo;
+        }
+
+        public static Markup GetDetailedOrderInfoByOrder(Order Order)
+        {
+            Markup detailedOrderInfo = new Markup($"[bold yellow]Order ID:[/] {Order.OrderID}\n[bold yellow]Order Name:[/] {Order.OrderName}\n[bold yellow]Order Total Price:[/] {Order.OrderTotalPrice.ToString("C", CultureInfo.CreateSpecificCulture("de-DE"))}\n[bold yellow]Order Date:[/] {Order.OrderDate.ToString("f")}\n\n[bold yellow]Ordered Items:[/]\n{Bucket.GetArticelsInBucket(Order.OrderBucket)}");
+            return detailedOrderInfo;
+        }
+
+        public static int GetOrderID(Order order)
+        {
+            return order.OrderID;
         }
     }
 }

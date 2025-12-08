@@ -10,7 +10,7 @@ namespace Elektrogrosshandel.Functions
 {
     internal class PlaceOrder
     {
-        public PlaceOrder() 
+        public static void ShowPlaceOrder() 
         {
             Order NewOrder;
             string ordername;
