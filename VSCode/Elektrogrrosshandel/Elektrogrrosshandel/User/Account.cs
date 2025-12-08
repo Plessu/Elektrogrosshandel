@@ -175,6 +175,26 @@ namespace Elektrogrosshandel
             return false;
         }
 
+        public static void ChangeAccountFirstName(Account account, string newFirstName)
+        {
+            account.FirstName = newFirstName;
+        }
+
+        public static void ChangeAccountLastName(Account account, string newLastName)
+        {
+            account.LastName = newLastName;
+        }
+
+        public static void ChangeAccountEmail(Account account, string newEmail)
+        {
+            account.Email = newEmail;
+        }
+
+        public static void ChangeAccountPhoneNumber(Account account, string newPhoneNumber)
+        {
+            account.PhoneNumber = newPhoneNumber;
+        }
+
         public static string GetAccountNameByAccount(Account account)
         {
             return account.FirstName + " " + account.LastName;
@@ -271,6 +291,18 @@ namespace Elektrogrosshandel
         public static void AddOrderToAccount(Account account, Order order)
         {
             account.Orders.Add(order);
+        }
+
+        public static Order GetOrderByOrderID(Account account, int orderID)
+        {
+            foreach (Order order in account.Orders)
+            {
+                if (orderID == Order.GetOrderID(order))
+                {
+                    return order;
+                }
+            }
+            return null;
         }
 
         public static List<Order> GetAccountOrders(Account account)

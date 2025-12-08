@@ -7,17 +7,17 @@ using Elektrogrosshandel.User;
 
 namespace Elektrogrosshandel.GUI.GUI_Menus
 {
-    internal class GUI_AccountInfoMenu
+    internal class GUI_AccountEdit
     {
         private static List<Markup> menuItems = new List<Markup>
         {
-            new Markup("[yellow]1.[/] [bold white]Account Info[/]"),
+            new Markup("[yellow]1.[/] Account Info"),
             new Markup("[yellow]2.[/] Orders"),
-            new Markup("[yellow]3.[/] Edit Account"),
+            new Markup("[yellow]3.[/] [bold white]Edit Account[/]"),
             new Markup("[yellow]4.[/] Back to Main Menu")
         };
 
-        private static Layout AccountInfoMenu()
+        private static Layout AccountEditMenu()
         {
             Layout accountMenu = new Layout("AccountMenu")
                         .SplitColumns(
@@ -51,8 +51,12 @@ namespace Elektrogrosshandel.GUI.GUI_Menus
         {
             List<Markup> infoLines = new List<Markup>(0);
 
-            infoLines = Account.GetAccountInformationList(Program.ActiveUser);
-
+            infoLines.Add(new Markup("[#c0c0c0]To edit your account information, please enter the option you want to change.[/]"));
+            infoLines.Add(new Markup("[#c0c0c0]For security reasons, some changes may require you to re-enter your password.[/]"));
+            infoLines.Add(new Markup("[#c0c0c0]Make sure to save your changes before exiting the menu.[/]"));
+            infoLines.Add(new Markup("[#c0c0c0]Follofwing Options can be selcted:[/]"));
+            infoLines.Add(new Markup("[yellow]1.[/] FirstName, 2. LastName, 3. Email , 4. PhoneNumber"));
+            
             var infoPanel = new Panel(new Rows(infoLines))
             {
                 Header = new PanelHeader("[bold #af8700 on black]Information[/]", Justify.Center),
@@ -65,9 +69,9 @@ namespace Elektrogrosshandel.GUI.GUI_Menus
             return infoPanel;
         }
 
-        public static Layout ShowAccountInfoMenu()
+        public static Layout ShowAccountEditMenu()
         {
-            return AccountInfoMenu();
+            return AccountEditMenu();
         }
 
         public static int MaxMenuItems()

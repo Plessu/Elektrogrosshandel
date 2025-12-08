@@ -56,5 +56,16 @@ namespace Elektrogrosshandel.Hardware
 
             return orderInfo;
         }
+
+        public static Markup GetDetailedOrderInfoByOrder(Order Order)
+        {
+            Markup detailedOrderInfo = new Markup($"[bold yellow]Order ID:[/] {Order.OrderID}\n[bold yellow]Order Name:[/] {Order.OrderName}\n[bold yellow]Order Total Price:[/] {Order.OrderTotalPrice.ToString("C", CultureInfo.CreateSpecificCulture("de-DE"))}\n[bold yellow]Order Date:[/] {Order.OrderDate.ToString("f")}\n\n[bold yellow]Ordered Items:[/]\n{Bucket.GetArticelsInBucket(Order.OrderBucket)}");
+            return detailedOrderInfo;
+        }
+
+        public static int GetOrderID(Order order)
+        {
+            return order.OrderID;
+        }
     }
 }
