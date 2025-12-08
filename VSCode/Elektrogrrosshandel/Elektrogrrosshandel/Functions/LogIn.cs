@@ -48,7 +48,7 @@ namespace Elektrogrosshandel.Functions
                     {
                         GUI_Display.DisplayWindow(GUI_LogIn.ShowLoginMenu(userName));
 
-                        password = UserInput.GetStringInput("Please enter your password: ");
+                        password = UserInput.GetPasswordInput("Please enter your password: ");
                         passwordIsValid = PasswordHelper.VerifyPassword(userName, password);
 
                         if (passwordIsValid == false)
