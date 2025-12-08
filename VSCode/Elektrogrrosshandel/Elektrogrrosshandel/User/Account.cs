@@ -273,6 +273,11 @@ namespace Elektrogrosshandel
             account.Orders.Add(order);
         }
 
+        public static List<Order> GetAccountOrders(Account account)
+        {
+            return account.Orders;
+        }
+
         public static string GetAccountRole(Account account)
         {
             return account.AcountRole;
