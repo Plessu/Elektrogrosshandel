@@ -23,7 +23,7 @@ namespace Elektrogrosshandel.Functions
             {
                 AnsiConsole.MarkupLine("[bold red]Order cancelled, returning to Main Menu...[/]");
                 Thread.Sleep(200);
-                MainMenu.DisplayMainMenu();
+                MainMenu.ShowMainMenu();
                 return;
             }
 
@@ -36,7 +36,7 @@ namespace Elektrogrosshandel.Functions
             AnsiConsole.MarkupLine("[bold green]Order placed successfully![/]");
             Thread.Sleep(200);
 
-            MainMenu.DisplayMainMenu();
+            MainMenu.ShowMainMenu();
             
         }
     }

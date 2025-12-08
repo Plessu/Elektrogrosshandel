@@ -88,7 +88,7 @@ namespace Elektrogrosshandel.User
 
             Thread.Sleep(1000);
 
-            MainMenu.DisplayMainMenu();
+            MainMenu.ShowMainMenu();
         }
     }
 }

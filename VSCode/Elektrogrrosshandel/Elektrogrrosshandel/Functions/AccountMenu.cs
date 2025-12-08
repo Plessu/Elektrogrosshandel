@@ -39,7 +39,7 @@ namespace Elektrogrosshandel.Functions
 
                 case 5:
 
-                    MainMenu.DisplayMainMenu();
+                    MainMenu.ShowMainMenu();
                     break;
             }
         }

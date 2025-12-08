@@ -3,6 +3,8 @@
   - Änderungsverlauf (Kurzfassung)
 ------------------------------
 
+- 2025-12-08: `AddCase` v1.0.0 veröffentlicht.
+- 2025-12-08: `AdminMenu` v1.0.0 veröffentlicht.
 - 2025-12-07: `MainMenu` v2.0.0 veröffentlicht.
 - 2025-12-07: `AccountMenu` v2.0.0 veröffentlicht.
 - 2025-12-07: `AccountMenuInfo` v1.0.0 enternt -> `AccountMenu`.
@@ -19,6 +21,42 @@
 
 Neue/Benutzer-Releases
 ----------------------
+
+- Klasse: `ElektroGrosshandel.Functions.AddArticelFunctions.AddCase`
+  - Version: `1.0.0`
+  - Datum: `2025-12-08`
+  - Autor: `Giacomo Graef`
+  - Zusammenfassung: `AddCase` Menü zum Hinzufügen von Gehäusen implementiert.
+  - Änderungen:
+    - Feature: Neue Funktion `AddCase` zum Erfassen und Anlegen von `Case`-Objekten (inkl. Validierung der Eingaben).
+    - Refactor: Eingabeaufforderungen als `List<string>` statt `Markup`-Objekten implementiert.
+    - Fix: Validierungslogik für numerische Felder und Abmessungen ergänzt.
+  - Breaking Changes:
+    - Keine
+  - Migrationshinweise:
+    - Keine, neue Funktion ergänzt das bestehende Menüsystem.
+  - Tests:
+    - `Keine`
+
+---
+
+- Klasse: `ElektroGrosshandel.Functions.AdminMenu`
+  - Version: `1.0.0`
+  - Datum: `2025-12-08`
+  - Autor: `Giacomo Graef`
+  - Zusammenfassung: Admin-Menü zur Verwaltung von Artikeln implementiert.
+  - Änderungen:
+    - Feature: `ShowAdminMenu` und `MenuSelection` implementiert (Auswahl: Add/Remove Artikel, Navigation zu AccountMenu).
+    - Integration: GUI-Aufrufe zu `GUI_AdminMenuAddArtikel` und `GUI_AdminMenuDeleteArtikel` sind eingebunden.
+    - Fix: Validierung der Menüeingaben und Navigation ergänzt.
+  - Breaking Changes:
+    - Keine
+  - Migrationshinweise:
+    - Keine, neue Verwaltungsfunktion ergänzt das bestehende Menüsystem.
+  - Tests:
+    - `Keine`
+ 
+---
 
 - Klasse: `ElektroGrosshandel.Functions.MainMenu`
   - Version: `2.0.0`
@@ -155,7 +193,6 @@ Neue/Benutzer-Releases
     - Siehe `AccountMenu` für Integration in `MainMenu`.
   - Tests: `Keine`
 
-
 ---
 
 - Klasse: `ElektroGrosshandel.Functions.LogIn`
@@ -220,8 +257,6 @@ Neue/Benutzer-Releases
   - Migrationshinweise:
     - Die Darstellung des Hauptmenüs wurde in die `LogIn`-Funktion verschoben;
   - Tests: `Keine (werden später hinzugefügt)`
-
-
 
 
 

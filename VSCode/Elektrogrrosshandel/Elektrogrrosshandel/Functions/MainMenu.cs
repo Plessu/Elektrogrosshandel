@@ -9,7 +9,7 @@ namespace Elektrogrosshandel.Functions
 {
     internal class MainMenu
     {
-        static public void DisplayMainMenu()
+        static public void ShowMainMenu()
         {
             int menuChoices;
             menuChoices = GUI_MainMenu.MaxMenuItems();
