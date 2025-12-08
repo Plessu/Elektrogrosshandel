@@ -24,7 +24,8 @@ namespace Elektrogrosshandel.GUI.GUI_Menus
         private static List<Markup> menuItemsPublic = new List<Markup>
         {
                 new Markup("[#c0c0c0]  7. Customer Support[/]"),
-                new Markup("[#c0c0c0]  8. Impressum[/]")
+                new Markup("[#c0c0c0]  8. Impressum[/]"),
+                new Markup("[#c0c0c0]  9. AdminBereich[/]") 
         };
         private static Layout MainMenu()
         {

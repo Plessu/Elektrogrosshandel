@@ -13,7 +13,7 @@ namespace Elektrogrosshandel.GUI.GUI_Menus
             {
                 new Markup("[bold yellow]1.[/] [bold]Add Artikel[/]"),
                 new Markup("[yellow]2.[/] Remove Artikel"),
-                new Markup("\n[yellow]5.[/] Back to Account Menu")
+                new Markup("\n[yellow]3.[/] Back to Account Menu")
             };
 
         private static Layout AdminMenu()
@@ -26,7 +26,7 @@ namespace Elektrogrosshandel.GUI.GUI_Menus
             accountShoppingCartManager["MenuAdmin"].Size(35);
             accountShoppingCartManager["Display"].Size(80);
 
-            accountShoppingCartManager["MenuShoppingCartManager"].Update(MenuAdmin());
+            accountShoppingCartManager["MenuAdmin"].Update(MenuAdmin());
             accountShoppingCartManager["Display"].Update(DisplayInformation());
 
             return accountShoppingCartManager;
@@ -54,10 +54,12 @@ namespace Elektrogrosshandel.GUI.GUI_Menus
 
             infoLines.Add(new Markup("[bold yellow]Admin Menu to add or remove Artikels.[/]"));
             infoLines.Add(new Markup("Select an option from the menu to proceed."));
+            infoLines.Add(new Markup("\n[bold yellow]Add Artikel:[/]"));
+            infoLines.Add(new Markup("[blue] Case, Mainboard, CPU, RAM, GPU, PSU, Storage, Cooling, Peripherie, Display, Software [/]"));
 
             var infoPanel = new Panel(new Rows(infoLines))
             {
-                Header = new PanelHeader("[bold #af8700 on black]Current Cart Manager[/]", Justify.Left),
+                Header = new PanelHeader("[bold #af8700 on black]AdminInfo[/]", Justify.Left),
                 Height = 15,
                 Width = 85,
                 Border = BoxBorder.Rounded,

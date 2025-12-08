@@ -23,11 +23,11 @@ namespace Elektrogrosshandel.Functions
             {
                 case 1:
                 
-                    GUI_Display.DisplayWindow(GUI_MenuAddArticel.ShowSCM_CurrentCart());
+                    GUI_Display.DisplayWindow(GUI_SCM_CurrentShoppingCart.ShowSCM_CurrentCart());
                     
                     AnsiConsole.MarkupLine("[bold green]Current Shopping Cart displayed.[/]");
                     
-                    choice = UserInput.MenuChoice(GUI_MenuAddArticel.MaxMenuItems());
+                    choice = UserInput.MenuChoice(GUI_SCM_CurrentShoppingCart.MaxMenuItems());
                     NavigateShoppingCartManager(choice);
                     
                     break;

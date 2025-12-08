@@ -43,10 +43,29 @@ namespace Elektrogrosshandel
 
 
 
-        private void CreateAccount(int accountID, string userName, string firstName, string lastName, string firmName,
-                 string passwordHash, byte[] passwordSalt, string email, string phoneNumber, string acountRole, int serialCode,
-                 bool isFirmAccount, bool wantUSTax)
+        public void CreateAccount(string userName, string firstName, string lastName, string firmName,
+                 string password, string email, string phoneNumber, int serialCode)
         {
+            string acountRole = VerifyAccount(serialCode);
+            int accountID = CreateUserID();
+            bool isFirmAccount;
+            bool wantUSTax;
+            byte[] passwordSalt = new byte[64];
+
+            string passwordHash = PasswordHelper.HashPassword(password, out passwordSalt);
+
+
+            if (VerifyAccount(serialCode) == "Admin" || VerifyAccount(serialCode) == "PrivateUser")
+            {
+                isFirmAccount = false;
+                wantUSTax = false;
+            }
+            else
+            {
+                isFirmAccount = true;
+                wantUSTax = true;
+            }
+
             this.AccountID = accountID;
             this.UserName = userName;
             this.FirstName = firstName;
@@ -57,7 +76,7 @@ namespace Elektrogrosshandel
             this.Email = email;
             this.PhoneNumber = phoneNumber;
             this.CreatedAt = DateTime.Now;
-            this.AcountRole = acountRole;
+            this.AcountRole = VerifyAccount(serialCode);
             this.SerialCode = serialCode;
             this.CreatedAt = DateTime.Now;
             this.IsFirmAccount = isFirmAccount;
@@ -81,6 +100,8 @@ namespace Elektrogrosshandel
             };
 
             this.AccountInformation = accountInformation;
+
+            AddAccountToList(this);
 
         }
         private void AddAccountToList(Account account)
@@ -121,40 +142,6 @@ namespace Elektrogrosshandel
 
         }
 
-        public Account newAccount(string username, string firstName, string lastName, string firmName,
-                 string password, string email, string phoneNumber, int serialCode)
-        {
-
-            string accountRole = VerifyAccount(SerialCode);
-            int accountID = CreateUserID();
-            bool isFirmAccount;
-            bool wantUSTax;
-            byte[] passwordSalt = new byte[64];
-
-            string passwordHash = PasswordHelper.HashPassword(password, out passwordSalt);
-
-
-            if (accountRole == "Admin" || accountRole == "PrivateUser")
-            {
-                isFirmAccount = false;
-                wantUSTax = false;
-            }
-            else
-            {
-                isFirmAccount = true;
-                wantUSTax = true;
-            }
-
-            Account account = new Account();
-
-            account.CreateAccount(accountID, username, firstName, lastName, firmName,
-                 passwordHash, passwordSalt, email, phoneNumber, accountRole, serialCode,
-                 isFirmAccount, wantUSTax);
-
-            AddAccountToList(account);
-
-            return account;
-        }
 
         public static byte[] GetAccountSalt(string userName)
         {
@@ -304,7 +291,13 @@ namespace Elektrogrosshandel
         public static void TestData()
         {
             Account testAccount = new Account();
-            testAccount.newAccount("a", "Giacomo", "Graef", "Graef Enterprise", "a", "g.graef@graef.graef", "0123/12adbe", 2);
+            testAccount.CreateAccount("a", "Giacomo", "Graef", "Graef Enterprise", "a", "g.graef@graef.graef", "0123/12adbe", 2);
+            
+            Account testAccount2 = new Account();
+            testAccount2.CreateAccount("b", "Max", "Mustermann", "Mustermann GmbH", "b", "maxmuster@muster.de", "0987/65gfedc", 9);
+
+            Account testAccount3 = new Account();
+            testAccount3.CreateAccount("c", "Erika", "Mustermann", "", "c", "Erika@Erika.de", "0111/223344", 5);
         }
 
     }

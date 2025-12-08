@@ -78,8 +78,8 @@ namespace Elektrogrosshandel.Functions
                 case 2:
                     AnsiConsole.MarkupLine("[bold green]Remove Artikel selected.[/]");
                     break;
-                case 5:
-                    AccountMenu.ShowAccountMenu();
+                case 3:
+                    MainMenu.ShowMainMenu();
                     break;
             }
         }

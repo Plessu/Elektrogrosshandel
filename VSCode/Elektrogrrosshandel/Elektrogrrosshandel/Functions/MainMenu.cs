@@ -14,9 +14,9 @@ namespace Elektrogrosshandel.Functions
             int menuChoices;
             menuChoices = GUI_MainMenu.MaxMenuItems();
 
-            if (Account.GetAccountRole(Program.ActiveUser) == "Admin")
+            if (Account.GetAccountRole(Program.ActiveUser) != "Admin")
             {
-                menuChoices++;    
+                menuChoices--;    
             }
 
             GUI_Display.DisplayWindow(GUI_MainMenu.ShowMainMenu());
@@ -30,11 +30,22 @@ namespace Elektrogrosshandel.Functions
                     AnsiConsole.MarkupLine("[bold green]News selected.[/]");
                     break;
 
-                case 5:
+                case 4:
                     AccountMenu.ShowAccountMenu();
                     break;
-                case 6:
+                case 5:
                     ShoppingCartManager.ShowShoppingCartManager();
+                    break;
+                case 9: 
+                    if (Account.GetAccountRole(Program.ActiveUser) == "Admin")
+                    {
+                        AdminMenu.ShowAdminMenu();
+                    }
+                    else
+                    {
+                        AnsiConsole.MarkupLine("[bold red]Invalid choice. Please try again.[/]");
+                        ShowMainMenu();
+                    }
                     break;
 
             }

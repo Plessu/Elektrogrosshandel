@@ -84,7 +84,7 @@ namespace Elektrogrosshandel.Hardware
 
         private static List<int> ArticelIDs = new List<int>();
 
-        private Peripheral(string articelName, string articelManufacturer, string articelModel,
+        public Peripheral(string articelName, string articelManufacturer, string articelModel,
                            int articelYearOfProduction, int articelManufactrerID, string[] articelColors, int articelStock,
                            int articelMinStock, double articelPrice, int articelWeight, int[] articelDimesnions,
                            string articelDescription,

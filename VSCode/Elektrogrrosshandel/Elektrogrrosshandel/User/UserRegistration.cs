@@ -81,7 +81,7 @@ namespace Elektrogrosshandel.User
 
 
             Account account = new Account();
-            account = account.newAccount(userName, firstName, lastName, firmName, password, email, phoneNumber, serialCode);
+            account.CreateAccount(userName, firstName, lastName, firmName, password, email, phoneNumber, serialCode);
 
             AnsiConsole.MarkupLine("[green]Ihr Konto wurde erfolgreich erstellt![/]");
             Program.SetActiveUser(account);
