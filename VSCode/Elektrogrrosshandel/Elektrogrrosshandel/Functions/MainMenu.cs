@@ -11,8 +11,16 @@ namespace Elektrogrosshandel.Functions
     {
         static public void DisplayMainMenu()
         {
+            int menuChoices;
+            menuChoices = GUI_MainMenu.MaxMenuItems();
+
+            if (Account.GetAccountRole(Program.ActiveUser) == "Admin")
+            {
+                menuChoices++;    
+            }
+
             GUI_Display.DisplayWindow(GUI_MainMenu.ShowMainMenu());
-            MenuSelection(UserInput.MenuChoice(GUI_MainMenu.MaxMenuItems()));
+            MenuSelection(UserInput.MenuChoice(menuChoices));
         }
         static void MenuSelection(int UserChoice)
         {

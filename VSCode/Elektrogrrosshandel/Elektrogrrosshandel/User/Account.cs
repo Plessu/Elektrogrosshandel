@@ -290,6 +290,11 @@ namespace Elektrogrosshandel
             account.Orders.Add(order);
         }
 
+        public static string GetAccountRole(Account account)
+        {
+            return account.AcountRole;
+        }
+
         public static List<Account> GetAllAccounts()
         {
             return Accounts;
@@ -300,8 +305,6 @@ namespace Elektrogrosshandel
         {
             Account testAccount = new Account();
             testAccount.newAccount("a", "Giacomo", "Graef", "Graef Enterprise", "a", "g.graef@graef.graef", "0123/12adbe", 2);
-
-
         }
 
     }

@@ -65,6 +65,14 @@ namespace Elektrogrosshandel.GUI.GUI_Menus
 
         private static Panel PanelMenuAccount()
         {
+            List<Markup> menu = new List<Markup>();
+            menu = menuItemsAccount;
+
+            if (Account.GetAccountRole(Program.ActiveUser) == "Admin")
+            {
+                menu.Add(new Markup("[#c0c0c0]  9. Admin Panel[/]"));
+            }
+
             Panel panelMenu = new Panel(
                 Align.Left(new Rows(menuItemsAccount), VerticalAlignment.Top));
             panelMenu.Height = 5;
