@@ -163,6 +163,11 @@ namespace Elektrogrosshandel
             return null;
         }
 
+        public static bool GetWantUSTax(Account account)
+        {
+            return account.WantUSTax;
+        }
+
         public static bool DoesAccountExist(string userName)
         {
             foreach (Account account in Accounts)

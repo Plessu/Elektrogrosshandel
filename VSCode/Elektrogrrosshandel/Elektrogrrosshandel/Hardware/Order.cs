@@ -23,7 +23,16 @@ namespace Elektrogrosshandel.Hardware
         private Order CreateOrder(int orderID, string orderName)
         {
             OrderID = orderID;
-            OrderTotalPrice = Bucket.GetBucketValue(Account.GetActiveBucketOfAccount(Program.ActiveUser));
+
+            if (Account.GetWantUSTax(Program.ActiveUser) == false)
+            {
+                OrderTotalPrice = Bucket.GetBucketValue(Account.GetActiveBucketOfAccount(Program.ActiveUser)) / 119 * 100;
+            }
+            else
+            {
+                OrderTotalPrice = Bucket.GetBucketValue(Account.GetActiveBucketOfAccount(Program.ActiveUser));
+            }
+            
             AccountID = Account.GetAccountID(Program.ActiveUser);
             OrderName = orderName;
             OrderDate = DateTime.Now;
