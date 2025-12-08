@@ -17,7 +17,7 @@ namespace Elektrogrosshandel.Hardware
         private static int ArticelGroupID = 200;
         private string ArticelGroupDescription = "This category includes all kinds of Motherrboards for computers, ranging from entry-level to high-end models designed for gaming and professional use.";
 
-        private static List<int> ArticelIDs = new List<int>();
+        private static List<Int64> ArticelIDs = new List<Int64>();
 
         public Motherboard( string articelName, string articelManufacturer, string articelModel,
                             int articelYearOfProduction, int articelManufactrerID, string[] articelColors, int articelStock,
@@ -38,10 +38,10 @@ namespace Elektrogrosshandel.Hardware
             ComputerHardware.AddMotherboard(this);
         }
 
-        private static int CreateArticelID()
+        private static Int64 CreateArticelID()
         {
             string articelID;
-            int iD;
+            Int64 iD;
             Random random = new Random();
             do
             {
@@ -53,7 +53,7 @@ namespace Elektrogrosshandel.Hardware
             } while (true);
 
             articelID = ComputerHardware.ArticelParentGroupID + ArticelGroupID.ToString() + iD.ToString("D4");
-            iD = int.Parse(articelID);
+            iD = Int64.Parse(articelID);
             ArticelIDs.Add(iD);
 
             return iD;

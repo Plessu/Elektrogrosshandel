@@ -14,7 +14,7 @@ namespace Elektrogrosshandel.User
         private DateTime CreatedAt { get; set; }
         private List<Hardware.ComputerHardware> Articels { get; set; }
         private List<int> Quantity { get; set; }
-        private List<int> ArticelIDs { get; set; }
+        private List<Int64> ArticelIDs { get; set; }
 
 
         private static List<int> UsedBucketIDs = new List<int>();
@@ -29,26 +29,36 @@ namespace Elektrogrosshandel.User
             CreatedAt = DateTime.Now;
             Articels = new List<Hardware.ComputerHardware>();
             Quantity = new List<int>();
-            ArticelIDs = new List<int>();
+            ArticelIDs = new List<Int64>();
  
         }
 
-        public static void AddArticelToBucket(Bucket bucket,int articelID, int quantity)
+        public static bool AddArticelToBucket(Bucket bucket, Int64 articelID, int quantity)
         {
-            if (bucket.ArticelIDs.Contains(articelID))
+            ComputerHardware articel = ComputerHardware.GetArticelByID(articelID);
+            if (articel == null)
             {
-                int index = bucket.ArticelIDs.IndexOf(articelID);
-                bucket.Quantity[index] += quantity;
+                return false;
             }
             else
             {
-                Hardware.ComputerHardware bucketHardware = Hardware.ComputerHardware.GetArticelByID(articelID);
-                bucket.ArticelIDs.Add(articelID);
-                bucket.Articels.Add(bucketHardware);
+
+                if (bucket.ArticelIDs.Contains(articelID))
+                {
+                    int index = bucket.ArticelIDs.IndexOf(articelID);
+                    bucket.Quantity[index] += quantity;
+                }
+                else
+                {
+                    Hardware.ComputerHardware bucketHardware = Hardware.ComputerHardware.GetArticelByID(articelID);
+                    bucket.ArticelIDs.Add(articelID);
+                    bucket.Articels.Add(bucketHardware);
+                }
+
+                bucket.BucketValue += ComputerHardware.GetArticelPriceByID(articelID) * quantity;
+
+                return true;
             }
-
-            bucket.BucketValue += ComputerHardware.GetArticelPriceByID(articelID) * quantity;
-
         }
         public static Bucket CreateBucket(int accountID, string bucketName)
         {
