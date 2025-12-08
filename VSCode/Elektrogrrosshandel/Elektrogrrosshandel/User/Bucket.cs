@@ -33,22 +33,32 @@ namespace Elektrogrosshandel.User
  
         }
 
-        public static void AddArticelToBucket(Bucket bucket,int articelID, int quantity)
+        public static bool AddArticelToBucket(Bucket bucket, int articelID, int quantity)
         {
-            if (bucket.ArticelIDs.Contains(articelID))
+            ComputerHardware articel = Hardware.ComputerHardware.GetArticelByID(articelID);
+            if (articel == null)
             {
-                int index = bucket.ArticelIDs.IndexOf(articelID);
-                bucket.Quantity[index] += quantity;
+                return false;
             }
             else
             {
-                Hardware.ComputerHardware bucketHardware = Hardware.ComputerHardware.GetArticelByID(articelID);
-                bucket.ArticelIDs.Add(articelID);
-                bucket.Articels.Add(bucketHardware);
+
+                if (bucket.ArticelIDs.Contains(articelID))
+                {
+                    int index = bucket.ArticelIDs.IndexOf(articelID);
+                    bucket.Quantity[index] += quantity;
+                }
+                else
+                {
+                    Hardware.ComputerHardware bucketHardware = Hardware.ComputerHardware.GetArticelByID(articelID);
+                    bucket.ArticelIDs.Add(articelID);
+                    bucket.Articels.Add(bucketHardware);
+                }
+
+                bucket.BucketValue += ComputerHardware.GetArticelPriceByID(articelID) * quantity;
+
+                return true;
             }
-
-            bucket.BucketValue += ComputerHardware.GetArticelPriceByID(articelID) * quantity;
-
         }
         public static Bucket CreateBucket(int accountID, string bucketName)
         {

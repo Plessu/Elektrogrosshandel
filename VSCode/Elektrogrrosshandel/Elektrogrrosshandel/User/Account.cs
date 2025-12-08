@@ -12,10 +12,6 @@ using Spectre.Console;
 
 namespace Elektrogrosshandel
 {
-
-
-
-
     internal class Account
     {
         private int AccountID { get; set; }

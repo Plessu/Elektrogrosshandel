@@ -27,7 +27,9 @@ namespace Elektrogrosshandel.Functions
             switch (UserChoice)
             {
                 case 1:
-                    AnsiConsole.MarkupLine("[bold green]News selected.[/]");
+                    AnsiConsole.MarkupLine("[bold green]Shop selected.[/]");
+                    Thread.Sleep(200);
+                    ProductCatalog.ShowProductCatalog(1);
                     break;
 
                 case 4:

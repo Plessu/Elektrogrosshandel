@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Spectre.Console;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -41,7 +42,7 @@ namespace Elektrogrosshandel.Hardware
         public ComputerHardware()
         {
         }
-        public  ComputerHardware(int articelID, string articelName, string articelManufacturer, string articelModel,
+        public ComputerHardware(int articelID, string articelName, string articelManufacturer, string articelModel,
                             int articelYearOfProduction, int articelManufactrerID, string[] articelColors, int articelStock,
                             int articelMinStock, double articelPrice, int articelWeight, int[] articelDimesnions,
                             string articelDescription)
@@ -148,6 +149,36 @@ namespace Elektrogrosshandel.Hardware
             return name;
         }
 
+        public static List<ComputerHardware> GetArticelbyManufacturer(string manufacturer)
+        {
+            List<ComputerHardware> hardwareByManufacturer = new List<ComputerHardware>();
+
+            foreach (ComputerHardware device in Devices)
+            {
+                if (device.ArticelManufacturer == manufacturer)
+                {
+                    hardwareByManufacturer.Add(device);
+                }
+            }
+
+            return hardwareByManufacturer;
+        }
+
+        public static List<string> GetAllManufacturers()
+        {
+            List<string> manufacturers = new List<string>();
+            foreach (ComputerHardware device in Devices)
+            {
+                if (!manufacturers.Contains(device.ArticelManufacturer))
+                {
+                    manufacturers.Add(device.ArticelManufacturer);
+                }
+            }
+
+
+            return manufacturers;
+        }
+
         public static double GetArticelPriceByHardware(ComputerHardware articel)
         {
             double price = 0;
@@ -169,5 +200,98 @@ namespace Elektrogrosshandel.Hardware
             }
             return price;
         }
+
+        public static Markup GetArticelInfoByArticel(ComputerHardware Articel)
+        {
+            Markup articelInfo = new Markup($"[bold yellow]ArtikelID:[/] {Articel.ArticelID} [bold yellow]Artikelname:[/] {Articel.ArticelName} [bold yellow]Hersteller:[/] {Articel.ArticelManufacturer} [bold yellow]Modell:[/] {Articel.ArticelModel} [bold yellow]Preis:[/] {Articel.ArticelPrice}");
+            
+            return articelInfo;
+        }
+
+        public static List<Markup> GetArticelInfoByID(int articelID)
+        {
+            List<Markup> articelInfo = new List<Markup>();
+
+            foreach (ComputerHardware device in Devices)
+            {
+                if (device.ArticelID == articelID)
+                {
+                    articelInfo.Add(new Markup($"[bold yellow]ArtikelID:[/] {device.ArticelID}"));
+                    articelInfo.Add(new Markup($"[bold yellow]Artikelname:[/] {device.ArticelName}"));
+                    articelInfo.Add(new Markup($"[bold yellow]Hersteller:[/] {device.ArticelManufacturer}"));
+                    articelInfo.Add(new Markup($"[bold yellow]Model:[/] {device.ArticelModel}"));
+                    articelInfo.Add(new Markup($"[bold yellow]Farben:[/] {string.Join(", ", device.ArticelColors)}"));
+                    articelInfo.Add(new Markup($"[bold yellow]HerstellerID:[/] {device.ArticelManufactrerID}"));
+                    articelInfo.Add(new Markup($"[bold yellow]Produktionsjahr:[/] {device.ArticelYearOfProduction}"));
+                    articelInfo.Add(new Markup($"[bold yellow]Modell:[/] {device.ArticelModel}"));
+                    articelInfo.Add(new Markup($"[bold yellow]Beschreibung:[/] {device.ArticelDescription}"));
+                    articelInfo.Add(new Markup($"[bold yellow]Preis:[/] {device.ArticelPrice}"));
+
+                    return articelInfo;
+                }
+            }
+
+            return articelInfo;
+        }
+
+        public static List<ComputerHardware> GetAllComputerHardwares()
+        {
+            return Devices;
+        }
+
+        public static List<Case> GetAllCases()
+        {
+            return Cases;
+        }
+
+        public static List<Motherboard> GetAllMotherboards()
+        {
+            return Motherboards;
+        }
+
+        public static List<PowerSupply> GetAllPowerSupplies()
+        {
+            return PowerSupplies;
+        }
+
+        public static List<Processor> GetAllProcessors()
+        {
+            return Processors;
+        }
+        public static List<GraphicsCard> GetAllGraphicsCards()
+        {
+            return GraphicsCards;
+        }
+
+        public static List<Ram> GetAllRAMs()
+        {
+            return RAMs;
+        }
+
+        public static List<StorageDevice> GetAllStorageDevices()
+        {
+            return StorageDevices;
+        }
+
+        public static List<CoolingSystem> GetAllCoolingSystems()
+        {
+            return CoolingSystems;
+        }
+
+        public static List<Peripheral> GetAllPeripherals()
+        {
+            return Peripherals;
+        }
+
+        public static List<Display> GetAllDisplays()
+        {
+            return Displays;
+        }
+
+        public static List<Software> GetAllSoftwares()
+        {
+            return Softwares;
+        }
+
     }
 }
