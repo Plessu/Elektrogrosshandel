@@ -22,6 +22,15 @@ namespace Elektrogrosshandel
                 HardWareStorage.SaveAllDevices("HardWareStorage.json");
             }
 
+            if (File.Exists("AccountsStorage.json"))
+            {
+                AccountStorage.LoadAllAccounts("AccountsStorage.json");
+            }
+            else
+            {
+                AccountStorage.SaveAllAccounts("AccountsStorage.json");
+            }
+
             Console.OutputEncoding = System.Text.Encoding.UTF8;
             LogIn.LogingIn();
         }

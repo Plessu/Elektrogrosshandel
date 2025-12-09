@@ -1,4 +1,4 @@
-﻿// """
+// """
 
 using Elektrogrosshandel.Hardware;
 using Spectre.Console;
@@ -18,6 +18,15 @@ namespace Elektrogrosshandel.User
 
         private static List<int> UsedBucketIDs = new List<int>();
 
+        public  Bucket(int bucketID, double bucketValue, string bucketName, DateTime createdAt, List<Hardware.ComputerHardware> articels, List<int> quantity)
+        {
+            BucketID = bucketID;
+            BucketValue = bucketValue;
+            BucketName = bucketName;
+            CreatedAt = createdAt;
+            Articels = articels;
+            Quantity = quantity;
+        }
 
         private Bucket(int bucketID, string bucketName, double bucketValue)
         {
@@ -60,6 +69,8 @@ namespace Elektrogrosshandel.User
                 return true;
             }
         }
+
+
         public static Bucket CreateBucket(int accountID, string bucketName)
         {
             int newBucketID;
