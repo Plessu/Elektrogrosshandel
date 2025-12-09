@@ -1,5 +1,7 @@
 // """
 
+using Elektrogrosshandel.Functions;
+
 namespace Elektrogrosshandel
 {
     internal class TestData
@@ -8,6 +10,9 @@ namespace Elektrogrosshandel
         {
             Account.TestData();
             Hardware.ComputerHardware.TestData();
+
+            HardWareStorage.SaveAllDevices("Articel.Json");
+            HardWareStorage.LoadAllDevices("Articel.Json");
         }
     }
 }

@@ -12,6 +12,16 @@ namespace Elektrogrosshandel
         static void Main(string[] args)
         {
             TestData.InitializeTestData();
+
+            if (File.Exists("HardWareStorage.json"))
+            {
+                HardWareStorage.LoadAllDevices("HardWareStorage.json");
+            }
+            else
+            {
+                HardWareStorage.SaveAllDevices("HardWareStorage.json");
+            }
+
             Console.OutputEncoding = System.Text.Encoding.UTF8;
             LogIn.LogingIn();
         }

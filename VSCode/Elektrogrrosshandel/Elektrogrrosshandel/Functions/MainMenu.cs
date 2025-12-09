@@ -1,4 +1,4 @@
-﻿// """
+// """
 
 using Elektrogrosshandel.GUI;
 using Elektrogrosshandel.GUI.GUI_Menus;
@@ -132,6 +132,8 @@ namespace Elektrogrosshandel.Functions
                     {
                         Program.ActiveUser = null;
                         AnsiConsole.MarkupLine("[bold green]Logging out...[/]");
+                        HardWareStorage.SaveAllDevices("HardWareStorage.json");
+
                         Thread.Sleep(1000);
                         LogIn.LogingIn();
                         break;
