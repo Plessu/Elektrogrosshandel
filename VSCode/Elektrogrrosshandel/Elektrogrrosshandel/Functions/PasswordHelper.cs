@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Runtime.Intrinsics.Arm;
+﻿// """
+
 using System.Security.Cryptography;
-using System.Text;
-using Elektrogrosshandel;
 
 namespace Elektrogrosshandel.Functions
 {
@@ -39,7 +36,7 @@ namespace Elektrogrosshandel.Functions
             byte[] salt = GenerateSalt();
             var hash = Rfc2898DeriveBytes.Pbkdf2(
                 password,
-                salt ,
+                salt,
                 _iterations,
                 HashAlgorithmName.SHA256,
                 _hashSize);
@@ -52,7 +49,7 @@ namespace Elektrogrosshandel.Functions
             byte[] salt = Account.GetAccountSalt(userName);
             string storedHash = Account.GetAccountPasswordHash(userName);
             string passwordHash = HashPassword(password, salt);
-            
+
             if (passwordHash == storedHash)
             {
                 return true;

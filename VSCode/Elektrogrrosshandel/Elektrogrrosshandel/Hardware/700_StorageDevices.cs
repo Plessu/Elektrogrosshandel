@@ -1,7 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
+// """
 
 /*
 Pseudocode / Plan (detailliert):
@@ -45,17 +42,17 @@ Pseudocode / Plan (detailliert):
 
 - Fabrikmethode:
   - Name: CreateStorageDevice
-  - Validierung: Prüfe, ob in ComputerHardware.StorageDevices bereits ein Gerät mit gleichem Model und Hersteller-ID existiert; falls ja, throw ArgumentException
+  - Validierung: PrÃ¼fe, ob in ComputerHardware.StorageDevices bereits ein GerÃ¤t mit gleichem Model und Hersteller-ID existiert; falls ja, throw ArgumentException
   - Erzeuge neues ArticelID mit CreateArticelID()
-  - Rückgabe einer neuen Instanz via privatem Konstruktor
+  - RÃ¼ckgabe einer neuen Instanz via privatem Konstruktor
 
 - CreateArticelID:
-  - Generiere zufällige 1..9999 Zahl, prüfe gegen ArticelIDs
+  - Generiere zufÃ¤llige 1..9999 Zahl, prÃ¼fe gegen ArticelIDs
   - Baue ID-String: ComputerHardware.ArticelParentGroupID + ArticelGroupID + Zahl im Format D4
-  - Parse zu int, in Liste speichern und zurückgeben
+  - Parse zu int, in Liste speichern und zurÃ¼ckgeben
 
 - Konsistenz:
-  - Stil, Namenskonventionen und Schreibweise an GraphicCard.cs anlehnen (inkl. Schreibfehler 'Articel' bewusst übernehmen)
+  - Stil, Namenskonventionen und Schreibweise an GraphicCard.cs anlehnen (inkl. Schreibfehler 'Articel' bewusst Ã¼bernehmen)
   - Methoden- und Feldnamen analog benennen, sodass Integration mit ComputerHardware erwartet werden kann
 
 Ende Pseudocode

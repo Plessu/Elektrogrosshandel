@@ -1,16 +1,14 @@
-﻿using Elektrogrosshandel.GUI;
+﻿// """
+
+using Elektrogrosshandel.GUI;
 using Elektrogrosshandel.GUI.GUI_Menus;
-using Elektrogrosshandel.Hardware;
 using Spectre.Console;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Elektrogrosshandel.Functions.ShopFunctions
 {
     internal class ShopProductManufacturer
     {
-        public static void ShopManufacturers(string UserInput) 
+        public static void ShopManufacturers(string UserInput)
         {
             int choice;
             string userInput;
@@ -25,7 +23,7 @@ namespace Elektrogrosshandel.Functions.ShopFunctions
 
             if (int.TryParse(userInput, out choice))
             {
-                if (choice >=1 && choice <= GUI_ProductCatalogManufacturerSelected.MaxMenuItems())
+                if (choice >= 1 && choice <= GUI_ProductCatalogManufacturerSelected.MaxMenuItems())
                 {
                     ProductCatalog.ShowProductCatalog(choice);
                 }

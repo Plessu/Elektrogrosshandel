@@ -1,18 +1,16 @@
-﻿using Elektrogrosshandel.Hardware;
+﻿// """
+
 using Elektrogrosshandel.GUI;
 using Elektrogrosshandel.GUI.GUI_Menus;
+using Elektrogrosshandel.Hardware;
 using Spectre.Console;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Elektrogrosshandel.Functions
 {
     internal class PlaceOrder
     {
-        public static void ShowPlaceOrder() 
+        public static void ShowPlaceOrder()
         {
-            Order NewOrder;
             string ordername;
 
             GUI_Display.DisplayWindow(GUI_PlaceOrder.ShowPlaceOrderMenu());
@@ -37,7 +35,7 @@ namespace Elektrogrosshandel.Functions
             Thread.Sleep(200);
 
             MainMenu.ShowMainMenu();
-            
+
         }
     }
 }

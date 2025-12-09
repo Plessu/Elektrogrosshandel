@@ -1,8 +1,7 @@
-﻿using Elektrogrosshandel.Hardware;
+﻿// """
+
+using Elektrogrosshandel.Hardware;
 using Spectre.Console;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Elektrogrosshandel.User
 {
@@ -30,7 +29,7 @@ namespace Elektrogrosshandel.User
             Articels = new List<Hardware.ComputerHardware>();
             Quantity = new List<int>();
             ArticelIDs = new List<Int64>();
- 
+
         }
 
         public static bool AddArticelToBucket(Bucket bucket, Int64 articelID, int quantity)

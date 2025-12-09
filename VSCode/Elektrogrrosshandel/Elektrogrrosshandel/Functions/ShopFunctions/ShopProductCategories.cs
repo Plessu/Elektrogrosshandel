@@ -1,10 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Spectre.Console;
+﻿// """
+
 using Elektrogrosshandel.GUI;
 using Elektrogrosshandel.GUI.GUI_Menus;
 using Elektrogrosshandel.Hardware;
+using Spectre.Console;
 
 namespace Elektrogrosshandel.Functions.ShopFunctions
 {
@@ -60,7 +59,7 @@ namespace Elektrogrosshandel.Functions.ShopFunctions
                             mainboardList.Add(ComputerHardware.GetArticelInfoByArticel(m));
                         }
                         GUI_Display.DisplayWindow(GUI_ProductCatalogCategorieSelected.ShowCategorieSelected(mainboardList));
-                        
+
                         userInput = Functions.UserInput.GetStringInput("Gib die ArticelID ein um eine Artikelbeschreibung zu sehen oder wechsel das Menü(1 - 3)");
 
                         if (int.TryParse(userInput, out choice))
@@ -249,7 +248,7 @@ namespace Elektrogrosshandel.Functions.ShopFunctions
 
                         break;
                     }
-                
+
                 case "Peripherie":
                     {
                         List<Markup> peripherieList = new List<Markup>();
@@ -278,7 +277,7 @@ namespace Elektrogrosshandel.Functions.ShopFunctions
 
                         break;
                     }
-                
+
                 case "Display":
                     {
                         List<Markup> displayList = new List<Markup>();
@@ -307,7 +306,7 @@ namespace Elektrogrosshandel.Functions.ShopFunctions
 
                         break;
                     }
-               
+
                 case "Software":
                     {
                         List<Markup> softwareList = new List<Markup>();

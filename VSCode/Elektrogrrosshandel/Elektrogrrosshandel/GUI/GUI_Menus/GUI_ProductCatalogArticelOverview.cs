@@ -1,8 +1,7 @@
-﻿using Elektrogrosshandel.Hardware;
+// """
+
+using Elektrogrosshandel.Hardware;
 using Spectre.Console;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Elektrogrosshandel.GUI.GUI_Menus
 {
@@ -34,7 +33,7 @@ namespace Elektrogrosshandel.GUI.GUI_Menus
             Panel articelDetails = new Panel(
                 Align.Left(new Rows(articelInfo), VerticalAlignment.Top));
             articelDetails.Border(BoxBorder.Rounded);
-            articelDetails.BorderColor(Color.DarkGoldenrod);   
+            articelDetails.BorderColor(Color.DarkGoldenrod);
             articelDetails.Header("[bold #af8700 on black]Artikel Details[/]");
             articelDetails.HeaderAlignment(Justify.Left);
             articelDetails.Padding = new Padding(1, 1, 1, 1);

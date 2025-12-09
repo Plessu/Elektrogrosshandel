@@ -1,8 +1,6 @@
-﻿using Elektrogrosshandel.Hardware;
+// """
+
 using Spectre.Console;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Elektrogrosshandel.GUI.GUI_Menus
 {
@@ -47,7 +45,7 @@ namespace Elektrogrosshandel.GUI.GUI_Menus
 
         private static Panel PanelCategoriesSelected(List<Markup> ItemsInCategorie)
         {
-            
+
             //Create Panel for Display area
             Panel panelDisplay = new Panel(
                 Align.Left(new Rows(ItemsInCategorie), VerticalAlignment.Top));
@@ -61,7 +59,7 @@ namespace Elektrogrosshandel.GUI.GUI_Menus
         }
         public static Layout ShowCategorieSelected(List<Markup> ItemsInCategorie)
         {
-            
+
             Layout manufacturerSelected = ProductCategoriesSelected(ItemsInCategorie);
             return manufacturerSelected;
         }

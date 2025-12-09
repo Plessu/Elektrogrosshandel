@@ -1,7 +1,6 @@
-﻿using Spectre.Console;
-using System;
-using System.Collections.Generic;
-using System.Text;
+// """
+
+using Spectre.Console;
 
 namespace Elektrogrosshandel.GUI.GUI_Menus
 {
@@ -46,10 +45,10 @@ namespace Elektrogrosshandel.GUI.GUI_Menus
 
             return mainMenu;
         }
-            
 
-         
-        
+
+
+
         //Layout
         private static Panel PanelMenuShop()
         {
@@ -102,7 +101,7 @@ namespace Elektrogrosshandel.GUI.GUI_Menus
             panelMenu.Header("[bold #af8700 on black]Public Area[/] ");
             panelMenu.HeaderAlignment(Justify.Left);
             panelMenu.Padding = new Padding(0, 0, 0, 1);
-            panelMenu.Expand=true;
+            panelMenu.Expand = true;
 
             return panelMenu;
         }
@@ -129,7 +128,7 @@ namespace Elektrogrosshandel.GUI.GUI_Menus
         }
         public static int MaxMenuItems()
         {
-            int maxMenuItems = (int) menuItemsShop.LongCount() + menuItemsAccount.Count() + menuItemsPublic.Count();
+            int maxMenuItems = (int)menuItemsShop.LongCount() + menuItemsAccount.Count() + menuItemsPublic.Count();
             return maxMenuItems;
         }
     }

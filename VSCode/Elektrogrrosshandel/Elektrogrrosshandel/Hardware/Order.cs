@@ -1,11 +1,8 @@
-﻿using Elektrogrosshandel;
+// """
+
+using System.Globalization;
 using Elektrogrosshandel.User;
 using Spectre.Console;
-using System;
-using System.Collections.Generic;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Globalization;
 
 namespace Elektrogrosshandel.Hardware
 {
@@ -32,13 +29,13 @@ namespace Elektrogrosshandel.Hardware
             {
                 OrderTotalPrice = Bucket.GetBucketValue(Account.GetActiveBucketOfAccount(Program.ActiveUser));
             }
-            
+
             AccountID = Account.GetAccountID(Program.ActiveUser);
             OrderName = orderName;
             OrderDate = DateTime.Now;
             OrderBucket = Account.GetActiveBucketOfAccount(Program.ActiveUser);
 
-            return this; 
+            return this;
         }
 
         public static Order PlaceOrder(string orderName)

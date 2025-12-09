@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Elektrogrosshandel.User;
+﻿// """
+
+using Elektrogrosshandel.Functions.AddArticelFunctions;
 using Elektrogrosshandel.GUI;
 using Elektrogrosshandel.GUI.GUI_Menus;
 using Spectre.Console;
-using System.Globalization;
-using Elektrogrosshandel.Functions.AddArticelFunctions;
 namespace Elektrogrosshandel.Functions
 {
     internal class AdminMenu
@@ -42,13 +39,13 @@ namespace Elektrogrosshandel.Functions
 
                     GUI_Display.DisplayWindow(GUI_AdminMenuMenuAddArticel.ShowAdminMenu());
                     AnsiConsole.MarkupLine("[bold green]Add Artikel selected.[/]");
-                    
+
                     userinput = UserInput.GetStringInput("Geben Sie \"add\" ein oder wecheln Sie in ein anderes Menü (1 - 3)");
 
                     if (userinput.ToLower() == "add")
                     {
                         userinput = UserInput.GetStringInput("Was für einen Artikel möchten Sie hinzufügen?");
-                    
+
                         foreach (string option in addOptions)
                         {
                             if (userinput.ToLower() == option.ToLower())

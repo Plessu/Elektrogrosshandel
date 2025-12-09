@@ -1,24 +1,4 @@
-// Pseudocode / Plan (deutsch, detailliert):
-// 1. Neue Klasse `Case` erstellen, basierend auf der vorhandenen `GraphicCard`-Datei.
-// 2. Alle Vorkommen von "GraphicCard" durch "Case" ersetzen:
-//    - Klassennamen, Konstruktorname, Factory-Methode, statische Listen- und Methodenaufrufe zu `ComputerHardware`.
-// 3. Alle Felder, Eigenschaften und Methodenbezeichner beibehalten (Articel...-Namen bleiben unverändert).
-// 4. Statische Gruppennamen anpassen: ArticelGroupName auf "Case" setzen.
-// 5. Factory-Methode `CreateCase` implementieren, die Duplikate prüft:
-//    - Durchlaufe `ComputerHardware.Cases` und prüfe auf gleiches Model + Hersteller-ID.
-//    - Falls gefunden, ArgumentException werfen.
-//    - Ansonsten `CreateArticelID()` aufrufen und neuen `Case` erstellen.
-// 6. Privaten Konstruktor anlegen, der die Felder setzt und `ComputerHardware.AddCase(this)` aufruft.
-// 7. `CreateArticelID()` übernehmen und anpassen (bei Bedarf unverändert lassen).
-// 8. Usings, Namespace und Sichtbarkeit analog zur Vorlage übernehmen.
-// 9. Datei als `Elektrogrrosshandel\Hardware\Case.cs` speichern.
-//
-// Hinweis: Diese Implementierung ist 1:1 an die Vorlage angelehnt; nur Bezeichner und Texte auf "Case" geändert.
-
-using System;
-using System.Collections.Generic;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
+// """
 
 namespace Elektrogrosshandel.Hardware
 {
@@ -48,7 +28,7 @@ namespace Elektrogrosshandel.Hardware
 
             ComputerHardware.AddCase(this);
         }
-        
+
 
         private static Int64 CreateArticelID()
         {

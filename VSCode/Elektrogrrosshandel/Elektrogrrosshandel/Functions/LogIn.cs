@@ -1,10 +1,8 @@
-﻿using Elektrogrosshandel;
-using Elektrogrosshandel.User;
-using Elektrogrosshandel.GUI.GUI_Menus;
+﻿// """
+
 using Elektrogrosshandel.GUI;
-using System;
-using System.Collections.Generic;
-using System.Text;
+using Elektrogrosshandel.GUI.GUI_Menus;
+using Elektrogrosshandel.User;
 using Spectre.Console;
 namespace Elektrogrosshandel.Functions
 
@@ -63,7 +61,7 @@ namespace Elektrogrosshandel.Functions
                         }
 
                     } while (true);
-                    
+
                     Account ActiveUser = Account.GetAccountByUserName(userName);
                     Program.SetActiveUser(ActiveUser);
 

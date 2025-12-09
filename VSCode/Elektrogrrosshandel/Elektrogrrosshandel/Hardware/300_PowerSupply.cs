@@ -1,5 +1,7 @@
+// """
+
 /* 
-Plan / Pseudocode (ausführlich):
+Plan / Pseudocode (ausfÃ¼hrlich):
 1. Namespace und Usings analog zur vorhandenen Klasse `GraphicCard` anlegen.
 2. Klasse `PowerSupply` internal deklarieren und von `ComputerHardware` erben.
 3. Private Eigenschaften anlegen:
@@ -16,23 +18,18 @@ Plan / Pseudocode (ausführlich):
    - ArticelWeight (int)
    - ArticelDimesnions (int[])
    - ArticelDescription (string)
-   - Wattage (int)  // spezifisch für Netzteile
-4. Statische Felder für Gruppenname, GroupID (300), Gruppenbeschreibung und eine Liste für bereits vergebene ArticelIDs.
+   - Wattage (int)  // spezifisch fÃ¼r Netzteile
+4. Statische Felder fÃ¼r Gruppenname, GroupID (300), Gruppenbeschreibung und eine Liste fÃ¼r bereits vergebene ArticelIDs.
 5. Privaten Konstruktor implementieren, der alle Felder setzt und `ComputerHardware.AddPowerSupply(this)` aufruft.
-6. Öffentliche statische Factory-Methode `CreatePowerSupply` implementieren:
-   - Prüft auf vorhandene Einträge in `ComputerHardware.PowerSupplies` mit gleicher `ArticelModel` und `ArticelManufactrerID` und wirft bei Duplikat.
-   - Erzeugt eine neue ArticelID über `CreateArticelID`.
-   - Gibt eine neue `PowerSupply`-Instanz zurück.
+6. Ã–ffentliche statische Factory-Methode `CreatePowerSupply` implementieren:
+   - PrÃ¼ft auf vorhandene EintrÃ¤ge in `ComputerHardware.PowerSupplies` mit gleicher `ArticelModel` und `ArticelManufactrerID` und wirft bei Duplikat.
+   - Erzeugt eine neue ArticelID Ã¼ber `CreateArticelID`.
+   - Gibt eine neue `PowerSupply`-Instanz zurÃ¼ck.
 7. Statische Hilfsmethode `CreateArticelID` implementieren:
    - Erzeugt eine eindeutige ID aus `ComputerHardware.ArticelParentGroupID`, `ArticelGroupID` und einer vierstelligen Zufallsnummer.
-   - Stellt sicher, dass die ID noch nicht in der lokalen Liste ist, fügt sie hinzu und gibt sie zurück.
+   - Stellt sicher, dass die ID noch nicht in der lokalen Liste ist, fÃ¼gt sie hinzu und gibt sie zurÃ¼ck.
 8. Stil, Benennung und Fehlerbehandlung analog zur vorhandenen `GraphicCard`-Klasse halten.
 */
-
-using System;
-using System.Collections.Generic;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
 
 namespace Elektrogrosshandel.Hardware
 {

@@ -1,30 +1,29 @@
-﻿using Spectre.Console;
-using System;
-using System.Collections.Generic;
-using System.Text;
+// """
+
+using Spectre.Console;
 
 namespace Elektrogrosshandel.GUI
 {
     internal class GUI_Display
     {
-        private static Markup headertitle = 
+        private static Markup headertitle =
             new Markup("[bold #af8700 on black]Graef [/][bold #c0c0c0]Elektro[/][white]grosshandel[/]");
 
-        private static Layout HeaderTitel = 
+        private static Layout HeaderTitel =
                            new Layout("HeaderTitle").Update(new Panel(
                                headertitle.Justify(Justify.Left)).Expand());
 
-        private static Markup headersubtitle = 
+        private static Markup headersubtitle =
             new Markup("[#c0c0c0]Ihr[/] [bold #af8700 on black]Partner[/] [#c0c0c0]fuer Elektrozubehoer[/]");
 
-        private static Layout HeaderSubtitle = 
+        private static Layout HeaderSubtitle =
                            new Layout("HeaderSubtitle").Update(new Panel(
                                headersubtitle.Justify(Justify.Center)).Expand());
 
         public static void DisplayWindow(Layout Body)
         {
             int consoleHight = Console.WindowHeight;
-            int bodyHeiht = (int) (consoleHight * 0.75);
+            int bodyHeiht = (int)(consoleHight * 0.75);
 
             //Create Layout and structure
             Layout window = new Layout("Window")
@@ -35,7 +34,7 @@ namespace Elektrogrosshandel.GUI
                 new Layout("HeaderSubtitle")),
                 new Layout("Body"),
                 new Layout("Footer"));
-            
+
             window["Window"].Size = 28;
             window["Header"].Size = 3;
             window["Footer"].Size = 3;
@@ -52,7 +51,7 @@ namespace Elektrogrosshandel.GUI
 
 
             AnsiConsole.Clear();
-            AnsiConsole.Write(window);  
+            AnsiConsole.Write(window);
             return;
         }
     }

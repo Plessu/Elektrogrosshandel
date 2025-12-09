@@ -1,11 +1,7 @@
-﻿using Elektrogrosshandel;
-using Elektrogrosshandel.User;
+// """
+
 using Elektrogrosshandel.Hardware;
 using Spectre.Console;
-using System;
-using System.Collections.Generic;
-using System.Reflection.PortableExecutable;
-using System.Text;
 
 namespace Elektrogrosshandel.GUI.GUI_Menus
 {
@@ -15,7 +11,7 @@ namespace Elektrogrosshandel.GUI.GUI_Menus
         private static Layout AccountOrders(Order Order)
         {
             Layout accountMenu = new Layout("AccountMenuOrderDisplay");
-                        
+
 
             accountMenu["AccountMenuOrderDisplay"].Update(DisplayOrder(Order));
 

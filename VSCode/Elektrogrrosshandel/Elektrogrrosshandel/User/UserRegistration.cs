@@ -1,18 +1,15 @@
-﻿using Elektrogrosshandel;
+﻿// """
+
+using Elektrogrosshandel.Functions;
 using Elektrogrosshandel.GUI;
 using Elektrogrosshandel.GUI.GUI_Menus;
-using Elektrogrosshandel.Functions;
 using Spectre.Console;
-using System;
-using System.Collections.Generic;
-using System.Text;
-using Spectre.Console.Rendering;
 
 namespace Elektrogrosshandel.User
 {
     internal class UserRegistration
     {
-        internal static void AddAccount ()
+        internal static void AddAccount()
         {
             string firstName = null;
             string lastName = null;
@@ -24,23 +21,23 @@ namespace Elektrogrosshandel.User
             string phoneNumber = null;
             string serialCodeString = null;
 
-            
+
             bool userAllreadyExists = true;
             int serialCode = -1;
 
             GUI_Display.DisplayWindow(GUI_UserRegistration.ShowUserRegistrationMenu(firstName, lastName, firmName, email, phoneNumber,
                                                                                     userName, password, serialCodeString));
-            
+
             firstName = UserInput.GetStringInput("Vorname");
-            GUI_Display.DisplayWindow(GUI_UserRegistration.ShowUserRegistrationMenu(firstName, lastName, firmName,email, phoneNumber, 
+            GUI_Display.DisplayWindow(GUI_UserRegistration.ShowUserRegistrationMenu(firstName, lastName, firmName, email, phoneNumber,
                                                                                     userName, password, serialCodeString));
-            
+
             lastName = UserInput.GetStringInput("Nachname");
             GUI_Display.DisplayWindow(GUI_UserRegistration.ShowUserRegistrationMenu(firstName, lastName, firmName, email, phoneNumber,
                                                                                     userName, password, serialCodeString));
-            
+
             firmName = UserInput.GetStringInput("Firmenname ( \"-\" falls nicht gewünscht)");
-            GUI_Display.DisplayWindow(GUI_UserRegistration.ShowUserRegistrationMenu(firstName, lastName, firmName, email, phoneNumber, 
+            GUI_Display.DisplayWindow(GUI_UserRegistration.ShowUserRegistrationMenu(firstName, lastName, firmName, email, phoneNumber,
                                                                                     userName, password, serialCodeString));
 
             email = UserInput.GetStringInput("E-Mail Adresse");
@@ -48,7 +45,7 @@ namespace Elektrogrosshandel.User
                                                                                     userName, password, serialCodeString));
 
             phoneNumber = UserInput.GetStringInput("Telefonnummer");
-            GUI_Display.DisplayWindow(GUI_UserRegistration.ShowUserRegistrationMenu(firstName, lastName, firmName, email, phoneNumber, 
+            GUI_Display.DisplayWindow(GUI_UserRegistration.ShowUserRegistrationMenu(firstName, lastName, firmName, email, phoneNumber,
                                                                                     userName, password, serialCodeString));
 
             do
@@ -71,12 +68,12 @@ namespace Elektrogrosshandel.User
 
             pass = UserInput.GetPasswordInput("Passwort");
             password = "********";
-            GUI_Display.DisplayWindow(GUI_UserRegistration.ShowUserRegistrationMenu(firstName, lastName, firmName,email, phoneNumber, userName, 
+            GUI_Display.DisplayWindow(GUI_UserRegistration.ShowUserRegistrationMenu(firstName, lastName, firmName, email, phoneNumber, userName,
                                                                                     password, serialCodeString));
 
             serialCode = UserInput.GetIntInput("Seriencode (Nur Zahlen)");
             serialCodeString = serialCode.ToString();
-            GUI_Display.DisplayWindow(GUI_UserRegistration.ShowUserRegistrationMenu(firstName, lastName, firmName, email, phoneNumber, userName, 
+            GUI_Display.DisplayWindow(GUI_UserRegistration.ShowUserRegistrationMenu(firstName, lastName, firmName, email, phoneNumber, userName,
                                                                                     password, serialCodeString));
 
 

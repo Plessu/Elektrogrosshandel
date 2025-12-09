@@ -1,12 +1,9 @@
-﻿using Elektrogrosshandel;
+﻿// """
+
 using Elektrogrosshandel.GUI;
 using Elektrogrosshandel.GUI.GUI_Menus;
-using Elektrogrosshandel.User;
 using Elektrogrosshandel.Hardware;
 using Spectre.Console;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Elektrogrosshandel.Functions
 {
@@ -30,7 +27,7 @@ namespace Elektrogrosshandel.Functions
 
                     AnsiConsole.MarkupLine("\n[bold yellow]What would you like to do next? ( 1 - 4 )[/]");
                     AccountMenuSelector(UserInput.MenuChoice(4));
-                    
+
 
                     break;
 
@@ -51,7 +48,7 @@ namespace Elektrogrosshandel.Functions
                         {
                             ShowAccountMenu(choice);
                         }
-                        else 
+                        else
                         {
                             Order order = new Order();
                             order = Account.GetOrderByOrderID(Program.ActiveUser, choice);
@@ -79,7 +76,7 @@ namespace Elektrogrosshandel.Functions
                     break;
 
                 case 3:
-                    
+
                     string userInputEdit;
                     AnsiConsole.MarkupLine("[bold green]Edit Account selected.[/]");
                     Thread.Sleep(500);
@@ -104,7 +101,7 @@ namespace Elektrogrosshandel.Functions
                     {
                         AnsiConsole.MarkupLine("\n[bold red]You choose to change a property.[/]");
                         Thread.Sleep(500);
-                        
+
                         AccountEdit.AccountEditSelector(userInputEdit);
                     }
 

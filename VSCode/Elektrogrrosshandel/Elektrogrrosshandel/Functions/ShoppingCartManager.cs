@@ -1,10 +1,8 @@
-﻿using Elektrogrosshandel.GUI;
+﻿// """
+
+using Elektrogrosshandel.GUI;
 using Elektrogrosshandel.GUI.GUI_Menus;
 using Spectre.Console;
-using System;
-using System.Collections.Generic;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
 
 namespace Elektrogrosshandel.Functions
 {
@@ -22,25 +20,25 @@ namespace Elektrogrosshandel.Functions
             switch (menuchoice)
             {
                 case 1:
-                
+
                     GUI_Display.DisplayWindow(GUI_SCM_CurrentShoppingCart.ShowSCM_CurrentCart());
-                    
+
                     AnsiConsole.MarkupLine("[bold green]Current Shopping Cart displayed.[/]");
-                    
+
                     choice = UserInput.MenuChoice(GUI_SCM_CurrentShoppingCart.MaxMenuItems());
                     NavigateShoppingCartManager(choice);
-                    
+
                     break;
-                
+
                 case 2:
-                    
+
                     GUI_Display.DisplayWindow(GUI_SCM_SaveCart.ShowSaveCart());
-                    
+
                     Account.SaveCurrentBucket(UserInput.GetStringInput("[bold yellow]Please enter a Name for the Bucket.[/]"));
-                    
+
                     AnsiConsole.MarkupLine("[bold green]Shopping Cart saved successfully![/]");
                     Thread.Sleep(200);
-                    
+
                     ShowShoppingCartManager();
 
                     break;
@@ -171,7 +169,7 @@ namespace Elektrogrosshandel.Functions
                     break;
 
                 case 5:
-                    
+
                     GUI_Display.DisplayWindow(GUI_AccountInfoMenu.ShowAccountInfoMenu());
                     break;
             }

@@ -1,8 +1,7 @@
-﻿using Spectre.Console;
-using System;
-using System.Collections.Generic;
-using System.Text;
+// """
+
 using Elektrogrosshandel.User;
+using Spectre.Console;
 
 namespace Elektrogrosshandel.GUI.GUI_Menus
 {
@@ -65,7 +64,7 @@ namespace Elektrogrosshandel.GUI.GUI_Menus
                 Padding = new Padding(2, 1),
                 Expand = true
             };
-            return infoPanel; 
+            return infoPanel;
         }
 
         public static Layout ShowSCM_CurrentCart()

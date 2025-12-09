@@ -1,10 +1,9 @@
-﻿using Elektrogrosshandel.GUI;
+﻿// """
+
+using Elektrogrosshandel.GUI;
 using Elektrogrosshandel.GUI.GUI_Menus;
 using Elektrogrosshandel.Hardware;
 using Spectre.Console;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Elektrogrosshandel.Functions.AddArticelFunctions
 {
@@ -119,7 +118,8 @@ namespace Elektrogrosshandel.Functions.AddArticelFunctions
             availablecolors = availablecolors.Replace(" ", "");
             colorsArray = availablecolors.Split(',');
 
-            do {                 
+            do
+            {
                 if (colorsArray.Length > 3)
                 {
                     AnsiConsole.MarkupLine("[red]Sie haben mehr als 3 Farben eingegeben. Bitte geben Sie maximal 3 Farben ein (Komma getrennt).[/]");
@@ -149,7 +149,7 @@ namespace Elektrogrosshandel.Functions.AddArticelFunctions
             } while (true);
 
             do
-            {                 
+            {
                 minstock = UserInput.GetStringInput(addCaseItems[7]);
                 if (int.TryParse(minstock, out minstockInt))
                 {
@@ -205,7 +205,7 @@ namespace Elektrogrosshandel.Functions.AddArticelFunctions
                     AnsiConsole.MarkupLine("[red]Ungültige Eingabe. Bitte geben Sie die Abmessungen im Format Länge,Breite,Höhe ein (nur Zahlen, Komma getrennt).[/]");
                 }
             } while (true);
-            
+
             articledescription = UserInput.GetStringInput(addCaseItems[11]);
             caseformfactor = UserInput.GetStringInput(addCaseItems[12]);
 

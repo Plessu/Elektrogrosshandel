@@ -1,12 +1,9 @@
-﻿using Elektrogrosshandel.GUI;
+﻿// """
+
+using Elektrogrosshandel.GUI;
 using Elektrogrosshandel.GUI.GUI_Menus;
-using Elektrogrosshandel.Hardware;
-using Elektrogrosshandel.Functions;
-using System;
-using System.Collections.Generic;
-using System.Text;
-using Spectre.Console;
 using Elektrogrosshandel.User;
+using Spectre.Console;
 
 namespace Elektrogrosshandel.Functions.ShopFunctions
 {
@@ -37,7 +34,7 @@ namespace Elektrogrosshandel.Functions.ShopFunctions
                         ShowArticelOverview(articelID);
                         return;
                     }
-                success = Bucket.AddArticelToBucket(Account.GetActiveBucket(Program.ActiveUser), Int64.Parse(articelID), quantity);
+                    success = Bucket.AddArticelToBucket(Account.GetActiveBucket(Program.ActiveUser), Int64.Parse(articelID), quantity);
 
                     if (success)
                     {

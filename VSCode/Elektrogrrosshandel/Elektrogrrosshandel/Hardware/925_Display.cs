@@ -1,6 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
+// """
 
 /*
 Pseudocode / Plan (detailliert) - DEUTSCH:
@@ -13,7 +11,7 @@ Pseudocode / Plan (detailliert) - DEUTSCH:
   - ArticelGroupName = "Display"
   - ArticelGroupID = 925
   - ArticelGroupDescription (kurz)
-  - ArticelIDs List<int> für bereits vergebene IDs
+  - ArticelIDs List<int> fÃ¼r bereits vergebene IDs
 
 - Private Eigenschaften (Articel...):
   - ArticelID : int
@@ -61,7 +59,7 @@ Pseudocode / Plan (detailliert) - DEUTSCH:
   - Erzeuge neues Display-Objekt und return
 
 - CreateArticelID:
-  - Random iD zwischen 1..9999 generieren, prüfe gegen ArticelIDs, solange bis frei
+  - Random iD zwischen 1..9999 generieren, prÃ¼fe gegen ArticelIDs, solange bis frei
   - articelID string zusammensetzen: ComputerHardware.ArticelParentGroupID + ArticelGroupID + iD.ToString("D4")
   - parse zu int, in ArticelIDs speichern, return int
 */

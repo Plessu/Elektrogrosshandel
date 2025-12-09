@@ -1,7 +1,6 @@
-﻿using Spectre.Console;
-using System;
-using System.Collections.Generic;
-using System.Text;
+// """
+
+using Spectre.Console;
 
 namespace Elektrogrosshandel.GUI.GUI_Menus
 {
@@ -47,10 +46,10 @@ namespace Elektrogrosshandel.GUI.GUI_Menus
 
             return mainMenu;
         }
-            
 
-         
-        
+
+
+
         //Layout
         private static Panel PanelMenuShop()
         {
@@ -132,7 +131,7 @@ namespace Elektrogrosshandel.GUI.GUI_Menus
         }
         public static int MaxMenuItems()
         {
-            int maxMenuItems = (int) menuItemsShop.LongCount() + menuItemsAccount.Count() + menuItemsPublic.Count();
+            int maxMenuItems = (int)menuItemsShop.LongCount() + menuItemsAccount.Count() + menuItemsPublic.Count();
             return maxMenuItems;
         }
     }

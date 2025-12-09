@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
+// """
 
 namespace Elektrogrosshandel.Hardware
 {
@@ -19,7 +16,7 @@ namespace Elektrogrosshandel.Hardware
 
         private static List<Int64> ArticelIDs = new List<Int64>();
 
-        public Motherboard( string articelName, string articelManufacturer, string articelModel,
+        public Motherboard(string articelName, string articelManufacturer, string articelModel,
                             int articelYearOfProduction, int articelManufactrerID, string[] articelColors, int articelStock,
                             int articelMinStock, double articelPrice, int articelWeight, int[] articelDimesnions,
                             string articelDescription, string Socket, string RamType, string FormFactor,

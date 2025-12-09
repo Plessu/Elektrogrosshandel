@@ -18,4 +18,12 @@
     <PackageReference Include="Spectre.Console.Testing" Version="0.54.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <EditorConfigFiles Remove="C:\Users\giaco\OneDrive - LG-Academy\Giacomo\Übungen\Präsenzkurse\Anwendungsgrundlagen\Abschlussprojekt\Elektrogrosshandel\VSCode\Elektrogrrosshandel\Elektrogrrosshandel\.editorconfig" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="C:\Users\giaco\OneDrive - LG-Academy\Giacomo\Übungen\Präsenzkurse\Anwendungsgrundlagen\Abschlussprojekt\Elektrogrosshandel\VSCode\Elektrogrrosshandel\Elektrogrrosshandel\.editorconfig" />
+  </ItemGroup>
+
 </Project>

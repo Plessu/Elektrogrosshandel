@@ -1,8 +1,7 @@
-﻿using Elektrogrosshandel.Hardware;
+// """
+
+using Elektrogrosshandel.Hardware;
 using Spectre.Console;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Elektrogrosshandel.GUI.GUI_Menus
 {
@@ -51,7 +50,7 @@ namespace Elektrogrosshandel.GUI.GUI_Menus
             manufacturers = ComputerHardware.GetAllManufacturers();
             manufacturersItems.Add(new Markup("[italic #00afff]Please select an manufacturer or change Menu (1 - 3).[/]"));
             manufacturersItems.Add(new Markup("\n[bold blue]Hersteller:[/]"));
-            
+
             foreach (string manufacturer in manufacturers)
             {
                 manufacturersItems.Add(new Markup($"[#c0c0c0] - {manufacturer}[/]"));

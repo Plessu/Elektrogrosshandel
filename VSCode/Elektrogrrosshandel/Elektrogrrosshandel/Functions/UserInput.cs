@@ -1,7 +1,6 @@
-﻿using Spectre.Console;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿// """
+
+using Spectre.Console;
 
 namespace Elektrogrosshandel.Functions
 {

@@ -1,8 +1,7 @@
-﻿using Elektrogrosshandel.User;
+// """
+
+using Elektrogrosshandel.User;
 using Spectre.Console;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Elektrogrosshandel.GUI.GUI_Menus
 {

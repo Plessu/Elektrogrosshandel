@@ -1,0 +1,74 @@
+
+.editorconfig
+root = true
+
+[*.{cs}]
+charset = utf-8
+end_of_line = crlf
+insert_final_newline = true
+trim_trailing_whitespace = true
+indent_style = space
+indent_size = 4
+
+############################################################
+# Naming conventions
+############################################################
+
+# Symbols
+dotnet_naming_symbols.types.applicable_kinds = class, struct, enum, interface, record
+dotnet_naming_symbols.types.applicable_accessibilities = *
+
+dotnet_naming_symbols.public_members.applicable_kinds = property, method, event
+dotnet_naming_symbols.public_members.applicable_accessibilities = public, internal
+
+dotnet_naming_symbols.private_fields.applicable_kinds = field
+dotnet_naming_symbols.private_fields.applicable_accessibilities = private
+
+dotnet_naming_symbols.parameters.applicable_kinds = parameter
+dotnet_naming_symbols.parameters.applicable_accessibilities = *
+
+dotnet_naming_symbols.locals.applicable_kinds = local
+dotnet_naming_symbols.locals.applicable_accessibilities = *
+
+# Styles
+dotnet_naming_style.pascal_case.capitalization = pascal_case
+dotnet_naming_style.camel_case.capitalization = camel_case
+dotnet_naming_style.private_field_underscore.capitalization = camel_case
+dotnet_naming_style.private_field_underscore.required_prefix = _
+
+# Rules
+dotnet_naming_rule.types_should_be_pascal.symbols = types
+dotnet_naming_rule.types_should_be_pascal.style = pascal_case
+dotnet_naming_rule.types_should_be_pascal.severity = suggestion
+
+dotnet_naming_rule.public_members_should_be_pascal.symbols = public_members
+dotnet_naming_rule.public_members_should_be_pascal.style = pascal_case
+dotnet_naming_rule.public_members_should_be_pascal.severity = suggestion
+
+dotnet_naming_rule.private_fields_should_have_underscore.symbols = private_fields
+dotnet_naming_rule.private_fields_should_have_underscore.style = private_field_underscore
+dotnet_naming_rule.private_fields_should_have_underscore.severity = suggestion
+
+dotnet_naming_rule.parameters_should_be_camel.symbols = parameters
+dotnet_naming_rule.parameters_should_be_camel.style = camel_case
+dotnet_naming_rule.parameters_should_be_camel.severity = suggestion
+
+dotnet_naming_rule.locals_should_be_camel.symbols = locals
+dotnet_naming_rule.locals_should_be_camel.style = camel_case
+dotnet_naming_rule.locals_should_be_camel.severity = suggestion
+
+############################################################
+# Code-style preferences
+############################################################
+csharp_style_expression_bodied_methods = when_possible:suggestion
+csharp_style_expression_bodied_properties = when_possible:suggestion
+
+csharp_style_var_for_built_in_types = false:suggestion
+csharp_style_var_when_type_is_apparent = true:suggestion
+csharp_style_var_elsewhere = false:suggestion
+
+dotnet_sort_system_directives_first = true
+
+file_header_template = """
+Copyright (c) COMPANY. All rights reserved.
+"""

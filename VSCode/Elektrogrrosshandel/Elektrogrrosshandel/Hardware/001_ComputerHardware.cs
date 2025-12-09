@@ -1,7 +1,6 @@
-﻿using Spectre.Console;
-using System;
-using System.Collections.Generic;
-using System.Text;
+// """
+
+using Spectre.Console;
 
 namespace Elektrogrosshandel.Hardware
 {
@@ -164,10 +163,10 @@ namespace Elektrogrosshandel.Hardware
 
             foreach (ComputerHardware device in hardwareByManufacturer)
             {
-                   list.Add(new Markup($"[bold yellow]ArtikelID:[/] {device.ArticelID} [bold yellow]Artikelname:[/] {device.ArticelName} [bold yellow]Artikelmodel:[/] {device.ArticelModel}"));
+                list.Add(new Markup($"[bold yellow]ArtikelID:[/] {device.ArticelID} [bold yellow]Artikelname:[/] {device.ArticelName} [bold yellow]Artikelmodel:[/] {device.ArticelModel}"));
             }
 
-            return list ;
+            return list;
         }
 
         public static List<string> GetAllManufacturers()

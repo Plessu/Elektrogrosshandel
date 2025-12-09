@@ -1,10 +1,6 @@
-﻿using Spectre.Console;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Runtime.ExceptionServices;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
+// """
+
+using Spectre.Console;
 
 namespace Elektrogrosshandel.GUI.GUI_Menus
 {
@@ -70,7 +66,7 @@ namespace Elektrogrosshandel.GUI.GUI_Menus
                     new Layout("Figlet1"),
                     new Layout("Figlet2"),
                     new Layout("Figlet3"));
-            
+
             showUserRegistration["Information"].Size(35);
             showUserRegistration["Figlet1"].Size(8);
             showUserRegistration["Figlet2"].Size(7);

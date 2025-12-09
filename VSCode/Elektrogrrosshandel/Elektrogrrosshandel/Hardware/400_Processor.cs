@@ -1,7 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
+// """
 
 /*
 Pseudocode / Plan (detailliert):
@@ -28,9 +25,9 @@ Pseudocode / Plan (detailliert):
   - Validierung: durchlaufe ComputerHardware.Processors und werfe ArgumentException,
     wenn ArticelModel und ArticelManufactrerID bereits existieren
   - Erzeuge ArticelID via CreateArticelID()
-  - Rückgabe neuer Instanz
+  - RÃ¼ckgabe neuer Instanz
 - CreateArticelID:
-  - Erzeuge zufällige Zahl 1..9999, prüfe gegen ArticelIDs, baue ID-String:
+  - Erzeuge zufÃ¤llige Zahl 1..9999, prÃ¼fe gegen ArticelIDs, baue ID-String:
     ComputerHardware.ArticelParentGroupID + ArticelGroupID + D4
   - Parse int, speichere in ArticelIDs, return int
 */

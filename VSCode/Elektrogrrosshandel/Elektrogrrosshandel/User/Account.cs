@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.Numerics;
-using System.Text;
-using System.Text.Json;
-using System.IO;
+﻿// """
+
 using Elektrogrosshandel.Functions;
-using Elektrogrosshandel.User;
 using Elektrogrosshandel.Hardware;
+using Elektrogrosshandel.User;
 using Spectre.Console;
 
 namespace Elektrogrosshandel
@@ -31,7 +26,7 @@ namespace Elektrogrosshandel
         private Bucket ActiveBucket { get; set; }
         private List<Bucket> SafedBuckets { get; set; }
         private List<Markup> AccountInformation { get; set; }
-       private List<Order> Orders { get; set; }
+        private List<Order> Orders { get; set; }
 
 
         private static List<Account> Accounts = new List<Account>();
@@ -330,7 +325,7 @@ namespace Elektrogrosshandel
         {
             Account testAccount = new Account();
             testAccount.CreateAccount("a", "Giacomo", "Graef", "Graef Enterprise", "a", "g.graef@graef.graef", "0123/12adbe", 2);
-            
+
             Account testAccount2 = new Account();
             testAccount2.CreateAccount("b", "Max", "Mustermann", "Mustermann GmbH", "b", "maxmuster@muster.de", "0987/65gfedc", 9);
 

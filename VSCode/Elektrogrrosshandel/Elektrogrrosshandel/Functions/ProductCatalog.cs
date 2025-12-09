@@ -1,16 +1,15 @@
-﻿using Elektrogrosshandel.GUI;
-using Elektrogrosshandel.GUI.GUI_Menus;
+﻿// """
+
 using Elektrogrosshandel.Functions.ShopFunctions;
-using System;
-using System.Collections.Generic;
-using System.Text;
+using Elektrogrosshandel.GUI;
+using Elektrogrosshandel.GUI.GUI_Menus;
 
 namespace Elektrogrosshandel.Functions
 {
     internal class ProductCatalog
     {
-        public static void ShowProductCatalog(int i) 
-        { 
+        public static void ShowProductCatalog(int i)
+        {
             MenuSelection(i);
         }
 

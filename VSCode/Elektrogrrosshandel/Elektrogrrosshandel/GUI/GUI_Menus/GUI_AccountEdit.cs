@@ -1,9 +1,6 @@
-﻿using Spectre.Console;
-using System;
-using System.Collections.Generic;
-using System.Text;
-using Elektrogrosshandel;
-using Elektrogrosshandel.User;
+// """
+
+using Spectre.Console;
 
 namespace Elektrogrosshandel.GUI.GUI_Menus
 {
@@ -56,7 +53,7 @@ namespace Elektrogrosshandel.GUI.GUI_Menus
             infoLines.Add(new Markup("[#c0c0c0]Make sure to save your changes before exiting the menu.[/]"));
             infoLines.Add(new Markup("[#c0c0c0]Follofwing Options can be selcted:[/]"));
             infoLines.Add(new Markup("[yellow]1.[/] FirstName, 2. LastName, 3. Email , 4. PhoneNumber"));
-            
+
             var infoPanel = new Panel(new Rows(infoLines))
             {
                 Header = new PanelHeader("[bold #af8700 on black]Information[/]", Justify.Center),

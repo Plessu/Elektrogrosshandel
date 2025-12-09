@@ -1,11 +1,9 @@
+// """
+
 using Elektrogrosshandel.GUI;
 using Elektrogrosshandel.GUI.GUI_Menus;
 using Elektrogrosshandel.Hardware;
 using Spectre.Console;
-using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Threading;
 
 namespace Elektrogrosshandel.Functions.AddArticelFunctions
 {

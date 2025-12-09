@@ -1,6 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
+// """
 
 /*
 Pseudocode / Plan (detailliert):
@@ -13,7 +11,7 @@ Pseudocode / Plan (detailliert):
   - ArticelGroupName = "Peripheral"
   - ArticelGroupID = 900
   - ArticelGroupDescription (kurz)
-  - ArticelIDs List<int> für bereits vergebene IDs
+  - ArticelIDs List<int> fÃ¼r bereits vergebene IDs
 
 - Private Eigenschaften (Articel...):
   - ArticelID : int
@@ -36,8 +34,8 @@ Pseudocode / Plan (detailliert):
   - Wireless : bool
   - BatteryLifeHours : int
   - ButtonsCount : int
-  - DPI : int (für Mäuse)
-  - KeySwitchType : string (für Tastaturen)
+  - DPI : int (fÃ¼r MÃ¤use)
+  - KeySwitchType : string (fÃ¼r Tastaturen)
   - RGB : bool
   - ConnectivityOptions : string[]
 
@@ -59,7 +57,7 @@ Pseudocode / Plan (detailliert):
   - Erzeuge neues Peripheral-Objekt und return
 
 - CreateArticelID:
-  - Random iD zwischen 1..9999 generieren, prüfe gegen ArticelIDs, solange bis frei
+  - Random iD zwischen 1..9999 generieren, prÃ¼fe gegen ArticelIDs, solange bis frei
   - articelID string zusammensetzen: ComputerHardware.ArticelParentGroupID + ArticelGroupID + iD.ToString("D4")
   - parse zu int, in ArticelIDs speichern, return int
 */

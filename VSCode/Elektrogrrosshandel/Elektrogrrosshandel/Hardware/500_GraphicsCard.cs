@@ -1,7 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
+// """
 
 /*
 Pseudocode / Plan (detailliert):
@@ -25,9 +22,9 @@ Pseudocode / Plan (detailliert):
   - public static GraphicsCard CreateGraphicsCard(...)
   - Validierung gegen ComputerHardware.GraphicsCards
   - Erzeuge ArticelID via CreateArticelID()
-  - Rückgabe neuer Instanz
+  - RÃ¼ckgabe neuer Instanz
 - CreateArticelID:
-  - random 1..9999, prüfe gegen ArticelIDs, baue ID-String mit ComputerHardware.ArticelParentGroupID + ArticelGroupID + D4, parse int, speichern, return
+  - random 1..9999, prÃ¼fe gegen ArticelIDs, baue ID-String mit ComputerHardware.ArticelParentGroupID + ArticelGroupID + D4, parse int, speichern, return
 */
 
 namespace Elektrogrosshandel.Hardware
