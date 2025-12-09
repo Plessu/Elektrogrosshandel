@@ -133,6 +133,7 @@ namespace Elektrogrosshandel.Functions
                         Program.ActiveUser = null;
                         AnsiConsole.MarkupLine("[bold green]Logging out...[/]");
                         HardWareStorage.SaveAllDevices("HardWareStorage.json");
+                        AccountStorage.SaveAllAccounts("AccountsStorage.json");
 
                         Thread.Sleep(1000);
                         LogIn.LogingIn();

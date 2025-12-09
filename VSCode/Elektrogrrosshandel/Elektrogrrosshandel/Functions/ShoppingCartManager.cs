@@ -1,4 +1,4 @@
-﻿// """
+// """
 
 using Elektrogrosshandel.GUI;
 using Elektrogrosshandel.GUI.GUI_Menus;
@@ -38,6 +38,9 @@ namespace Elektrogrosshandel.Functions
 
                     AnsiConsole.MarkupLine("[bold green]Shopping Cart saved successfully![/]");
                     Thread.Sleep(200);
+
+                    AccountStorage.SaveAllAccounts("accounts.json");
+                    HardWareStorage.SaveAllDevices("hardware.json");
 
                     ShowShoppingCartManager();
 

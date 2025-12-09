@@ -1,4 +1,4 @@
-﻿// """
+// """
 
 using Elektrogrosshandel.GUI;
 using Elektrogrosshandel.GUI.GUI_Menus;
@@ -32,6 +32,9 @@ namespace Elektrogrosshandel.Functions
             Account.AddOrderToAccount(Program.ActiveUser, newOrder);
 
             AnsiConsole.MarkupLine("[bold green]Order placed successfully![/]");
+            HardWareStorage.SaveAllDevices("hardware_storage.json");
+            AccountStorage.SaveAllAccounts("account_storage.json");
+
             Thread.Sleep(200);
 
             MainMenu.ShowMainMenu();

@@ -1,6 +1,6 @@
-// """
-
 using Spectre.Console;
+using Elektrogrosshandel.Functions;
+using Elektrogrosshandel;
 
 namespace Elektrogrosshandel.GUI.GUI_Menus
 {
@@ -46,13 +46,24 @@ namespace Elektrogrosshandel.GUI.GUI_Menus
 
         private static Panel DisplayInformation()
         {
-            List<Markup> infoLines = new List<Markup>(0);
-
-            infoLines.Add(new Markup("[#c0c0c0]To edit your account information, please enter the option you want to change.[/]"));
-            infoLines.Add(new Markup("[#c0c0c0]For security reasons, some changes may require you to re-enter your password.[/]"));
-            infoLines.Add(new Markup("[#c0c0c0]Make sure to save your changes before exiting the menu.[/]"));
-            infoLines.Add(new Markup("[#c0c0c0]Follofwing Options can be selcted:[/]"));
-            infoLines.Add(new Markup("[yellow]1.[/] FirstName, 2. LastName, 3. Email , 4. PhoneNumber"));
+            // Zeige statt der Account-Details eine Liste von editierbaren Optionen
+            // oder den Hinweis, dass der Nutzer 1-4 im Menü wählen kann.
+            List<Markup> infoLines = new List<Markup>
+            {
+                new Markup("[#c0c0c0]Wählen Sie eine Option zum Bearbeiten Ihres Accounts oder nutzen Sie das Menü (1-4).[/]"),
+                new Markup(""),
+                new Markup("[yellow]Editierbare Felder:[/]"),
+                new Markup("  [green]firstname[/]  - Vorname ändern"),
+                new Markup("  [green]lastname[/]   - Nachname ändern"),
+                new Markup("  [green]email[/]      - E‑Mail Adresse ändern"),
+                new Markup("  [green]phonenumber[/]- Telefonnummer ändern"),
+                new Markup("  [green]firmname[/]   - Firmenname ändern (leer = löschen)"),
+                new Markup("  [green]username[/]   - Benutzername ändern"),
+                new Markup("  [green]password[/]   - Passwort ändern"),
+                new Markup("  [green]serialcode[/] - Seriencode / Rolle ändern"),
+                new Markup(""),
+                new Markup("[#c0c0c0]Tipp: Geben Sie eine der obenstehenden Eigenschaften ein oder wählen Sie das Menü (1-4).[/]")
+            };
 
             var infoPanel = new Panel(new Rows(infoLines))
             {

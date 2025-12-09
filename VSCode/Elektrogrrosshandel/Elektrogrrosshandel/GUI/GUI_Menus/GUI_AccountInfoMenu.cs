@@ -1,6 +1,10 @@
 // """
 
+using System.Linq;
 using Spectre.Console;
+using Spectre.Console.Rendering;
+using Elektrogrosshandel.Functions;
+using Elektrogrosshandel;
 
 namespace Elektrogrosshandel.GUI.GUI_Menus
 {
@@ -46,9 +50,8 @@ namespace Elektrogrosshandel.GUI.GUI_Menus
 
         private static Panel DisplayInformation()
         {
-            List<Markup> infoLines = new List<Markup>(0);
-
-            infoLines = Account.GetAccountInformationList(Program.ActiveUser);
+            // Erzeuge die Anzeige-Liste zur Laufzeit aus den aktuellen Daten (Program.ActiveUser)
+            var infoLines = AccountEdit.BuildAccountInformationForGui(Program.ActiveUser) ?? new List<Markup>();
 
             var infoPanel = new Panel(new Rows(infoLines))
             {
