@@ -14,11 +14,11 @@ namespace Elektrogrosshandel.Functions
             {
                 case "firstname":
 
-                    string newUsername;
+                    string newFirstName;
 
-                    newUsername = Functions.UserInput.GetStringInput("[bold yellow]Please enter your new Username:[/]");
-                    Account.ChangeAccountFirstName(Program.ActiveUser, newUsername);
-                    
+                    newFirstName = Functions.UserInput.GetStringInput("[bold yellow]Please enter your new First name:[/]");
+                    Program.ActiveUser.FirstName = newFirstName;
+
                     AnsiConsole.MarkupLine("[bold green]Username updated successfully![/]");
                     Thread.Sleep(500);
 

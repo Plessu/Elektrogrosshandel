@@ -16,13 +16,13 @@ namespace Elektrogrosshandel
     {
         private int AccountID { get; set; }
         private string UserName { get; set; }
-        private string FirstName { get; set; }
-        private string LastName { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
         private string FirmName { get; set; }
         private string Password { get; set; }
         private byte[] PasswordSalt { get; set; }
-        private string Email { get; set; }
-        private string PhoneNumber { get; set; }
+        public string Email { get; set; }
+        public string PhoneNumber { get; set; }
         private DateTime CreatedAt { get; set; }
         private string AcountRole { get; set; }
         private int SerialCode { get; set; }
