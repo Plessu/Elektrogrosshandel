@@ -25,8 +25,10 @@ namespace Elektrogrosshandel.GUI.GUI_Menus
         {
                 new Markup("[#c0c0c0]  7. Customer Support[/]"),
                 new Markup("[#c0c0c0]  8. Impressum[/]"),
-                new Markup("[#c0c0c0]  9. AdminBereich[/]") 
+                new Markup("[#c0c0c0]  9. AdminBereich[/]"),
+                new Markup("[#c0c0c0] 10. Logout[/]")
         };
+
         private static Layout Impressum()
         {
             Layout mainMenu = new Layout("Main Menu")
@@ -35,7 +37,7 @@ namespace Elektrogrosshandel.GUI.GUI_Menus
                         .SplitRows(
                             new Layout("Shop").Size(5),
                             new Layout("Account").Size(5),
-                            new Layout("Public Area").Size(5)),
+                            new Layout("Public Area").Size(6)),
                     new Layout("Right"));
 
             mainMenu["Left"]["Shop"].Update(PanelMenuShop().Expand());
@@ -60,7 +62,8 @@ namespace Elektrogrosshandel.GUI.GUI_Menus
             panelMenu.BorderColor(Color.DarkGoldenrod);
             panelMenu.Header("[bold #af8700 on black]Shop[/]");
             panelMenu.HeaderAlignment(Justify.Left);
-            
+            panelMenu.Padding = new Padding(0, 0, 0, 1);
+
             return panelMenu;
         }
 
@@ -82,6 +85,7 @@ namespace Elektrogrosshandel.GUI.GUI_Menus
             panelMenu.BorderColor(Color.DarkGoldenrod);
             panelMenu.Header("[bold #af8700 on black]Account[/]");
             panelMenu.HeaderAlignment(Justify.Left);
+            panelMenu.Padding = new Padding(0, 0, 0, 1);
 
             return panelMenu;
         }
@@ -90,12 +94,13 @@ namespace Elektrogrosshandel.GUI.GUI_Menus
         {
             Panel panelMenu = new Panel(
                 Align.Left(new Rows(menuItemsPublic), VerticalAlignment.Middle));
-            panelMenu.Height = 5;
+            panelMenu.Height = 6;
             panelMenu.Width = 35;
             panelMenu.Border(BoxBorder.Rounded);
             panelMenu.BorderColor(Color.DarkGoldenrod);
             panelMenu.Header("[bold #af8700 on black]Public Area[/] ");
             panelMenu.HeaderAlignment(Justify.Left);
+            panelMenu.Padding = new Padding(0, 0, 0, 1);
 
             return panelMenu;
         }
@@ -113,7 +118,7 @@ namespace Elektrogrosshandel.GUI.GUI_Menus
 
             //Create Panel for Display area
             Panel panelDisplay = new Panel(new Rows(infoLine));
-            panelDisplay.Height = 15;
+            panelDisplay.Height = 16;
             panelDisplay.Width = 81;
             panelDisplay.Border(BoxBorder.Rounded);
             panelDisplay.Header("[bold #af8700 on black]Welcome Area[/]");

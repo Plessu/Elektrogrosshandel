@@ -14,11 +14,6 @@ namespace Elektrogrosshandel.Functions
             int menuChoices;
             menuChoices = GUI_MainMenu.MaxMenuItems();
 
-            if (Account.GetAccountRole(Program.ActiveUser) != "Admin")
-            {
-                menuChoices--;    
-            }
-
             GUI_Display.DisplayWindow(GUI_MainMenu.ShowMainMenu());
             MenuSelection(UserInput.MenuChoice(menuChoices));
         }
@@ -131,6 +126,15 @@ namespace Elektrogrosshandel.Functions
 
                             ShowMainMenu();
                         }
+                        break;
+                    }
+
+                case 10:
+                    {
+                        Program.ActiveUser = null;
+                        AnsiConsole.MarkupLine("[bold green]Logging out...[/]");
+                        Thread.Sleep(1000);
+                        LogIn.LogingIn();
                         break;
                     }
             }
