@@ -1,4 +1,4 @@
-﻿// """
+// """
 
 using Elektrogrosshandel.GUI;
 using Elektrogrosshandel.GUI.GUI_Menus;
@@ -243,6 +243,7 @@ namespace Elektrogrosshandel.Functions.AddArticelFunctions
             );
 
             AnsiConsole.MarkupLine("[green]Das Gehäuse wurde erfolgreich hinzugefügt![/]");
+            HardWareStorage.SaveAllDevices("hardware_storage.json");
             AnsiConsole.MarkupLine("[blue]Sie werden zum Hauptmenü zurückgeleitet...[/]");
             Thread.Sleep(500);
 

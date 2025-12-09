@@ -16,28 +16,28 @@ namespace Elektrogrosshandel.Functions.AddArticelFunctions
                 "Bitte geben Sie ein Modell ein",
                 "Bitte geben Sie ein Produktionsjahr ein",
                 "Bitte geben Sie eine Hersteller ID ein",
-                "Bitte geben Sie verfügbare Farben ein (Komma getrennt, max 3)",
+                "Bitte geben Sie verfÃ¼gbare Farben ein (Komma getrennt, max 3)",
                 "Bitte geben Sie den Lagerbestand ein",
                 "Bitte geben Sie den Mindestlagerbestand ein",
                 "Bitte geben Sie den Preis ein",
                 "Bitte geben Sie das Gewicht ein (in Gramm)",
-                "Bitte geben Sie die Abmessungen ein (Länge,Breite,Höhe in cm, Komma getrennt)",
+                "Bitte geben Sie die Abmessungen ein (LÃ¤nge,Breite,HÃ¶he in cm, Komma getrennt)",
                 "Bitte geben Sie den Link zur Artikelbeschreibung ein",
         };
 
         private static List<string> addItemsDisplay = new List<string>
         {
-                "Bitte geben Sie die Auflösung ein (z.B. 1920x1080)",
+                "Bitte geben Sie die AuflÃ¶sung ein (z.B. 1920x1080)",
                 "Bitte geben Sie die Bildwiederholfrequenz in Hz ein (z.B. 144)",
                 "Bitte geben Sie den Panel-Typ ein (z.B. IPS, VA, TN)",
-                "Bitte geben Sie die Größe in Zoll ein (z.B. 27.0)",
-                "Unterstützt HDR? (ja/nein)",
-                "Bitte geben Sie die Anschlüsse ein (Komma getrennt, z.B. HDMI,DisplayPort)",
+                "Bitte geben Sie die GrÃ¶ÃŸe in Zoll ein (z.B. 27.0)",
+                "UnterstÃ¼tzt HDR? (ja/nein)",
+                "Bitte geben Sie die AnschlÃ¼sse ein (Komma getrennt, z.B. HDMI,DisplayPort)",
                 "Bitte geben Sie Adaptive-Sync (z.B. FreeSync, G-Sync oder 'keine') ein",
                 "Ist das Display gebogen? (ja/nein)",
-                "Ist das Display Touch-fähig? (ja/nein)",
+                "Ist das Display Touch-fÃ¤hig? (ja/nein)",
                 "Bitte geben Sie die Helligkeit in nits ein (z.B. 300)",
-                "Bitte geben Sie das Seitenverhältnis ein (z.B. 16:9)",
+                "Bitte geben Sie das SeitenverhÃ¤ltnis ein (z.B. 16:9)",
         };
 
         private static List<string> GetAddDisplayItems()
@@ -62,7 +62,7 @@ namespace Elektrogrosshandel.Functions.AddArticelFunctions
             {
                 string yearStr = UserInput.GetStringInput(items[3]);
                 if (int.TryParse(yearStr, out year)) break;
-                AnsiConsole.MarkupLine("[red]Ungültige Eingabe. Bitte geben Sie ein gültiges Produktionsjahr ein (nur Zahlen).[/]");
+                AnsiConsole.MarkupLine("[red]UngÃ¼ltige Eingabe. Bitte geben Sie ein gÃ¼ltiges Produktionsjahr ein (nur Zahlen).[/]");
             } while (true);
 
             int manufacturerID;
@@ -74,7 +74,7 @@ namespace Elektrogrosshandel.Functions.AddArticelFunctions
                     manufacturerID = int.Parse(mId);
                     break;
                 }
-                AnsiConsole.MarkupLine("[red]Ungültige Eingabe. Bitte geben Sie eine gültige Hersteller ID ein (nur Zahlen).[/]");
+                AnsiConsole.MarkupLine("[red]UngÃ¼ltige Eingabe. Bitte geben Sie eine gÃ¼ltige Hersteller ID ein (nur Zahlen).[/]");
             } while (true);
 
             string colorsRaw = UserInput.GetStringInput(items[5]);
@@ -100,7 +100,7 @@ namespace Elektrogrosshandel.Functions.AddArticelFunctions
             {
                 string stockStr = UserInput.GetStringInput(items[6]);
                 if (int.TryParse(stockStr, out stock)) break;
-                AnsiConsole.MarkupLine("[red]Ungültige Eingabe. Bitte geben Sie einen gültigen Lagerbestand ein (nur Zahlen).[/]");
+                AnsiConsole.MarkupLine("[red]UngÃ¼ltige Eingabe. Bitte geben Sie einen gÃ¼ltigen Lagerbestand ein (nur Zahlen).[/]");
             } while (true);
 
             int minStock;
@@ -108,7 +108,7 @@ namespace Elektrogrosshandel.Functions.AddArticelFunctions
             {
                 string minStockStr = UserInput.GetStringInput(items[7]);
                 if (int.TryParse(minStockStr, out minStock)) break;
-                AnsiConsole.MarkupLine("[red]Ungültige Eingabe. Bitte geben Sie einen gültigen Mindestlagerbestand ein (nur Zahlen).[/]");
+                AnsiConsole.MarkupLine("[red]UngÃ¼ltige Eingabe. Bitte geben Sie einen gÃ¼ltigen Mindestlagerbestand ein (nur Zahlen).[/]");
             } while (true);
 
             double price;
@@ -116,7 +116,7 @@ namespace Elektrogrosshandel.Functions.AddArticelFunctions
             {
                 string priceStr = UserInput.GetStringInput(items[8]);
                 if (double.TryParse(priceStr, out price)) break;
-                AnsiConsole.MarkupLine("[red]Ungültige Eingabe. Bitte geben Sie einen gültigen Preis ein (nur Zahlen).[/]");
+                AnsiConsole.MarkupLine("[red]UngÃ¼ltige Eingabe. Bitte geben Sie einen gÃ¼ltigen Preis ein (nur Zahlen).[/]");
             } while (true);
 
             int weight;
@@ -124,7 +124,7 @@ namespace Elektrogrosshandel.Functions.AddArticelFunctions
             {
                 string weightStr = UserInput.GetStringInput(items[9]);
                 if (int.TryParse(weightStr, out weight)) break;
-                AnsiConsole.MarkupLine("[red]Ungültige Eingabe. Bitte geben Sie ein gültiges Gewicht ein (nur Zahlen).[/]");
+                AnsiConsole.MarkupLine("[red]UngÃ¼ltige Eingabe. Bitte geben Sie ein gÃ¼ltiges Gewicht ein (nur Zahlen).[/]");
             } while (true);
 
             int length, width, height;
@@ -142,7 +142,7 @@ namespace Elektrogrosshandel.Functions.AddArticelFunctions
                     dimensions = new int[] { length, width, height };
                     break;
                 }
-                AnsiConsole.MarkupLine("[red]Ungültige Eingabe. Bitte geben Sie die Abmessungen im Format Länge,Breite,Höhe ein (nur Zahlen).[/]");
+                AnsiConsole.MarkupLine("[red]UngÃ¼ltige Eingabe. Bitte geben Sie die Abmessungen im Format LÃ¤nge,Breite,HÃ¶he ein (nur Zahlen).[/]");
             } while (true);
 
             string description = UserInput.GetStringInput(items[11]);
@@ -155,7 +155,7 @@ namespace Elektrogrosshandel.Functions.AddArticelFunctions
             {
                 string s = UserInput.GetStringInput(items[13]);
                 if (int.TryParse(s, out refreshRate)) break;
-                AnsiConsole.MarkupLine("[red]Ungültige Eingabe. Bitte geben Sie die Bildwiederholfrequenz in Hz ein (nur Zahlen).[/]");
+                AnsiConsole.MarkupLine("[red]UngÃ¼ltige Eingabe. Bitte geben Sie die Bildwiederholfrequenz in Hz ein (nur Zahlen).[/]");
             } while (true);
 
             string panelType = UserInput.GetStringInput(items[14]);
@@ -165,7 +165,7 @@ namespace Elektrogrosshandel.Functions.AddArticelFunctions
             {
                 string s = UserInput.GetStringInput(items[15]);
                 if (double.TryParse(s, out sizeInInches)) break;
-                AnsiConsole.MarkupLine("[red]Ungültige Eingabe. Bitte geben Sie die Größe in Zoll ein (z.B. 27.0).[/]");
+                AnsiConsole.MarkupLine("[red]UngÃ¼ltige Eingabe. Bitte geben Sie die GrÃ¶ÃŸe in Zoll ein (z.B. 27.0).[/]");
             } while (true);
 
             bool hdr;
@@ -180,7 +180,7 @@ namespace Elektrogrosshandel.Functions.AddArticelFunctions
                 {
                     hdr = false; break;
                 }
-                AnsiConsole.MarkupLine("[red]Ungültige Eingabe. Bitte antworten Sie mit 'ja' oder 'nein'.[/]");
+                AnsiConsole.MarkupLine("[red]UngÃ¼ltige Eingabe. Bitte antworten Sie mit 'ja' oder 'nein'.[/]");
             } while (true);
 
             string portsRaw = UserInput.GetStringInput(items[17]);
@@ -201,7 +201,7 @@ namespace Elektrogrosshandel.Functions.AddArticelFunctions
                 {
                     curved = false; break;
                 }
-                AnsiConsole.MarkupLine("[red]Ungültige Eingabe. Bitte antworten Sie mit 'ja' oder 'nein'.[/]");
+                AnsiConsole.MarkupLine("[red]UngÃ¼ltige Eingabe. Bitte antworten Sie mit 'ja' oder 'nein'.[/]");
             } while (true);
 
             bool touch;
@@ -216,7 +216,7 @@ namespace Elektrogrosshandel.Functions.AddArticelFunctions
                 {
                     touch = false; break;
                 }
-                AnsiConsole.MarkupLine("[red]Ungültige Eingabe. Bitte antworten Sie mit 'ja' oder 'nein'.[/]");
+                AnsiConsole.MarkupLine("[red]UngÃ¼ltige Eingabe. Bitte antworten Sie mit 'ja' oder 'nein'.[/]");
             } while (true);
 
             int brightness;
@@ -224,7 +224,7 @@ namespace Elektrogrosshandel.Functions.AddArticelFunctions
             {
                 string s = UserInput.GetStringInput(items[21]);
                 if (int.TryParse(s, out brightness)) break;
-                AnsiConsole.MarkupLine("[red]Ungültige Eingabe. Bitte geben Sie die Helligkeit in nits ein (nur Zahlen).[/]");
+                AnsiConsole.MarkupLine("[red]UngÃ¼ltige Eingabe. Bitte geben Sie die Helligkeit in nits ein (nur Zahlen).[/]");
             } while (true);
 
             string aspectRatio = UserInput.GetStringInput(items[22]);
@@ -254,9 +254,9 @@ namespace Elektrogrosshandel.Functions.AddArticelFunctions
                 brightness,
                 aspectRatio
             );
-
-            AnsiConsole.MarkupLine("[green]Das Display wurde erfolgreich hinzugefügt![/]");
-            AnsiConsole.MarkupLine("[blue]Sie werden zum Hauptmenü zurückgeleitet...[/]");
+            HardWareStorage.SaveAllDevices("hardware_storage.json");
+            AnsiConsole.MarkupLine("[green]Das Display wurde erfolgreich hinzugefÃ¼gt![/]");
+            AnsiConsole.MarkupLine("[blue]Sie werden zum HauptmenÃ¼ zurÃ¼ckgeleitet...[/]");
             Thread.Sleep(500);
             MainMenu.ShowMainMenu();
         }

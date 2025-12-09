@@ -1,4 +1,4 @@
-﻿// """
+// """
 
 using Elektrogrosshandel.Functions;
 using Elektrogrosshandel.Hardware;
@@ -13,7 +13,7 @@ namespace Elektrogrosshandel
         private string UserName { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        private string FirmName { get; set; }
+        public string FirmName { get; set; }
         private string Password { get; set; }
         private byte[] PasswordSalt { get; set; }
         public string Email { get; set; }
@@ -178,21 +178,126 @@ namespace Elektrogrosshandel
         public static void ChangeAccountFirstName(Account account, string newFirstName)
         {
             account.FirstName = newFirstName;
+            RefreshAccountInformation(account);
         }
 
         public static void ChangeAccountLastName(Account account, string newLastName)
         {
             account.LastName = newLastName;
+            RefreshAccountInformation(account);
         }
 
         public static void ChangeAccountEmail(Account account, string newEmail)
         {
             account.Email = newEmail;
+            RefreshAccountInformation(account);
         }
 
         public static void ChangeAccountPhoneNumber(Account account, string newPhoneNumber)
         {
             account.PhoneNumber = newPhoneNumber;
+            RefreshAccountInformation(account);
+        }
+
+        // Neuer: Firma ändern
+        public static void ChangeAccountFirmName(Account account, string newFirmName)
+        {
+            account.FirmName = newFirmName;
+            RefreshAccountInformation(account);
+        }
+
+        // Neuer: Username sicher ändern (prüft auf Konflikt). Gibt true bei Erfolg zurück.
+        public static bool TryChangeAccountUserName(Account account, string newUserName)
+        {
+            if (string.IsNullOrWhiteSpace(newUserName))
+            {
+                return false;
+            }
+
+            // Wenn neuer Name gleich altem, akzeptieren (keine Änderung)
+            if (newUserName == account.UserName)
+            {
+                return true;
+            }
+
+            if (DoesAccountExist(newUserName))
+            {
+                return false;
+            }
+
+            account.UserName = newUserName;
+            RefreshAccountInformation(account);
+            return true;
+        }
+
+        // Neuer: Passwort ändern (neuer Hash + Salt)
+        public static void ChangeAccountPassword(Account account, string newPassword)
+        {
+            byte[] salt;
+            string hash = PasswordHelper.HashPassword(newPassword, out salt);
+            account.Password = hash;
+            account.PasswordSalt = salt;
+            // Passwort wird nicht in AccountInformation angezeigt, daher kein Refresh nötig,
+            // trotzdem aufrufen falls Anzeige andere Felder kombinieren möchte
+            RefreshAccountInformation(account);
+        }
+
+        // Neuer: SerialCode ändern => Rolle + Firm-Flag + Steuerwunsch aktualisieren
+        public static void ChangeAccountSerialCode(Account account, int newSerialCode)
+        {
+            account.SerialCode = newSerialCode;
+
+            string role;
+            if (newSerialCode % 2 == 0)
+            {
+                role = "Admin";
+            }
+            else if (newSerialCode % 3 == 0)
+            {
+                role = "BuisnessUser";
+            }
+            else
+            {
+                role = "PrivateUser";
+            }
+
+            account.AcountRole = role;
+
+            if (role == "Admin" || role == "PrivateUser")
+            {
+                account.IsFirmAccount = false;
+                account.WantUSTax = false;
+            }
+            else
+            {
+                account.IsFirmAccount = true;
+                account.WantUSTax = true;
+            }
+
+            RefreshAccountInformation(account);
+        }
+
+        // Helfer, um den UserName auszulesen (wird z.B. für Passwortprüfung benötigt)
+        public static string GetUserName(Account account)
+        {
+            return account.UserName;
+        }
+
+        private static void RefreshAccountInformation(Account account)
+        {
+            // Rekonstruiert die Anzeige-Liste basierend auf aktuellen Properties
+            account.AccountInformation = new List<Markup>
+            {
+                new Markup($"FirstName: {account.FirstName}"),
+                new Markup($"LastName: {account.LastName}"),
+                new Markup($"FirmName: {account.FirmName}"),
+                new Markup($"Email: {account.Email}"),
+                new Markup($"PhoneNumber: {account.PhoneNumber}"),
+                new Markup($"\nAccountID: {account.AccountID}"),
+                new Markup($"AcountRole: {account.AcountRole}"),
+                new Markup($"UserName: {account.UserName}"),
+                new Markup($"CreatedAt: {account.CreatedAt}")
+            };
         }
 
         public static string GetAccountNameByAccount(Account account)

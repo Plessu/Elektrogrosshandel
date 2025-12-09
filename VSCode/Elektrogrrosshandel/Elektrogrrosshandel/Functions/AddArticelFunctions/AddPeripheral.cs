@@ -11,17 +11,17 @@ namespace Elektrogrosshandel.Functions.AddArticelFunctions
     {
         private static List<string> addItemsBase = new List<string>
         {
-                "Bitte geben Sie den Namen des Peripheriegeräts ein",
+                "Bitte geben Sie den Namen des PeripheriegerÃ¤ts ein",
                 "Bitte geben Sie einen Hersteller ein",
                 "Bitte geben Sie ein Modell ein",
                 "Bitte geben Sie ein Produktionsjahr ein",
                 "Bitte geben Sie eine Hersteller ID ein",
-                "Bitte geben Sie verfügbare Farben ein (Komma getrennt, max 3)",
+                "Bitte geben Sie verfÃ¼gbare Farben ein (Komma getrennt, max 3)",
                 "Bitte geben Sie den Lagerbestand ein",
                 "Bitte geben Sie den Mindestlagerbestand ein",
                 "Bitte geben Sie den Preis ein",
                 "Bitte geben Sie das Gewicht ein (in Gramm)",
-                "Bitte geben Sie die Abmessungen ein (Länge,Breite,Höhe in cm, Komma getrennt)",
+                "Bitte geben Sie die Abmessungen ein (LÃ¤nge,Breite,HÃ¶he in cm, Komma getrennt)",
                 "Bitte geben Sie den Link zur Artikelbeschreibung ein",
         };
 
@@ -29,13 +29,13 @@ namespace Elektrogrosshandel.Functions.AddArticelFunctions
         {
                 "Bitte geben Sie den Peripherie-Typ ein (z.B. Maus, Tastatur, Headset)",
                 "Bitte geben Sie den Schnittstellentyp ein (z.B. USB, Bluetooth)",
-                "Ist das Gerät kabellos? (ja/nein)",
+                "Ist das GerÃ¤t kabellos? (ja/nein)",
                 "Bitte geben Sie die Akkulaufzeit in Stunden ein (falls relevant, sonst 0)",
                 "Bitte geben Sie die Anzahl der Tasten ein (falls nicht relevant, 0)",
                 "Bitte geben Sie die DPI ein (falls Maus, sonst 0)",
                 "Bitte geben Sie den Schaltertyp ein (z.B. Cherry MX Red) oder 'keiner'",
-                "Unterstützt RGB? (ja/nein)",
-                "Bitte geben Sie Konnektivitätsoptionen ein (Komma getrennt, z.B. USB,Bluetooth)",
+                "UnterstÃ¼tzt RGB? (ja/nein)",
+                "Bitte geben Sie KonnektivitÃ¤tsoptionen ein (Komma getrennt, z.B. USB,Bluetooth)",
         };
 
         private static List<string> GetAddPeripheralItems()
@@ -60,7 +60,7 @@ namespace Elektrogrosshandel.Functions.AddArticelFunctions
             {
                 string yearStr = UserInput.GetStringInput(items[3]);
                 if (int.TryParse(yearStr, out year)) break;
-                AnsiConsole.MarkupLine("[red]Ungültige Eingabe. Bitte geben Sie ein gültiges Produktionsjahr ein (nur Zahlen).[/]");
+                AnsiConsole.MarkupLine("[red]UngÃ¼ltige Eingabe. Bitte geben Sie ein gÃ¼ltiges Produktionsjahr ein (nur Zahlen).[/]");
             } while (true);
 
             int manufacturerID;
@@ -72,7 +72,7 @@ namespace Elektrogrosshandel.Functions.AddArticelFunctions
                     manufacturerID = int.Parse(mId);
                     break;
                 }
-                AnsiConsole.MarkupLine("[red]Ungültige Eingabe. Bitte geben Sie eine gültige Hersteller ID ein (nur Zahlen).[/]");
+                AnsiConsole.MarkupLine("[red]UngÃ¼ltige Eingabe. Bitte geben Sie eine gÃ¼ltige Hersteller ID ein (nur Zahlen).[/]");
             } while (true);
 
             string colorsRaw = UserInput.GetStringInput(items[5]);
@@ -98,7 +98,7 @@ namespace Elektrogrosshandel.Functions.AddArticelFunctions
             {
                 string stockStr = UserInput.GetStringInput(items[6]);
                 if (int.TryParse(stockStr, out stock)) break;
-                AnsiConsole.MarkupLine("[red]Ungültige Eingabe. Bitte geben Sie einen gültigen Lagerbestand ein (nur Zahlen).[/]");
+                AnsiConsole.MarkupLine("[red]UngÃ¼ltige Eingabe. Bitte geben Sie einen gÃ¼ltigen Lagerbestand ein (nur Zahlen).[/]");
             } while (true);
 
             int minStock;
@@ -106,7 +106,7 @@ namespace Elektrogrosshandel.Functions.AddArticelFunctions
             {
                 string minStockStr = UserInput.GetStringInput(items[7]);
                 if (int.TryParse(minStockStr, out minStock)) break;
-                AnsiConsole.MarkupLine("[red]Ungültige Eingabe. Bitte geben Sie einen gültigen Mindestlagerbestand ein (nur Zahlen).[/]");
+                AnsiConsole.MarkupLine("[red]UngÃ¼ltige Eingabe. Bitte geben Sie einen gÃ¼ltigen Mindestlagerbestand ein (nur Zahlen).[/]");
             } while (true);
 
             double price;
@@ -114,7 +114,7 @@ namespace Elektrogrosshandel.Functions.AddArticelFunctions
             {
                 string priceStr = UserInput.GetStringInput(items[8]);
                 if (double.TryParse(priceStr, out price)) break;
-                AnsiConsole.MarkupLine("[red]Ungültige Eingabe. Bitte geben Sie einen gültigen Preis ein (nur Zahlen).[/]");
+                AnsiConsole.MarkupLine("[red]UngÃ¼ltige Eingabe. Bitte geben Sie einen gÃ¼ltigen Preis ein (nur Zahlen).[/]");
             } while (true);
 
             int weight;
@@ -122,7 +122,7 @@ namespace Elektrogrosshandel.Functions.AddArticelFunctions
             {
                 string weightStr = UserInput.GetStringInput(items[9]);
                 if (int.TryParse(weightStr, out weight)) break;
-                AnsiConsole.MarkupLine("[red]Ungültige Eingabe. Bitte geben Sie ein gültiges Gewicht ein (nur Zahlen).[/]");
+                AnsiConsole.MarkupLine("[red]UngÃ¼ltige Eingabe. Bitte geben Sie ein gÃ¼ltiges Gewicht ein (nur Zahlen).[/]");
             } while (true);
 
             int length, width, height;
@@ -140,7 +140,7 @@ namespace Elektrogrosshandel.Functions.AddArticelFunctions
                     dimensions = new int[] { length, width, height };
                     break;
                 }
-                AnsiConsole.MarkupLine("[red]Ungültige Eingabe. Bitte geben Sie die Abmessungen im Format Länge,Breite,Höhe ein (nur Zahlen).[/]");
+                AnsiConsole.MarkupLine("[red]UngÃ¼ltige Eingabe. Bitte geben Sie die Abmessungen im Format LÃ¤nge,Breite,HÃ¶he ein (nur Zahlen).[/]");
             } while (true);
 
             string description = UserInput.GetStringInput(items[11]);
@@ -155,7 +155,7 @@ namespace Elektrogrosshandel.Functions.AddArticelFunctions
                 string s = UserInput.GetStringInput(items[14]).Trim().ToLowerInvariant();
                 if (s == "ja" || s == "j" || s == "true" || s == "t") { wireless = true; break; }
                 else if (s == "nein" || s == "n" || s == "false" || s == "f") { wireless = false; break; }
-                AnsiConsole.MarkupLine("[red]Ungültige Eingabe. Bitte antworten Sie mit 'ja' oder 'nein'.[/]");
+                AnsiConsole.MarkupLine("[red]UngÃ¼ltige Eingabe. Bitte antworten Sie mit 'ja' oder 'nein'.[/]");
             } while (true);
 
             int battery;
@@ -163,7 +163,7 @@ namespace Elektrogrosshandel.Functions.AddArticelFunctions
             {
                 string s = UserInput.GetStringInput(items[15]);
                 if (int.TryParse(s, out battery)) break;
-                AnsiConsole.MarkupLine("[red]Ungültige Eingabe. Bitte geben Sie die Akkulaufzeit in Stunden ein (nur Zahlen).[/]");
+                AnsiConsole.MarkupLine("[red]UngÃ¼ltige Eingabe. Bitte geben Sie die Akkulaufzeit in Stunden ein (nur Zahlen).[/]");
             } while (true);
 
             int buttons;
@@ -171,7 +171,7 @@ namespace Elektrogrosshandel.Functions.AddArticelFunctions
             {
                 string s = UserInput.GetStringInput(items[16]);
                 if (int.TryParse(s, out buttons)) break;
-                AnsiConsole.MarkupLine("[red]Ungültige Eingabe. Bitte geben Sie die Anzahl der Tasten ein (nur Zahlen).[/]");
+                AnsiConsole.MarkupLine("[red]UngÃ¼ltige Eingabe. Bitte geben Sie die Anzahl der Tasten ein (nur Zahlen).[/]");
             } while (true);
 
             int dpi;
@@ -179,7 +179,7 @@ namespace Elektrogrosshandel.Functions.AddArticelFunctions
             {
                 string s = UserInput.GetStringInput(items[17]);
                 if (int.TryParse(s, out dpi)) break;
-                AnsiConsole.MarkupLine("[red]Ungültige Eingabe. Bitte geben Sie die DPI ein (nur Zahlen).[/]");
+                AnsiConsole.MarkupLine("[red]UngÃ¼ltige Eingabe. Bitte geben Sie die DPI ein (nur Zahlen).[/]");
             } while (true);
 
             string keySwitchType = UserInput.GetStringInput(items[18]);
@@ -190,7 +190,7 @@ namespace Elektrogrosshandel.Functions.AddArticelFunctions
                 string s = UserInput.GetStringInput(items[19]).Trim().ToLowerInvariant();
                 if (s == "ja" || s == "j" || s == "true" || s == "t") { rgb = true; break; }
                 else if (s == "nein" || s == "n" || s == "false" || s == "f") { rgb = false; break; }
-                AnsiConsole.MarkupLine("[red]Ungültige Eingabe. Bitte antworten Sie mit 'ja' oder 'nein'.[/]");
+                AnsiConsole.MarkupLine("[red]UngÃ¼ltige Eingabe. Bitte antworten Sie mit 'ja' oder 'nein'.[/]");
             } while (true);
 
             string connectivityRaw = UserInput.GetStringInput(items[20]);
@@ -220,9 +220,9 @@ namespace Elektrogrosshandel.Functions.AddArticelFunctions
                 rgb,
                 connectivityOptions
             );
-
-            AnsiConsole.MarkupLine("[green]Das Peripheriegerät wurde erfolgreich hinzugefügt![/]");
-            AnsiConsole.MarkupLine("[blue]Sie werden zum Hauptmenü zurückgeleitet...[/]");
+            HardWareStorage.SaveAllDevices("hardware_storage.json");
+            AnsiConsole.MarkupLine("[green]Das PeripheriegerÃ¤t wurde erfolgreich hinzugefÃ¼gt![/]");
+            AnsiConsole.MarkupLine("[blue]Sie werden zum HauptmenÃ¼ zurÃ¼ckgeleitet...[/]");
             Thread.Sleep(500);
             MainMenu.ShowMainMenu();
         }
